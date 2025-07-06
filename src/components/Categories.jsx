@@ -9,7 +9,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className='overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mr-4 pr-4'>
+    <div className='overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mx-4 pl-4 pr-4'>
       <div className='flex gap-2 whitespace-nowrap pr-4'>
         {categories.map((category, index) => (
           <Link

@@ -5,10 +5,12 @@
 button {
   @apply p-0 m-0 cursor-pointer bg-transparent;
 }
+
 a,
 span {
-  @apply inline-block no-underline;
+  @apply inline-block no-underline focus:shadow-none outline-offset-0;
 }
+
 input {
   @apply outline-none;
 }
