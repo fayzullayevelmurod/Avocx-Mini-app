@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const BottomBar = () => {
   return (
-    <div className=' fixed bottom-3 left-1/2 -translate-x-1/2 flex justify-between px-6 items-center bg-[#1B1B1B66] z-50 w-[calc(100%_-_32px)] rounded-[150px] h-[76px] backdrop-blur-md shadow-inset-gray border border-iron'>
+    <div className='max-w-[500px] fixed bottom-3 left-1/2 -translate-x-1/2 flex justify-between px-6 items-center bg-[#1B1B1B66] z-50 w-[calc(100%_-_32px)] rounded-[150px] h-[76px] backdrop-blur-md shadow-inset-gray border border-iron'>
       <Link className='text-center' to='#!'>
         <img
           className='block mx-auto h-6'
