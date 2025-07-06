@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  @apply p-0 m-0 cursor-pointer bg-transparent;
+}
+a,
+span {
+  @apply inline-block no-underline;
+}
+input {
+  @apply outline-none;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply bg-body-bg text-base-white font-medium;
+}
+
+.container {
+  @apply max-w-[413px] mx-auto px-[14px];
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
