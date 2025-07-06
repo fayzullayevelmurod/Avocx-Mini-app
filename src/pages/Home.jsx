@@ -49,7 +49,7 @@ const products = [
 const HomePage = () => {
   return (
     <>
-      <div>
+      <div className='pb-[100px]'>
         {/* search */}
         <div className='flex items-center gap-2'>
           <Link className='mr-2 w-10' to='#!'>
