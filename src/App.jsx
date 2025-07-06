@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='overflow-hidden'>
       <Header />
-      <div className='container'>
+      <div className='container pb-5'>
         <AppRoutes />
       </div>
     </div>

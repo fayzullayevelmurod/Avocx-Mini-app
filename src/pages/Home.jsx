@@ -87,17 +87,7 @@ const HomePage = () => {
 
         <div className='space-y-1'>
           {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              image={product.image}
-              imageAlt={product.imageAlt}
-              companyLogo={product.companyLogo}
-              companyLogoAlt={product.companyLogoAlt}
-              title={product.title}
-              groupCount={product.groupCount}
-              cartCount={product.cartCount}
-              description={product.description}
-            />
+            <ProductCard key={product.id} data={product} />
           ))}
         </div>
       </div>
