@@ -33,7 +33,7 @@ const Card = ({ data }) => {
           </span>
         </div>
         <div className='flex gap-1 mt-2'>
-          <Button className='h-10 w-full' gray={true}>
+          <Button className='!h-10 w-full' gray={true}>
             <span className='text-[13px]'>{price}</span>
             <svg
               width='15'
@@ -50,7 +50,7 @@ const Card = ({ data }) => {
               />
             </svg>
           </Button>
-          <Button className='h-10 w-[61px]' gray={true}>
+          <Button className='!h-10 w-[61px]' gray={true}>
             <img src={favoriteIcon} alt={favoriteIconAlt} />
           </Button>
         </div>
