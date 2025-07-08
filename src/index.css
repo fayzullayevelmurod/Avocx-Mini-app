@@ -11,8 +11,9 @@ span {
   @apply inline-block no-underline focus:shadow-none outline-offset-0;
 }
 
-input {
-  @apply outline-none;
+input,
+textarea {
+  @apply outline-none block;
 }
 body {
   font-family: 'Montserrat', sans-serif;

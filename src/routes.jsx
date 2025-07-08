@@ -4,6 +4,7 @@ import HomePage from './pages/Home';
 import { MapPage } from './pages/MapPage';
 import MyShops from './pages/MyShops';
 import MyShopsTwo from './pages/MyShopsTwo';
+import Step from './pages/create-shop/Step';
 
 
 const AppRoutes = () => {
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Route path='/home' element={<HomePage />} />
       <Route path='/my-shops' element={<MyShops />} />
       <Route path='/my-shops-two' element={<MyShopsTwo />} />
+      <Route path='/create-shop' element={<Step />} />
     </Routes>
   );
 };

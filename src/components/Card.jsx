@@ -50,7 +50,7 @@ const Card = ({ data }) => {
               />
             </svg>
           </Button>
-          <Button className='!h-10 w-[61px]' gray={true}>
+          <Button className='!h-10 max-w-[61px] min-w-[61px]' gray={true}>
             <img src={favoriteIcon} alt={favoriteIconAlt} />
           </Button>
         </div>

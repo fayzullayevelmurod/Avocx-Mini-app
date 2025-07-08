@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'dark': '#1A1A1A',
         "body-bg": "#161616",
         'base-white': "#E8E8E8",
         'purple': "#9544FF",
@@ -16,6 +17,7 @@ export default {
         "carbon": "#242424",
         "orange": "#FF6C11",
         grayCustom: '#A3A3A3',
+        'dark-gray': '#333333',
       },
       fontSize: {
         '15': "15px",
@@ -27,7 +29,9 @@ export default {
       boxShadow: {
         'inset-light': 'inset 0px 0px 5px 0px #EDEDED',
         'inset-gray': 'inset 0px 0px 6px 0px #696969',
-
+        'select-theme': '0px 0px 10px 0px #1A72FF',
+        'tariff': '0px 4px 7px 0px #21212166',
+        'selected-tariff': '0px 0px 16.9px 0px #1A72FF'
       },
       blur: {
         50: '50px',
@@ -37,10 +41,15 @@ export default {
         md: '8px',
         lg: '12px',
       },
-
+      dropShadow: {
+        'select-theme': '0px 0px 10px 0px #1A72FF'
+      },
       backgroundImage: {
         'green-dark-gradient': 'linear-gradient(90deg, #2AC32E 0%, #161616 31.11%)',
       },
+      lineHeight: {
+        'full': "100%"
+      }
     },
   },
   plugins: [],
