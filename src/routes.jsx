@@ -5,7 +5,8 @@ import { MapPage } from './pages/MapPage';
 import MyShops from './pages/MyShops';
 import MyShopsTwo from './pages/MyShopsTwo';
 import Step from './pages/create-shop/Step';
-
+import StoreManagement from './pages/StoreManagement';
+import StoreManagementTwo from './pages/StoreManagementTwo';
 
 const AppRoutes = () => {
   return (
@@ -15,6 +16,8 @@ const AppRoutes = () => {
       <Route path='/my-shops' element={<MyShops />} />
       <Route path='/my-shops-two' element={<MyShopsTwo />} />
       <Route path='/create-shop' element={<Step />} />
+      <Route path='/store-management' element={<StoreManagement />} />
+      <Route path='/store-management-2' element={<StoreManagementTwo />} />
     </Routes>
   );
 };
