@@ -14,7 +14,7 @@ const ProductCard = ({ data, btns }) => {
   } = data || {};
 
   return (
-    <div className='overflow-hidden rounded-[20px] bg-charcoal p-1 border border-iron'>
+    <div className='overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron'>
       <div>
         <img
           className='w-full object-cover h-[178px] rounded-2xl'
@@ -47,7 +47,7 @@ const ProductCard = ({ data, btns }) => {
                 </div>
               </div>
             </div>
-            <p className='text-xxs text-grayCustom mt-[1px] line-clamp-2'>
+            <p className='text-xxs text-grayCustom mt-[1px] leading-full line-clamp-2'>
               {description}
             </p>
           </div>

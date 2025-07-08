@@ -1,99 +1,241 @@
-import { Link } from 'react-router-dom';
-import Search from '../components/Search';
-import Button from '../components/Button';
-import Categories from '../components/Categories';
-import Title from '../components/Title';
-import ProductCard from '../components/ProductCard';
-import BottomBar from '../layouts/BottomBar';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Tab from '../components/Tab';
+import CardUI from '../components/CardUI';
 
-// products data
-const products = [
-  {
-    id: 1,
-    image: '/images/product-img-1.png',
-    imageAlt: 'product img',
-    companyLogo: '/images/company-logo.svg',
-    companyLogoAlt: 'company logo',
-    title: 'GUCCI legend',
-    groupCount: 15788,
-    cartCount: 7332,
-    description:
-      'Только оригинальные вещи от Gucci. Огромная коллекция вещей со всего мира, есть очень редкие экземпляры.',
-  },
-  {
-    id: 2,
-    image: '/images/product-img.png',
-    imageAlt: 'product img',
-    companyLogo: '/images/company-logo.svg',
-    companyLogoAlt: 'company logo',
-    title: 'GUCCI legend',
-    groupCount: 15788,
-    cartCount: 7332,
-    description:
-      'Только оригинальные вещи от Gucci. Огромная коллекция вещей со всего мира, есть очень редкие экземпляры.',
-  },
-  {
-    id: 3,
-    image: '/images/product-img.png',
-    imageAlt: 'product img',
-    companyLogo: '/images/company-logo.svg',
-    companyLogoAlt: 'company logo',
-    title: 'GUCCI legend',
-    groupCount: 15788,
-    cartCount: 7332,
-    description:
-      'Только оригинальные вещи от Gucci. Огромная коллекция вещей со всего мира, есть очень редкие экземпляры.',
-  },
-];
+const Home = () => {
+  // Sample image data (replace with your own images)
+  const slides = [
+    { src: 'images/slider-img.png', alt: 'slider img 1' },
+    { src: 'images/slider-img.png', alt: 'slider img 2' },
+    { src: 'images/slider-img.png', alt: 'slider img 3' },
+  ];
 
-const HomePage = () => {
+  const tabData = [
+    { id: '1', label: 'Я покупатель', content: <Buyer /> },
+    { id: '2', label: 'Я продавец', content: <Seller /> },
+  ];
+
   return (
-    <>
-      <div className='pb-[100px]'>
-        {/* search */}
-        <div className='flex items-center gap-2'>
-          <Link className='mr-2 w-10' to='#!'>
-            <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
-          </Link>
-          <Search />
-          <Button className='min-w-[50px] max-w-[50px] h-[45px]'>
-            <img src='/images/icons/shop.svg' alt='shop icon' />
-          </Button>
-          <button className='w-[50px] h-[45px] flex items-center justify-center'>
-            <img
-              src='/images/icons/refresh.svg'
-              alt='refresh icon'
-              width={17}
-              height={21}
-            />
-          </button>
-        </div>
-        {/* filter */}
-        <div className='flex gap-2 mt-3 mb-2'>
-          <button className='flex-1 flex items-center gap-[10px] px-4 bg-carbon h-12 rounded-base'>
-            <img src='/images/icons/menu-2.svg' alt='menu' />
-            <span>Категории</span>
-          </button>
-          <button className='flex-1 flex items-center gap-[10px] px-4 bg-carbon h-12 rounded-base'>
-            <img src='/images/icons/filter.svg' alt='filter' />
-            <span>Категории</span>
-          </button>
-          <button className='w-[35px] flex items-center justify-center bg-carbon h-12 rounded-base'>
-            <img src='/images/icons/star.svg' alt='star' />
-          </button>
-        </div>
-        <Categories />
-        <Title label='Магазины' />
-
-        <div className='space-y-1'>
-          {products.map((product) => (
-            <ProductCard key={product.id} data={product} />
+    <div>
+      <h1 className='text-[17px] font-bold text-center mb-5 text-white'>
+        Главная
+      </h1>
+      <div className='mb-[15px] shadow-card-shd rounded-[20px] overflow-hidden bg-[#181818] h-[232px]'>
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={0}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          className='h-full'
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <img
+                className='w-full h-full object-cover'
+                src={slide.src}
+                alt={slide.alt}
+              />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
-      <BottomBar />
-    </>
+
+      <Tab tabData={tabData} />
+      <div className='mt-[6px] bg-ai-card flex items-center justify-between pl-[18px] rounded-base'>
+        <div className='flex items-center gap-[5px]'>
+          <img
+            className='w-[25px] h-[25px] rounded-full object-cover'
+            src='images/blog-logo.svg'
+            alt='blog-logo'
+          />
+          <div>
+            <a className='text-[13px] italic flex items-center gap-2' href='#!'>
+              <span>Avocx Devblog</span>
+              <svg
+                width='16'
+                height='9'
+                viewBox='0 0 16 9'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M15 4.5L11.1111 0.999999M15 4.5L11.1111 8M15 4.5L1 4.5'
+                  stroke='#fff'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </a>
+            <p className='text-[8px] font-normal'>
+              News, promotions, giveaways.
+            </p>
+          </div>
+        </div>
+        <img src='/images/ai.png' alt='ai img' />
+      </div>
+    </div>
   );
 };
 
-export default HomePage;
+export default Home;
+
+const Buyer = () => {
+  const cardsData = [
+    {
+      id: '1',
+      title: 'Реклама',
+      description:
+        'Покупайте и продавайте рекламу быстро, выгодно и без обмана.',
+      icon: '/images/icons/trade-up-blue.svg',
+    },
+    {
+      id: '2',
+      title: 'Магазины',
+      description:
+        'Покупайте множество товаров напрямую у авторов телеграм каналов.',
+      icon: '/images/icons/home-blue.svg',
+    },
+    {
+      id: '3',
+      title: 'Услуги и Работа',
+      description:
+        'Найдутся решение для любых задач, от топ специалистов, до новичков.',
+      icon: '/images/icons/work.svg',
+    },
+    {
+      id: '4',
+      title: 'Биржа каналов',
+      description:
+        'Покупайте и продавайте каналы, чаты и боты, с avocx гарантом.',
+      icon: '/images/icons/canal.svg',
+    },
+    {
+      id: '5',
+      title: 'Биржа подарков',
+      description: 'Покупайте и продавайте NFT подарки быстро и надежно.',
+      icon: '/images/icons/gift.svg',
+    },
+    {
+      id: '6',
+      title: 'TON Two teams',
+      description:
+        'Есть две версии, чея окажется верной разделят приз на всю команду',
+      icon: '/images/icons/diamon.svg',
+    },
+    {
+      id: '7',
+      title: 'Обмен валют',
+      description: 'Легальные обмены валют и криптовалют по всему миру.',
+      icon: '/images/icons/change-valute.svg',
+    },
+    {
+      id: '8',
+      title: 'Розыгрыши',
+      description:
+        'Создайте или участвуйте в розыгрыше подарков, подписок, звёзд или других призов.',
+      icon: '/images/icons/flag.svg',
+    },
+  ];
+
+  return (
+    <div className='grid grid-cols-2 gap-[10px]'>
+      {cardsData.map((card) => (
+        <CardUI key={card.id} className='!p-[12px] rounded-base'>
+          <div className='flex items-center gap-2 mb-3'>
+            <img
+              src={card.icon}
+              alt={`${card.title} icon`}
+              className='w-5 h-5'
+            />
+            <span className='text-sm font-semibold text-white'>
+              {card.title}
+            </span>
+          </div>
+          <p className='text-[10px] text-grayCustom'>{card.description}</p>
+        </CardUI>
+      ))}
+    </div>
+  );
+};
+
+const Seller = () => {
+  const cardsData2 = [
+    {
+      id: '1',
+      title: 'Реклама',
+      description:
+        'Покупайте и продавайте рекламу быстро, выгодно и без обмана.',
+      icon: '/images/icons/trade-up-blue.svg',
+    },
+    {
+      id: '2',
+      title: 'Магазины',
+      description:
+        'Покупайте множество товаров напрямую у авторов телеграм каналов.',
+      icon: '/images/icons/home-blue.svg',
+    },
+    {
+      id: '3',
+      title: 'Услуги и Работа',
+      description:
+        'Найдутся решение для любых задач, от топ специалистов, до новичков.',
+      icon: '/images/icons/work.svg',
+    },
+    {
+      id: '4',
+      title: 'Биржа каналов',
+      description:
+        'Покупайте и продавайте каналы, чаты и боты, с avocx гарантом.',
+      icon: '/images/icons/canal.svg',
+    },
+    {
+      id: '5',
+      title: 'Биржа подарков',
+      description: 'Покупайте и продавайте NFT подарки быстро и надежно.',
+      icon: '/images/icons/gift.svg',
+    },
+    {
+      id: '6',
+      title: 'TON Two teams',
+      description:
+        'Есть две версии, чея окажется верной разделят приз на всю команду',
+      icon: '/images/icons/diamon.svg',
+    },
+    {
+      id: '7',
+      title: 'Обмен валют',
+      description: 'Легальные обмены валют и криптовалют по всему миру.',
+      icon: '/images/icons/change-valute.svg',
+    },
+    {
+      id: '8',
+      title: 'Розыгрыши',
+      description:
+        'Создайте или участвуйте в розыгрыше подарков, подписок, звёзд или других призов.',
+      icon: '/images/icons/flag.svg',
+    },
+  ];
+
+  return (
+    <div className='grid grid-cols-2 gap-[10px]'>
+      {cardsData2.map((card) => (
+        <CardUI key={card.id} className='!p-[12px] rounded-base'>
+          <div className='flex items-center gap-2 mb-3'>
+            <img
+              src={card.icon}
+              alt={`${card.title} icon`}
+              className='w-5 h-5'
+            />
+            <span className='text-sm font-semibold text-white'>
+              {card.title}
+            </span>
+          </div>
+          <p className='text-[10px] text-grayCustom'>{card.description}</p>
+        </CardUI>
+      ))}
+    </div>
+  );
+};

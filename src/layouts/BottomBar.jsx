@@ -9,7 +9,7 @@ const BottomBar = () => {
           src='/images/icons/shop.svg'
           alt=''
         />
-        <span className='mt-1 text-xxs'>SHOPS</span>
+        <span className='mt-1 text-xxs text-white'>SHOPS</span>
       </Link>
       <Link className='text-center' to='#!'>
         <svg
@@ -28,15 +28,15 @@ const BottomBar = () => {
           />
         </svg>
 
-        <span className='mt-1 text-xxs'>BASKET</span>
+        <span className='mt-1 text-xxs text-white'>BASKET</span>
       </Link>
       <Link className='text-center' to='#!'>
         <img className='block mx-auto' src='/images/icons/home.svg' alt='' />
-        <span className='mt-1 text-xxs'>HOME</span>
+        <span className='mt-1 text-xxs text-white'>HOME</span>
       </Link>
       <Link className='text-center' to='#!'>
         <img className='block mx-auto' src='/images/icons/order.svg' alt='' />
-        <span className='mt-1 text-xxs'>ORDERS</span>
+        <span className='mt-1 text-xxs text-white'>ORDERS</span>
       </Link>
       <Link className='text-center' to='#!'>
         <img
@@ -44,7 +44,7 @@ const BottomBar = () => {
           src='/images/icons/settings.svg'
           alt=''
         />
-        <span className='mt-1 text-xxs'>SETTINGS</span>
+        <span className='mt-1 text-xxs text-white'>SETTINGS</span>
       </Link>
     </div>
   );

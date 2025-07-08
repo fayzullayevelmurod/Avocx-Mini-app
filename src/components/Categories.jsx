@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-
+import 'swiper/css';
+import 'swiper/css/navigation';
 const categories = [
   { label: 'На хайпе', to: '/hype', className: 'bg-orange' },
   { label: 'Бестселлеры', to: '/bestsellers', className: 'bg-primary' },
@@ -9,8 +10,8 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className='overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mx-4 pl-4 pr-4'>
-      <div className='flex gap-2 whitespace-nowrap pr-4'>
+    <div className='categories-container overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mx-4 pl-4 pr-4'>
+      <div className='flex gap-2 whitespace-nowrap pr-4 mr-4'>
         {categories.map((category, index) => (
           <Link
             key={index}

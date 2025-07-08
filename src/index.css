@@ -19,7 +19,39 @@ body {
   font-family: 'Montserrat', sans-serif;
   @apply bg-body-bg text-base-white font-medium;
 }
-
+body.light-theme {
+  @apply bg-white;
+}
+body.light-theme .shops-page {
+  @apply !text-[#272727];
+}
+body.light-theme .shops-page .text-grayCustom {
+  @apply text-[#7A7A7A];
+}
+body.light-theme .shops-page .bg-charcoal {
+  @apply bg-base-white;
+}
+body.light-theme .shops-page .border-iron {
+  @apply border-[#CECECE];
+}
+body.light-theme .shops-page .categories-container {
+  @apply text-white;
+}
+body.light-theme .shops-page .bg-carbon {
+  @apply bg-[#E8E8E8];
+}
+body.light-theme .light-icon path {
+  @apply stroke-[#272727];
+}
+body.light-theme header .header-logo path {
+  @apply fill-[#272727];
+}
+body.light-theme .text-base-white {
+  @apply text-[#272727];
+}
+body.light-theme .media-menu .text-base-white {
+  @apply text-white;
+}
 .container {
   @apply max-w-[413px] mx-auto px-[14px];
 }
@@ -37,4 +69,21 @@ body {
 
 .swiper .swiper-pagination-bullet-active {
   @apply bg-primary;
+}
+
+.react-datepicker,
+.react-datepicker__header {
+  @apply !bg-charcoal;
+}
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name,
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  @apply !text-white;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply !bg-primary !opacity-100;
 }

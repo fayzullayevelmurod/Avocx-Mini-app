@@ -32,7 +32,9 @@ export default {
         'inset-gray': 'inset 0px 0px 6px 0px #696969',
         'select-theme': '0px 0px 10px 0px #1A72FF',
         'tariff': '0px 4px 7px 0px #21212166',
-        'selected-tariff': '0px 0px 16.9px 0px #1A72FF'
+        'selected-tariff': '0px 0px 16.9px 0px #1A72FF',
+        'btn-inset': "0px 0px 5px 0px #FFFFFF inset",
+        'card-shd': '0px 0px 5px 0px #656565',
       },
       blur: {
         50: '50px',
@@ -47,6 +49,8 @@ export default {
       },
       backgroundImage: {
         'green-dark-gradient': 'linear-gradient(90deg, #2AC32E 0%, #161616 31.11%)',
+        'ai-card': "linear-gradient(92.53deg, #232323 9.26%, #0F0F0F 90.74%)",
+        "nav":"linear-gradient(169.23deg, #181818 2.37%, #111111 97.63%)"
       },
       lineHeight: {
         'full': "100%"

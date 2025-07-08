@@ -1,6 +1,5 @@
 // routes.jsx
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/Home';
 import { MapPage } from './pages/MapPage';
 import MyShops from './pages/MyShops';
 import MyShopsTwo from './pages/MyShopsTwo';
@@ -11,12 +10,20 @@ import ProductCard from './pages/ProductCard';
 import ProductCardTwo from './pages/ProductCardTwo';
 import Basket from './pages/Basket';
 import MyOrders from './pages/MyOrders';
+import Announcement from './pages/Announcement';
+import AnnouncementTwo from './pages/AnnouncementTwo';
+import CreateAd from './pages/CreateAd';
+import CreateAdTwo from './pages/CreateAdTwo';
+import CreateAdSuccess from './pages/CreateAdSuccess';
+import Shops from './pages/Shops';
+import Home from './pages/Home';
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path='/' element={<MapPage />} />
-      <Route path='/home' element={<HomePage />} />
+      <Route path='/shops' element={<Shops />} />
+      <Route path='/home' element={<Home />} />
       <Route path='/my-shops' element={<MyShops />} />
       <Route path='/my-shops-two' element={<MyShopsTwo />} />
       <Route path='/create-shop' element={<Step />} />
@@ -26,7 +33,11 @@ const AppRoutes = () => {
       <Route path='/product-card-two' element={<ProductCardTwo />} />
       <Route path='/basket' element={<Basket />} />
       <Route path='/my-orders' element={<MyOrders />} />
-
+      <Route path='/announcement' element={<Announcement />} />
+      <Route path='/announcement-two' element={<AnnouncementTwo />} />
+      <Route path='/create-ad' element={<CreateAd />} />
+      <Route path='/create-ad-two' element={<CreateAdTwo />} />
+      <Route path='/create-ad-success' element={<CreateAdSuccess />} />
     </Routes>
   );
 };
