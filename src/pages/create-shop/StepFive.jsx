@@ -1,14 +1,14 @@
 import Button from '../../components/Button';
 import CardUI from '../../components/CardUI';
-import { CategoryForm, Select, UploadFile } from '../../components/Form';
+import {
+  CategoryForm,
+  DropDown,
+  Select,
+  SelectedBox,
+  UploadFile,
+} from '../../components/Form';
 
-const StepFive = ({onNext}) => {
-  const options = [
-    { value: 'sell', label: 'Готовые решения' },
-    { value: 'buy', label: 'Я покупаю2' },
-    { value: 'rent', label: 'Я арендаю3' },
-  ];
-
+const StepFive = ({ onNext }) => {
   return (
     <div>
       <h3 className='text-xl text-center leading-[100%] mb-[30px]'>
@@ -17,7 +17,25 @@ const StepFive = ({onNext}) => {
       </h3>
       <CardUI className='space-y-[6px]'>
         <CategoryForm />
-        <Select options={options} />
+        <DropDown className='space-y-[7px]'>
+          <div className='pl-8'>
+            <SelectedBox />
+          </div>
+          <div className='pl-[69px]'>
+            <CategoryForm
+              label='Подподкатегория'
+              icon='/images/icons/plus-2.svg'
+            />
+          </div>
+          <div className='pl-8'>
+            <CategoryForm
+              label='Подкатегория'
+              icon='/images/icons/plus-2.svg'
+            />
+          </div>
+          <CategoryForm />
+          <div className='w-[356px]'></div>
+        </DropDown>
         <div className='pt-3 space-y-[6px]'>
           <Button onClick={onNext}>Далее</Button>
           <UploadFile />

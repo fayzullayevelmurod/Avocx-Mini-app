@@ -21,6 +21,13 @@ export const MapPage = () => {
       <Link className='text-primary block underline' to='/store-management-2'>
         Мои магазины
       </Link>
+      <Link className='text-primary block underline' to='/product-card'>
+        Карточка товара
+      </Link>
+      <Link className='text-primary block underline' to='/product-card-two'>
+        Карточка товара 2
+      </Link>
+
     </div>
   );
 };

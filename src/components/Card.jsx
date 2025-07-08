@@ -1,6 +1,6 @@
 import Button from './Button';
 
-const Card = ({ data }) => {
+const Card = ({ data, actions }) => {
   const {
     image,
     imageAlt,
@@ -14,26 +14,56 @@ const Card = ({ data }) => {
   } = data || {};
 
   return (
-    <div className='bg-charcoal p-[1px] rounded-[20px] border border-iron'>
-      <img
-        className='w-full h-[201px] object-cover rounded-[19px]'
-        src={image}
-        alt={imageAlt}
-        loading='lazy'
-      />
+    <div className='bg-charcoal p-[1px] rounded-[20px] border border-iron overflow-hidden'>
+      <div className='relative'>
+        <div>
+          {image ? (
+            <img
+              className='w-full h-[201px] object-cover rounded-[19px]'
+              src={image}
+              alt={imageAlt}
+              loading='lazy'
+            />
+          ) : (
+            <div className='w-full h-[201px] bg-iron flex items-center justify-center font-semibold rounded-[19px]'>
+              {imageAlt}
+            </div>
+          )}
+        </div>
+        {actions && (
+          <div className='absolute top-4 right-4 flex gap-7'>
+            <button>
+              <img
+                src='images/icons/pen.svg'
+                alt='pen'
+                width={25}
+                height={25}
+              />
+            </button>
+            <button>
+              <img
+                src='images/icons/trash.svg'
+                alt='pen'
+                width={25}
+                height={25}
+              />
+            </button>
+          </div>
+        )}
+      </div>
       <div className='px-3 pt-2 pb-1'>
         <h4 className='text-xs font-normal text-grayCustom'>{brand}</h4>
         <h3 className='text-[13px] font-bold mb-2'>{title}</h3>
         <div className='space-y-1'>
           <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
-            Состояние: {condition}
+            {condition}
           </span>
           <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
-            Размер: {size}
+            {size}
           </span>
         </div>
         <div className='flex gap-1 mt-2'>
-          <Button className='!h-10 w-full' gray={true}>
+          <Button className='!h-10 w-full bg-[#232323]'>
             <span className='text-[13px]'>{price}</span>
             <svg
               width='15'
@@ -50,7 +80,7 @@ const Card = ({ data }) => {
               />
             </svg>
           </Button>
-          <Button className='!h-10 max-w-[61px] min-w-[61px]' gray={true}>
+          <Button className='!h-10 max-w-[51px] min-w-[50px] bg-[#232323]'>
             <img src={favoriteIcon} alt={favoriteIconAlt} />
           </Button>
         </div>

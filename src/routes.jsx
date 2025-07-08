@@ -7,6 +7,10 @@ import MyShopsTwo from './pages/MyShopsTwo';
 import Step from './pages/create-shop/Step';
 import StoreManagement from './pages/StoreManagement';
 import StoreManagementTwo from './pages/StoreManagementTwo';
+import ProductCard from './pages/ProductCard';
+import ProductCardTwo from './pages/ProductCardTwo';
+import Basket from './pages/Basket';
+import MyOrders from './pages/MyOrders';
 
 const AppRoutes = () => {
   return (
@@ -18,6 +22,11 @@ const AppRoutes = () => {
       <Route path='/create-shop' element={<Step />} />
       <Route path='/store-management' element={<StoreManagement />} />
       <Route path='/store-management-2' element={<StoreManagementTwo />} />
+      <Route path='/product-card' element={<ProductCard />} />
+      <Route path='/product-card-two' element={<ProductCardTwo />} />
+      <Route path='/basket' element={<Basket />} />
+      <Route path='/my-orders' element={<MyOrders />} />
+
     </Routes>
   );
 };

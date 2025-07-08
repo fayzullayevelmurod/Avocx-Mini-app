@@ -39,7 +39,7 @@ export const TextareaForm = ({ placeHolder, value }) => {
   );
 };
 
-export const Select = ({ options, selected = false }) => {
+export const Select = ({ options, selected = false, rightIcon = false }) => {
   const [isSelected, setIsSelected] = useState(selected);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -57,27 +57,29 @@ export const Select = ({ options, selected = false }) => {
 
   return (
     <div className='relative w-full'>
-      <svg
-        className={`absolute top-1/2 left-[10px] -translate-y-1/2 w-5 h-5 transition-transform duration-300 ${
-          isOpen ? 'rotate-180' : ''
-        }`}
-        width='20'
-        height='20'
-        viewBox='0 0 20 20'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          d='M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z'
-          stroke={isOpen ? '#1A72FF' : '#E8E8E8'}
-          strokeLinecap='round'
-          strokeLinejoin='round'
-        />
-      </svg>
+      {!rightIcon && (
+        <svg
+          className={`absolute top-1/2 left-[10px] -translate-y-1/2 w-5 h-5 transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+          width='20'
+          height='20'
+          viewBox='0 0 20 20'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z'
+            stroke={isOpen ? '#1A72FF' : '#E8E8E8'}
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          />
+        </svg>
+      )}
       <select
-        className={`pl-10 pr-4 text-sm w-full h-[45px] py-2 bg-dark rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
+        className={`text-sm w-full h-[45px] py-2 bg-dark rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
           isSelected ? 'text-white' : 'text-iron'
-        }`}
+        } ${rightIcon ? 'pr-10 pl-4' : 'pl-10 pr-4'}`}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
@@ -98,6 +100,25 @@ export const Select = ({ options, selected = false }) => {
           </option>
         )}
       </select>
+      {rightIcon && (
+        <svg
+          className={`absolute top-1/2 right-[10px] -translate-y-1/2 w-5 h-5 transition-transform duration-300 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+          width='20'
+          height='20'
+          viewBox='0 0 20 20'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z'
+            stroke={isOpen ? '#1A72FF' : '#E8E8E8'}
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          />
+        </svg>
+      )}
     </div>
   );
 };

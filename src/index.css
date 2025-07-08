@@ -27,3 +27,14 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   @apply hidden;
 }
+
+.product-card__swiper .swiper-pagination {
+  @apply !bottom-[35px];
+}
+.swiper .swiper-pagination-bullet {
+  @apply w-[43px] h-[3px] bg-[#222222] opacity-100 rounded-sm;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  @apply bg-primary;
+}
