@@ -17,7 +17,7 @@ textarea {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  @apply bg-body-bg text-base-white font-medium;
+  @apply bg-body-bg text-base-white font-medium leading-full;
 }
 body.light-theme {
   @apply bg-white;

@@ -1,12 +1,13 @@
 import Tab from '../components/Tab';
 import CardUI from '../components/CardUI';
 import Button from '../components/Button';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Title from '../components/Title';
 
 const StoresContent = () => {
   const [count, setCount] = useState(1);
+  const [check, setCheck] = useState(true);
   const handleIncrement = () => {
     setCount((prev) => prev + 1);
   };
@@ -15,6 +16,9 @@ const StoresContent = () => {
     if (count > 1) {
       setCount((prev) => prev - 1);
     }
+  };
+  const handleChecked = () => {
+    setCheck(!check);
   };
 
   return (
@@ -29,9 +33,12 @@ const StoresContent = () => {
 
       <CardUI className='!p-[10px]'>
         <div className='flex gap-[10px]'>
-          <div className='w-8 h-8 flex items-center justify-center border border-dark-gray rounded-[11px]'>
-            <img src='images/icons/check.svg' alt='checkbox' />
-          </div>
+          <button
+            onClick={handleChecked}
+            className='w-8 h-8 flex items-center justify-center border border-dark-gray rounded-[11px]'
+          >
+            {check && <img src='images/icons/check.svg' alt='checkbox' />}
+          </button>
           <img
             className='w-[78px] h-[78px] rounded-base object-cover'
             src='/images/product-img-2.png'
@@ -42,7 +49,7 @@ const StoresContent = () => {
               Футболка «RED» <br />{' '}
               <span className='font-normal'>Hugo BOSS</span>
             </h3>
-            <ul className='space-y-1'>
+            <ul className='space-y-[1px]'>
               <li className='text-[10px] leading-full text-grayCustom'>
                 Магазин: <span className='text-primary'>SHLZ.STORE</span>
               </li>
@@ -58,7 +65,7 @@ const StoresContent = () => {
             <span>{count}</span>
             <button onClick={handleIncrement}>+</button>
           </div>
-          <Button gray={true}>
+          <Button className='!bg-[#1B1B1B]' gray={true}>
             <span>2500₽</span>
             <div className='flex items-center gap-2'>
               <img src='/images/icons/card.svg' alt='' />

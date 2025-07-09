@@ -11,7 +11,7 @@ const ProductCard = () => {
   // Sample image data (replace with your own images)
   const images = [
     { src: 'images/product-img-2.png', alt: 'product img 1' },
-    { src: 'images/product-img-3.png', alt: 'product img 2' },
+    { src: 'images/product-img-2.png', alt: 'product img 2' },
     { src: 'images/product-img-2.png', alt: 'product img 3' },
   ];
   const options = [
@@ -42,7 +42,7 @@ const ProductCard = () => {
           />
         </button>
       </div>
-      <CardUI className='!px-5'>
+      <CardUI className='!px-5 '>
         <div className='flex items-center'>
           <img
             className='w-12 h-12 rounded-full'
@@ -81,29 +81,39 @@ const ProductCard = () => {
           {images.map((image, index) => (
             <SwiperSlide key={index} className='swiper-slide'>
               <img
-                className='rounded-base h-[440px] object-cover w-full'
+                className='rounded-base h-[440px] w-full'
                 src={image.src}
                 alt={image.alt}
               />
             </SwiperSlide>
           ))}
         </Swiper>
-        <CardUI className='py-5 px-[23px] space-y-6 -mt-8 relative z-10'>
+        <CardUI className='!pt-6 !pb-5 !px-[23px] space-y-6 -mt-8 relative z-10 !bg-[#1A1A1A]'>
           <div className='flex items-center justify-between'>
             <div>
-              <span className='text-15 leading-full text-grayCustom'>
+              <span className='text-15 font-normal leading-full text-grayCustom'>
                 Hugo BOSS
               </span>
               <h4 className='text-xl leading-full font-bold italic'>
                 Футболка «RED»
               </h4>
             </div>
-            <img src='/images/icons/star.svg' alt='star icon' />
+            <img src='/images/icons/star.svg' alt='star icon' width={25} />
           </div>
           <div>
             <div className='grid grid-cols-2 gap-[14px] mb-[10px]'>
-              <Select options={options} selected={true} rightIcon={true} />
-              <Select options={options1} selected={true} rightIcon={true} />
+              <Select
+                options={options}
+                selected={true}
+                rightIcon={true}
+                bgColor='bg-[#232323]'
+              />
+              <Select
+                options={options1}
+                selected={true}
+                rightIcon={true}
+                bgColor='bg-[#232323]'
+              />
             </div>
             <Button className='w-full'>
               <span>2.500₽</span>
@@ -125,7 +135,7 @@ const ProductCard = () => {
           </div>
           <div>
             <h4 className='text-xl mb-2'>Описание</h4>
-            <p className='text-15 italic'>
+            <p className='text-15 leading-full font-normal italic'>
               Изготовленная из премиального хлопка, она сочетает комфорт
               повседневной носки с безупречным качеством легендарного бренда.{' '}
               <br />
@@ -134,7 +144,7 @@ const ProductCard = () => {
               элегантного smart casual.
             </p>
           </div>
-          <Button gray={true}>
+          <Button className='!bg-[#232323]' gray={true}>
             <span>Задать вопрос по товару</span>
             <img src='images/icons/chat.svg' alt='chat icon' />
           </Button>

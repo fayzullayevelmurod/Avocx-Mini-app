@@ -56,9 +56,6 @@ const MyShopsTwo = () => {
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Search />
-        <Button className='min-w-[50px] max-w-[50px] h-[45px]'>
-          <img src='/images/icons/plus.svg' alt='shop icon' />
-        </Button>
         <button className='w-[50px] h-[45px] flex items-center justify-center'>
           <img
             src='/images/icons/refresh.svg'

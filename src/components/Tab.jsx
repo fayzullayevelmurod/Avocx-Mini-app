@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Tab = ({ tabData }) => {
+const Tab = ({ tabData, sizeLg }) => {
   const [activeTab, setActiveTab] = useState(tabData[0]?.id || '');
 
   const handleTabClick = (id) => {
@@ -13,7 +13,9 @@ const Tab = ({ tabData }) => {
         {tabData.map((item) => (
           <li
             key={item.id}
-            className={`text-[13px] border p-[10px] cursor-pointer rounded-base transition-colors duration-200 bg-charcoal w-full text-center text-white ${
+            className={`${
+              sizeLg ? 'text-15 font-semibold bg-[#1B1B1B]' : 'text-[13px] bg-charcoal'
+            }  border p-[10px] cursor-pointer rounded-base transition-colors duration-200  w-full text-center text-white ${
               activeTab === item.id ? 'border-primary' : 'border-charcoal'
             }`}
             onClick={() => handleTabClick(item.id)}

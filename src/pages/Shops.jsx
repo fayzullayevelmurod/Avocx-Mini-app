@@ -4,7 +4,7 @@ import Button from '../components/Button';
 import Categories from '../components/Categories';
 import Title from '../components/Title';
 import ProductCard from '../components/ProductCard';
-import BottomBar from '../layouts/BottomBar';
+
 
 // products data
 const products = [
@@ -49,7 +49,7 @@ const products = [
 const Shops = () => {
   return (
     <div className='shops-page'>
-      <div className='pb-[100px]'>
+      <div>
         {/* search */}
         <div className='flex items-center gap-2'>
           <Link className='mr-2 w-10' to='#!'>
@@ -144,7 +144,6 @@ const Shops = () => {
           ))}
         </div>
       </div>
-      <BottomBar />
     </div>
   );
 };

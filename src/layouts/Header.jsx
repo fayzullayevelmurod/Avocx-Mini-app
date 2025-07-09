@@ -1,150 +1,3 @@
-// import { Link } from 'react-router-dom';
-// import { Select } from '../components/Form';
-// const Header = () => {
-//   const options = [
-//     { value: 'ruble', label: 'Валюта: ₽' },
-//     { value: 'usd', label: 'Валюта: $' },
-//   ];
-//   const options2 = [
-//     { value: 'ruble', label: 'Язык: Russian' },
-//     { value: 'usd', label: 'Язык: Uzbek' },
-//   ];
-//   return (
-//     <div>
-//       <header className='pt-6 mb-[18px]'>
-//         <div className='max-w-[368px] mx-auto flex items-center justify-between'>
-//           <Link to='/home'>
-//             <img src='/images/logo.svg' alt='logo' width={69} height={27} />
-//           </Link>
-//           <div className='flex items-center gap-2'>
-//             <Link className='text-15' to='#!'>
-//               @norffas
-//             </Link>
-//             <div className='flex items-center'>
-//               <div className='bg-purple w-8 h-8 rounded-full p-[1px] relative'>
-//                 <img
-//                   className='w-full h-full object-cover'
-//                   src='/images/user.png'
-//                   alt='user'
-//                 />
-//               </div>
-//               <div className='bg-purple italic text-xxs font-semibold h-5 -ml-1 px-2 rounded-r-3xl flex items-center justify-center'>
-//                 Pro
-//               </div>
-//             </div>
-//           </div>
-//           <button>
-//             <img src='/images/icons/menu.svg' alt='menu icon' />
-//           </button>
-//         </div>
-//       </header>
-//       {/* media menu */}
-//       <div className='fixed top-0 left-0 w-full h-[100dvh] overflow-y-auto bg-nav pr-[25px] py-8 z-[999]'>
-//         <button className='ml-auto block'>
-//           <img src='/images/icons/close.svg' alt='close icon' />
-//         </button>
-//         <ul className='my-9'>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Корзина
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Мои заказы
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Реклама
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Моя реклама
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Биржа каналов
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Магазины
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Мои магазины
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Аналитика
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             >
-//               Настройки
-//             </Link>
-//           </li>
-//           <li>
-//             <Link
-//               className='w-full text-right  py-3 text-[23px] text-base-white leading-[196%]'
-//               href='#!'
-//             ></Link>
-//           </li>
-//         </ul>
-//         <div className='w-[318px] ml-auto'>
-//           <div className='flex gap-4 mb-[13px]'>
-//             <div className='flex-1'>
-//               <Select options={options} rightIcon={true} selected={true} />
-//             </div>
-//             <div className='w-[112px] bg-charcoal rounded-base overflow-hidden flex'>
-//               <button className='w-14 flex items-center justify-center bg-primary h-full rounded-base'>
-//                 <img src='/images/icons/moon.svg' alt='moon icon' />
-//               </button>
-//               <button className='w-14 flex items-center justify-center bg-transparent h-full rounded-base'>
-//                 <img src='/images/icons/soon.svg' alt='soon icon' />
-//               </button>
-//             </div>
-//           </div>
-//           <Select options={options2} rightIcon={true} selected={true} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Header;
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Select } from '../components/Form';
@@ -196,7 +49,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className='pt-6 mb-[18px]'>
+      <header className='pt-6 mb-[18px] px-9'>
         <div className='max-w-[368px] mx-auto flex items-center justify-between'>
           <Link to='/home'>
             <svg
@@ -242,7 +95,7 @@ const Header = () => {
               <path
                 d='M11.6286 19.4555H25.8M1 10.5H25.8M11.6286 1.54443H25.8'
                 stroke='white'
-                stroke-width='2'
+                strokeWidth='2'
                 strokeLinecap='round'
                 strokeLinejoin='round'
               />
@@ -263,7 +116,7 @@ const Header = () => {
           {menuItems.map((item, index) => (
             <li key={index}>
               <Link
-                className='border-b w-full text-right border-[#303030] py-3 text-[23px] text-base-white leading-[196%]'
+                className='border-b w-full font-medium flex items-center justify-end text-right border-[#303030]  text-[23px] text-base-white leading-[196%] h-[42px]'
                 to='#!'
               >
                 {item}
@@ -274,7 +127,12 @@ const Header = () => {
         <div className='w-[318px] ml-auto'>
           <div className='flex gap-4 mb-[13px]'>
             <div className='flex-1'>
-              <Select options={options} rightIcon={true} selected={true} />
+              <Select
+                options={options}
+                rightIcon={true}
+                selected={true}
+                bgColor='bg-charcoal'
+              />
             </div>
             <div className='w-[112px] bg-charcoal rounded-base overflow-hidden flex'>
               <button
@@ -295,7 +153,12 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <Select options={options2} rightIcon={true} selected={true} />
+          <Select
+            options={options2}
+            rightIcon={true}
+            selected={true}
+            bgColor='bg-charcoal'
+          />
         </div>
       </div>
     </div>

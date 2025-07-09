@@ -43,7 +43,7 @@ const Home = () => {
         </Swiper>
       </div>
 
-      <Tab tabData={tabData} />
+      <Tab tabData={tabData} sizeLg={true} />
       <div className='mt-[6px] bg-ai-card flex items-center justify-between pl-[18px] rounded-base'>
         <div className='flex items-center gap-[5px]'>
           <img
@@ -143,18 +143,18 @@ const Buyer = () => {
   return (
     <div className='grid grid-cols-2 gap-[10px]'>
       {cardsData.map((card) => (
-        <CardUI key={card.id} className='!p-[12px] rounded-base'>
+        <CardUI key={card.id} className='!p-[12px] rounded-base !bg-[#1E1E1E] min-h-[92px]'>
           <div className='flex items-center gap-2 mb-3'>
             <img
               src={card.icon}
               alt={`${card.title} icon`}
-              className='w-5 h-5'
+              className='w-4'
             />
             <span className='text-sm font-semibold text-white'>
               {card.title}
             </span>
           </div>
-          <p className='text-[10px] text-grayCustom'>{card.description}</p>
+          <p className='text-[10px] leading-full text-grayCustom'>{card.description}</p>
         </CardUI>
       ))}
     </div>

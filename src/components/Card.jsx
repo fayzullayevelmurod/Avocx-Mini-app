@@ -15,11 +15,11 @@ const Card = ({ data, actions }) => {
 
   return (
     <div className='bg-charcoal p-[1px] rounded-[20px] border border-iron overflow-hidden'>
-      <div className='relative'>
+      <div className='relative -m-[1px]'>
         <div>
           {image ? (
             <img
-              className='w-full h-[201px] object-cover rounded-[19px]'
+              className='w-full h-[200px] object-cover rounded-[19px]'
               src={image}
               alt={imageAlt}
               loading='lazy'
@@ -51,19 +51,23 @@ const Card = ({ data, actions }) => {
           </div>
         )}
       </div>
-      <div className='px-3 pt-2 pb-1'>
-        <h4 className='text-xs font-normal text-grayCustom'>{brand}</h4>
-        <h3 className='text-[13px] font-bold mb-2'>{title}</h3>
-        <div className='space-y-1'>
-          <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
-            {condition}
-          </span>
-          <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
-            {size}
-          </span>
+      <div className='pt-2 pb-[6px]'>
+        <div className='px-3'>
+          <h4 className='text-xs font-normal text-grayCustom leading-full'>
+            {brand}
+          </h4>
+          <h3 className='text-[13px] font-bold mb-2'>{title}</h3>
+          <div className='space-y-[1px]'>
+            <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
+              {condition}
+            </span>
+            <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
+              {size}
+            </span>
+          </div>
         </div>
-        <div className='flex gap-1 mt-2'>
-          <Button className='!h-10 w-full' gray={true}>
+        <div className='flex gap-1 mt-2 px-[6px]'>
+          <Button className='!h-10 w-full !bg-[#232323]' gray={true}>
             <span className='text-[13px]'>{price}</span>
             <svg
               width='15'
@@ -80,7 +84,10 @@ const Card = ({ data, actions }) => {
               />
             </svg>
           </Button>
-          <Button className='!h-10 max-w-[51px] min-w-[50px]' gray={true}>
+          <Button
+            className='!h-10 max-w-[51px] min-w-[50px] !bg-[#232323]'
+            gray={true}
+          >
             <img src={favoriteIcon} alt={favoriteIconAlt} />
           </Button>
         </div>

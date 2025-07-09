@@ -39,7 +39,12 @@ export const TextareaForm = ({ placeHolder, value }) => {
   );
 };
 
-export const Select = ({ options, selected = false, rightIcon = false }) => {
+export const Select = ({
+  options,
+  selected = false,
+  rightIcon = false,
+  bgColor = 'bg-dark',
+}) => {
   const [isSelected, setIsSelected] = useState(selected);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -77,7 +82,7 @@ export const Select = ({ options, selected = false, rightIcon = false }) => {
         </svg>
       )}
       <select
-        className={`text-sm w-full h-[45px] py-2 bg-dark rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
+        className={`text-sm w-full h-[45px] py-2 ${bgColor} rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
           isSelected ? 'text-white' : 'text-iron'
         } ${rightIcon ? 'pr-10 pl-4' : 'pl-10 pr-4'}`}
         onChange={handleChange}
