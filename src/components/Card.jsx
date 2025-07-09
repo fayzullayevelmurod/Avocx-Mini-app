@@ -63,7 +63,7 @@ const Card = ({ data, actions }) => {
           </span>
         </div>
         <div className='flex gap-1 mt-2'>
-          <Button className='!h-10 w-full bg-[#232323]'>
+          <Button className='!h-10 w-full' gray={true}>
             <span className='text-[13px]'>{price}</span>
             <svg
               width='15'
@@ -80,7 +80,7 @@ const Card = ({ data, actions }) => {
               />
             </svg>
           </Button>
-          <Button className='!h-10 max-w-[51px] min-w-[50px] bg-[#232323]'>
+          <Button className='!h-10 max-w-[51px] min-w-[50px]' gray={true}>
             <img src={favoriteIcon} alt={favoriteIconAlt} />
           </Button>
         </div>

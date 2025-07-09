@@ -110,7 +110,7 @@ const AdsContent = () => (
 
         <div>
           <span className='text-center text-[10px] block mb-1'>Дата </span>
-          <div className='h-[36px] w-[107px] flex items-center justify-center bg-[#303030] rounded-base'>
+          <div className='h-[36px] w-[95px] flex items-center justify-center bg-[#303030] rounded-base'>
             <span className='text-[13px]'>01.07.2025</span>
           </div>
         </div>
@@ -167,11 +167,11 @@ const ServicesContent = () => (
 
         <div>
           <span className='text-center text-[10px] block mb-1'>Дата </span>
-          <div className='h-[36px] w-[107px] flex items-center justify-center bg-[#303030] rounded-base'>
+          <div className='h-[36px] w-[95px] flex items-center justify-center bg-[#303030] rounded-base'>
             <span className='text-[13px]'>01.07.2025</span>
           </div>
         </div>
-        <div className='flex-1'>
+        <div className='flex-1 whitespace-nowrap'>
           <span className='text-center text-[10px] block mb-1'>
             Рекламный пост{' '}
           </span>
