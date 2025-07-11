@@ -66,11 +66,11 @@ const ProductCard = ({ data, btns }) => {
             <Button gray={true}>Открыть</Button>
           </Link>
           <div className='flex gap-1 mt-1'>
-            <Button gray={true}>
+            <Button gray={true} className='text-[13px]'>
               <img src='/images/icons/plus.svg' alt='plus' />
               <span>Добавить товар</span>
             </Button>
-            <Button gray={true}>
+            <Button gray={true} className='text-[13px]'>
               <img src='/images/icons/settings-2.svg' alt='settings' />
               <span>Управление</span>
             </Button>

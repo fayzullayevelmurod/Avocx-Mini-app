@@ -22,12 +22,12 @@ const CreateAdSuccess = () => {
 
       <div className='text-center'>
         <img
-          className='mx-auto mt-[66px]'
-          src='images/yes.png'
+          className='mx-auto mt-[66px] w-[237px] h-[237px] -translate-x-5'
+          src='/gif/5.gif'
           alt='success img'
         />
         <h2 className='text-[40px] italic leading-full font-bold my-[13px]'>
-          Готово!
+          Создаю!
         </h2>
         <p className='text-xl leading-full mb-5'>
           С минуты на минуту ваше объявление появится на бирже.

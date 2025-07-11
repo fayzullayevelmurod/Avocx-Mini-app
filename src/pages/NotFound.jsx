@@ -3,7 +3,7 @@ import Button from "../components/Button";
 const NotFound = () => {
   return (
     <div className='mt-[133px]'>
-      <img className='mx-auto h-[144px]' src='/images/guess.png' alt='' />
+      <img className='mx-auto h-[144px]' src='/gif/1.gif' alt='' />
       <h2 className='text-[40px] leading-full italic mt-3 font-bold text-center'>
         Opss..
       </h2>

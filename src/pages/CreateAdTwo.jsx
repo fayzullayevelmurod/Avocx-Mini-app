@@ -41,15 +41,21 @@ const CreateAdTwo = () => {
         <div className='mt-[13px]'>
           <div className='flex gap-[2px] mb-[7px]'>
             <div className='flex-1'>
-              <span className='text-[13px] pl-[14px]'>Формат</span>
-              <InputForm placeHolder='1 / 24' />
+              <span className='text-[13px] pl-[14px] mb-[1px]'>Формат</span>
+              {/* <InputForm placeHolder='1 / 24' /> */}
+              {/* <input
+                className='w-full h-[45px] py-2 px-[10px] bg-dark rounded-[15px] placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white'
+                type='text'
+                placeholder='1 / 24'
+              /> */}
+              <SplitInput />
             </div>
             <div className='flex-1'>
-              <span className='text-[13px] pl-[14px]'>Измерение</span>
-              <Select options={options} selected={true} />
+              <span className='text-[13px] pl-[14px] mb-[1px]'>Измерение</span>
+              <Select options={options} selected={true} rightIcon={true} />
             </div>
             <div className='flex-1'>
-              <span className='text-[13px] pl-[14px]'>Цена</span>
+              <span className='text-[13px] pl-[14px] mb-[1px]'>Цена</span>
               <InputForm placeHolder='Цена' />
             </div>
           </div>
@@ -71,3 +77,40 @@ const CreateAdTwo = () => {
 };
 
 export default CreateAdTwo;
+
+import { useState } from 'react';
+
+const SplitInput = () => {
+  const [first, setFirst] = useState('');
+  const [second, setSecond] = useState('');
+
+  const handleFirstChange = (e) => {
+    const val = e.target.value;
+    if (/^\d?$/.test(val)) setFirst(val); // faqat bitta raqam
+  };
+
+  const handleSecondChange = (e) => {
+    const val = e.target.value;
+    if (/^\d{0,3}$/.test(val)) setSecond(val); // faqat 0-3 ta raqam
+  };
+
+  return (
+    <div className='flex items-center bg-dark rounded-base h-[45px]'>
+      <input
+        className='w-[20px] placeholder:text-[#464646] text-base-white pl-3 bg-transparent outline-none text-base text-center'
+        type='text'
+        value={first}
+        onChange={handleFirstChange}
+        placeholder='1'
+      />
+      <span className='text-white text-sm ml-1'>/</span>
+      <input
+        className='w-[40px] pl-[7px] placeholder:text-[#464646] text-left text-base-white bg-transparent outline-none text-base'
+        type='text'
+        value={second}
+        onChange={handleSecondChange}
+        placeholder='24'
+      />
+    </div>
+  );
+};

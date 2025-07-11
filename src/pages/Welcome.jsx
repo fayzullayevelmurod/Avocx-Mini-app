@@ -3,7 +3,7 @@ import Button from '../components/Button';
 const Welcome = () => {
   return (
     <div className='mt-[133px]'>
-      <img className='mx-auto h-[144px]' src='/images/welcome.png' alt='' />
+      <img className='mx-auto h-[144px]' src='/gif/2.gif' alt='' />
       <h2 className='text-[40px] leading-full italic mt-3 font-bold text-center'>
         Welcome
       </h2>

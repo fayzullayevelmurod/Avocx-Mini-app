@@ -35,6 +35,7 @@ const ProductCard = () => {
         <Search />
         <button className='w-[50px] h-[45px] flex items-center justify-center'>
           <img
+            className='w-[17px] h-[21px]'
             src='/images/icons/refresh.svg'
             alt='refresh icon'
             width={17}
@@ -42,15 +43,15 @@ const ProductCard = () => {
           />
         </button>
       </div>
-      <CardUI className='!px-5 '>
-        <div className='flex items-center'>
+      <CardUI className='!px-6 !py-[10px] h-[67px] flex items-center relative'>
+        <div className='flex items-center justify-between gap-[11px]'>
           <img
             className='w-12 h-12 rounded-full'
             src='/images/company-logo.svg'
             alt='product company logo'
           />
-          <div className='flex items-center justify-between w-full gap-1'>
-            <h3 className='text-base font-semibold'>SHLZ.STORE 🥇</h3>
+          <div className=''>
+            <h3 className='text-base font-semibold leading-full mb-[2px]'>SHLZ.STORE 🥇</h3>
             <div className='flex items-center gap-3'>
               <div className='flex items-center gap-1'>
                 <img src='/images/icons/group.svg' alt='group icon' />
@@ -65,7 +66,7 @@ const ProductCard = () => {
                 </span>
               </div>
             </div>
-            <img src='/images/icons/star.svg' alt='' />
+            <img className='absolute top-1/2 -translate-y-1/2 right-6' src='/images/icons/star.svg' alt='' />
           </div>
         </div>
       </CardUI>
