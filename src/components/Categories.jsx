@@ -6,7 +6,7 @@ const categories = [
   { label: 'На хайпе', to: '/hype', className: 'bg-orange' },
   { label: 'Бестселлеры', to: '/bestsellers', className: 'bg-primary' },
   { label: 'Бренды', to: '/brands', className: 'bg-purple' },
-  { label: 'Скидки', to: '/discounts', className: 'bg-green' },
+  { label: 'Скидки', to: '/discounts', className: 'bg-[#00AA6E]' },
 ];
 
 const Categories = ({ categoriesData = categories }) => {
@@ -19,9 +19,7 @@ const Categories = ({ categoriesData = categories }) => {
             <Link
               key={index}
               to={category.to}
-              className={`${category.className} ${
-                index === categoriesData.length - 1 ? 'bg-green-dark-gradient' : ''
-              } shadow-inset-light h-[35px] flex items-center justify-center min-w-[110px] rounded-base text-xs font-semibold snap-center flex-shrink-0 transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
+              className={`${category.className} shadow-inset-light h-[35px] flex items-center justify-center min-w-[110px] rounded-base text-xs font-semibold snap-center flex-shrink-0 transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
             >
               {category.label}
             </Link>

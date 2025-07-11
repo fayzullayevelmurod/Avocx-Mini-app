@@ -109,10 +109,10 @@ const categories = [
             <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127px] pl-4'>
               <span className='text-[11px]'>1/48</span>
               <span className='text-[11px] font-bold'>650₽</span>
-              <Button className='min-w-[34px] min-h-[31px] max-w-[34px] max-h-[31px] shadow-btn-inset'>
+              <Button className='min-w-[34px] min-h-[31px] max-w-[34px] max-h-[31px] shadow-btn-inset !rounded-[13px]'>
                 <svg
-                  width='17'
-                  height='15'
+                  width='18'
+                  height='16'
                   viewBox='0 0 15 15'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'

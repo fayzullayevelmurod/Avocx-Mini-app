@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-const ProductCard = ({ data, btns, isFavorite }) => {
+const ProductCard = ({ data, btns }) => {
   const {
     image,
     imageAlt,
@@ -15,15 +15,20 @@ const ProductCard = ({ data, btns, isFavorite }) => {
 
   return (
     <div
-      className={`overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron w-[413px]`}
+      className={`overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron`}
     >
       <div>
-        <img
-          className='w-full object-cover h-[178px] rounded-2xl'
-          src={image}
-          alt={imageAlt}
-          loading='lazy'
-        />
+        <div className='w-full h-[178px] relative'>
+          <img
+            className='w-full object-cover h-full rounded-2xl'
+            src={image}
+            alt={imageAlt}
+            loading='lazy'
+          />
+          <button className='absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center'>
+            <img className='w-full h-full' src='/images/icons/star-shadow.png' alt='' />
+          </button>
+        </div>
         <div className='flex gap-2 items-center mt-3 px-[10px]'>
           <img
             className='rounded-full w-12 h-12 object-cover'
@@ -47,7 +52,6 @@ const ProductCard = ({ data, btns, isFavorite }) => {
                     {cartCount?.toLocaleString()}
                   </span>
                 </div>
-                {isFavorite && <img src='/images/icons/star.svg' alt='' />}
               </div>
             </div>
             <p className='text-xxs text-grayCustom mt-[1px] leading-full line-clamp-2'>

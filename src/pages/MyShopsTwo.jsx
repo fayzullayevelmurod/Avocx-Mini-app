@@ -69,7 +69,7 @@ const MyShopsTwo = () => {
       {/* products */}
       <div className='space-y-1 mt-[18px]'>
         {products.map((product) => (
-          <ProductCard key={product.id} data={product} isFavorite={true} />
+          <ProductCard key={product.id} data={product} />
         ))}
       </div>
 
