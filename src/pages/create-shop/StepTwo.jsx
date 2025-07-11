@@ -39,7 +39,11 @@ const StepTwo = ({ onNext }) => {
           />
         </div>
       </div>
-      <Tariffs />
+      <h2 className='text-[17px] leading-full font-semibold text-center mt-[18px] mb-2'>Тарифный план</h2>
+      <button className='border border-dashed border-[#464646] rounded-base h-[49px] flex items-center justify-center w-full' >Ваша подписка: Pro</button>
+      <p className='py-[13px] text-15 leading-full'>
+        Для того чтобы продолжить необходимо иметь подписку: Basic, Pro или Ultra.
+      </p>
       <Button onClick={onNext}>Далее</Button>
     </CardUI>
   );

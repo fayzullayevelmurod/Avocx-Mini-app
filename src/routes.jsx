@@ -17,6 +17,9 @@ import CreateAdTwo from './pages/CreateAdTwo';
 import CreateAdSuccess from './pages/CreateAdSuccess';
 import Shops from './pages/Shops';
 import Home from './pages/Home';
+import Loading from './pages/Loading';
+import NotFound from './pages/NotFound';
+import Welcome from './pages/Welcome';
 
 const AppRoutes = () => {
   return (
@@ -38,6 +41,9 @@ const AppRoutes = () => {
       <Route path='/create-ad' element={<CreateAd />} />
       <Route path='/create-ad-two' element={<CreateAdTwo />} />
       <Route path='/create-ad-success' element={<CreateAdSuccess />} />
+      <Route path='/loading' element={<Loading />} />
+      <Route path='/not-found' element={<NotFound />} />
+      <Route path='/welcome' element={<Welcome />} />
     </Routes>
   );
 };

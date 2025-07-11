@@ -6,11 +6,11 @@ const CreateAdSuccess = () => {
   return (
     <div>
       <div className='flex items-center justify-between'>
-        <Link className='mr-2 w-10' to='#!'>
+        <Link className='mr-2 w-6' to='#!'>
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Title label='Создание объявление' className='!m-0' />
-        <button className='h-[22px] flex items-center justify-center'>
+        <button className='h-[22px] w-6 flex items-center justify-end'>
           <img
             src='/images/icons/refresh.svg'
             alt='refresh icon'
@@ -32,7 +32,9 @@ const CreateAdSuccess = () => {
         <p className='text-xl leading-full mb-5'>
           С минуты на минуту ваше объявление появится на бирже.
         </p>
-        <Button>Ок</Button>
+        <div className='mx-auto w-[284px]'>
+          <Button className=''>Ок</Button>
+        </div>
       </div>
     </div>
   );

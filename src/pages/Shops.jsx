@@ -129,7 +129,7 @@ const Shops = () => {
               />
             </svg>
 
-            <span>Категории</span>
+            <span>Сортировка</span>
           </button>
           <button className='w-[35px] flex items-center justify-center bg-carbon h-12 rounded-base'>
             <img src='/images/icons/star.svg' alt='star' />

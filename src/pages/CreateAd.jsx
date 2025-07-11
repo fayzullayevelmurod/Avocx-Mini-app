@@ -28,7 +28,7 @@ const CreateAd = () => {
       </p>
 
       <div className='space-y-[6px]'>
-        <CardUI className='flex items-center justify-between rounded-[20px] !py-2'>
+        <CardUI className='flex items-center justify-between !rounded-[20px] !py-2'>
           <div className='flex items-center gap-[10px]'>
             <img
               className='w-[30px] h-[30px] object-cover'
@@ -39,7 +39,7 @@ const CreateAd = () => {
           </div>
           <img src='/images/icons/next-arrow-2.svg' alt='next arrow' />
         </CardUI>
-        <CardUI className='flex items-center justify-between rounded-[20px] !py-2'>
+        <CardUI className='flex items-center justify-between !rounded-[20px] !py-2'>
           <div className='flex items-center gap-[10px]'>
             <img
               className='w-[30px] h-[30px] object-cover'
@@ -50,7 +50,7 @@ const CreateAd = () => {
           </div>
           <img src='/images/icons/next-arrow-2.svg' alt='next arrow' />
         </CardUI>
-        <CardUI className='flex items-center justify-between rounded-[20px] !py-2'>
+        <CardUI className='flex items-center justify-between !rounded-[20px] !py-2'>
           <div className='flex items-center gap-[10px]'>
             <img
               className='w-[30px] h-[30px] object-cover'

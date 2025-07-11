@@ -30,7 +30,12 @@ const StepOne = ({ onNext }) => {
     <div>
       <CardUI className='space-y-2'>
         <InputForm placeHolder='| Название магазина' />
-        <TextareaForm placeHolder='| Напишите краткое описание магазина, до 100 симолов.' />
+        <div className='relative'>
+          <TextareaForm placeHolder='| Напишите краткое описание магазина, до 100 симолов.' />
+          <span className='absolute text-xxs leading-full text-[#3C3C3C] bottom-[6px] right-[10px]'>
+            0 / 100
+          </span>
+        </div>
         <Select options={options} />
         <Select options={options1} />
         <Select options={options2} />

@@ -3,6 +3,7 @@ import Title from '../components/Title';
 import CardUI from '../components/CardUI';
 import { InputForm, Select, TextareaForm, UploadImg } from '../components/Form';
 import Button from '../components/Button';
+import SearchTitle from '../components/SearchTitle';
 
 const StoreManagement = () => {
   const options = [
@@ -30,20 +31,7 @@ const StoreManagement = () => {
 
   return (
     <div>
-      <div className='flex items-center justify-between'>
-        <Link className='mr-2 w-10' to='#!'>
-          <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
-        </Link>
-        <Title label='Управление магазином' />
-        <button className='w-[50px] h-[45px] flex items-center justify-center'>
-          <img
-            src='/images/icons/refresh.svg'
-            alt='refresh icon'
-            width={17}
-            height={21}
-          />
-        </button>
-      </div>
+      <SearchTitle label='Создание объявление' className='mb-5' />
       <CardUI className='!p-[14px]'>
         <div className='flex items-center gap-2'>
           <img

@@ -56,7 +56,7 @@ const MyShopsTwo = () => {
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Search />
-        <button className='w-[50px] h-[45px] flex items-center justify-center'>
+        <button className='ml-[3px] w-[30px] h-[45px] flex items-center justify-center'>
           <img
             src='/images/icons/refresh.svg'
             alt='refresh icon'
@@ -69,7 +69,7 @@ const MyShopsTwo = () => {
       {/* products */}
       <div className='space-y-1 mt-[18px]'>
         {products.map((product) => (
-          <ProductCard key={product.id} data={product} />
+          <ProductCard key={product.id} data={product} isFavorite={true} />
         ))}
       </div>
 
@@ -81,7 +81,7 @@ const MyShopsTwo = () => {
         </button>
         <button className='flex-1 flex items-center gap-[10px] px-4 bg-carbon h-12 rounded-base'>
           <img src='/images/icons/filter.svg' alt='filter' />
-          <span>Категории</span>
+          <span>Сортировка</span>
         </button>
         <button className='w-[35px] flex items-center justify-center bg-carbon h-12 rounded-base'>
           <img src='/images/icons/star.svg' alt='star' />

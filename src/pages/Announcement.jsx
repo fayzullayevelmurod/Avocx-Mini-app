@@ -7,7 +7,12 @@ import Title from '../components/Title';
 import CardUI from '../components/CardUI';
 
 const Announcement = () => {
-
+const categories = [
+  { label: 'Горячее', to: '/hype', className: 'bg-orange' },
+  { label: 'На трафике', to: '/bestsellers', className: 'bg-primary' },
+  { label: 'Проверенное', to: '/brands', className: 'bg-purple' },
+  { label: 'Свежие', to: '/discounts', className: 'bg-green' },
+];
   return (
     <div>
       {/* search */}
@@ -40,25 +45,25 @@ const Announcement = () => {
           </button>
           <button className='flex-1 flex items-center gap-[10px] px-4 bg-carbon h-12 rounded-base'>
             <img src='/images/icons/filter.svg' alt='filter' />
-            <span>Категории</span>
+            <span>Сортировка</span>
           </button>
           <button className='w-[35px] flex items-center justify-center bg-carbon h-12 rounded-base'>
             <img src='/images/icons/star.svg' alt='star' />
           </button>
         </div>
         <Date />
-        <Button gray={true}>
+        <Button className='!bg-[#242424]'>
           <img src='images/icons/ai.svg' alt='' />
           <span>Ai Mass Ads</span>
         </Button>
-        <Categories />
+        <Categories categoriesData={categories} />
       </div>
       <Title label='Подборка дня' />
       <div className='space-y-1'>
         <CardUI className='!p-[11px]'>
           <div className='flex items-start justify-between'>
             <div className='flex items-start gap-2'>
-              <div className='bg-[#3B3B3B] rounded-t-[79px] rounded-b-[10px] w-[53px] h-[65px] p-[2px] flex justify-between flex-col items-center'>
+              <div className='bg-[#3B3B3B] rounded-t-[79px] rounded-b-[25px] w-[53px] h-[65px] p-[2px] flex justify-between flex-col items-center'>
                 <img
                   className='w-[47px] h-[47px]'
                   src='images/icons/logo.svg'
@@ -101,7 +106,7 @@ const Announcement = () => {
             <img src='images/icons/star.svg' alt='star icon' />
           </div>
           <div className='bg-iron p-[2px] rounded-2xl mt-2 flex gap-[2px] h-[38px]'>
-            <div className='flex items-center gap-5 p-[2px] rounded-base bg-charcoal w-fit pl-5'>
+            <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127px] pl-4'>
               <span className='text-[11px]'>1/48</span>
               <span className='text-[11px] font-bold'>650₽</span>
               <Button className='min-w-[34px] min-h-[31px] max-w-[34px] max-h-[31px] shadow-btn-inset'>
@@ -136,7 +141,7 @@ const Announcement = () => {
         <CardUI className='!p-[11px]'>
           <div className='flex items-start justify-between'>
             <div className='flex items-start gap-2'>
-              <div className='bg-[#3B3B3B] rounded-t-[79px] rounded-b-[10px] w-[53px] h-[65px] p-[2px] flex justify-between flex-col items-center'>
+              <div className='bg-[#3B3B3B] rounded-t-[79px] rounded-b-[25px] w-[53px] h-[65px] p-[2px] flex justify-between flex-col items-center'>
                 <img
                   className='w-[47px] h-[47px]'
                   src='images/icons/logo.svg'

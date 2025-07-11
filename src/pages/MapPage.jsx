@@ -18,6 +18,9 @@ export const MapPage = () => {
     { path: '/create-ad', label: 'Create Ad' },
     { path: '/create-ad-two', label: 'Create Ad 2' },
     { path: '/create-ad-success', label: 'Create Ad Success' },
+    { path: '/loading', label: 'Loading' },
+    { path: '/not-found', label: 'NotFound' },
+    { path: '/welcome', label: 'Welcome' },
   ];
 
   return (
