@@ -28,7 +28,7 @@ const StepOne = ({ onNext }) => {
 
   return (
     <div>
-      <CardUI className='space-y-2'>
+      <CardUI className='space-y-[10px] !pb-[11px]'>
         <InputForm placeHolder='| Название магазина' />
         <div className='relative'>
           <TextareaForm placeHolder='| Напишите краткое описание магазина, до 100 симолов.' />
@@ -40,9 +40,13 @@ const StepOne = ({ onNext }) => {
         <Select options={options1} />
         <Select options={options2} />
         <InputForm placeHolder='| Название кнопки магазина (кратко)' />
-        <UploadImg label='Добавьте логотип магазина' />
-        <UploadImg label='Добавьте баннер магазина' />
-        <Button onClick={onNext}>Далее</Button>
+        <div className='space-y-[5px]'>
+          <UploadImg label='Добавьте логотип магазина' />
+          <UploadImg label='Добавьте баннер магазина' />
+        </div>
+        <Button className='!mt-[15px]' onClick={onNext}>
+          Далее
+        </Button>
       </CardUI>
     </div>
   );

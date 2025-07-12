@@ -23,19 +23,19 @@ const MyShops = () => {
   return (
     <div>
       {/* search */}
-      <div className='flex items-center gap-2'>
-        <Link className='mr-2 w-10' to='#!'>
+      <div className='flex items-center gap-[6px]'>
+        <Link className='mr-1 w-10' to='#!'>
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Search />
         <Button className='min-w-[50px] max-w-[50px] h-[45px]'>
           <img src='/images/icons/plus.svg' alt='shop icon' />
         </Button>
-        <button className='w-[50px] h-[45px] flex items-center justify-center'>
+        <button className='w-[50px] flex items-end justify-end'>
           <img
             src='/images/icons/refresh.svg'
             alt='refresh icon'
-            width={17}
+            width={20}
             height={21}
           />
         </button>

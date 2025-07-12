@@ -66,11 +66,11 @@ const Header = () => {
               />
             </svg>
           </Link>
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-[11px]'>
             <Link className='text-15 text-base-white' to='#!'>
               @norffas
             </Link>
-            <div className='flex items-center'>
+            <div className='flex items-center -translate-x-1'>
               <div className='bg-purple w-8 h-8 rounded-full p-[1px] relative'>
                 <img
                   className='w-full h-full object-cover'
@@ -83,7 +83,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <button onClick={toggleMenu}>
+          <button className='translate-x-[2px]' onClick={toggleMenu}>
             <svg
               width='27'
               height='21'

@@ -35,6 +35,7 @@ export default {
         'selected-tariff': '0px 0px 16.9px 0px #1A72FF',
         'btn-inset': "0px 0px 5px 0px #FFFFFF inset",
         'card-shd': '0px 0px 5px 0px #656565',
+        'sort': "0 4px 23px 0 #2B2B2B"
       },
       blur: {
         50: '50px',

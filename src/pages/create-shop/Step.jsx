@@ -27,7 +27,7 @@ const Step = () => {
     <div>
       <div className='flex items-center justify-center relative'>
         <button
-          className='w-10 absolute top-1/2 left-0 -translate-y-1/2'
+          className='w-10 absolute top-1/2 left-5 -translate-y-1/2'
           onClick={handlePrevStep}
           disabled={currentStep === 1} // Disable on first step
         >
@@ -37,7 +37,7 @@ const Step = () => {
       </div>
 
       <div
-        className={`flex gap-5 justify-center mb-[22px] ${
+        className={`flex gap-5 justify-center mb-[19px] mt-[6px] ${
           currentStep === 6 ? 'hidden' : ''
         }`}
       >

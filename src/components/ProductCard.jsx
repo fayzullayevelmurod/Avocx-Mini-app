@@ -29,15 +29,15 @@ const ProductCard = ({ data, btns }) => {
             <img className='w-full h-full' src='/images/icons/star-shadow.png' alt='' />
           </button>
         </div>
-        <div className='flex gap-2 items-center mt-3 px-[10px]'>
+        <div className='flex gap-2 items-center mt-[11px] px-[10px]'>
           <img
             className='rounded-full w-12 h-12 object-cover'
             src={companyLogo}
             alt={companyLogoAlt}
             loading='lazy'
           />
-          <div>
-            <div className='flex items-center gap-5'>
+          <div className='mt-[-2px]'>
+            <div className='flex items-center gap-[1px]'>
               <h3 className='font-semibold text-base'>{title}</h3>
               <div className='flex items-center gap-3'>
                 <div className='flex items-center gap-1'>
@@ -54,14 +54,14 @@ const ProductCard = ({ data, btns }) => {
                 </div>
               </div>
             </div>
-            <p className='text-xxs text-grayCustom mt-[1px] leading-full line-clamp-2'>
+            <p className='text-xxs text-grayCustom mt-1 leading-full line-clamp-2'>
               {description}
             </p>
           </div>
         </div>
       </div>
       {btns && (
-        <div className='mt-3 px-[8px]'>
+        <div className='mt-[14px] px-[8px]'>
           <Link className='w-full' to='#!'>
             <Button gray={true}>Открыть</Button>
           </Link>

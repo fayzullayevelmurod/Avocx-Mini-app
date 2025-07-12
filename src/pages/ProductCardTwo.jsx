@@ -37,29 +37,31 @@ const ProductCardTwo = () => {
   return (
     <div>
       {/* search */}
-      <div className='flex items-center gap-2 mb-4'>
-        <Link className='mr-2 w-10' to='#!'>
+      <div className='flex items-center gap-[5px] mb-4 -mt-[9px]'>
+        <Link className='mr-2 w-8' to='#!'>
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Search />
-        <button className='w-[50px] h-[45px] flex items-center justify-center'>
+        <button className='w-[37px] h-[45px] flex items-center justify-end'>
           <img
+            className='w-5'
             src='/images/icons/refresh.svg'
             alt='refresh icon'
-            width={17}
-            height={21}
+            width={20}
           />
         </button>
       </div>
-      <CardUI className='!px-5'>
-        <div className='flex items-center'>
+      <CardUI className='!px-6 !py-[10px] h-[67px] !rounded-[20px] flex items-center relative'>
+        <div className='flex items-center justify-between gap-[11px]'>
           <img
             className='w-12 h-12 rounded-full'
             src='/images/company-logo.svg'
             alt='product company logo'
           />
-          <div className='flex items-center justify-between w-full gap-1'>
-            <h3 className='text-base font-semibold'>SHLZ.STORE 🥇</h3>
+          <div className=''>
+            <h3 className='text-base font-semibold leading-full mb-[6px]'>
+              SHLZ.STORE 🥇
+            </h3>
             <div className='flex items-center gap-3'>
               <div className='flex items-center gap-1'>
                 <img src='/images/icons/group.svg' alt='group icon' />
@@ -74,15 +76,14 @@ const ProductCardTwo = () => {
                 </span>
               </div>
             </div>
-            <img src='/images/icons/star.svg' alt='' />
           </div>
         </div>
       </CardUI>
-      <div className='text-center my-4'>
-        <h4 className='text-xl font-bold leading-full mb-2'>
+      <div className='text-center mt-[18px] mb-5'>
+        <h4 className='text-xl font-bold leading-full mb-[7px]'>
           Добавление нового товара
         </h4>
-        <p className='text-base leading-full'>
+        <p className='text-base leading-[111%]'>
           Выберите подходящий шаблон, или создайте свой собственный.
         </p>
       </div>
@@ -90,12 +91,14 @@ const ProductCardTwo = () => {
         {cardProducts.map((product) => (
           <Card key={product.id} data={product} />
         ))}
-        <CardUI className='flex items-center justify-center text-iron'>
+        <CardUI className='flex items-center justify-center text-iron !rounded-[20px]'>
           <span className='text-xl font-bold'>+ Создать</span>
         </CardUI>
       </div>
-      <h4 className='text-xl font-bold leading-full mb-2 my-5'>Мои шаблоны</h4>
-      <div className='grid grid-cols-2'>
+      <h4 className='text-xl font-bold leading-full mb-[19px] text-center mt-[22px]'>
+        Мои шаблоны
+      </h4>
+      <div className='w-[202px]'>
         {cardProducts2.map((product) => (
           <Card key={product.id} data={product} actions={true} />
         ))}

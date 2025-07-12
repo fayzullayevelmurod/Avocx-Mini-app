@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ru from 'date-fns/locale/ru'; // Import Russian locale from date-fns
@@ -8,15 +8,28 @@ registerLocale('ru', ru);
 
 const Date = () => {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // Start with picker closed
+  const datePickerRef = useRef(null); // Ref to track the DatePicker element
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    setIsOpen(false); // Close picker after selection
+    setIsOpen(false); // Close picker after selecting a date
   };
 
-  const togglePicker = () => {
-    setIsOpen((prev) => !prev);
+  const togglePicker = (e) => {
+    e.stopPropagation(); // Prevent event bubbling to avoid conflicts
+    setIsOpen((prev) => !prev); // Toggle the isOpen state
+  };
+
+  const handleClickOutside = (e) => {
+    // Only close if clicking outside both the picker and the button
+    if (
+      datePickerRef.current &&
+      !datePickerRef.current.contains(e.target) &&
+      !e.target.closest('.date-picker-button') // Ensure the button isn't considered "outside"
+    ) {
+      setIsOpen(false);
+    }
   };
 
   // Format date as DD.MM.YYYY or use placeholder if no date is selected
@@ -31,15 +44,15 @@ const Date = () => {
   return (
     <div className='relative w-full'>
       <div
-        className={`pl-[10px] pr-4 text-sm w-full h-[45px] py-2 bg-carbon rounded-[15px] focus:outline-none justify-center focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer ${
+        className={`pl-[10px] pr-4 text-sm w-full h-[48px] py-2 bg-carbon rounded-[15px] focus:outline-none justify-center focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer date-picker-button ${
           isOpen ? 'border-iron' : 'border-transparent'
         }`}
-        onClick={togglePicker}
+        onClick={togglePicker} // Toggle picker on button click
       >
         <img
           src='images/icons/calendar.svg'
           alt='calendar'
-          className='w-5 h-5'
+          className='w-[15px] h-5 ml-2'
         />
         <span className='text-15 text-white'>{formattedDate}</span>
         <svg
@@ -61,11 +74,14 @@ const Date = () => {
         </svg>
       </div>
       {isOpen && (
-        <div className='absolute w-full z-10 mt-2 left-1/2 -translate-x-1/2 custom-date'>
+        <div
+          className='absolute w-full z-10 mt-2 left-1/2 -translate-x-1/2 custom-date'
+          ref={datePickerRef} // Attach ref to the DatePicker container
+        >
           <DatePicker
             selected={selectedDate}
             onChange={handleDateChange}
-            onClickOutside={() => setIsOpen(false)}
+            onClickOutside={handleClickOutside} // Custom outside click handler
             inline
             locale='ru' // Use registered Russian locale
             dateFormat='dd.MM.yyyy'

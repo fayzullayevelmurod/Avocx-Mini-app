@@ -51,7 +51,7 @@ const Card = ({ data, actions }) => {
           </div>
         )}
       </div>
-      <div className='pt-2 pb-[6px]'>
+      <div className='pt-[10px] pb-[6px]'>
         <div className='px-3'>
           <h4 className='text-xs font-normal text-grayCustom leading-full'>
             {brand}
@@ -66,12 +66,12 @@ const Card = ({ data, actions }) => {
             </span>
           </div>
         </div>
-        <div className='flex gap-1 mt-2 px-[6px]'>
-          <Button className='!h-10 w-full !bg-[#232323]' gray={true}>
+        <div className='flex gap-1 mt-3 pl-1'>
+          <Button className='!h-[39px] max-w-[126px] w-full !bg-[#232323]' gray={true}>
             <span className='text-[13px]'>{price}</span>
             <svg
-              width='15'
-              height='15'
+              width='16px'
+              height='16px'
               viewBox='0 0 15 15'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -85,7 +85,7 @@ const Card = ({ data, actions }) => {
             </svg>
           </Button>
           <Button
-            className='!h-10 max-w-[51px] min-w-[50px] !bg-[#232323]'
+            className='!h-[39px] max-w-[61px] min-w-[50px] !bg-[#232323]'
             gray={true}
           >
             <img src={favoriteIcon} alt={favoriteIconAlt} />

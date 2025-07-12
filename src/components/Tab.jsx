@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Tab = ({ tabData, sizeLg }) => {
+const Tab = ({ tabData, sizeLg, sizeXl }) => {
   const [activeTab, setActiveTab] = useState(tabData[0]?.id || '');
 
   const handleTabClick = (id) => {
@@ -15,7 +15,7 @@ const Tab = ({ tabData, sizeLg }) => {
             key={item.id}
             className={`${
               sizeLg ? 'text-15 font-semibold bg-[#1B1B1B]' : 'text-[13px] bg-charcoal'
-            }  border p-[10px] cursor-pointer rounded-base transition-colors duration-200  w-full text-center text-white ${
+            } ${sizeXl && '!h-[46px] !text-[15px] leading-full p-0 flex items-center justify-center'}  border p-[10px] cursor-pointer rounded-base transition-colors duration-200  w-full text-center text-white ${
               activeTab === item.id ? 'border-primary' : 'border-charcoal'
             }`}
             onClick={() => handleTabClick(item.id)}

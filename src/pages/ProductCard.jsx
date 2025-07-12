@@ -28,22 +28,21 @@ const ProductCard = () => {
   return (
     <div className=''>
       {/* search */}
-      <div className='flex items-center gap-2 mb-4'>
-        <Link className='mr-2 w-10' to='#!'>
+      <div className='flex items-center gap-[5px] mb-4 -mt-[9px]'>
+        <Link className='mr-2 w-8' to='#!'>
           <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
         </Link>
         <Search />
-        <button className='w-[50px] h-[45px] flex items-center justify-center'>
+        <button className='w-[37px] h-[45px] flex items-center justify-end'>
           <img
-            className='w-[17px] h-[21px]'
+            className='w-5'
             src='/images/icons/refresh.svg'
             alt='refresh icon'
-            width={17}
-            height={21}
+            width={20}
           />
         </button>
       </div>
-      <CardUI className='!px-6 !py-[10px] h-[67px] flex items-center relative'>
+      <CardUI className='!px-6 !py-[10px] h-[67px] !rounded-[20px] flex items-center relative'>
         <div className='flex items-center justify-between gap-[11px]'>
           <img
             className='w-12 h-12 rounded-full'
@@ -51,7 +50,9 @@ const ProductCard = () => {
             alt='product company logo'
           />
           <div className=''>
-            <h3 className='text-base font-semibold leading-full mb-[2px]'>SHLZ.STORE 🥇</h3>
+            <h3 className='text-base font-semibold leading-full mb-[6px]'>
+              SHLZ.STORE 🥇
+            </h3>
             <div className='flex items-center gap-3'>
               <div className='flex items-center gap-1'>
                 <img src='/images/icons/group.svg' alt='group icon' />
@@ -66,7 +67,11 @@ const ProductCard = () => {
                 </span>
               </div>
             </div>
-            <img className='absolute top-1/2 -translate-y-1/2 right-6' src='/images/icons/star.svg' alt='' />
+            <img
+              className='absolute top-1/2 -translate-y-1/2 right-[22px]'
+              src='/images/icons/star.svg'
+              alt=''
+            />
           </div>
         </div>
       </CardUI>
@@ -89,38 +94,46 @@ const ProductCard = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <CardUI className='!pt-6 !pb-5 !px-[23px] space-y-6 -mt-8 relative z-10 !bg-[#1A1A1A]'>
+        <CardUI className='!pt-6 !pb-5 !px-[23px] space-y-6 -mt-[30px] relative z-10 !bg-[#1A1A1A]'>
           <div className='flex items-center justify-between'>
             <div>
               <span className='text-15 font-normal leading-full text-grayCustom'>
                 Hugo BOSS
               </span>
-              <h4 className='text-xl leading-full font-bold italic'>
+              <h4 className='text-xl leading-full font-bold italic mt-[5px]'>
                 Футболка «RED»
               </h4>
             </div>
-            <img src='/images/icons/star.svg' alt='star icon' width={25} />
+            <img
+              className='absolute top-6 right-[27px] w-[26px]'
+              src='/images/icons/star.svg'
+              alt='star icon'
+              width={26}
+            />
           </div>
           <div>
-            <div className='grid grid-cols-2 gap-[14px] mb-[10px]'>
+            <div className='grid grid-cols-2 gap-[14px] mb-3'>
               <Select
                 options={options}
                 selected={true}
                 rightIcon={true}
                 bgColor='bg-[#232323]'
+                className='!h-[51px]'
               />
               <Select
                 options={options1}
                 selected={true}
                 rightIcon={true}
                 bgColor='bg-[#232323]'
+                className='!h-[51px]'
               />
             </div>
-            <Button className='w-full'>
+            <Button className='w-full h-[51px]'>
               <span>2.500₽</span>
               <svg
-                width='15'
-                height='15'
+                className='w-[22px] h-auto mt-[-3px] '
+                width='22px'
+                height='22'
                 viewBox='0 0 15 15'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -134,20 +147,27 @@ const ProductCard = () => {
               </svg>
             </Button>
           </div>
-          <div>
+          <div className='!mt-5'>
             <h4 className='text-xl mb-2'>Описание</h4>
-            <p className='text-15 leading-full font-normal italic'>
+            <p className='text-15 leading-[114%]  font-normal italic mt-[-3px]'>
               Изготовленная из премиального хлопка, она сочетает комфорт
               повседневной носки с безупречным качеством легендарного бренда.{' '}
-              <br />
-              <br /> Минималистичный крой и фирменный логотип делают ее
-              универсальной основой для любого образа — от дерзкого casual до
-              элегантного smart casual.
+            </p>
+            <p className='text-15 leading-[114%]  font-normal italic mt-[22px]'>
+              Минималистичный крой и фирменный логотип делают ее универсальной
+              основой для любого образа — от дерзкого casual до элегантного
+              smart casual.
             </p>
           </div>
-          <Button className='!bg-[#232323]' gray={true}>
+          <Button
+            className='!bg-[#232323] !mt-[30px] h-[51px] !font-medium relative gap-[22px]'
+            gray={true}
+          >
             <span>Задать вопрос по товару</span>
-            <img src='images/icons/chat.svg' alt='chat icon' />
+            <img
+              src='images/icons/chat.svg'
+              alt='chat icon'
+            />
           </Button>
         </CardUI>
       </div>

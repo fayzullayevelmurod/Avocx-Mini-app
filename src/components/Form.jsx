@@ -44,6 +44,7 @@ export const Select = ({
   selected = false,
   rightIcon = false,
   bgColor = 'bg-dark',
+  className
 }) => {
   const [isSelected, setIsSelected] = useState(selected);
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +83,7 @@ export const Select = ({
         </svg>
       )}
       <select
-        className={`text-sm w-full h-[45px] py-2 ${bgColor} rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
+        className={`text-sm w-full ${className} h-[45px] py-2 ${bgColor} rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
           isSelected ? 'text-white' : 'text-iron'
         } ${rightIcon ? 'pr-10 pl-4' : 'pl-10 pr-4'}`}
         onChange={handleChange}
