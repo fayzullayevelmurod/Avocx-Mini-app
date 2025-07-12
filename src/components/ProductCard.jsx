@@ -37,7 +37,7 @@ const ProductCard = ({ data, btns }) => {
             loading='lazy'
           />
           <div className='mt-[-2px]'>
-            <div className='flex items-center gap-[5px]'>
+            <div className='flex items-center gap-[10px]'>
               <h3 className='font-semibold text-base'>{title}</h3>
               <div className='flex items-center gap-[9px]'>
                 <div className='flex items-center gap-1'>
