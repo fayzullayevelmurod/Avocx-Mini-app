@@ -76,8 +76,8 @@ const Announcement = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Психология, Цитаты, Литература.
                 </p>
-                <div className='flex items-center gap-4 my-[2px] mt-[-3px]'>
-                  <div className='flex items-center gap-[5px]'>
+                <div className='flex items-center gap-[9px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px] min-w-[60px]'>
                     <img src='images/icons/users.svg' alt='' />
                     <span className='text-xs text-grayCustom'>17.345</span>
                   </div>
@@ -87,8 +87,8 @@ const Announcement = () => {
                     <img src='images/icons/trade-success.svg' alt='' />
                   </div>
                 </div>
-                <div className='flex items-center gap-[11px] mt-[3px]'>
-                  <div className='flex items-center gap-[5px]'>
+                <div className='flex items-center gap-[9px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px] min-w-[60px]'>
                     <img src='images/icons/er.svg' alt='er' />
                     <span className='text-xs text-grayCustom'>21%</span>
                   </div>
@@ -108,7 +108,7 @@ const Announcement = () => {
             />
           </div>
           <div className='bg-iron p-[2px] rounded-2xl mt-[7px] flex gap-[2px] h-[38px]'>
-            <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127px] pl-2'>
+            <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127px] pl-2 pr-[1px]'>
               <span className='text-[11px]'>1/48</span>
               <span className='text-[11px] font-bold'>650₽</span>
               <Button className='min-w-[34px] min-h-[32px] max-w-[34px] max-h-[32px] shadow-btn-inset !rounded-[13px]'>
@@ -158,8 +158,8 @@ const Announcement = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Познавательное, История, Политика.
                 </p>
-                <div className='flex items-center gap-[7px] my-[2px] mt-[-3px]'>
-                  <div className='flex items-center gap-[5px]'>
+                <div className='flex items-center gap-[9px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px] min-w-[60px]'>
                     <img src='images/icons/users.svg' alt='' />
                     <span className='text-xs text-grayCustom'>735</span>
                   </div>
@@ -169,8 +169,8 @@ const Announcement = () => {
                     <img src='images/icons/trade-success.svg' alt='' />
                   </div>
                 </div>
-                <div className='flex items-center gap-[11px] mt-[3px]'>
-                  <div className='flex items-center gap-[5px]'>
+                <div className='flex items-center gap-[9px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px] min-w-[60px]'>
                     <img src='images/icons/er.svg' alt='er' />
                     <span className='text-xs text-grayCustom'>13%</span>
                   </div>

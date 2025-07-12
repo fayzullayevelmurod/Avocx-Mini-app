@@ -6,31 +6,31 @@ const BottomBar = () => {
       <Link className='text-center h-[24px] -translate-y-1 flex flex-col justify-end relative' to='#!'>
         <img
           // w-6 h-6
-          className='block mx-auto w-6 h-6'
+          className='block mx-auto w-[26px] h-[unset] -translate-y-[3px]'
           src='/images/icons/bottom-shop.svg'
           alt=''
         />
-        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-1 -translate-x-1/2'>SHOPS</span>
+        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-[7px] -translate-x-1/2'>SHOPS</span>
       </Link>
       <Link className='text-center h-[24px] -translate-y-1 flex flex-col justify-end relative' to='#!'>
-        <img className='mx-auto w-6 h-[22px]' src='/images/icons/bottom-basket.svg' alt='' />
-        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-1 -translate-x-1/2'>BASKET</span>
+        <img className='mx-auto w-[27px] h-[unsent]  translate-y-[2px]' src='/images/icons/bottom-basket.svg' alt='' />
+        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-[7px] -translate-x-1/2'>BASKET</span>
       </Link>
       <Link className='text-center h-[24px] -translate-y-1 flex flex-col justify-end relative' to='#!'>
-        <img className='block mx-auto w-7' src='/images/icons/home.svg' alt='' />
-        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-1 -translate-x-1/2'>HOME</span>
+        <img className='block mx-auto w-[30px] translate-y-[1px]' src='/images/icons/home.svg' alt='' />
+        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-[7px] -translate-x-1/2'>HOME</span>
       </Link>
       <Link className='text-center h-[24px] -translate-y-1 flex flex-col justify-end relative' to='#!'>
-        <img className='block mx-auto w-[30px] h-5' src='/images/icons/order.svg' alt='' />
-        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-1 -translate-x-1/2'>ORDERS</span>
+        <img className='block mx-auto w-8 h-[unset] translate-x-[1px] translate-y-[2px]' src='/images/icons/order.svg' alt='' />
+        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-[7px] -translate-x-1/2'>ORDERS</span>
       </Link>
       <Link className='text-center h-[24px] -translate-y-1 flex flex-col justify-end relative' to='#!'>
         <img
-          className='block mx-auto w-[22px] h-5'
+          className='block mx-auto w-[26px] h-[unset] -translate-x-[2px] translate-y-[2px]'
           src='/images/icons/settings.svg'
           alt=''
         />
-        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-1 -translate-x-1/2'>SETTINGS</span>
+        <span className='leading-full text-[6px] text-white absolute top-full left-1/2 mt-[7px] -translate-x-1/2'>SETTINGS</span>
       </Link>
     </div>
   );

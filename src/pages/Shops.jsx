@@ -73,7 +73,7 @@ const Shops = () => {
           <Button className='min-w-[50px] max-w-[50px] h-[45px]'>
             <img src='/images/icons/shop.svg' alt='shop icon' />
           </Button>
-          <button className='w-[50px] h-[45px] flex items-center justify-center'>
+          <button className='w-[45px] h-[45px] flex items-center justify-end'>
             <svg
               width='20'
               height='24'
@@ -92,7 +92,7 @@ const Shops = () => {
           </button>
         </div>
         {/* filter */}
-        <div className='flex gap-2 mt-3 mb-2'>
+        <div className='flex gap-2 mt-[9px] mb-2'>
           <button className='flex-1 flex items-center gap-[10px] px-4 bg-carbon h-12 rounded-base'>
             <svg
               width='19'
@@ -136,7 +136,7 @@ const Shops = () => {
           </button>
         </div>
         <Categories />
-        <Title label='Магазины' />
+        <Title label='Магазины' className='!mb-[15px]' />
 
         <div className='space-y-1'>
           {products.map((product) => (

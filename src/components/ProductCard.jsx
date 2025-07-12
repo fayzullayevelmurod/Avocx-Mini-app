@@ -15,7 +15,7 @@ const ProductCard = ({ data, btns }) => {
 
   return (
     <div
-      className={`overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron`}
+      className={`overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron pb-[15px]`}
     >
       <div>
         <div className='w-full h-[178px] relative'>
@@ -37,19 +37,20 @@ const ProductCard = ({ data, btns }) => {
             loading='lazy'
           />
           <div className='mt-[-2px]'>
-            <div className='flex items-center gap-[1px]'>
+            <div className='flex items-center gap-[10px]'>
               <h3 className='font-semibold text-base'>{title}</h3>
-              <div className='flex items-center gap-3'>
+              <div className='flex items-center gap-[9px]'>
                 <div className='flex items-center gap-1'>
                   <img src='/images/icons/group.svg' alt='group icon' />
                   <span className='text-xs font-medium text-grayCustom'>
-                    {groupCount?.toLocaleString()}
+                    {/* {groupCount?.toLocaleString()} */}
+                    {groupCount}
                   </span>
                 </div>
-                <div className='flex items-center gap-1'>
+                <div className='flex items-center gap-1 -mt-[5px]'>
                   <img src='/images/icons/cart.svg' alt='cart icon' />
                   <span className='text-xs font-medium text-grayCustom'>
-                    {cartCount?.toLocaleString()}
+                    {cartCount}
                   </span>
                 </div>
               </div>
