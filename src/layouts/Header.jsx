@@ -40,10 +40,11 @@ const Header = () => {
   };
 
   useEffect(() => {
-    document.body.classList.toggle('overflow-hidden', isMenuOpen);
-    document.body.classList.toggle('light-theme', isLightTheme);
+    // document.body.classList.toggle('overflow-hidden', isMenuOpen);
+    // document.body.classList.toggle('light-theme', isLightTheme);
     return () => {
-      document.body.classList.remove('overflow-hidden', 'light-theme');
+      // document.body.classList.remove('overflow-hidden', 'light-theme');
+      document.body.classList.remove('overflow-hidden');
     };
   }, [isMenuOpen, isLightTheme]);
 
