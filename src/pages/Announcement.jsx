@@ -7,6 +7,90 @@ import Title from '../components/Title';
 import CardUI from '../components/CardUI';
 import Sort from '../components/Sort';
 
+// import { motion } from 'framer-motion';
+// import { useState } from 'react';
+
+// export const ShopButton = () => {
+//   const [ripple, setRipple] = useState(false);
+
+//   const handleClick = () => {
+//     setRipple(true);
+//     setTimeout(() => setRipple(false), 400);
+//   };
+
+//   return (
+//     <button
+//       onClick={handleClick}
+//       className='relative overflow-hidden w-[34.89px] h-[31.20px] shadow-btn-inset !rounded-[13px] bg-blue-600 flex items-center justify-center mr-[1px]'
+//     >
+//       {/* Silkinuvchi fon */}
+//       <motion.div
+//         whileTap={{ scale: 0.9 }}
+//         className='absolute inset-0 rounded-[13px]'
+//       />
+
+//       {/* Ikonka – silkinmaydi */}
+//       <img
+//         src='/images/icons/white-cart.svg'
+//         alt=''
+//         className='relative z-10 pointer-events-none'
+//       />
+
+//       {/* Ripple effekti */}
+//       {ripple && (
+//         <motion.span
+//           initial={{ scale: 0, opacity: 0.6 }}
+//           animate={{ scale: 2.5, opacity: 0 }}
+//           transition={{ duration: 0.4, ease: 'easeOut' }}
+//           className='absolute w-16 h-16 bg-blue-400 rounded-full pointer-events-none z-0'
+//           style={{
+//             top: '50%',
+//             left: '50%',
+//             transform: 'translate(-50%, -50%)',
+//           }}
+//         />
+//       )}
+//     </button>
+//   );
+// };
+
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+export const ShopButton = () => {
+  const [ripple, setRipple] = useState(false);
+
+  const handleClick = () => {
+    setRipple(true);
+    setTimeout(() => setRipple(false), 400); // Ripple animatsiyasini tozalash
+  };
+
+  return (
+    <motion.button
+      onClick={handleClick}
+      whileTap={{ scale: 0.9 }} // "Prujina" effekti
+      className='relative overflow-hidden w-[34.89236831665039px] h-[31.20182991027832px] shadow-btn-inset !rounded-[13px] bg-blue-600 flex items-center justify-center mr-[1px]'
+    >
+      <img src='/images/icons/white-cart.svg' alt='' />
+
+      {ripple && (
+        <motion.span
+          initial={{ scale: 0, opacity: 0.6 }}
+          animate={{ scale: 2.5, opacity: 0 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className='absolute w-16 h-16 bg-blue-400 rounded-full pointer-events-none'
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      )}
+    </motion.button>
+  );
+};
+
 const Announcement = () => {
   const categories = [
     { label: 'Горячее', to: '/hype', className: 'bg-orange' },
@@ -108,24 +192,12 @@ const Announcement = () => {
             />
           </div>
           <div className='bg-iron p-[2px] rounded-2xl mt-[7px] flex gap-[2px] h-[38px]'>
-            <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127px] pl-2 pr-[1px]'>
-              <span className='text-[11px]'>1/48</span>
+            <div className='flex items-center gap-0 justify-between p-[2px] rounded-base bg-charcoal  w-[127.82685852050781px] pl-2 pr-[1px] h-[34.55686569213867px]'>
+              <span className='text-[11px] ml-[1px]'>1/48</span>
               <span className='text-[11px] font-bold'>650₽</span>
-              <Button className='min-w-[34px] min-h-[32px] max-w-[34px] max-h-[32px] shadow-btn-inset !rounded-[13px]'>
-                <svg
-                  width='19'
-                  height='19'
-                  viewBox='0 0 15 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M4.18618 4.46117H3.20944C2.17121 4.46117 1.65253 4.46117 1.28327 4.67244C0.959222 4.85783 0.71013 5.15069 0.580059 5.49998C0.431929 5.89777 0.517194 6.40805 0.687663 7.42823L0.68802 7.43015L1.43363 11.8923C1.56011 12.6492 1.62377 13.0279 1.81312 13.3119C1.98004 13.5622 2.21434 13.7602 2.48937 13.8832C2.80137 14.0228 3.18589 14.0229 3.95525 14.0229H10.8082C11.5776 14.0229 11.9619 14.0228 12.2739 13.8832C12.5489 13.7602 12.7834 13.5622 12.9503 13.3119C13.1396 13.0279 13.203 12.6492 13.3294 11.8923L14.075 7.43015L14.0758 7.42704C14.2461 6.40765 14.3313 5.89762 14.1833 5.49998C14.0532 5.15069 13.8047 4.85783 13.4806 4.67244C13.1114 4.46117 12.5919 4.46117 11.5536 4.46117H10.5771M4.18618 4.46117H10.5771M4.18618 4.46117C4.18618 2.7009 5.61683 1.27393 7.38164 1.27393C9.14644 1.27393 10.5771 2.7009 10.5771 4.46117'
-                    stroke='#fff'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
+              {/* <ShopButton /> */}
+              <Button className='min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset !rounded-[13px] bg-blue-600 flex items-center justify-center mr-[1px] small-effect'>
+                <img src="/images/icons/white-cart.svg" alt="" />
               </Button>
             </div>
             <div className='bg-charcoal rounded-base w-10 flex items-center justify-center'>
