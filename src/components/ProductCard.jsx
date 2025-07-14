@@ -26,7 +26,11 @@ const ProductCard = ({ data, btns }) => {
             loading='lazy'
           />
           <button className='absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center'>
-            <img className='w-full h-full' src='/images/icons/star-shadow.png' alt='' />
+            <img
+              className='w-full h-full'
+              src='/images/icons/star-shadow.png'
+              alt=''
+            />
           </button>
         </div>
         <div className='flex gap-2 items-center mt-[11px] px-[10px]'>
@@ -38,7 +42,10 @@ const ProductCard = ({ data, btns }) => {
           />
           <div className='mt-[-2px]'>
             <div className='flex items-center gap-[10px]'>
-              <h3 className='font-semibold text-base'>{title}</h3>
+              {/* <h3 className='font-semibold text-base'>{title}</h3> */}
+              <h3 className='font-semibold text-base truncate max-w-[150px] whitespace-nowrap overflow-hidden'>
+                {title}
+              </h3>
               <div className='flex items-center gap-[9px]'>
                 <div className='flex items-center gap-1'>
                   <img src='/images/icons/group.svg' alt='group icon' />
@@ -48,7 +55,11 @@ const ProductCard = ({ data, btns }) => {
                   </span>
                 </div>
                 <div className='flex items-center gap-1'>
-                  <img className='mt-[-3px]' src='/images/icons/cart.svg' alt='cart icon' />
+                  <img
+                    className='mt-[-3px]'
+                    src='/images/icons/cart.svg'
+                    alt='cart icon'
+                  />
                   <span className='text-xs font-medium text-grayCustom'>
                     {cartCount}
                   </span>

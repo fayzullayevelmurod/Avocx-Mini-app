@@ -308,7 +308,8 @@ h2.react-datepicker__current-month {
   border-radius: 15px;
   z-index: -1;
   opacity: 0;
-  transform: scale3d(0.8, 0.5, 1);
+  /* transform: scale3d(0.8, 0.5, 1); */
+  transform: scale3d(0.9, 0.9, 1); /* avval 0.8 edi */
 }
 
 .button--moema.small-effect::before {
@@ -324,7 +325,7 @@ h2.react-datepicker__current-month {
   opacity: 0.3;
 }
 
-@keyframes anim-moema-1 {
+/* @keyframes anim-moema-1 {
   60% {
     transform: scale3d(0.8, 0.8, 1);
   }
@@ -333,6 +334,17 @@ h2.react-datepicker__current-month {
   }
   100% {
     transform: scale3d(1, 1, 1);
+  }
+} */
+@keyframes anim-moema-1 {
+  60% {
+    transform: scale3d(0.94, 0.94, 1); /* ozgina kichrayadi */
+  }
+  85% {
+    transform: scale3d(1.03, 1.03, 1); /* ozgina kattalashadi */
+  }
+  100% {
+    transform: scale3d(1, 1, 1); /* normal holat */
   }
 }
 

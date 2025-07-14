@@ -7,53 +7,6 @@ import Title from '../components/Title';
 import CardUI from '../components/CardUI';
 import Sort from '../components/Sort';
 
-// import { motion } from 'framer-motion';
-// import { useState } from 'react';
-
-// export const ShopButton = () => {
-//   const [ripple, setRipple] = useState(false);
-
-//   const handleClick = () => {
-//     setRipple(true);
-//     setTimeout(() => setRipple(false), 400);
-//   };
-
-//   return (
-//     <button
-//       onClick={handleClick}
-//       className='relative overflow-hidden w-[34.89px] h-[31.20px] shadow-btn-inset !rounded-[13px] bg-blue-600 flex items-center justify-center mr-[1px]'
-//     >
-//       {/* Silkinuvchi fon */}
-//       <motion.div
-//         whileTap={{ scale: 0.9 }}
-//         className='absolute inset-0 rounded-[13px]'
-//       />
-
-//       {/* Ikonka – silkinmaydi */}
-//       <img
-//         src='/images/icons/white-cart.svg'
-//         alt=''
-//         className='relative z-10 pointer-events-none'
-//       />
-
-//       {/* Ripple effekti */}
-//       {ripple && (
-//         <motion.span
-//           initial={{ scale: 0, opacity: 0.6 }}
-//           animate={{ scale: 2.5, opacity: 0 }}
-//           transition={{ duration: 0.4, ease: 'easeOut' }}
-//           className='absolute w-16 h-16 bg-blue-400 rounded-full pointer-events-none z-0'
-//           style={{
-//             top: '50%',
-//             left: '50%',
-//             transform: 'translate(-50%, -50%)',
-//           }}
-//         />
-//       )}
-//     </button>
-//   );
-// };
-
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -160,8 +113,8 @@ const Announcement = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Психология, Цитаты, Литература.
                 </p>
-                <div className='flex items-center gap-[9px] my-[2px] mt-[-3px]'>
-                  <div className='flex items-center gap-[5px] min-w-[60px]'>
+                <div className='flex items-center gap-[10px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/users.svg' alt='' />
                     <span className='text-xs text-grayCustom'>17.345</span>
                   </div>
@@ -171,8 +124,8 @@ const Announcement = () => {
                     <img src='images/icons/trade-success.svg' alt='' />
                   </div>
                 </div>
-                <div className='flex items-center gap-[9px] mt-[3px]'>
-                  <div className='flex items-center gap-[5px] min-w-[60px]'>
+                <div className='flex items-center gap-[10px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/er.svg' alt='er' />
                     <span className='text-xs text-grayCustom'>21%</span>
                   </div>
@@ -222,10 +175,10 @@ const Announcement = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Познавательное, История, Политика.
                 </p>
-                <div className='flex items-center gap-[9px] my-[2px] mt-[-3px]'>
-                  <div className='flex items-center gap-[5px] min-w-[60px]'>
+                <div className='flex items-center gap-[10px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/users.svg' alt='' />
-                    <span className='text-xs text-grayCustom'>735</span>
+                    <span className='text-xs text-grayCustom'>много цифр 735</span>
                   </div>
                   <div className='flex gap-[2px]'>
                     <img src='images/icons/trade-down.svg' alt='' />
@@ -233,8 +186,8 @@ const Announcement = () => {
                     <img src='images/icons/trade-success.svg' alt='' />
                   </div>
                 </div>
-                <div className='flex items-center gap-[9px] mt-[3px]'>
-                  <div className='flex items-center gap-[5px] min-w-[60px]'>
+                <div className='flex items-center gap-[10px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/er.svg' alt='er' />
                     <span className='text-xs text-grayCustom'>13%</span>
                   </div>
@@ -424,11 +377,11 @@ const ExpandableAdButtons = ({ cardId, buttonsData }) => {
           <div
             key={`${cardId}-${button.format}`}
             className={`
-              flex items-center gap-0 justify-between pl-0 rounded-base bg-charcoal cursor-pointer
-              transition-all duration-300 ease-out
+              flex items-center justify-between  rounded-base bg-charcoal cursor-pointer
+              transition-all duration-300 ease-out ml-0
               ${
                 isExpanded
-                  ? 'w-[127.82685852050781px] pl-2 pr-[1px] h-[34.55686569213867px]'
+                  ? 'h-[34.55686569213867px] gap-[15px]'
                   : 'w-10 h-[34.55686569213867px] justify-center'
               }
             `}
@@ -445,7 +398,7 @@ const ExpandableAdButtons = ({ cardId, buttonsData }) => {
 
             {/* Price - slides in */}
             <span
-              className={`
+              className={` -ml-2
                 text-[11px] font-bold whitespace-nowrap
                 transition-all duration-300 ease-out
                 ${
@@ -501,136 +454,3 @@ const ExpandableAdButtons = ({ cardId, buttonsData }) => {
     </div>
   );
 };
-// // Добавьте этот компонент в начало файла или в отдельный файл
-// const ExpandableAdButtons = () => {
-//   const [expandedButton, setExpandedButton] = useState('1/48'); // По умолчанию первая кнопка расширена
-//   const [ripple, setRipple] = useState(false);
-//   const containerRef = useRef(null);
-
-//   const buttons = [
-//     { format: '1/48', price: '650₽' },
-//     { format: '1/72', price: '890₽' },
-//     { format: '1/168', price: '1200₽' },
-//     { format: 'Story', price: '1500₽' },
-//   ];
-
-//   useEffect(() => {
-//     const handleClickOutside = (event) => {
-//       if (
-//         containerRef.current &&
-//         !containerRef.current.contains(event.target)
-//       ) {
-//         setExpandedButton(null);
-//       }
-//     };
-
-//     document.addEventListener('mousedown', handleClickOutside);
-//     return () => {
-//       document.removeEventListener('mousedown', handleClickOutside);
-//     };
-//   }, []);
-
-//   const handleButtonClick = (format) => {
-//     if (expandedButton === format) {
-//       setExpandedButton(null);
-//     } else {
-//       setExpandedButton(format);
-//     }
-//   };
-
-//   const handleCartClick = (e, format, price) => {
-//     e.stopPropagation();
-//     setRipple(true);
-//     setTimeout(() => setRipple(false), 400);
-//     console.log(`Added ${format} for ${price} to cart`);
-//   };
-
-//   return (
-//     <div
-//       ref={containerRef}
-//       className='bg-iron p-[2px] rounded-2xl mt-[7px] flex gap-[2px] h-[38px]'
-//     >
-//       {buttons.map((button) => {
-//         const isExpanded = expandedButton === button.format;
-
-//         return (
-//           <div
-//             key={button.format}
-//             className={`
-//               flex items-center gap-0 justify-between  pl-0 rounded-base bg-charcoal cursor-pointer
-//               transition-all duration-300 ease-out
-//               ${
-//                 isExpanded
-//                   ? 'w-[127.82685852050781px] pl-2 pr-[1px] h-[34.55686569213867px]'
-//                   : 'w-10 h-[34.55686569213867px] justify-center'
-//               }
-//             `}
-//             onClick={() => handleButtonClick(button.format)}
-//           >
-//             {/* Format text */}
-//             <span
-//               className={`text-[11px] transition-all duration-300 w-[40px] h-[34px] flex items-center justify-center ${
-//                 isExpanded ? 'ml-[1px]' : ''
-//               }`}
-//             >
-//               {button.format}
-//             </span>
-
-//             {/* Price - slides in */}
-//             <span
-//               className={`
-//                 text-[11px] font-bold whitespace-nowrap
-//                 transition-all duration-300 ease-out
-//                 ${
-//                   isExpanded
-//                     ? 'opacity-100 translate-x-0'
-//                     : 'opacity-0 translate-x-4 w-0 overflow-hidden'
-//                 }
-//               `}
-//             >
-//               {button.price}
-//             </span>
-
-//             {/* Cart button - appears with spring effect */}
-//             <div
-//               className={`
-//                 transition-all duration-400 ease-out
-//                 ${
-//                   isExpanded
-//                     ? 'opacity-100 scale-100 translate-x-0'
-//                     : 'opacity-0 scale-75 translate-x-2 w-0 overflow-hidden'
-//                 }
-//               `}
-//               style={{
-//                 transitionTimingFunction: isExpanded
-//                   ? 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-//                   : 'ease-out',
-//               }}
-//             >
-//               <motion.button
-//                 onClick={(e) => handleCartClick(e, button.format, button.price)}
-//                 whileTap={{ scale: 0.9 }}
-//                 className='relative overflow-hidden min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset !rounded-[13px] bg-blue-600 flex items-center justify-center mr-[1px]'
-//               >
-//                 <img src='/images/icons/white-cart.svg' alt='' />
-//                 {ripple && (
-//                   <motion.span
-//                     initial={{ scale: 0, opacity: 0.6 }}
-//                     animate={{ scale: 2.5, opacity: 0 }}
-//                     transition={{ duration: 0.4, ease: 'easeOut' }}
-//                     className='absolute w-16 h-16 bg-blue-400 rounded-full pointer-events-none'
-//                     style={{
-//                       top: '50%',
-//                       left: '50%',
-//                       transform: 'translate(-50%, -50%)',
-//                     }}
-//                   />
-//                 )}
-//               </motion.button>
-//             </div>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// };

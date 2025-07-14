@@ -14,7 +14,7 @@ const products = [
     imageAlt: 'product img',
     companyLogo: '/images/company-logo.svg',
     companyLogoAlt: 'company logo',
-    title: 'GUCCI legend',
+    title: 'GUCCI legend loremloremlorem',
     groupCount: 15788,
     cartCount: 7332,
     description:
