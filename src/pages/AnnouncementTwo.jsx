@@ -249,11 +249,11 @@ const ExpandableAdButtons = ({ cardId, buttonsData }) => {
           <div
             key={`${cardId}-${button.format}`}
             className={`
-              flex items-center gap-0 justify-between pl-0 rounded-base bg-charcoal cursor-pointer
-              transition-all duration-300 ease-out
+              flex items-center justify-between  rounded-base bg-charcoal cursor-pointer
+              transition-all duration-300 ease-out ml-0
               ${
                 isExpanded
-                  ? 'w-[127.82685852050781px] pl-2 pr-[1px] h-[34.55686569213867px]'
+                  ? 'h-[34.55686569213867px] gap-[15px]'
                   : 'w-10 h-[34.55686569213867px] justify-center'
               }
             `}
@@ -270,7 +270,7 @@ const ExpandableAdButtons = ({ cardId, buttonsData }) => {
 
             {/* Price - slides in */}
             <span
-              className={`
+              className={` -ml-2
                 text-[11px] font-bold whitespace-nowrap
                 transition-all duration-300 ease-out
                 ${
@@ -381,7 +381,30 @@ const AnnouncementTwo = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Психология, Цитаты, Литература.
                 </p>
-                <div className='flex items-center gap-4 my-[2px] mt-[-3px]'>
+                <div className='flex items-center gap-[10px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/users.svg' alt='' />
+                    <span className='text-xs text-grayCustom'>17.345</span>
+                  </div>
+                  <div className='flex gap-[2px]'>
+                    <img src='images/icons/trade-down.svg' alt='' />
+                    <img src='images/icons/trade-success.svg' alt='' />
+                    <img src='images/icons/trade-success.svg' alt='' />
+                  </div>
+                </div>
+                <div className='flex items-center gap-[10px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/er.svg' alt='er' />
+                    <span className='text-xs text-grayCustom'>21%</span>
+                  </div>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/see.svg' alt='see' />
+                    <span className='text-xs text-grayCustom'>
+                      567, 754, 1145
+                    </span>
+                  </div>
+                </div>
+                {/* <div className='flex items-center gap-4 my-[2px] mt-[-3px]'>
                   <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/users.svg' alt='' />
                     <span className='text-xs text-grayCustom'>17.345</span>
@@ -403,7 +426,7 @@ const AnnouncementTwo = () => {
                       567, 754, 1145
                     </span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -455,7 +478,30 @@ const AnnouncementTwo = () => {
                 <p className='text-[10px] font-normal text-grayCustom leading-full mt-[1px] mb-[5px]'>
                   Познавательное, История, Политика.
                 </p>
-                <div className='flex items-center gap-[7px] my-[2px] mt-[-3px]'>
+                <div className='flex items-center gap-[10px] my-[2px] mt-[-3px]'>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/users.svg' alt='' />
+                    <span className='text-xs text-grayCustom'>175</span>
+                  </div>
+                  <div className='flex gap-[2px]'>
+                    <img src='images/icons/trade-down.svg' alt='' />
+                    <img src='images/icons/trade-success.svg' alt='' />
+                    <img src='images/icons/trade-success.svg' alt='' />
+                  </div>
+                </div>
+                <div className='flex items-center gap-[10px] mt-[3px]'>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/er.svg' alt='er' />
+                    <span className='text-xs text-grayCustom'>21%</span>
+                  </div>
+                  <div className='flex items-center gap-[5px]'>
+                    <img src='images/icons/see.svg' alt='see' />
+                    <span className='text-xs text-grayCustom'>
+                      567, 754, 1145
+                    </span>
+                  </div>
+                </div>
+                {/* <div className='flex items-center gap-[7px] my-[2px] mt-[-3px]'>
                   <div className='flex items-center gap-[5px]'>
                     <img src='images/icons/users.svg' alt='' />
                     <span className='text-xs text-grayCustom'>735</span>
@@ -477,7 +523,7 @@ const AnnouncementTwo = () => {
                       231, 313, 420
                     </span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
