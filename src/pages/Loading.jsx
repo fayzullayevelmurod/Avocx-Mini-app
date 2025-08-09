@@ -17,7 +17,7 @@ const Loading = () => {
         currentProgress = 100;
         clearInterval(timer);
         // Redirect to /not-found after progress reaches 100%
-        navigate('/not-found');
+        // navigate('/not-found');
       }
       setProgress(currentProgress);
     }, 16); // Update every ~16ms for smooth animation
@@ -26,16 +26,16 @@ const Loading = () => {
   }, [navigate]);
 
   return (
-    <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
-      <img className="mx-auto" src='/images/logo2.svg' alt='' />
-      <div className='w-[235px] h-[7px] bg-[#333333] my-[43px] rounded-lg overflow-hidden'>
+    <div className='absolute left-1/2 -translate-x-1/2 mt-[240px] text-center'>
+      <span className='text-base-white text-center text-[17px] uppercase mb-'>SUPERSERVICE</span>
+      <h1 className='text-[75px] italic font-bold leading-[100%]'>avocx</h1>
+      <div className='w-[235px] h-[7px] bg-dark-gray mt-[34px] rounded-lg'>
         {/* Progress bar with dynamic width */}
         <div
-          className='h-full bg-primary rounded-lg transition-all duration-[16ms] ease-linear'
+          className='h-full bg-loader shadow-loader-shadow rounded-lg transition-all duration-[16ms] ease-linear'
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <span className='text-xl italic leading-full text-[#676767]'>avocx</span>
     </div>
   );
 };

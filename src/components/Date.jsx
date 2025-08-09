@@ -44,7 +44,7 @@ const Date = () => {
   return (
     <div className='relative w-full'>
       <div
-        className={`pl-[10px] pr-4 text-sm w-full h-[48px] py-2 bg-carbon rounded-[15px] focus:outline-none justify-center focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer date-picker-button ${
+        className={`pl-[10px] pr-4 text-sm w-full h-[48px] py-2 bg-carbon rounded-base focus:outline-none justify-center focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer date-picker-button ${
           isOpen ? 'border-iron' : 'border-transparent'
         }`}
         onClick={togglePicker} // Toggle picker on button click

@@ -8,7 +8,7 @@ export const InputForm = ({
 }) => {
   return (
     <input
-      className='w-full h-[45px] py-2 px-[10px] bg-dark rounded-[15px] placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white'
+      className='w-full h-[45px] py-2 px-[10px] bg-dark rounded-base placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white'
       type={type}
       placeholder={placeHolder}
       value={value}
@@ -19,7 +19,7 @@ export const InputForm = ({
 
 export const CategoryForm = ({ label = 'Категория', icon }) => {
   return (
-    <div className='flex items-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-[15px]'>
+    <div className='flex items-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-base'>
       <img
         src={`${icon ? icon : 'images/icons/bars-plus.svg'}`}
         alt='bars-plus'
@@ -32,7 +32,7 @@ export const CategoryForm = ({ label = 'Категория', icon }) => {
 export const TextareaForm = ({ placeHolder, value }) => {
   return (
     <textarea
-      className='w-full resize-none h-[105px] py-2 px-[10px] bg-dark rounded-[15px] placeholder:text-iron text-sm text-white'
+      className='w-full resize-none h-[105px] py-2 px-[10px] bg-dark rounded-base placeholder:text-iron text-sm text-white'
       placeholder={placeHolder}
       value={value}
     />
@@ -83,7 +83,7 @@ export const Select = ({
         </svg>
       )}
       <select
-        className={`text-sm w-full ${className} h-[45px] py-2 ${bgColor} rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
+        className={`text-sm w-full ${className} h-[45px] py-2 ${bgColor} rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
           isSelected ? 'text-white' : 'text-iron'
         } ${rightIcon ? 'pr-10 pl-4' : 'pl-10 pr-4'}`}
         onChange={handleChange}
@@ -147,7 +147,7 @@ export const UploadImg = ({ label }) => {
 
 export const UploadFile = () => {
   return (
-    <div className='flex items-center justify-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-[15px]'>
+    <div className='flex items-center justify-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-base'>
       <img src='images/icons/upload-file.svg' alt='' />
       <span className='text-15 font-semibold'>Загрузить текстовым файлом</span>
     </div>
@@ -173,7 +173,7 @@ export const DropDown = ({ children, className, isOpen = false }) => {
   return (
     <div className={className}>
       <div
-        className='pl-[10px] pr-4 text-sm w-full h-[45px] py-2 bg-dark rounded-[15px] appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer'
+        className='pl-[10px] pr-4 text-sm w-full h-[45px] py-2 bg-dark rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer'
         onClick={toggleDropdown}
       >
         <svg

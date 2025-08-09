@@ -30,7 +30,7 @@ const Button = ({ className = '', children, gray, onClick }) => {
       onClick={handleClick}
       className={`button--moema ${isActive ? 'active' : ''} ${
         gray ? 'bg-dark text-white' : 'bg-primary text-white'
-      } ${className} font-semibold text-15 h-[48px] flex items-center justify-center gap-2 rounded-[15px] w-full`}
+      } ${className} font-semibold text-15 h-[48px] flex items-center justify-center gap-2 rounded-base w-full`}
       style={{ '--gap': gap }}
     >
       {children}
@@ -57,7 +57,7 @@ export default Button;
 //       onClick={handleClick}
 //       className={`button--moema ${isActive ? 'active' : ''} ${
 //         gray ? 'bg-dark text-white' : 'bg-primary text-white'
-//       } ${className} font-semibold text-15 w-full h-[48px] flex items-center justify-center gap-2 rounded-[15px]`}
+//       } ${className} font-semibold text-15 w-full h-[48px] flex items-center justify-center gap-2 rounded-base`}
 //     >
 //       {children}
 //     </button>
