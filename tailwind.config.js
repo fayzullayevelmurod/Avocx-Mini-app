@@ -35,6 +35,8 @@ export default {
         "card-shd": "0px 0px 5px 0px #656565",
         sort: "0 4px 23px 0 #2B2B2B",
         "loader-shadow": "0px 0px 6.9px 0px #9544FF",
+        'orange-btn-shadow': '0px 0px 10px 0px #FFFFFF inset',
+        'vip':"0px 0px 12.8px 0px #FFFFFF5C inset, 0px 0px 15px 0px #CB47FF4D"
       },
       blur: {
         50: "50px",
@@ -48,12 +50,14 @@ export default {
         "select-theme": "0px 0px 10px 0px #1A72FF",
       },
       backgroundImage: {
+        'vip': "linear-gradient(90deg, rgba(255, 132, 0, 0.1) 0%, rgba(245, 99, 255, 0.1) 55.77%, rgba(0, 170, 255, 0.1) 100%)",
         "green-dark-gradient":
           "linear-gradient(90deg, #2AC32E 0%, #161616 31.11%)",
         "ai-card": "linear-gradient(92.53deg, #232323 9.26%, #0F0F0F 90.74%)",
         nav: "linear-gradient(169.23deg, #181818 2.37%, #111111 97.63%)",
         loader:
           "linear-gradient(90deg, #FF8400 0%, #F563FF 55.77%, #00AAFF 100%)",
+          'orange-gradient': "linear-gradient(99.2deg, #FF631A 0.86%, #FFA378 99.14%)"
       },
       lineHeight: {
         full: "100%",

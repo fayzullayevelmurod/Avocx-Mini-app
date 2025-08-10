@@ -6,7 +6,7 @@ const categories = [
   { label: 'На хайпе', to: '/hype', className: 'bg-orange' },
   { label: 'Бестселлеры', to: '/bestsellers', className: 'bg-primary' },
   { label: 'Бренды', to: '/brands', className: 'bg-purple' },
-  { label: 'Скидки', to: '/discounts', className: 'bg-[#00AA6E]' },
+  { label: 'Скидки', to: '/discounts', className: 'bg-[#02AA6E]' },
 ];
 
 const Categories = ({ categoriesData = categories }) => {
