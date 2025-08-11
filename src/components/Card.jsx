@@ -14,7 +14,7 @@ const Card = ({ data, actions }) => {
   } = data || {};
 
   return (
-    <div className='bg-charcoal p-[1px] rounded-[20px] border border-iron overflow-hidden'>
+    <div className='bg-charcoal p-[1px] rounded-[25px] border border-iron overflow-hidden'>
       <div className='relative -m-[1px]'>
         <div>
           {image ? (
@@ -51,13 +51,13 @@ const Card = ({ data, actions }) => {
           </div>
         )}
       </div>
-      <div className='pt-[10px] pb-[6px]'>
+      <div className='pt-[9px] pb-1'>
         <div className='px-3'>
           <h4 className='text-xs font-normal text-grayCustom leading-full'>
             {brand}
           </h4>
-          <h3 className='text-[13px] font-bold mb-2'>{title}</h3>
-          <div className='space-y-[1px]'>
+          <h3 className='text-[13px] font-bold mb-[6px]'>{title}</h3>
+          <div className='space-y-[3px]'>
             <span className='block text-xxs text-grayCustom font-normal leading-[100%]'>
               {condition}
             </span>
@@ -66,7 +66,7 @@ const Card = ({ data, actions }) => {
             </span>
           </div>
         </div>
-        <div className='flex gap-1 mt-3 pl-1'>
+        <div className='flex gap-1 mt-[7px] pl-1'>
           <Button className='!h-[39px] max-w-[126px] w-full !bg-[#232323]' gray={true}>
             <span className='text-[13px]'>{price}</span>
             <svg

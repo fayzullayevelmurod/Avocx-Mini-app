@@ -12,11 +12,10 @@ const Button = ({ className = '', children, gray, onClick }) => {
     if (onClick) onClick(e);
   };
 
-  // ⬇️ Tugma width'ini aniqlash va gapni yangilash
   useEffect(() => {
     const updateGap = () => {
       const width = buttonRef.current?.offsetWidth || 0;
-      setGap(width <= 60 ? '-10px' : '-20px');
+      setGap(width <= 60 ? '-10px' : '-15px');
     };
 
     updateGap();
@@ -29,8 +28,8 @@ const Button = ({ className = '', children, gray, onClick }) => {
       ref={buttonRef}
       onClick={handleClick}
       className={`button--moema ${isActive ? 'active' : ''} ${
-        gray ? 'bg-dark text-white' : 'bg-primary text-white'
-      } ${className} font-semibold text-15 h-[48px] flex items-center justify-center gap-2 rounded-base w-full`}
+        gray ? 'bg-charcoal text-white' : 'bg-primary blue-btn text-white'
+      } ${className} font-semibold text-15 h-[48px] flex items-center justify-center gap-2 rounded-[20px] w-full`}
       style={{ '--gap': gap }}
     >
       {children}
@@ -39,29 +38,3 @@ const Button = ({ className = '', children, gray, onClick }) => {
 };
 
 export default Button;
-
-// import { useState } from 'react';
-
-// const Button = ({ className = '', children, gray, onClick }) => {
-//   const [isActive, setIsActive] = useState(false);
-
-//   const handleClick = (e) => {
-//     setIsActive(true);
-//     setTimeout(() => setIsActive(false), 600); // 0.6s = animatsiya davomiyligi
-
-//     if (onClick) onClick(e);
-//   };
-
-//   return (
-//     <button
-//       onClick={handleClick}
-//       className={`button--moema ${isActive ? 'active' : ''} ${
-//         gray ? 'bg-dark text-white' : 'bg-primary text-white'
-//       } ${className} font-semibold text-15 w-full h-[48px] flex items-center justify-center gap-2 rounded-base`}
-//     >
-//       {children}
-//     </button>
-//   );
-// };
-
-// export default Button;

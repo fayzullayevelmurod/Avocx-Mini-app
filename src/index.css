@@ -181,7 +181,7 @@ h2.react-datepicker__current-month {
 .button--moema {
   position: relative;
   transition: background-color 0.3s, color 0.3s;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .button--moema::before {
@@ -192,7 +192,7 @@ h2.react-datepicker__current-month {
   right: var(--gap, -20px);
   bottom: var(--gap, -20px);
   background: rgba(255, 255, 255, 0.1); /* yoki istalgan rang */
-  border-radius: 15px;
+  border-radius: 20px;
   z-index: -1;
   opacity: 0;
   /* transform: scale3d(0.8, 0.5, 1); */
@@ -293,4 +293,25 @@ h2.react-datepicker__current-month {
 .gradient-border {
   background: url(../public/images/vip.png) no-repeat;
   background-size: 100% 100%;
+}
+
+.blue-btn {
+  position: relative;
+  padding: 10px 20px; /* border ichidagi content uchun */
+  z-index: 1;
+  box-shadow: 0px 0px 10px 0px #ffffff inset;
+}
+
+.blue-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* border qalinligi */
+  border-radius: inherit;
+  background: linear-gradient(180deg, #e0ecff 0%, #1a72ff 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /* faqat border qismi qoladi */
+  pointer-events: none;
+  z-index: -1;
 }

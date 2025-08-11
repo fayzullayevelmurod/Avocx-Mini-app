@@ -1,12 +1,15 @@
 import { useState } from "react";
 
-const Sort = () => {
+const Sort = ({
+  label = "Сортировка",
+  icon = false,
+  iconPath,
+  options = [],
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Text 1");
+  const [selectedOption, setSelectedOption] = useState(options[0] || "");
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -23,15 +26,19 @@ const Sort = () => {
       >
         <div className="text-left">
           <div className="flex gap-1 items-center">
-            <img src="/images/icons/filter.svg" alt="filter" />
-            <span className="text-grayCustom leading-full">Сортировка</span>
+            {icon && (
+              <img src={iconPath || "/images/icons/filter.svg"} alt="filter" />
+            )}
+            <span className="text-grayCustom leading-full">{label}</span>
           </div>
           <span className="overflow-hidden mt-[1px] whitespace-nowrap w-[94px] ml-[2px] translate-y-[3px]">
             {selectedOption}
           </span>
         </div>
         <svg
-          className="w-5 h-5 transition-transform duration-300 "
+          className={`w-5 h-5 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
           width="20"
           height="20"
           viewBox="0 0 20 20"
@@ -46,62 +53,20 @@ const Sort = () => {
           ></path>
         </svg>
       </button>
+
       {isOpen && (
         <ul className="absolute left-0 top-full z-50 w-full shadow-sort bg-carbon pt-[2px] p-[15px] rounded-b-base pb-4 -mt-[6px] border border-iron border-t-0">
-          <li
-            className="text-[13px] leading-[200%] text-primary hover:cursor-pointer"
-            onClick={() => handleOptionClick("Подборка")}
-          >
-            Подборка
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("По популярности")}
-          >
-            По популярности
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Горящее")}
-          >
-            Горящее
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Больше охват")}
-          >
-            Больше охват
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Меньше охват")}
-          >
-            Меньше охват
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Больше ER")}
-          >
-            Больше ER
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Меньше ER")}
-          >
-            Меньше ER
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Больше аудитории")}
-          >
-            Больше аудитории
-          </li>
-          <li
-            className="text-[13px] leading-[200%] hover:cursor-pointer"
-            onClick={() => handleOptionClick("Меньше аудитории")}
-          >
-            Меньше аудитории
-          </li>
+          {options.map((option, idx) => (
+            <li
+              key={idx}
+              className={`text-[13px] leading-[200%] ${
+                option === selectedOption ? "text-primary" : "text-grayCustom"
+              } hover:cursor-pointer`}
+              onClick={() => handleOptionClick(option)}
+            >
+              {option}
+            </li>
+          ))}
         </ul>
       )}
     </div>
