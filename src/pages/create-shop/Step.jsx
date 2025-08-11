@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import Title from '../../components/Title';
-import StepOne from './StepOne';
-import StepTwo from './StepTwo';
-import StepThree from './StepThree';
-import StepFour from './StepFour';
-import StepFive from './StepFive';
-import Successfully from './Successfully';
+import { useState } from "react";
+import Title from "../../components/Title";
+import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import StepFour from "./StepFour";
+import StepFive from "./StepFive";
+import Successfully from "./Successfully";
 
 const Step = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -20,12 +20,12 @@ const Step = () => {
 
   const getStepNumberStyles = (step) =>
     `text-[30px] leading-[100%] font-bold ${
-      step <= currentStep ? 'text-primary' : 'text-dark-gray'
+      step <= currentStep ? "text-primary" : "text-dark-gray"
     }`;
 
   return (
     <div>
-      <div className='flex items-center justify-center relative'>
+      <div className='flex items-center justify-center relative mt-[13px] mb-[13px]'>
         <button
           className='w-10 absolute top-1/2 left-5 -translate-y-1/2'
           onClick={handlePrevStep}
@@ -33,7 +33,7 @@ const Step = () => {
         >
           <img src='/images/icons/prev-arrow.svg' alt='previous step' />
         </button>
-        <Title label='Создание магазина' />
+        <Title label='Создание магазина' className='!m-0' />
       </div>
 
       <div

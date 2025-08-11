@@ -54,6 +54,8 @@ const Announcement = () => {
     { label: "Проверенное", to: "/brands", className: "bg-purple" },
     { label: "Свежие", to: "/discounts", className: "bg-green" },
   ];
+  const categoryOptions = ["Все", "Все 1", "Все 2"];
+  const sortOptions = ["Text", "Text  1", "Text  2"];
   return (
     <div>
       {/* search */}
@@ -85,15 +87,16 @@ const Announcement = () => {
       {/* filter */}
       <div className="space-y-[5px] mb-[9px]">
         <div className="flex gap-[5px] mt-[17px] items-center">
-          <Category />
-          <Sort />
+          {/* <Category /> */}
+          <Sort options={categoryOptions} icon={true} iconPath='/images/icons/category.svg' />
+          <Sort options={sortOptions} icon={true} />
           <button className="min-w-[35px] h-[55px] max-w-[35px] flex items-center justify-center bg-carbon rounded-base">
             <img src="/images/icons/star.svg" alt="star" />
           </button>
         </div>
         <Chanel />
         <Date />
-        <Button className="!bg-[#242424] !mt-[6px] font-semibold">
+        <Button gray={true} className="!bg-[#242424] !mt-[6px] font-semibold">
           <img src="images/icons/ai.svg" alt="" />
           <span>Mass Ads</span>
         </Button>

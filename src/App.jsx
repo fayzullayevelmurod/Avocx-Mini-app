@@ -7,7 +7,7 @@ function App() {
   const location = useLocation();
 
   const hideHeaderRoutes = ["/loading"];
-  const hideBottomBarRoutes = ["/loading"];
+  const hideBottomBarRoutes = ["/loading", "/create-ad-success"];
 
   return (
     <div className="overflow-hidden pb-[100px]">
