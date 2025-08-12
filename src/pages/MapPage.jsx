@@ -4,15 +4,15 @@ export const MapPage = () => {
   const routes = [
     { path: "/loading", label: "Loader" },
     { path: "/home", label: "Menu 1" },
-    { path: "/shops", label: "Маркетплейс магазинов" },
-    { path: "/my-shops", label: "Мои магазины" },
-    { path: "/my-shops-two", label: "Магазин вид" },
     { path: "/create-shop", label: "Create Shop" },
     { path: "/product-card", label: "Product Card" },
     { path: "/announcement", label: "Announcement" },
     { path: "/products-my-stores", label: "Products My Stores" },
     { path: "/create-ad-success", label: "Create Ad Success" },
     { path: "/my-shop-not-found", label: "My Shop Not Found" },
+    { path: "/shops", label: "Маркетплейс магазинов" },
+    { path: "/my-shops", label: "Мои магазины" },
+    { path: "/my-shops-two", label: "Магазин вид" },
   ];
 
   return (

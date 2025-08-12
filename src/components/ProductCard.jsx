@@ -78,20 +78,23 @@ const ProductCard = ({ data, btns, intelligence }) => {
         )}
       </div>
       {btns && (
-        <div className="mt-[14px] px-[8px]">
-          <Link className="w-full" to="#!">
-            <Button gray={true}>Открыть</Button>
-          </Link>
-          <div className="flex gap-1 mt-1">
-            <Button gray={true} className="text-[13px]">
-              <img src="/images/icons/plus.svg" alt="plus" />
-              <span>Добавить товар</span>
-            </Button>
-            <Button gray={true} className="text-[13px]">
-              <img src="/images/icons/settings-2.svg" alt="settings" />
-              <span>Управление</span>
-            </Button>
-          </div>
+          <div className="grid grid-cols-2 gap-y-[5px] gap-x-0.5 mt-[14px] w-[calc(100%_-_12px)] mx-auto pb-[5px]">
+          <Button gray={true} className="text-sm !bg-[#1A1A1A]">
+            <img src="/images/icons/product.svg" alt="plus" />
+            <span>Товары</span>
+          </Button>
+          <Button gray={true} className="text-sm !bg-[#1A1A1A]">
+            <img src="/images/icons/settings-2.svg" alt="settings" />
+            <span>Управление</span>
+          </Button>
+          <Button gray={true} className="text-sm !bg-[#1A1A1A]">
+            <img src="/images/icons/product.svg" alt="plus" />
+            <span>Статистика</span>
+          </Button>
+          <Button gray={true} className="text-sm !bg-[#1A1A1A]">
+            <img src="/images/icons/setting.svg" alt="settings" />
+            <span>Заказы</span>
+          </Button>
         </div>
       )}
     </div>

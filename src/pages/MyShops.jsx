@@ -25,11 +25,11 @@ const MyShops = () => {
     <div>
       {/* search */}
       <Header blueBtn={true} btnIcon="images/icons/plus.svg" />
-      <Title label="Мои магазины" />
+      <Title className='!my-[18px]' label="Мои магазины" />
       {/* products */}
       <div className="space-y-1">
         {products.map((product) => (
-          <ProductCard key={product.id} data={product} btns={true} />
+          <ProductCard key={product.id} data={product} intelligence={true} btns={true} />
         ))}
       </div>
     </div>
