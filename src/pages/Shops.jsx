@@ -30,7 +30,7 @@ const Shops = () => {
   const singleProduct = [
     {
       id: 3,
-      image: "/images/product-img.png",
+      image: "/images/dron.png",
       imageAlt: "product img",
       companyLogo: "/images/company-logo.svg",
       companyLogoAlt: "company logo",
@@ -64,7 +64,7 @@ const Shops = () => {
           <div className="px-[13px] pb-[21px] pt-2">
             <Title className="gradient-text !mb-[7px]" label="VIP" />
             {singleProduct.map((item) => (
-              <ProductCard key={item.id} data={item} />
+              <ProductCard  key={item.id} data={item} />
             ))}
           </div>
         </div>
