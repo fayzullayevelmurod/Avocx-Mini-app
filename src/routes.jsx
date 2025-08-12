@@ -34,13 +34,17 @@ const AppRoutes = () => {
       <Route path="/products-my-stores" element={<ProductsMyStores />} />
       <Route path="/loading" element={<Loading />} />
       <Route path="/create-ad-success" element={<CreateAdSuccess />} />
+      <Route path="/shops" element={<Shops />} />
+      <Route path="/my-shops-two" element={<MyShopsTwo />} />
       <Route path="/my-shop-not-found" element={<MyShopNotFound />} />
+      <Route path="/my-shops" element={<MyShops />} />
+
+
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
-      <Route path="/shops" element={<Shops />} />
-      <Route path="/my-shops" element={<MyShops />} />
-      <Route path="/my-shops-two" element={<MyShopsTwo />} />
+
+
       <Route path="/store-management" element={<StoreManagement />} />
       <Route path="/store-management-2" element={<StoreManagementTwo />} />
       <Route path="/product-card-two" element={<ProductCardTwo />} />

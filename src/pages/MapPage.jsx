@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 
 export const MapPage = () => {
   const routes = [
-    { path: "/loading", label: "Loading" },
-    { path: "/home", label: "Home" },
+    { path: "/loading", label: "Loader" },
+    { path: "/home", label: "Menu 1" },
+    { path: "/shops", label: "Маркетплейс магазинов" },
+    { path: "/my-shops", label: "Мои магазины" },
+    { path: "/my-shops-two", label: "Магазин вид" },
     { path: "/create-shop", label: "Create Shop" },
     { path: "/product-card", label: "Product Card" },
     { path: "/announcement", label: "Announcement" },
