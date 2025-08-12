@@ -15,12 +15,26 @@ const ProductCard = ({ data, btns }) => {
 
   return (
     <div
-      className={`overflow-hidden pb-3 rounded-[20px] bg-charcoal p-1 border border-iron`}
+      className={`overflow-hidden pb-3 rounded-[25px] bg-charcoal p-1 border border-iron`}
     >
       <div>
-        <div className='w-full h-[178px] relative'>
+        <div className='w-full h-[176px] relative'>
+          <div className='absolute bottom-1 bg-[#272727B2] backdrop-blur-4 px-[8px] left-[6px] rounded-[18px] h-[31px] flex items-center gap-[10px]'>
+            <div className='flex items-center gap-[3px]'>
+              <img src="/images/icons/nishon.svg" alt="" />
+              <span className='text-xs leading-full'>4.8</span>
+            </div>
+            <div className='flex items-center gap-[3px]'>
+              <img src="/images/icons/user-group.svg" alt="" />
+              <span className='text-xs leading-full'>{groupCount}</span>
+            </div>
+            <div className='flex items-center gap-[3px]'>
+              <img src="/images/icons/blue-basket.svg" alt="" />
+              <span className='text-xs leading-full'>{cartCount}</span>
+            </div>
+          </div>
           <img
-            className='w-full object-cover h-full rounded-2xl'
+            className='w-full object-cover h-full rounded-[21px]'
             src={image}
             alt={imageAlt}
             loading='lazy'
@@ -33,9 +47,9 @@ const ProductCard = ({ data, btns }) => {
             />
           </button>
         </div>
-        <div className='flex gap-2 items-center mt-[11px] px-[10px]'>
+        <div className='flex gap-2 items-center mt-[13px] px-[10px]'>
           <img
-            className='rounded-full w-12 h-12 object-cover'
+            className='rounded-full w-12 h-12 object-cover mt-0.5'
             src={companyLogo}
             alt={companyLogoAlt}
             loading='lazy'
@@ -46,27 +60,8 @@ const ProductCard = ({ data, btns }) => {
               <h3 className='font-semibold text-base truncate max-w-[150px] whitespace-nowrap overflow-hidden'>
                 {title}
               </h3>
-              <div className='flex items-center gap-[9px]'>
-                <div className='flex items-center gap-1'>
-                  <img src='/images/icons/group.svg' alt='group icon' />
-                  <span className='text-xs font-medium text-grayCustom'>
-                    {/* {groupCount?.toLocaleString()} */}
-                    {groupCount}
-                  </span>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <img
-                    className='mt-[-3px]'
-                    src='/images/icons/cart.svg'
-                    alt='cart icon'
-                  />
-                  <span className='text-xs font-medium text-grayCustom'>
-                    {cartCount}
-                  </span>
-                </div>
-              </div>
             </div>
-            <p className='text-xxs text-grayCustom mt-1 leading-full line-clamp-2'>
+            <p className='text-xxs text-grayCustom mt-1 leading-[117%] line-clamp-2'>
               {description}
             </p>
           </div>
