@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className='relative bg-charcoal h-[46px] w-full rounded-[20px]'>
+    <div className='relative border border-[#303030] bg-charcoal h-[46px] w-full rounded-[20px]'>
       <img
         className='absolute top-1/2 -translate-y-1/2 left-4'
         src='/images/icons/search.svg'

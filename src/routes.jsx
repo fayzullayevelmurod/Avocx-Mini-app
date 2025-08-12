@@ -20,6 +20,7 @@ import Home from './pages/Home';
 import Loading from './pages/Loading';
 import NotFound from './pages/NotFound';
 import Welcome from './pages/Welcome';
+import { MyShopNotFound } from './pages/MyShopNotFound';
 
 const AppRoutes = () => {
   return (
@@ -44,6 +45,7 @@ const AppRoutes = () => {
       <Route path='/loading' element={<Loading />} />
       <Route path='/not-found' element={<NotFound />} />
       <Route path='/welcome' element={<Welcome />} />
+      <Route path='/my-shop-not-found' element={<MyShopNotFound />} />
     </Routes>
   );
 };

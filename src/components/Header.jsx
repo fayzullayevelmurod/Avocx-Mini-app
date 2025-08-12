@@ -10,12 +10,12 @@ export const Header = ({ blueBtn, btnIcon, grayBtn, grayBtnIcon }) => {
       </Link>
       <Search />
       {blueBtn ? (
-        <Button className="max-w-[50px] h-[46px]" gray={true}>
+        <Button className="max-w-[50px] !h-[46px] !p-0">
           <img src={btnIcon} alt="" />
         </Button>
       ) : null}
       {grayBtn ? (
-        <Button className="max-w-[50px] h-[46px]" gray={true}>
+        <Button className="max-w-[50px] !h-[46px]" gray={true}>
           <img src={grayBtnIcon} alt="" />
         </Button>
       ) : null}
