@@ -7,7 +7,7 @@ function App() {
   const location = useLocation();
 
   const hideHeaderRoutes = ["/loading"];
-  const hideBottomBarRoutes = ["/loading", "/create-ad-success"];
+  const hideBottomBarRoutes = ["/loading", "/create-ad-success", '/my-shop-not-found'];
 
   return (
     <div className="overflow-hidden pb-[100px]">

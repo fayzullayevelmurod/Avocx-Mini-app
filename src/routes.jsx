@@ -21,6 +21,7 @@ import Loading from './pages/Loading';
 import NotFound from './pages/NotFound';
 import Welcome from './pages/Welcome';
 import { MyShopNotFound } from './pages/MyShopNotFound';
+import { ProductsMyStores } from './components/ProductsMyStores';
 
 const AppRoutes = () => {
   return (
@@ -46,6 +47,7 @@ const AppRoutes = () => {
       <Route path='/not-found' element={<NotFound />} />
       <Route path='/welcome' element={<Welcome />} />
       <Route path='/my-shop-not-found' element={<MyShopNotFound />} />
+      <Route path='/products-my-stores' element={<ProductsMyStores />} />
     </Routes>
   );
 };
