@@ -3,7 +3,6 @@ import CardUI from '../../components/CardUI';
 import {
   CategoryForm,
   DropDown,
-  Select,
   SelectedBox,
   UploadFile,
 } from '../../components/Form';
@@ -11,13 +10,13 @@ import {
 const StepFive = ({ onNext }) => {
   return (
     <div>
-      <h3 className='text-xl text-center leading-[100%] mb-[30px]'>
+      <h3 className='text-xl text-center leading-[112%] mb-[21px]'>
         Создайте категории и к ним подкатегории, для удобной сортировки в вашем
         магазине.
       </h3>
-      <CardUI className='space-y-[6px]'>
+      <CardUI className='space-y-[6px] !rounded-[30px] !pt-3'>
         <CategoryForm />
-        <DropDown className='space-y-[7px]'>
+        <DropDown className='space-y-[7px]' label='Готовые решения'>
           <div className='pl-8'>
             <SelectedBox />
           </div>
@@ -36,7 +35,7 @@ const StepFive = ({ onNext }) => {
           <CategoryForm />
           <div className='w-[356px]'></div>
         </DropDown>
-        <div className='pt-3 space-y-[6px]'>
+        <div className='pt-3 space-y-[10px]'>
           <Button onClick={onNext}>Далее</Button>
           <UploadFile />
         </div>

@@ -31,7 +31,7 @@ const StepOne = ({ onNext }) => {
       <CardUI className='space-y-[10px] !pb-[11px]'>
         <InputForm placeHolder='| Название магазина' />
         <div className='relative'>
-          <TextareaForm placeHolder='| Напишите краткое описание магазина, до 100 симолов.' />
+          <TextareaForm placeHolder='Название кнопки магазина (кратко)' />
           <span className='absolute text-xxs leading-full text-[#3C3C3C] bottom-[6px] right-[10px]'>
             0 / 100
           </span>

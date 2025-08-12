@@ -28,11 +28,11 @@ const StepThree = ({onNext}) => {
   ];
 
   return (
-    <CardUI className='space-y-2'>
-      <Select options={options} />
-      <Select options={options1} />
-      <Select options={options2} />
-      <Select options={options3} />
+    <CardUI className='space-y-[5px] !rounded-[30px]'>
+      <Select className='border text-white border-iron' options={options} />
+      <Select className='border text-white border-iron' options={options1} />
+      <Select className='border text-white border-iron' options={options2} />
+      <Select className='border text-white border-iron' options={options3} />
       <Button onClick={onNext}>Далее</Button>
     </CardUI>
   );
