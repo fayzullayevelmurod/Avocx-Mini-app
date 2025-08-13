@@ -13,6 +13,7 @@ export const MapPage = () => {
     { path: "/shops", label: "Маркетплейс магазинов" },
     { path: "/my-shops", label: "Мои магазины" },
     { path: "/my-shops-two", label: "Магазин вид" },
+    { path: "/product-card-two", label: "Добавление товара" },
   ];
 
   return (

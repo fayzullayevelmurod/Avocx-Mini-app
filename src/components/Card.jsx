@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const Card = ({ data, actions }) => {
+const Card = ({ data, actions, btns }) => {
   const {
     image,
     imageAlt,
@@ -39,8 +39,20 @@ const Card = ({ data, actions }) => {
               <img src="images/icons/diagram.svg" alt="pen" />
             </button>
 
-            <div className="py-2 px-[15px] rounded-[15px] text-xs whitespace-nowrap h-[31px] flex items-center justify-center backdrop-blur-4 bg-dark-glass absolute bottom-[7px] left-1/2 -translate-x-1/2">Создан: 14.07.2025</div>
+            <div className="py-2 px-[15px] rounded-[15px] text-xs whitespace-nowrap h-[31px] flex items-center justify-center backdrop-blur-4 bg-dark-glass absolute bottom-[7px] left-1/2 -translate-x-1/2">
+              Создан: 14.07.2025
+            </div>
           </>
+        )}
+        {btns && (
+          <div className="absolute top-[18px] right-[18px] flex gap-[30px] items-center">
+            <button>
+              <img src="/images/icons/gray-pen.svg" alt="" />
+            </button>
+            <button>
+              <img src="/images/icons/trash.svg" alt="" />
+            </button>
+          </div>
         )}
       </div>
       <div className="pt-[9px] pb-1">
