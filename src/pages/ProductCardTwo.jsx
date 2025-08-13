@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import CardUI from "../components/CardUI";
 import Card from "../components/Card";
 import Sort from "../components/Sort";
+import { Header } from "../components/Header";
 
 const ProductCardTwo = () => {
   const cardProducts = [
@@ -34,28 +35,15 @@ const ProductCardTwo = () => {
       favoriteIconAlt: "favorite icon",
     },
   ];
-  const categoryOptions = [
-    "Шаблоны для товаров",
-    "Шаблоны для товаров 2",
-    "Шаблоны для товаров 3",
-  ];
+    const categoryOptions = [
+      "Шаблоны для товаров",
+      "Шаблоны для товаров 2",
+      "Шаблоны для товаров 3",
+    ];
   return (
     <div>
       {/* search */}
-      <div className="flex items-center gap-[5px] mb-4 -mt-[9px]">
-        <Link className="mr-2 w-8" to="#!">
-          <img src="/images/icons/prev-arrow.svg" alt="prev arrow" />
-        </Link>
-        <Search />
-        <button className="w-[37px] h-[45px] flex items-center justify-end">
-          <img
-            className="w-5"
-            src="/images/icons/refresh.svg"
-            alt="refresh icon"
-            width={20}
-          />
-        </button>
-      </div>
+      <Header />
       <CardUI className="!px-[9px] !py-[10px] h-[65px] flex items-center relative mb-[10px]">
         <div className="flex items-center justify-between gap-[10px]">
           <img
@@ -84,7 +72,12 @@ const ProductCardTwo = () => {
           </div>
         </div>
       </CardUI>
-      <Sort label="Категория" options={categoryOptions} icon={true} iconPath='/images/icons/category.svg' />
+      <Sort
+        label="Категория"
+        options={categoryOptions}
+        icon={true}
+        iconPath="/images/icons/category.svg"
+      />
       <div className="text-center mt-[21px] mb-[18px]">
         <h4 className="text-xl font-bold leading-full mb-[5px]">
           Добавление нового товара

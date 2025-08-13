@@ -39,12 +39,10 @@ const AppRoutes = () => {
       <Route path="/my-shop-not-found" element={<MyShopNotFound />} />
       <Route path="/my-shops" element={<MyShops />} />
       <Route path="/product-card-two" element={<ProductCardTwo />} />
-
+      <Route path="/store-management" element={<StoreManagement />} />
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
-
-      <Route path="/store-management" element={<StoreManagement />} />
       <Route path="/store-management-2" element={<StoreManagementTwo />} />
       <Route path="/basket" element={<Basket />} />
       <Route path="/my-orders" element={<MyOrders />} />

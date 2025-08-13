@@ -8,7 +8,7 @@ export const InputForm = ({
 }) => {
   return (
     <input
-      className="w-full h-[45px] py-2 px-[10px] bg-dark rounded-base placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white"
+      className="w-full h-[46px] py-2 px-[10px] bg-dark rounded-[20px] placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white"
       type={type}
       placeholder={placeHolder}
       value={value}
@@ -32,7 +32,7 @@ export const CategoryForm = ({ label = "Категория", icon }) => {
 export const TextareaForm = ({ placeHolder, value }) => {
   return (
     <textarea
-      className="w-full resize-none h-[109px] pt-[10px] pb-2 px-[10px] bg-dark rounded-[20px] placeholder:text-iron text-15 text-white"
+      className="w-full resize-none h-[105px] pt-[14px] leading-[120%]  pb-2 px-[10px] bg-dark rounded-[20px] placeholder:text-iron text-15 text-white"
       placeholder={placeHolder}
       value={value}
     />
@@ -83,7 +83,7 @@ export const Select = ({
         </svg>
       )}
       <select
-        className={`text-sm w-full ${className} h-[45px] py-2 ${bgColor} rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
+        className={`text-[15px] w-full ${className} h-[45px] py-2 ${bgColor} rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 ${
           isSelected ? "text-white" : "text-iron"
         } ${rightIcon ? "pr-10 pl-4" : "pl-10 pr-4"}`}
         onChange={handleChange}
@@ -161,7 +161,7 @@ export const SelectedBox = () => {
   );
 };
 
-export const DropDown = ({ children, className, isOpen = false,label }) => {
+export const DropDown = ({ children, className, isOpen = false, label }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(isOpen);
 
   const toggleDropdown = () => {
@@ -171,7 +171,7 @@ export const DropDown = ({ children, className, isOpen = false,label }) => {
   return (
     <div className={className}>
       <div
-        className="pl-[10px] pr-4 text-sm w-full h-[45px] py-2 bg-dark rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer"
+        className="pl-[10px] pr-4 text-sm w-full h-[45px] py-2 bg-[#1B1B1B] rounded-base appearance-none focus:outline-none focus:ring-2 focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer"
         onClick={toggleDropdown}
       >
         <svg
@@ -191,11 +191,114 @@ export const DropDown = ({ children, className, isOpen = false,label }) => {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="text-white">{label ? label : 'Мужское'}</span>
+        <span className="text-white">{label ? label : "Мужское"}</span>
       </div>
       <div className={`space-y-[7px] ${isDropdownOpen ? "block" : "hidden"}`}>
         {children}
       </div>
+    </div>
+  );
+};
+
+import { useEffect, useRef } from "react";
+
+export const CustomSelect = ({
+  options = [],
+  selected = null,
+  bgColor = "bg-[#1B1B1B]",
+  className = "",
+  placeholder = "Я продаю",
+  onChange,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentValue, setCurrentValue] = useState(selected);
+  const selectRef = useRef(null);
+
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleSelect = (option) => {
+    setCurrentValue(option);
+    setIsOpen(false);
+    if (onChange) onChange(option);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={selectRef}
+      className={`relative flex-[1_1_30px] rounded-[20px] ${
+        isOpen ? "shadow-option-shadow" : ""
+      } ${className}`}
+    >
+      {/* Button to toggle dropdown */}
+      <button
+        onClick={toggleOpen}
+        className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 ${bgColor} pl-[13px] border ${
+          isOpen ? "border-iron rounded-b-none" : "border-transparent"
+        }`}
+      >
+        <div className="text-left">
+          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] translate-y-[3px]">
+            {currentValue?.label || placeholder}
+          </span>
+        </div>
+        <svg
+          className={`w-5 h-5 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
+            stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {/* Dropdown menu */}
+      {isOpen && (
+        <ul
+          className={`absolute left-0 top-full z-50 w-full ${bgColor} pt-[2px] p-[15px] rounded-b-base pb-4 -mt-[6px] border border-iron border-t-0`}
+        >
+          {options.length > 0 ? (
+            options.map((option, idx) => (
+              <li
+                key={idx}
+                onClick={() => handleSelect(option)}
+                className={`text-[13px] leading-[200%] ${
+                  option === currentValue ? "text-primary" : "text-grayCustom"
+                } hover:cursor-pointer`}
+              >
+                {option.label}
+              </li>
+            ))
+          ) : (
+            <li className="text-[13px] leading-[200%] text-grayCustom">
+              {placeholder}
+            </li>
+          )}
+        </ul>
+      )}
     </div>
   );
 };
