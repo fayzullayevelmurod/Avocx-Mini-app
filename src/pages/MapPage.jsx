@@ -27,6 +27,10 @@ export const MapPage = () => {
       path: "/adding-product",
       label: "Добавление товара без шаблона",
     },
+    {
+      path: "/control",
+      label: "Мои магазины. Управление",
+    },
   ];
 
   return (
