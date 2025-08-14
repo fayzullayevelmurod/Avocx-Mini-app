@@ -29,13 +29,23 @@ export const CategoryForm = ({ label = "Категория", icon }) => {
   );
 };
 
-export const TextareaForm = ({ placeHolder, value }) => {
+export const TextareaForm = ({ placeHolder, value, acctions, className }) => {
   return (
-    <textarea
-      className="w-full resize-none h-[105px] pt-[14px] leading-[120%]  pb-2 px-[10px] bg-dark rounded-[20px] placeholder:text-iron text-15 text-white"
-      placeholder={placeHolder}
-      value={value}
-    />
+    <div className={`relative h-[105px] ${className}`}>
+      <textarea
+        className="w-full resize-none h-full pt-[14px] leading-[120%]  pb-2 px-[10px] bg-dark rounded-[20px] placeholder:text-iron text-15 text-white"
+        placeholder={placeHolder}
+        value={value}
+      />
+      {acctions && (
+        <div className="flex gap-[6px] absolute bottom-[10px] left-[10px]">
+          <button className="ai-btn">Ai Описание</button>
+          <button className="w-[39px] h-[39px] flex items-center justify-center rounded-base border border-[#505050]">
+            <img src="/images/icons/gray-trash.svg" alt="gray-trash" />
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -143,20 +153,29 @@ export const UploadImg = ({ label }) => {
   );
 };
 
-export const UploadFile = () => {
+export const UploadFile = ({ label, iconPath, className }) => {
   return (
-    <div className="flex border-2 h-[50px] border-primary rounded-[20px] items-center justify-center gap-[7px] w-full py-2 px-[10px] bg-dark">
-      <img src="images/icons/upload-file.svg" alt="upload file icon" />
-      <span className="text-15 font-bold">Загрузить текстовым файлом</span>
+    <div className={`flex border-2 h-[50px] border-primary rounded-[20px] items-center justify-center gap-[7px] w-full py-2 px-[10px] bg-dark ${className}`}>
+      <img
+        src={`${iconPath ? iconPath : "images/icons/upload-file.svg"}`}
+        alt="upload file icon"
+      />
+      <span className="text-15 font-bold">
+        {label ? label : "Загрузить текстовым файлом"}
+      </span>
     </div>
   );
 };
 
-export const SelectedBox = () => {
+export const SelectedBox = ({ label, selected, onClick }) => {
   return (
-    <div className="w-full h-[45px] p-3 bg-dark text-base-white flex items-center justify-between rounded-base">
-      <span>Обувь</span>
-      <img src="/images/icons/trash.svg" alt="" />
+    <div
+      onClick={onClick}
+      className={`w-full h-[45px] p-3 bg-dark text-base-white flex items-center justify-between rounded-[20px] cursor-pointer ${
+        selected ? "border border-primary" : ""
+      }`}
+    >
+      <span>{label}</span>
     </div>
   );
 };
@@ -251,28 +270,32 @@ export const CustomSelect = ({
         onClick={toggleOpen}
         className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] h-full rounded-[20px] pr-4 ${bgColor} pl-[13px] border ${
           isOpen ? "border-iron rounded-b-none" : "border-transparent"
-        }`}
+        } ${rightIcon && "justify-between"}`}
       >
-        <div className="text-left flex items-center gap-[11px]">
-        {leftIcon && (
-          <svg
-            className={`w-5 h-5 transition-transform duration-300 ${
-              isOpen ? "rotate-180" : ""
-            }`}
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
-              stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
+        <div
+          className={`text-left flex items-center gap-[11px] ${
+            rightIcon ? "w-[90%]" : ""
+          }`}
+        >
+          {leftIcon && (
+            <svg
+              className={`w-5 h-5 transition-transform duration-300 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
+                stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
           <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] ">
             {currentValue?.label || placeholder}
           </span>

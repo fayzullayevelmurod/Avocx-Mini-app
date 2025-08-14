@@ -21,16 +21,20 @@ export const MapPage = () => {
     },
     {
       path: "/management-characteristics",
-      label: "🟢 Мои магазины. Управление характеристики",
+      label: "Мои магазины. Управление характеристики",
+    },
+    {
+      path: "/adding-product",
+      label: "Добавление товара без шаблона",
     },
   ];
 
   return (
-    <div className="space-y-5 text-3xl">
+    <div className="space-y-5 text-3xl mb-16">
       {routes.map((route, index) => (
         <Link
           key={index}
-          className="text-primary block underline"
+          className="text-primary block underline text-base"
           to={route.path}
         >
           {`${index + 1}: ${route.label}`}

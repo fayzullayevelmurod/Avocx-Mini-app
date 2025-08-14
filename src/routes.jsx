@@ -23,6 +23,7 @@ import Welcome from "./pages/Welcome";
 import { MyShopNotFound } from "./pages/MyShopNotFound";
 import { ProductsMyStores } from "./components/ProductsMyStores";
 import { ManagementCharacteristics } from "./pages/ManagementCharacteristics";
+import { AddingProduct } from "./pages/AddingProduct";
 
 const AppRoutes = () => {
   return (
@@ -43,6 +44,7 @@ const AppRoutes = () => {
       <Route path="/store-management" element={<StoreManagement />} />
       <Route path="/store-management-2" element={<StoreManagementTwo />} />
       <Route path="/management-characteristics" element={<ManagementCharacteristics />} />
+      <Route path="/adding-product" element={<AddingProduct />} />
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />

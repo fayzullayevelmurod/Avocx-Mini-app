@@ -292,3 +292,18 @@ h2.react-datepicker__current-month {
   pointer-events: none;
   z-index: -1;
 }
+
+.ai-btn {
+  background: linear-gradient(95.38deg, #ff4400 0.08%, #1a72ff 99.92%);
+  border: 1px solid #cfcfcf;
+  box-shadow: 0px 0px 7px 0px #ffffff inset;
+  border-radius: 15px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 126px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+}

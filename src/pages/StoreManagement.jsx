@@ -83,18 +83,21 @@ const StoreManagement = () => {
             rightIcon={true}
             placeholder="Процесс оплаты: Без согласования"
             selected={true}
+            className="border border-iron !h-[49px]"
           />
           <CustomSelect
             options={options1}
             rightIcon={true}
             placeholder="Способы доставки: Посылка"
             selected={true}
+            className="border border-iron !h-[49px]"
           />
           <CustomSelect
             options={options2}
             rightIcon={true}
             placeholder="Страны доставки: Весь Мир"
             selected={true}
+            className="border border-iron !h-[49px]"
           />
           <Button>Сохранить изменения</Button>
         </div>
