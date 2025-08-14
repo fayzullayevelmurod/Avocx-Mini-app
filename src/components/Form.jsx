@@ -19,7 +19,7 @@ export const InputForm = ({
 
 export const CategoryForm = ({ label = "Категория", icon }) => {
   return (
-    <div className="flex items-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-base">
+    <div className="flex items-center gap-[7px] w-full h-[45px] py-2 px-[10px] bg-dark rounded-[20px]">
       <img
         src={`${icon ? icon : "images/icons/bars-plus.svg"}`}
         alt="bars-plus"
@@ -209,6 +209,9 @@ export const CustomSelect = ({
   className = "",
   placeholder = "Я продаю",
   onChange,
+  rightIcon,
+  leftIcon,
+  trashIcon,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentValue, setCurrentValue] = useState(selected);
@@ -240,39 +243,60 @@ export const CustomSelect = ({
   return (
     <div
       ref={selectRef}
-      className={`relative flex-[1_1_30px] rounded-[20px] ${
+      className={`relative flex-[1_1_30px] h-[55px] rounded-[20px] ${
         isOpen ? "shadow-option-shadow" : ""
       } ${className}`}
     >
-      {/* Button to toggle dropdown */}
       <button
         onClick={toggleOpen}
-        className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 ${bgColor} pl-[13px] border ${
+        className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] h-full rounded-[20px] pr-4 ${bgColor} pl-[13px] border ${
           isOpen ? "border-iron rounded-b-none" : "border-transparent"
         }`}
       >
-        <div className="text-left">
-          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] translate-y-[3px]">
+        <div className="text-left flex items-center gap-[11px]">
+        {leftIcon && (
+          <svg
+            className={`w-5 h-5 transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
+              stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
+          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] ">
             {currentValue?.label || placeholder}
           </span>
         </div>
-        <svg
-          className={`w-5 h-5 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
-            stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        {rightIcon && (
+          <svg
+            className={`w-5 h-5 transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
+              stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
+        {trashIcon && <img src="/images/icons/trash-small.svg" alt="trash" />}
       </button>
 
       {/* Dropdown menu */}
