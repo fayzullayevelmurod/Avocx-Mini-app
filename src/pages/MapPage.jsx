@@ -15,6 +15,8 @@ export const MapPage = () => {
     { path: "/my-shops-two", label: "Магазин вид" },
     { path: "/product-card-two", label: "Добавление товара" },
     { path: "/store-management", label: "Мои магазины. Управление" },
+    { path: "/store-management-2", label: "Мои магазины. Управление категориями" },
+
   ];
 
   return (

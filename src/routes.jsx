@@ -40,10 +40,11 @@ const AppRoutes = () => {
       <Route path="/my-shops" element={<MyShops />} />
       <Route path="/product-card-two" element={<ProductCardTwo />} />
       <Route path="/store-management" element={<StoreManagement />} />
+      <Route path="/store-management-2" element={<StoreManagementTwo />} />
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
-      <Route path="/store-management-2" element={<StoreManagementTwo />} />
+
       <Route path="/basket" element={<Basket />} />
       <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/announcement-two" element={<AnnouncementTwo />} />
