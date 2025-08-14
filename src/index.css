@@ -272,6 +272,70 @@ h2.react-datepicker__current-month {
   background-size: 100% 100%;
 }
 
+.ai-btn {
+  background: linear-gradient(95.38deg, #ff4400 0.08%, #1a72ff 99.92%);
+  border: 1px solid #cfcfcf;
+  box-shadow: 0px 0px 7px 0px #ffffff inset;
+  border-radius: 15px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 126px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+}
+
+.gradient-btn {
+  box-shadow: 0px 0px 10px 0px #ffffff inset;
+  background: linear-gradient(90deg, #ff8400 0%, #f563ff 55.77%, #00aaff 100%);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.modal-content::before {
+  content: "";
+  width: calc(100% + 2px);
+  height: 100%;
+  border-radius: inherit;
+  top: -1px;
+  left: -1px;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(180deg, #a3a3a3 0%, #161616 100%);
+}
+
+.gradient-btn-outline {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  position: relative;
+  border: none;
+  background: transparent;
+  z-index: 3;
+}
+.gradient-btn-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #FF8400 0%, #F563FF 55.77%, #00AAFF 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
 .blue-btn {
   position: relative;
   padding: 10px 20px; /* border ichidagi content uchun */
@@ -291,19 +355,4 @@ h2.react-datepicker__current-month {
   mask-composite: exclude; /* faqat border qismi qoladi */
   pointer-events: none;
   z-index: -1;
-}
-
-.ai-btn {
-  background: linear-gradient(95.38deg, #ff4400 0.08%, #1a72ff 99.92%);
-  border: 1px solid #cfcfcf;
-  box-shadow: 0px 0px 7px 0px #ffffff inset;
-  border-radius: 15px;
-  height: 39px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 126px;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 100%;
 }

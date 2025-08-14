@@ -31,6 +31,10 @@ export const MapPage = () => {
       path: "/control",
       label: "Мои магазины. Управление",
     },
+    {
+      path: "/window",
+      label: "Window",
+    },
   ];
 
   return (

@@ -25,6 +25,7 @@ import { ProductsMyStores } from "./components/ProductsMyStores";
 import { ManagementCharacteristics } from "./pages/ManagementCharacteristics";
 import { AddingProduct } from "./pages/AddingProduct";
 import { Control } from "./pages/Control";
+import { Window } from "./pages/Window";
 
 const AppRoutes = () => {
   return (
@@ -50,6 +51,8 @@ const AppRoutes = () => {
       />
       <Route path="/adding-product" element={<AddingProduct />} />
       <Route path="/control" element={<Control />} />
+      <Route path="/window" element={<Window />} />
+
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />

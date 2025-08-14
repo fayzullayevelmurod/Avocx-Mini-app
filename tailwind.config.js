@@ -48,9 +48,12 @@ export default {
         md: "8px",
         lg: "12px",
         4: '4px',
+        45: '45px',
+        20: '20px',
       },
       dropShadow: {
         "select-theme": "0px 0px 10px 0px #1A72FF",
+
       },
       backgroundImage: {
         vip: "linear-gradient(90deg, rgba(255, 132, 0, 0.1) 0%, rgba(245, 99, 255, 0.1) 55.77%, rgba(0, 170, 255, 0.1) 100%)",
