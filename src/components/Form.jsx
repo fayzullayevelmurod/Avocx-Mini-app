@@ -235,6 +235,7 @@ export const CustomSelect = ({
   const [isOpen, setIsOpen] = useState(false);
   const [currentValue, setCurrentValue] = useState(selected);
   const selectRef = useRef(null);
+console.log(options);
 
   const toggleOpen = () => {
     setIsOpen((prev) => !prev);

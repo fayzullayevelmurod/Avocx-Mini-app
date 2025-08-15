@@ -9,7 +9,7 @@ const Tab = ({ tabData, sizeLg, sizeXl }) => {
 
   return (
     <div className='space-y-4'>
-      <ul className='flex gap-2'>
+      <ul className='flex gap-1 border border-iron rounded-[20px] p-[3px]'>
         {tabData.map((item) => (
           <li
             key={item.id}

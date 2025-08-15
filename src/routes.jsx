@@ -26,6 +26,7 @@ import { ManagementCharacteristics } from "./pages/ManagementCharacteristics";
 import { AddingProduct } from "./pages/AddingProduct";
 import { Control } from "./pages/Control";
 import { Window } from "./pages/Window";
+import { SettingsProfile } from "./pages/SettingsProfile";
 
 const AppRoutes = () => {
   return (
@@ -52,12 +53,12 @@ const AppRoutes = () => {
       <Route path="/adding-product" element={<AddingProduct />} />
       <Route path="/control" element={<Control />} />
       <Route path="/window" element={<Window />} />
+      <Route path="/settings-profile" element={<SettingsProfile />} />
 
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
 
-      <Route path="/basket" element={<Basket />} />
       <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/announcement-two" element={<AnnouncementTwo />} />
       <Route path="/create-ad" element={<CreateAd />} />

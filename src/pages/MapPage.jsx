@@ -35,6 +35,14 @@ export const MapPage = () => {
       path: "/window",
       label: "Window",
     },
+    {
+      path: "/basket",
+      label: "Корзина реклама",
+    },
+    {
+      path: "/settings-profile",
+      label: "Settings and profil",
+    },
   ];
 
   return (
