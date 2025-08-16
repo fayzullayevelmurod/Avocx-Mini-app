@@ -54,12 +54,11 @@ const AppRoutes = () => {
       <Route path="/control" element={<Control />} />
       <Route path="/window" element={<Window />} />
       <Route path="/settings-profile" element={<SettingsProfile />} />
-
+      <Route path="/my-orders" element={<MyOrders />} />
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
 
-      <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/announcement-two" element={<AnnouncementTwo />} />
       <Route path="/create-ad" element={<CreateAd />} />
       <Route path="/create-ad-two" element={<CreateAdTwo />} />

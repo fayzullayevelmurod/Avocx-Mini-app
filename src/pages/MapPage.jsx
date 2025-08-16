@@ -43,6 +43,10 @@ export const MapPage = () => {
       path: "/settings-profile",
       label: "Settings and profil",
     },
+    {
+      path: "/my-orders",
+      label: "Реклама. Я покупатель",
+    },
   ];
 
   return (

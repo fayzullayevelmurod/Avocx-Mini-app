@@ -80,19 +80,19 @@ export const SettingsProfile = () => {
           placeholder="Язык: Russian"
           rightIcon={true}
           options={options}
-          className="h-[49px] border border-iron"
+          className="!h-[49px] border border-iron"
         />
         <CustomSelect
           placeholder="Валюта: Russian ruble (₽) "
           rightIcon={true}
           options={options2}
-          className="h-[49px] border border-iron"
+          className="!h-[49px] border border-iron"
         />
         <CustomSelect
           placeholder="Тема интерфейса:       Dark space"
           rightIcon={true}
           options={options3}
-          className="h-[49px] border border-iron"
+          className="!h-[49px] border border-iron"
         />
       </div>
       <Button gray={true} className="h-[52px]">

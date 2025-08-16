@@ -37,7 +37,7 @@ export default {
         "loader-shadow": "0px 0px 6.9px 0px #9544FF",
         "orange-btn-shadow": "0px 0px 10px 0px #FFFFFF inset",
         vip: "0px 0px 12.8px 0px #FFFFFF5C inset, 0px 0px 15px 0px #CB47FF4D",
-        "option-shadow": "0px 4px 20px 0px #464646", // seniki
+        "option-shadow": "0px 4px 20px 0px #464646",
       },
       blur: {
         50: "50px",
