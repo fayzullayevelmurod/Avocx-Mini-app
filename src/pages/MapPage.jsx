@@ -47,6 +47,10 @@ export const MapPage = () => {
       path: "/my-orders",
       label: "Реклама. Я покупатель",
     },
+    {
+      path: "/settings-chanel",
+      label: "Настройки канала для рекламы",
+    },
   ];
 
   return (

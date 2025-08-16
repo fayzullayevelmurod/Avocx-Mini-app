@@ -27,6 +27,7 @@ import { AddingProduct } from "./pages/AddingProduct";
 import { Control } from "./pages/Control";
 import { Window } from "./pages/Window";
 import { SettingsProfile } from "./pages/SettingsProfile";
+import { SettingsChanel } from "./pages/SettingsChanel";
 
 const AppRoutes = () => {
   return (
@@ -55,6 +56,8 @@ const AppRoutes = () => {
       <Route path="/window" element={<Window />} />
       <Route path="/settings-profile" element={<SettingsProfile />} />
       <Route path="/my-orders" element={<MyOrders />} />
+      <Route path="/settings-chanel" element={<SettingsChanel />} />
+
       {/* finished pages */}
 
       <Route path="/" element={<MapPage />} />
