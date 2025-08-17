@@ -65,8 +65,8 @@ const Header = () => {
           </Link>
           <div className="flex items-center gap-[2px] translate-x-5">
             <div className="flex items-center">
-              <div className="bg-purple w-8 h-8 rounded-full p-[1px] relative">
-                <div className="absolute -left-[75%] -z-10 top-1/2 -translate-y-1/2 bg-purple italic text-xxs font-semibold h-5 -ml-1 px-2 rounded-l-3xl flex items-center justify-center text-white">
+              <div className="bg-primary w-8 h-8 rounded-full p-[1px] relative">
+                <div className="absolute -left-[75%] -z-10 top-1/2 -translate-y-1/2 bg-primary italic text-xxs font-semibold h-5 -ml-1 px-2 rounded-l-3xl flex items-center justify-center text-white">
                   Pro
                 </div>
                 <img

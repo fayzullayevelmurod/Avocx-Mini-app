@@ -28,7 +28,7 @@ const Button = ({ className = '', children, gray, onClick }) => {
       ref={buttonRef}
       onClick={handleClick}
       className={`button--moema ${isActive ? 'active' : ''} ${
-        gray ? 'bg-charcoal text-white' : 'bg-primary blue-btn text-white'
+        gray ? 'bg-charcoal text-base-white' : 'bg-primary blue-btn text-base-white'
       } ${className} font-semibold text-15 h-[50px] flex items-center justify-center gap-2 rounded-[20px] w-full`}
       style={{ '--gap': gap }}
     >

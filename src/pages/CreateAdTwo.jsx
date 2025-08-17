@@ -12,25 +12,12 @@ const CreateAdTwo = () => {
   ];
   return (
     <div>
-      <div className='mb-[22px] mt-[27px] relative'>
-        <Link className='mr-2 w-10 absolute top-1/2 -translate-y-1/2 left-5' to='#!'>
-          <img src='/images/icons/prev-arrow.svg' alt='prev arrow' />
-        </Link>
-        <Title label='Создание объявление' className='!m-0 !text-xl' />
-        <button className='h-[22px] flex items-center justify-center absolute top-1/2 -translate-y-1/2 right-[21px]'>
-          <img
-            src='/images/icons/refresh.svg'
-            alt='refresh icon'
-            width={20}
-            height={21}
-          />
-        </button>
-      </div>
-      <p className='text-center text-base leading-[119%] w-[360px] mx-auto mb-[22px]'>
+<SearchTitle label="Создание объявления" />
+      <p className='text-center text-base leading-[119%] w-[360px] mx-auto mb-[23px] mt-[35px]'>
         Укажите формат, условия и цену за рекламное размещение в вашем канале.
       </p>
-      <CardUI className='!rounded-[20px]'>
-        <div className='flex gap-3'>
+      <CardUI className='!rounded-[30px]'>
+        <div className='flex gap-3 justify-center'>
           <img
             className='w-[31px] h-[31px] object-cover rounded-full'
             src='images/icons/logo.svg'
@@ -39,7 +26,7 @@ const CreateAdTwo = () => {
           <span className='text-lg font-semibold'>Cчастье Сейчас</span>
         </div>
         <div className='mt-[13px]'>
-          <div className='flex gap-[2px] mb-[7px]'>
+          <div className='flex gap-[2px] mb-[5px]'>
             <div className='flex-1'>
               <span className='text-[13px] pl-[14px] mb-[5px]'>Формат</span>
               <SplitInput />
@@ -53,10 +40,10 @@ const CreateAdTwo = () => {
               <InputForm placeHolder='Цена' />
             </div>
           </div>
-          <Button gray={true} className='!h-[45px]'>
+          <Button className='bg-transparent border-2 border-primary !shadow-none before:hidden after:hidden'>
             + Добавить
           </Button>
-          <p className='text-[11px] font-semibold leading-[114%] text-[#B1B1B1] mt-[11px] mb-[13px]'>
+          <p className='text-[11px] font-semibold leading-[120%] text-[#B1B1B1] mt-[6px] mb-[13px]'>
             <span className='text-base-white'>Формат это</span> — то, сколько и
             как будет размещена ваша реклама, на примере «1 / 24»: «1» - это час
             в топе канале без перекрытия, затем «24» часа в ленте канала.
@@ -73,6 +60,7 @@ const CreateAdTwo = () => {
 export default CreateAdTwo;
 
 import { useState, useRef } from 'react';
+import SearchTitle from '../components/SearchTitle';
 
 const SplitInput = () => {
   const [first, setFirst] = useState('');

@@ -51,6 +51,14 @@ export const MapPage = () => {
       path: "/settings-chanel",
       label: "Настройки канала для рекламы",
     },
+    {
+      path: "/create-ad-two",
+      label: "Создание рекламы",
+    },
+    {
+      path: "/basket",
+      label: "Корзина реклама",
+    },
   ];
 
   return (

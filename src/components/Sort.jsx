@@ -5,6 +5,7 @@ const Sort = ({
   icon = false,
   iconPath,
   options = [],
+  onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0] || "");
@@ -14,10 +15,17 @@ const Sort = ({
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    if (onChange) {
+      onChange(option);
+    }
   };
 
   return (
-    <div className={`relative flex-[1_1_30px] rounded-[20px] ${isOpen ? 'shadow-option-shadow' : ''}`}>
+    <div
+      className={`relative flex-[1_1_30px] rounded-[20px] ${
+        isOpen ? "shadow-option-shadow" : ""
+      }`}
+    >
       <button
         className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 bg-carbon pl-[13px] border ${
           isOpen ? "border-iron rounded-b-none " : "border-transparent"
@@ -47,7 +55,7 @@ const Sort = ({
         >
           <path
             d="M13.018 9.22749L10.0532 12.1923L7.08834 9.22749M18.9476 10.2158C18.9476 5.30348 14.9654 1.32129 10.0532 1.32129C5.14088 1.32129 1.15869 5.30348 1.15869 10.2158C1.15869 15.128 5.14088 19.1102 10.0532 19.1102C14.9654 19.1102 18.9476 15.128 18.9476 10.2158Z"
-            stroke={isOpen ? '#1A72FF' : '#E8E8E8'}
+            stroke={isOpen ? "#1A72FF" : "#E8E8E8"}
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>

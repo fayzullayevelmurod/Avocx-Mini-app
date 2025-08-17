@@ -33,6 +33,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* finished pages */}
+      <Route path="/" element={<MapPage />} />
       <Route path="/home" element={<Home />} />
       <Route path="/create-shop" element={<Step />} />
       <Route path="/product-card" element={<ProductCard />} />
@@ -57,14 +58,13 @@ const AppRoutes = () => {
       <Route path="/settings-profile" element={<SettingsProfile />} />
       <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/settings-chanel" element={<SettingsChanel />} />
-
+      <Route path="/create-ad-two" element={<CreateAdTwo />} />
+      <Route path="/basket" element={<Basket />} />
       {/* finished pages */}
-
-      <Route path="/" element={<MapPage />} />
 
       <Route path="/announcement-two" element={<AnnouncementTwo />} />
       <Route path="/create-ad" element={<CreateAd />} />
-      <Route path="/create-ad-two" element={<CreateAdTwo />} />
+
       <Route path="/not-found" element={<NotFound />} />
       <Route path="/welcome" element={<Welcome />} />
     </Routes>
