@@ -4,7 +4,7 @@ import { OrangeBtn } from "../components/OrangeBtn";
 import Search from "../components/Search";
 import Tab from "../components/Tab";
 import Button from "../components/Button";
-import Sort from "../components/Sort";
+import SortTwo from "../components/Sort2";
 
 export const GiftExchange = () => {
   const tabData = [
@@ -40,12 +40,65 @@ export const GiftExchange = () => {
 };
 
 const Gifts = () => {
-  const collectionOptions = ["All", "All 2"];
-  const modelOptions = ["All", "All 2"];
-  const backdropOptions = ["All", "All 2"];
-  const sortOptions = ["По убыванию цены", "По убыванию цены 2"];
+  const collectionOptions = [
+    {
+      id: 1,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 1",
+    },
+    {
+      id: 2,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 2",
+    },
+    {
+      id: 3,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 3",
+    },
+  ];
+  const modelOptions = [
+    {
+      id: 1,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 1",
+      checkbox: true,
+    },
+    {
+      id: 2,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 2",
+      checkbox: true,
+    },
+    {
+      id: 3,
+      icon: "/images/icons/thumb.webp",
+      label: "Label 3",
+      checkbox: true,
+    },
+  ];
+  const backdropOptions = [
+    {
+      id: 1,
+      icon: "/images/icons/circle-box.svg",
+      label: "Label 1",
+      checkbox: true,
+    },
+    {
+      id: 2,
+      icon: "/images/icons/circle-box.svg",
+      label: "Label 2",
+      checkbox: true,
+    },
+    {
+      id: 3,
+      icon: "/images/icons/circle-box.svg",
+      label: "Label 3",
+      checkbox: true,
+    },
+  ];
   return (
-    <div className="mt-[11px]">
+    <div className="mt-[11px] mb-[50px]">
       <img
         className="rounded-[20px] h-[137px] object-cover"
         src="/images/avox-fit.png"
@@ -58,15 +111,13 @@ const Gifts = () => {
         <img src="/images/icons/purchase.svg" alt="" />
         <span>Auto purchase</span>
       </Button>
-     <div  className="space-y-[6px]">
-       <Sort label="Collection" options={collectionOptions} />
-      <div className="grid grid-cols-2 gap-[9px] ">
-        <Sort label="Model" options={modelOptions} />
-        <Sort label="Backdrop" options={backdropOptions} />
+      <div className="space-y-[6px]">
+        <SortTwo label="Collection" options={collectionOptions} />
+        <div className="grid grid-cols-2 gap-[9px] ">
+          <SortTwo label="Model" options={modelOptions} />
+          <SortTwo label="Backdrop" options={backdropOptions} />
+        </div>
       </div>
-       <Sort icon={true} options={sortOptions} />
-
-     </div>
     </div>
   );
 };
