@@ -28,6 +28,7 @@ import { Control } from "./pages/Control";
 import { Window } from "./pages/Window";
 import { SettingsProfile } from "./pages/SettingsProfile";
 import { SettingsChanel } from "./pages/SettingsChanel";
+import { GiftExchange } from "./pages/GiftExchange";
 
 const AppRoutes = () => {
   return (
@@ -60,13 +61,14 @@ const AppRoutes = () => {
       <Route path="/settings-chanel" element={<SettingsChanel />} />
       <Route path="/create-ad-two" element={<CreateAdTwo />} />
       <Route path="/basket" element={<Basket />} />
+      <Route path="/gift-exchange" element={<GiftExchange />} />
       {/* finished pages */}
 
-      <Route path="/announcement-two" element={<AnnouncementTwo />} />
+      {/* <Route path="/announcement-two" element={<AnnouncementTwo />} />
       <Route path="/create-ad" element={<CreateAd />} />
 
       <Route path="/not-found" element={<NotFound />} />
-      <Route path="/welcome" element={<Welcome />} />
+      <Route path="/welcome" element={<Welcome />} /> */}
     </Routes>
   );
 };

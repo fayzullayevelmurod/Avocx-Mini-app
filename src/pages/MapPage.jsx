@@ -59,6 +59,7 @@ export const MapPage = () => {
       path: "/basket",
       label: "Корзина реклама",
     },
+    { path: "/gift-exchange", label: "Биржа подарков" },
   ];
 
   return (

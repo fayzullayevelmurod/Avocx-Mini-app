@@ -16,14 +16,21 @@ const Tab = ({ tabData, sizeXl }) => {
             className={`${
               sizeXl &&
               "!h-[46px] !text-[15px] leading-full p-0 flex items-center justify-center"
-            }  border flex items-center justify-center p-[10px] text-15 font-bold bg-carbon cursor-pointer rounded-[17px] border-transparent transition-colors duration-200  w-full text-center ${
+            }  border flex relative items-center justify-center p-[10px] text-15 font-bold bg-carbon cursor-pointer rounded-[17px] border-transparent transition-colors duration-200  w-full text-center ${
               activeTab === item.id
                 ? "shadow-btn-inset text-base-white"
                 : "text-grayCustom"
             }`}
             onClick={() => handleTabClick(item.id)}
           >
-            {item.label}
+            <div className="relative">
+              {item.subLabel && (
+                <span className=" text-[#FFD26F] text-[11px] font-semibold absolute right-0 top-[-10px]">
+                  {item.subLabel}
+                </span>
+              )}
+              {item.label}
+            </div>
           </li>
         ))}
       </ul>
