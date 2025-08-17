@@ -98,7 +98,7 @@ const Gifts = () => {
     },
   ];
   return (
-    <div className="mt-[11px] mb-[50px]">
+    <div className="mt-[11px] mb-[100px]">
       <img
         className="rounded-[20px] h-[137px] object-cover"
         src="/images/avox-fit.png"
