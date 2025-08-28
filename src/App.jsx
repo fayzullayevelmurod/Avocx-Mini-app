@@ -1,23 +1,18 @@
-import Header from "./layouts/Header";
-import AppRoutes from "./routes";
-import BottomBar from "./layouts/BottomBar";
 import { useLocation } from "react-router-dom";
+import AppRoutes from "./routes";
+import { Header, Footer } from "./layouts";
 
-function App() {
+export const App = () => {
   const location = useLocation();
 
-  const hideHeaderRoutes = ["/loading"];
-  const hideBottomBarRoutes = ["/loading", "/create-ad-success", '/my-shop-not-found'];
+  const hideBottomBarRoutes = ["/loading"];
 
   return (
     <div className="overflow-hidden pb-[100px]">
-      {!hideHeaderRoutes.includes(location.pathname) && <Header />}
       <div className="container pb-5">
         <AppRoutes />
       </div>
-      {!hideBottomBarRoutes.includes(location.pathname) && <BottomBar />}
+      {!hideBottomBarRoutes.includes(location.pathname) && <Footer />}
     </div>
   );
-}
-
-export default App;
+};

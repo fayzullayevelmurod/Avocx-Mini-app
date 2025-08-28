@@ -4,13 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: "#1A72FF",
+        white: "#E8E8E8",
+        black: "#161616",
+        charcoal: "#242424",
         dark: "#1A1A1A",
         "body-bg": "#161616",
         "base-white": "#E8E8E8",
         purple: "#9544FF",
-        charcoal: "#272727",
         iron: "#464646",
-        primary: "#1A72FF",
         carbon: "#242424",
         orange: "#FF6C11",
         grayCustom: "#A3A3A3",
@@ -19,63 +21,16 @@ export default {
       },
       fontSize: {
         15: "15px",
-        xxs: "10px",
-        17: "17px",
-      },
-      borderRadius: {
-        base: "15px",
-      },
-      boxShadow: {
-        "inset-light": "inset 0px 0px 5px 0px #EDEDED",
-        "inset-gray": "inset 0px 0px 6px 0px #696969",
-        "select-theme": "0px 0px 10px 0px #1A72FF",
-        tariff: "0px 4px 7px 0px #21212166",
-        "selected-tariff": "0px 0px 16.9px 0px #1A72FF",
-        "btn-inset": "0px 0px 5px 0px #FFFFFF inset",
-        "card-shd": "0px 0px 5px 0px #656565",
-        sort: "0 4px 23px 0 #2B2B2B",
-        "loader-shadow": "0px 0px 6.9px 0px #9544FF",
-        "orange-btn-shadow": "0px 0px 10px 0px #FFFFFF inset",
-        vip: "0px 0px 12.8px 0px #FFFFFF5C inset, 0px 0px 15px 0px #CB47FF4D",
-        "option-shadow": "0px 4px 20px 0px #464646",
-      },
-      blur: {
-        50: "50px",
-        30: "30px",
-      },
-      backdropBlur: {
-        sm: "4px",
-        md: "8px",
-        lg: "12px",
-        4: '4px',
-        45: '45px',
-        20: '20px',
-      },
-      dropShadow: {
-        "select-theme": "0px 0px 10px 0px #1A72FF",
-
-      },
-      backgroundImage: {
-        vip: "linear-gradient(90deg, rgba(255, 132, 0, 0.1) 0%, rgba(245, 99, 255, 0.1) 55.77%, rgba(0, 170, 255, 0.1) 100%)",
-        "green-dark-gradient":
-          "linear-gradient(90deg, #2AC32E 0%, #161616 31.11%)",
-        "ai-card": "linear-gradient(92.53deg, #232323 9.26%, #0F0F0F 90.74%)",
-        nav: "linear-gradient(169.23deg, #181818 2.37%, #111111 97.63%)",
-        loader:
-          "linear-gradient(90deg, #FF8400 0%, #F563FF 55.77%, #00AAFF 100%)",
-        "orange-gradient":
-          "linear-gradient(99.2deg, #FF631A 0.86%, #FFA378 99.14%)",
-      },
-      backgroundColor: {
-        "dark-glass": "rgba(35, 35, 35, 0.5)", // #23232380
       },
       lineHeight: {
         full: "100%",
-        // full: "108%",
       },
-      fontFamily: {
-        inter: "Inter",
+      boxShadow: {
+        'pay-card': "0px 0px 10px 0px #96BBF7"
       },
+      blur: {
+        10: "10px"
+      }
     },
   },
   plugins: [],
