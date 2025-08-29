@@ -4,6 +4,7 @@ export const MapPage = () => {
   const routes = [
     { path: "/loading", label: "Loader" },
     { path: "/slide-window", label: "Slide Window" },
+    { path: "/home", label: "Home" },
   ];
 
   return (

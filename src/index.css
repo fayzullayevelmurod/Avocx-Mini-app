@@ -37,3 +37,12 @@ body {
   box-shadow: 0px 4px 20px 0px #464646;
   backdrop-filter: blur(45px);
 }
+.swiper .swiper-pagination {
+  @apply rounded-[7.5px] bg-[#46464626] !w-fit p-1 h-[14px] flex gap-0.5 justify-center mx-auto !left-1/2 !-translate-x-1/2 !bottom-0.5
+}
+.swiper .swiper-pagination-bullet{
+  @apply w-[6px] h-[6px] opacity-100 bg-grayCustom !m-0
+}
+.swiper .swiper-pagination-bullet-active{
+  @apply bg-white
+}

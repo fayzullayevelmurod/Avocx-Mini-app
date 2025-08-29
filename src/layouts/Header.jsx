@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export const Header = ({ title, search }) => {
   return (
-    <header className="rounded-b-[30px] bg-charcoal p-[13px] shadow-header-shadow mb-2">
-      <div className="flex items-center justify-between mb-2">
+    <header className="rounded-b-[30px] bg-charcoal p-[13px] shadow-header-shadow mb-2 w-[calc(100%_+_28px)] -ml-[14px]">
+      <div className="flex items-center justify-between mb-2 pl-[17px]">
         <Link to="/home">
           <img src="/images/logo.svg" alt="logo" />
         </Link>
