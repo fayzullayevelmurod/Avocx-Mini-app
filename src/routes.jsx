@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, Loading, MapPage, SlideWindow } from "./pages";
+import { Home, Loading, MapPage, Settings, SlideWindow } from "./pages";
 
 const AppRoutes = () => {
   return (
@@ -9,6 +9,7 @@ const AppRoutes = () => {
       <Route path="/loading" element={<Loading />} />
       <Route path="/slide-window" element={<SlideWindow />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
   );
 };

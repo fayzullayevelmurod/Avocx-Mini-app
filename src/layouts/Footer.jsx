@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="fixed bottom-0 bg-charcoal rounded-t-[30px] h-[87px] z-[999] w-full flex items-center justify-between px-14">
+    <footer className="fixed max-w-[441px] left-1/2 -translate-x-1/2 mx-auto bottom-0 bg-charcoal rounded-t-[30px] h-[87px] z-[999] w-full flex items-center justify-between px-14">
       <Link className="text-center" to="#!">
         <img className="mx-auto block mb-1" src="/images/icons/store.svg" alt="" />
         <span className="text-[#707070] text-[9px]">Market</span>

@@ -21,12 +21,14 @@ export default {
       },
       fontSize: {
         15: "15px",
+        17: '17px'
       },
       lineHeight: {
         full: "100%",
       },
       boxShadow: {
-        'pay-card': "0px 0px 10px 0px #96BBF7"
+        'pay-card': "0px 0px 10px 0px #96BBF7",
+        "option-shadow": "0px 4px 20px 0px #464646"
       },
       blur: {
         10: "10px"
