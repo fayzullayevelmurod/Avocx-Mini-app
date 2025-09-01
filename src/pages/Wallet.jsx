@@ -10,7 +10,7 @@ export const Wallet = () => {
   ];
   return (
     <div>
-      <Header title="Кошелёк" />
+      <Header title="Кошелёк" activeType="wallet" />
       <CardUI className="rounded-[30px] !p-0 mt-[9px]">
         <div className="bg-dark rounded-[30px] border-b border-[#303030] pt-[14px] pb-[11px] px-[11px]">
           <div className="flex items-center gap-2 justify-center pb-[10px]">

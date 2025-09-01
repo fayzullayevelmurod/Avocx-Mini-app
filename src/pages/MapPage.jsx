@@ -5,9 +5,10 @@ export const MapPage = () => {
   const routes = [
     { path: "/loading", label: "Loader" },
     { path: "/slide-window", label: "Slide Window" },
-    { path: "/home", label: "Home" },
-    { path: "/settings", label: "Settings" },
+    { path: "/home", label: "Главная" },
+    { path: "/settings", label: "Настройки профиля" },
     { path: "/wallet", label: "Кошелёк" },
+    { path: "/notifications", label: "Уведомления" },
   ];
 
   return (
