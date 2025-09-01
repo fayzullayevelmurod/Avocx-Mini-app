@@ -9,6 +9,8 @@ export const MapPage = () => {
     { path: "/settings", label: "Настройки профиля" },
     { path: "/wallet", label: "Кошелёк" },
     { path: "/notifications", label: "Уведомления" },
+    { path: "/cart-products", label: "Корзина товары" },
+
   ];
 
   return (

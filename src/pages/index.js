@@ -5,3 +5,4 @@ export { Home } from "./Home";
 export { Settings } from "./Settings";
 export { Wallet } from "./Wallet";
 export { Notifications } from "./Notifications";
+export {CartProducts} from './CartProducts';
