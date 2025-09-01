@@ -7,6 +7,7 @@ export const MapPage = () => {
     { path: "/slide-window", label: "Slide Window" },
     { path: "/home", label: "Home" },
     { path: "/settings", label: "Settings" },
+    { path: "/wallet", label: "Кошелёк" },
   ];
 
   return (

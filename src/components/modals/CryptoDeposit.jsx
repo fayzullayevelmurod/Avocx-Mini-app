@@ -54,7 +54,7 @@ export const CryptoDeposit = ({ isOpen, onClose }) => {
         </div>
       </div>
       <Button type="primary">
-        <img src="/images/icons/pay.svg" alt="pay" />
+        <img src="/images/icons/plus.svg" alt="pay" />
         <span>Оплатить</span>
       </Button>
       <p className="font-semibold mt-2 mb-[29px] text-center">

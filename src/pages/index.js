@@ -3,3 +3,4 @@ export { Loading } from "./Loading";
 export { SlideWindow } from "./SlideWindow";
 export {Home} from './Home'
 export {Settings} from './Settings'
+export {Wallet} from './Wallet';
