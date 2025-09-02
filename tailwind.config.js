@@ -21,18 +21,26 @@ export default {
       },
       fontSize: {
         15: "15px",
-        17: '17px'
+        17: "17px",
       },
       lineHeight: {
         full: "100%",
       },
       boxShadow: {
-        'pay-card': "0px 0px 10px 0px #96BBF7",
-        "option-shadow": "0px 4px 20px 0px #464646"
+        "pay-card": "0px 0px 10px 0px #96BBF7",
+        "option-shadow": "0px 4px 20px 0px #464646",
+        "cart-btn": "0px 0px 5px 0px #FFFFFF inset",
+        vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
       },
       blur: {
-        10: "10px"
-      }
+        10: "10px",
+      },
+      borderRadius: {
+        base: "14px",
+      },
+      backgroundImage: {
+        vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
+      },
     },
   },
   plugins: [],
