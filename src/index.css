@@ -184,3 +184,52 @@ h2.react-datepicker__current-month {
   flex-direction: column;
   gap: 3px;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply rounded-lg w-[18px] border border-iron;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply border border-iron border-solid rounded-lg;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white rounded-lg;
+}
+.checkbox-container {
+  @apply flex items-center gap-[6px];
+}
+.checkbox-container input {
+  @apply hidden;
+}
+.checkbox-container label {
+  @apply relative pl-[26px] text-xs font-semibold cursor-pointer;
+}
+.checkbox-container label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #464646;
+  background: #272727;
+  border-radius: 6px;
+}
+.checkbox-container label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("./images/icons/check-2.svg") no-repeat center;
+  border-radius: 4px;
+  display: none;
+}
+.checkbox-container input:checked + label::after {
+  display: block;
+}
+.checkbox-container input:checked + label::before {
+  border: transparent;
+}

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AdvertisingAccount, AdvertisingExchange, CartProducts, Home, Loading, MapPage, Notifications, Settings, SlideWindow, Wallet } from "./pages";
+import { AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, Home, Loading, MapPage, Notifications, Settings, SlideWindow, Wallet } from "./pages";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/cart-products" element={<CartProducts />} />
       <Route path="/advertising-exchange" element={<AdvertisingExchange  />} />
       <Route path="/advertising-account" element={<AdvertisingAccount  />} />
+      <Route path="/channel-settings" element={<ChannelSettings  />} />
 
 
 

@@ -12,6 +12,8 @@ export const MapPage = () => {
     { path: "/cart-products", label: "Корзина товары" },
     { path: "/advertising-exchange", label: "Биржа рекламы" },
     { path: "/advertising-account", label: "Рекламный кабинет" },
+    { path: "/channel-settings", label: "Настройки канала для рекламы" },
+
 
   ];
 

@@ -8,3 +8,4 @@ export { Notifications } from "./Notifications";
 export { CartProducts } from "./CartProducts";
 export { AdvertisingExchange } from "./AdvertisingExchange";
 export { AdvertisingAccount } from "./AdvertisingAccount";
+export { ChannelSettings } from "./ChannelSettings";
