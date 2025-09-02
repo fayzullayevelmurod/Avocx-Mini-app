@@ -10,7 +10,7 @@ export const MapPage = () => {
     { path: "/wallet", label: "Кошелёк" },
     { path: "/notifications", label: "Уведомления" },
     { path: "/cart-products", label: "Корзина товары" },
-
+    { path: "/advertising-exchange", label: "Биржа рекламы" },
   ];
 
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Header = ({ title, search, activeType }) => {
+export const Header = ({ title, search, activeType, cabinet }) => {
   return (
     <header className="rounded-b-[30px] bg-charcoal p-[13px] shadow-header-shadow mb-2 w-[calc(100%_+_28px)] -ml-[14px]">
       <div className="flex items-center justify-between mb-2 pl-[17px]">
@@ -53,18 +53,26 @@ export const Header = ({ title, search, activeType }) => {
         </div>
       </div>
       {search && (
-        <div className="relative border border-[#303030] rounded-[20px] flex gap-[13px] items-center h-[46px] px-[17px]">
-          <button className="">
-            <img src="/images/icons/arrow.svg" alt="" />
-          </button>
-          <div className="flex gap-1 items-center w-full">
-            <img src="/images/icons/search.svg" alt="search.svg" />
-            <input
-              type="text"
-              className="w-full h-full bg-transparent outline-none text-sm font-semibold"
-              placeholder="Искать на Авокс.."
-            />
+        <div className="flex gap-2">
+          <div className="relative flex-1 border border-[#303030] rounded-[20px] flex gap-[13px] items-center h-[46px] px-[17px]">
+            <button className="">
+              <img src="/images/icons/arrow.svg" alt="" />
+            </button>
+            <div className="flex gap-1 items-center w-full">
+              <img src="/images/icons/search.svg" alt="search.svg" />
+              <input
+                type="text"
+                className="w-full h-full bg-transparent outline-none text-sm font-semibold"
+                placeholder="Искать на Авокс.."
+              />
+            </div>
           </div>
+          {cabinet && (
+            <button className="border border-[#303030] bg-[#272727]  rounded-[20px] w-[124px] h-[46px] flex items-center justify-center gap-2 font-semibold">
+              <img className="filter brightness-0 invert" src="/images/icons/trade-up.svg" alt="trade up" width={20} height={20} />
+              <span>Кабинет</span>
+            </button>
+          )}
         </div>
       )}
       {!search && (

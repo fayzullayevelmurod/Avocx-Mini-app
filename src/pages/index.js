@@ -5,4 +5,5 @@ export { Home } from "./Home";
 export { Settings } from "./Settings";
 export { Wallet } from "./Wallet";
 export { Notifications } from "./Notifications";
-export {CartProducts} from './CartProducts';
+export { CartProducts } from "./CartProducts";
+export { AdvertisingExchange } from "./AdvertisingExchange";
