@@ -13,8 +13,7 @@ export const MapPage = () => {
     { path: "/advertising-exchange", label: "Биржа рекламы" },
     { path: "/advertising-account", label: "Рекламный кабинет" },
     { path: "/channel-settings", label: "Настройки канала для рекламы" },
-
-
+    { path: "/my-ads", label: "Объявления на бирже" },
   ];
 
   return (

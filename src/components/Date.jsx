@@ -44,7 +44,7 @@ export const Date = () => {
   return (
     <div className="relative w-full">
       <div
-        className={`pl-[10px] justify-between rounded-[20px] pr-4 text-sm w-full h-[48px] py-2 bg-carbon rounded-base focus:outline-none focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer date-picker-button ${
+        className={`pl-[10px] justify-between rounded-[20px] pr-4 text-sm w-full h-[48px] py-2 bg-carbon focus:outline-none focus:ring-2 border focus:ring-iron/50 flex items-center gap-[7px] cursor-pointer date-picker-button ${
           isOpen ? "border-iron rounded-b-none" : "border-transparent"
         }`}
         onClick={togglePicker} // Toggle picker on button click
@@ -53,7 +53,7 @@ export const Date = () => {
           <img
             src="images/icons/calendar.svg"
             alt="calendar"
-            className="w-[15px] h-5 ml-2"
+            className="w-[19px] h-5 ml-2"
           />
           <span className="text-15 text-white">Выбрать дату: {formattedDate}</span>
         </div>

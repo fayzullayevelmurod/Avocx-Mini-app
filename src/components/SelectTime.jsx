@@ -92,7 +92,7 @@ export const SelectTime = () => {
           .map(([key]) => (
             <div
               key={key}
-              className="w-10 h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-12 font-bold cursor-pointer"
+              className="w-10 h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-xs font-bold cursor-pointer"
             >
               {dayShortNames[key]}
             </div>

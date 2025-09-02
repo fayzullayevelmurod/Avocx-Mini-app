@@ -61,10 +61,9 @@ export const Tab = ({ tabData, sizeXl, defaultTab }) => {
               onClick={() => handleTabClick(item.id)}
             >
               <img
-                className={`${isActive ? "filter brightness-0 invert" : ""}`}
+                className={`max-w-5 w-auto ${isActive ? "filter brightness-0 invert" : ""}`}
                 src={item.icon}
                 alt=""
-                width={20}
               />
               {item.label}
             </li>
