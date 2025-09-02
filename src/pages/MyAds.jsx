@@ -253,7 +253,7 @@ const Purchase = () => {
           <div className="flex gap-1 items-center">
             <img src="/images/icons/price.svg" alt="" />
             <input
-              className="outline-none bg-transparent w-[30px] h-full border-none w-[50px]"
+              className="outline-none bg-transparent  h-full border-none w-[50px] placeholder:text-iron"
               type="text"
               placeholder="Цена"
             />

@@ -54,14 +54,16 @@ export const Tab = ({ tabData, sizeXl, defaultTab }) => {
               className={`${
                 sizeXl &&
                 "!h-[43px]  !text-[15px] leading-full p-0 flex items-center justify-center"
-              } border flex gap-1 h-[43px] items-center justify-center p-[10px] text-15 font-bold bg-transparent cursor-pointer rounded-[17px] border-transparent transition-colors duration-200 w-full text-center ${
+              }  flex gap-1 h-[43px] items-center justify-center p-[10px] text-15 font-bold bg-transparent cursor-pointer rounded-[17px] transition-colors duration-200 w-full text-center ${
                 isActive ? "" : "text-grayCustom"
               }`}
               style={style}
               onClick={() => handleTabClick(item.id)}
             >
               <img
-                className={`max-w-5 w-auto ${isActive ? "filter brightness-0 invert" : ""}`}
+                className={`max-w-5 w-auto ${
+                  isActive ? "filter brightness-0 invert" : ""
+                }`}
                 src={item.icon}
                 alt=""
               />
