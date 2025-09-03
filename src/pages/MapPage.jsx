@@ -18,6 +18,8 @@ export const MapPage = () => {
     { path: "/store-management", label: "Управление магазином" },
     { path: "/store-management-two", label: "Управление магазином 2" },
     { path: "/management-characteristics", label: "Мои магазины. Управление характеристики" },
+    { path: "/adding-product", label: "Добавление товара без шаблона" },
+
 
   ];
 

@@ -14,3 +14,4 @@ export { MyShops } from "./MyShops";
 export { StoreManagement } from "./StoreManagement";
 export { StoreManagementTwo } from "./StoreManagementTwo";
 export {ManagementCharacteristics} from './ManagementCharacteristics'
+export {AddingProduct} from './AddingProduct'

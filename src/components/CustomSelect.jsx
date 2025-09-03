@@ -10,6 +10,7 @@ export const CustomSelect = ({
   rightIcon,
   leftIcon,
   trashIcon,
+  leftImg,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentValue, setCurrentValue] = useState(selected);
@@ -73,6 +74,9 @@ export const CustomSelect = ({
                 fill={isOpen ? "#E679FF" : "#707070"}
               />
             </svg>
+          )}
+          {leftImg && (
+            <img className="ml-[7px] filter brightness-0 invert" src={leftImg} />
           )}
           <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] ">
             {currentValue?.label || placeholder}

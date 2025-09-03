@@ -31,6 +31,7 @@ export default {
         "option-shadow": "0px 4px 20px 0px #464646",
         "cart-btn": "0px 0px 5px 0px #FFFFFF inset",
         vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
+        'ai-btn': "0px 0px 10px 0px #C3A4FF66"
       },
       blur: {
         10: "10px",
