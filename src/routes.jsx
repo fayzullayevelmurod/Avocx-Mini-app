@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { AddingProduct, AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, Home, Loading, ManagementCharacteristics, MapPage, MyAds, MyShop, MyShops, Notifications, Settings, SlideWindow, StoreManagement, StoreManagementTwo, Wallet } from "./pages";
 import { AddingProductTwo } from "./pages/AddingProductTwo";
+import { MarketplaceStores } from "./pages/MarketplaceStores";
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,8 @@ const AppRoutes = () => {
       <Route path="/adding-product" element={<AddingProduct  />} />
       <Route path="/adding-product-two" element={<AddingProductTwo  />} />
       <Route path="/my-shop" element={<MyShop  />} />
+      <Route path="/marketplace-stores" element={<MarketplaceStores  />} />
+
 
     </Routes>
   );

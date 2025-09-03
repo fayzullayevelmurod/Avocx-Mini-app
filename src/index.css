@@ -233,3 +233,9 @@ h2.react-datepicker__current-month {
 .checkbox-container input:checked + label::before {
   border: transparent;
 }
+
+.text-vip {
+  background: linear-gradient(90deg, #ff6d44 0%, #ffb783 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
