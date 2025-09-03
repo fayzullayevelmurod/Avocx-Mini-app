@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const SelectTime = () => {
+export const SelectTime = ({className}) => {
   const [open, setOpen] = useState(false);
 
   // Checkbox state
@@ -40,7 +40,7 @@ export const SelectTime = () => {
     <div
       className={`relative bg-[#1A1A1A] rounded-[20px] py-[15px] px-4 ${
         open ? "shadow-option-shadow" : ""
-      }`}
+      } ${className}`}
     >
       {/* Top block (ochish yopish) */}
       <div

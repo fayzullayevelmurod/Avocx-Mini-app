@@ -40,6 +40,7 @@ export default {
       },
       backgroundImage: {
         vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
+        check: 'url("/images/icons/check.svg")',
       },
     },
   },

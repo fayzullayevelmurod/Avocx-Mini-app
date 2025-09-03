@@ -13,3 +13,6 @@ export { CustomRadio } from "./Radio";
 export { InputForm } from "./InputForm";
 export { SelectTime } from "./SelectTime";
 export { ChanelSelect } from "./ChanelSelect";
+export { ProfileBox } from "./ProfileBox";
+export { List } from "./List";
+export {MultiSelect} from './MultiSelect';

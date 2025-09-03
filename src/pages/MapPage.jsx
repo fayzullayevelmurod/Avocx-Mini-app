@@ -15,6 +15,7 @@ export const MapPage = () => {
     { path: "/channel-settings", label: "Настройки канала для рекламы" },
     { path: "/my-ads", label: "Объявления на бирже" },
     { path: "/my-shops", label: "Мои магазины. Нету" },
+    { path: "/store-management", label: "Управление магазином" },
   ];
 
   return (
