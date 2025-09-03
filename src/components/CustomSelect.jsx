@@ -53,7 +53,7 @@ export const CustomSelect = ({
         } ${rightIcon && "justify-between"}`}
       >
         <div
-          className={`text-left flex items-center gap-[11px] ${
+          className={`text-left flex items-center gap-[10px] ${
             rightIcon ? "w-[90%]" : ""
           }`}
         >
@@ -95,7 +95,7 @@ export const CustomSelect = ({
             />
           </svg>
         )}
-        {trashIcon && <img src="/images/icons/trash-small.svg" alt="trash" />}
+        {trashIcon && <img src="/images/icons/red-trash.svg" alt="trash" />}
       </button>
 
       {/* Dropdown menu */}
