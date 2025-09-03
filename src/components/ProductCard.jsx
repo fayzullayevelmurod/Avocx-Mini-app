@@ -9,6 +9,14 @@ export const ProductCard = ({
   return (
     <div className="w-[212px] mx-auto bg-[#272727] border border-[#303030] pb-2 rounded-[20px]">
       <div className="h-[282px] rounded-[19px] bg-[#303030] flex items-center justify-center flex-col relative">
+        <div className="flex gap-2 absolute top-2 left-2">
+          <div className="bg-[#242424] w-[41px] h-[41px] rounded-[15px] flex items-center justify-center">
+            <img src="/images/icons/red-trash.svg" alt="" />
+          </div>
+          <div className="bg-[#242424] w-[41px] h-[41px] rounded-[15px] flex items-center justify-center">
+            <img src="/images/icons/edit.svg" alt="" />
+          </div>
+        </div>
         <img src={image} alt={title} width={97} height={97} />
         <span className="text-grayCustom font-bold text-center mt-[5px]">
           {title}
