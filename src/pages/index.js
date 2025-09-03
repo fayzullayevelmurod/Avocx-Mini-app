@@ -10,3 +10,4 @@ export { AdvertisingExchange } from "./AdvertisingExchange";
 export { AdvertisingAccount } from "./AdvertisingAccount";
 export { ChannelSettings } from "./ChannelSettings";
 export {MyAds} from './MyAds';
+export {MyShops} from './MyShops';
