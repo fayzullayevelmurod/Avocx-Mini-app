@@ -109,7 +109,7 @@ export const CustomSelect = ({
                 key={idx}
                 onClick={() => handleSelect(option)}
                 className={`text-15 leading-[200%] ${
-                  option === currentValue ? "text-primary" : "text-grayCustom"
+                  option === currentValue ? "text-[#E679FF]" : "text-grayCustom"
                 } hover:cursor-pointer`}
               >
                 {option.label}

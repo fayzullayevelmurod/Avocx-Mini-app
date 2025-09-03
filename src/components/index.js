@@ -16,3 +16,4 @@ export { ChanelSelect } from "./ChanelSelect";
 export { ProfileBox } from "./ProfileBox";
 export { List } from "./List";
 export {MultiSelect} from './MultiSelect';
+export {TextareaForm} from './TextareaForm';

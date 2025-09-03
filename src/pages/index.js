@@ -12,3 +12,4 @@ export { ChannelSettings } from "./ChannelSettings";
 export { MyAds } from "./MyAds";
 export { MyShops } from "./MyShops";
 export { StoreManagement } from "./StoreManagement";
+export { StoreManagementTwo } from "./StoreManagementTwo";
