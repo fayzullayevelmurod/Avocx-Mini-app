@@ -80,7 +80,7 @@ export const Header = ({ title, search, activeType, cabinet, addBtn }) => {
             </button>
           )}
           {addBtn && (
-            <button className="border border-[#303030] bg-[#272727]  rounded-[20px] w-[46px] h-[46px] flex items-center justify-center gap-2 font-semibold">
+            <button className="border border-[#303030] bg-[#272727]  rounded-[20px] w-[50px] h-[46px] flex items-center justify-center gap-2 font-semibold">
               <img
                 className="filter brightness-0 invert"
                 src="/images/icons/plus.svg"

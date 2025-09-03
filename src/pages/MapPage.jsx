@@ -23,6 +23,7 @@ export const MapPage = () => {
     },
     { path: "/adding-product", label: "Добавление товара без шаблона" },
     { path: "/adding-product-two", label: "Добавление товара" },
+    { path: "/my-shop", label: "Мои магазины" },
   ];
 
   return (
