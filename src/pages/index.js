@@ -16,3 +16,4 @@ export { StoreManagementTwo } from "./StoreManagementTwo";
 export {ManagementCharacteristics} from './ManagementCharacteristics'
 export {AddingProduct} from './AddingProduct'
 export {MyShop} from './MyShop';
+export {MarketplaceProducts} from './MarketplaceProducts'

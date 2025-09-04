@@ -5,9 +5,10 @@ export const ProductCard = ({
   oldPrice = "37.500",
   storeName = "Название вашего магазина",
   description = "Краткое ключевое описание",
+  className=""
 }) => {
   return (
-    <div className="w-[212px] mx-auto bg-[#272727] border border-[#303030] pb-2 rounded-[20px]">
+    <div className={`w-[212px] mx-auto bg-[#272727] border border-[#303030] pb-2 rounded-[20px] ${className}`}>
       <div className="h-[282px] rounded-[19px] bg-[#303030] flex items-center justify-center flex-col relative">
         <div className="flex gap-2 absolute top-2 left-2">
           <div className="bg-[#242424] w-[41px] h-[41px] rounded-[15px] flex items-center justify-center">
@@ -29,7 +30,7 @@ export const ProductCard = ({
       <div className="pt-[5px] px-3">
         <h3 className="text-sm font-bold leading-full mt-0.5">
           {price}{" "}
-          <span className="text-[10px] text-grayCustom line-through font-normal">
+          <span className="text-[10px] text-grayCustom line-through font-normal pl-1">
             {oldPrice}
           </span>
         </h3>
