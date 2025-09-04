@@ -1,6 +1,20 @@
 import { Button, Card, Categories, ProductCard, Sort } from "../components";
 import { Header } from "../layouts";
 
+const products = [
+  {
+    id: 1,
+    image: "/images/product-img.jpg",
+    imageAlt: "product image",
+    companyLogo: "/images/profile-img.jpg",
+    companyLogoAlt: "company logo",
+    title: "GUCCI legend",
+    groupCount: 5879,
+    cartCount: 2334,
+    description: "Только оригинальные вещи от Gucci. Огромная коллекция бренда",
+  },
+];
+
 const productData = [
   {
     image: "/images/bag.png",
@@ -24,13 +38,16 @@ const productData = [
   },
 ];
 
-export const MarketplaceProducts = () => {
+export const ShopView = () => {
   const categoryOptions2 = ["От новых", "От новых 2", "От новых 3"];
   const categoryOptions3 = ["Все", "Все 2", "Все 3"];
   return (
     <div>
-      <Header search={true} workBtn={true} />
+      <Header search={true} shareBtn={true} />
       <div className="space-y-[7px]">
+        {products.map((product) => (
+          <Card key={product.id} data={product} intelligence={true} />
+        ))}
         <div className="flex gap-1">
           <Sort
             label="Категория"
@@ -44,11 +61,9 @@ export const MarketplaceProducts = () => {
           </Button>
         </div>
         <Categories />
-        <div className="flex gap-[30px] bg-[#242424] rounded-[20px] px-4 h-10 items-center">
-          <span className="font-bold">Магазины</span>
-          <span className="text-[#707070] font-bold">Товары</span>
-        </div>
-        <h3 className="text-center font-semibold">Актуальное</h3>
+        <h3 className="text-center font-semibold h-[21px] flex items-center justify-center">
+          Новое
+        </h3>
         <div className="grid grid-cols-2 gap-1">
           {productData.map((product, index) => (
             <ProductCard

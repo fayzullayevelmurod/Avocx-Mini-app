@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AddingProduct, AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, Home, Loading, ManagementCharacteristics, MapPage, MarketplaceProducts, MyAds, MyShop, MyShops, Notifications, Settings, SlideWindow, StoreManagement, StoreManagementTwo, Wallet } from "./pages";
+import { AddingProduct, AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, Home, Loading, ManagementCharacteristics, MapPage, MarketplaceProducts, MyAds, MyShop, MyShops, Notifications, ProductCardPage, Settings, ShopView, SlideWindow, StoreManagement, StoreManagementTwo, Wallet } from "./pages";
 import { AddingProductTwo } from "./pages/AddingProductTwo";
 import { MarketplaceStores } from "./pages/MarketplaceStores";
 
@@ -28,6 +28,8 @@ const AppRoutes = () => {
       <Route path="/my-shop" element={<MyShop  />} />
       <Route path="/marketplace-stores" element={<MarketplaceStores  />} />
       <Route path="/marketplace-products" element={<MarketplaceProducts  />} />
+      <Route path="/shop-view" element={<ShopView  />} />
+      <Route path="/product-card" element={<ProductCardPage  />} />
 
 
 

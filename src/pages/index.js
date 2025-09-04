@@ -13,7 +13,9 @@ export { MyAds } from "./MyAds";
 export { MyShops } from "./MyShops";
 export { StoreManagement } from "./StoreManagement";
 export { StoreManagementTwo } from "./StoreManagementTwo";
-export {ManagementCharacteristics} from './ManagementCharacteristics'
-export {AddingProduct} from './AddingProduct'
-export {MyShop} from './MyShop';
-export {MarketplaceProducts} from './MarketplaceProducts'
+export { ManagementCharacteristics } from "./ManagementCharacteristics";
+export { AddingProduct } from "./AddingProduct";
+export { MyShop } from "./MyShop";
+export { MarketplaceProducts } from "./MarketplaceProducts";
+export { ShopView } from "./ShopView";
+export {ProductCardPage} from './ProductCardPage';

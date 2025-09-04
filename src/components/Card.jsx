@@ -18,7 +18,11 @@ export const Card = ({ data, btns, intelligence, vip }) => {
         intelligence ? "pb-1" : "pb-[6px]"
       } ${vip ? "border-[#FF9462] shadow-vip" : "border-iron"}`}
     >
-      <div className="absolute top-0 left-6 flex items-center justify-center w-11 h-[22px] rounded-b-[7px] bg-vip z-10">VIP</div>
+      {vip && (
+        <div className="absolute top-0 left-6 flex items-center justify-center w-11 h-[22px] rounded-b-[7px] bg-vip z-10">
+          VIP
+        </div>
+      )}
       <div>
         <div className="w-full h-[176px] relative">
           <div className="absolute bottom-1 bg-[#272727B2] backdrop-blur-4 px-[11px] left-[10px] rounded-[18px] h-[31px] flex items-center gap-[10px]">
@@ -44,7 +48,7 @@ export const Card = ({ data, btns, intelligence, vip }) => {
           <button className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
             <img
               className="w-full h-full"
-              src="/images/icons/featured.svg"
+              src="/images/icons/featured-border.svg"
               alt=""
             />
           </button>
@@ -52,11 +56,17 @@ export const Card = ({ data, btns, intelligence, vip }) => {
         <div className="flex gap-2 items-center px-[10px] -ml-0.5 mt-[5px]">
           <div className="relative min-w-[50px] max-w-[50px] h-[50px]">
             <img
-              className={`w-full h-full rounded-full border object-cover ${vip ? "border-[#FF9462]" : "border-primary"}`}
+              className={`w-full h-full rounded-full border object-cover ${
+                vip ? "border-[#FF9462]" : "border-primary"
+              }`}
               src={companyLogo}
               alt="product company logo"
             />
-            <div className={`absolute bottom-0 left-1/2 -translate-x-1/2  flex items-center gap-[1px] h-[10px] rounded-[5px] w-[30px] justify-center ${vip ? "bg-[#FF9462]" : "bg-primary"}`}>
+            <div
+              className={`absolute bottom-0 left-1/2 -translate-x-1/2  flex items-center gap-[1px] h-[10px] rounded-[5px] w-[30px] justify-center ${
+                vip ? "bg-[#FF9462]" : "bg-primary"
+              }`}
+            >
               <img src="/images/icons/trophy.svg" alt="" />
               <span className="text-[8px] font-semibold leading-full">189</span>
             </div>

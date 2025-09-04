@@ -6,6 +6,7 @@ export const Sort = ({
   iconPath,
   options = [],
   onChange,
+  className
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0] || "");
@@ -29,7 +30,7 @@ export const Sort = ({
       <button
         className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 bg-carbon pl-[13px] border ${
           isOpen ? "border-iron rounded-b-none " : "border-transparent"
-        }`}
+        } ${className}`}
         onClick={toggleDropdown}
       >
         <div className="text-left">
