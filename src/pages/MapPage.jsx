@@ -29,7 +29,7 @@ export const MapPage = () => {
     { path: "/shop-view", label: "Магазин вид" },
     { path: "/product-card", label: "Карточка товара" },
     { path: "/create-shop", label: "Создание магазина" },
-
+    { path: "/products-my-stores", label: "Товары в Мои магазины" },
   ];
 
   return (

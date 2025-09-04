@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
-export const Header = ({ title, search, activeType, cabinet, addBtn, workBtn, shareBtn }) => {
+export const Header = ({
+  title,
+  search,
+  activeType,
+  cabinet,
+  addBtn,
+  workBtn,
+  shareBtn,
+  searchText,
+}) => {
   return (
     <header className="rounded-b-[30px] bg-charcoal p-[13px] shadow-header-shadow mb-2 w-[calc(100%_+_28px)] -ml-[14px]">
       <div className="flex items-center justify-between mb-2 pl-[17px]">
@@ -63,7 +72,7 @@ export const Header = ({ title, search, activeType, cabinet, addBtn, workBtn, sh
               <input
                 type="text"
                 className="w-full h-full bg-transparent outline-none text-sm font-semibold placeholder:text-[#707070]"
-                placeholder="Искать на Авокс.."
+                placeholder={`${searchText ? searchText : "Искать на Авокс.."}`}
               />
             </div>
           </div>

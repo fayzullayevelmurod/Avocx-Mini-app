@@ -18,5 +18,6 @@ export { AddingProduct } from "./AddingProduct";
 export { MyShop } from "./MyShop";
 export { MarketplaceProducts } from "./MarketplaceProducts";
 export { ShopView } from "./ShopView";
-export {ProductCardPage} from './ProductCardPage';
-export {CreateShop} from './CreateShop';
+export { ProductCardPage } from "./ProductCardPage";
+export { CreateShop } from "./CreateShop";
+export { ProductsMyStores } from "./ProductsMyStores";
