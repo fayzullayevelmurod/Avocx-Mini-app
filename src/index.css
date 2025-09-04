@@ -253,3 +253,14 @@ h2.react-datepicker__current-month {
     #272727 89.75%
   );
 }
+.circle-chart{
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-chart .recharts-wrapper {
+  width: 89px !important;
+  height: 89px !important;
+}

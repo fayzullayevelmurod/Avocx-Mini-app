@@ -1,27 +1,5 @@
 import { Card, List, ProductCard, ProfileBox, Sort } from "../components";
 import { Header } from "../layouts";
-const productData = [
-  {
-    image: "/images/bag.png",
-    title: "Gucci legend",
-    price: "25.000₽",
-    oldPrice: "37.500",
-    storeName: "Gucci legend",
-    description: "Рюкзак Tommy Helfiger 25 из на..",
-    discount: null,
-    className: "!w-full",
-  },
-  {
-    image: "/images/bag.png",
-    title: "Gucci legend",
-    price: "25.000₽",
-    oldPrice: "37.500",
-    storeName: "Gucci legend",
-    description: "Рюкзак Tommy Helfiger 25 из на..",
-    discount: "– 33%",
-    className: "!w-full",
-  },
-];
 
 export const ProductsMyStores = () => {
   const categoryOptions = [

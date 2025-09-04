@@ -1,8 +1,8 @@
 import { CardUI } from "./CardUI";
 
-export const ProfileBox = () => {
+export const ProfileBox = ({className}) => {
   return (
-    <CardUI className="!px-[7px] !py-[10px] h-[65px] flex items-center relative !rounded-[25px]">
+    <CardUI className={`!px-[7px] !py-[10px] h-[65px] flex items-center relative !rounded-[25px] ${className}`}>
       <div className="flex items-center justify-between gap-[10px]">
         <div className="relative w-[50px] h-[50px]">
           <img

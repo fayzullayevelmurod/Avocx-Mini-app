@@ -32,7 +32,7 @@ export default {
         "cart-btn": "0px 0px 5px 0px #FFFFFF inset",
         vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
         'ai-btn': "0px 0px 10px 0px #C3A4FF66",
-        "discount": "0px 0px 3px 0px #0000004D"
+        "discount": "0px 0px 3px 0px #0000004D",
       },
       blur: {
         10: "10px",

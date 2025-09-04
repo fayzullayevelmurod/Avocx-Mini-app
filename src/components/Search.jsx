@@ -9,7 +9,7 @@ export const Search = ({className}) => {
       <input
         className='w-full h-full bg-transparent pl-8 placeholder:text-iron text-sm'
         type='text'
-        placeholder='Искать'
+        placeholder='Искать..'
       />
     </div>
   );
