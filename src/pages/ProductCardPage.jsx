@@ -1,6 +1,10 @@
 import { Header } from "../layouts";
-import { Button, CardUI, ProductCard, ProfileBox, Sort } from "../components";
+import { Button, CardUI, ProductCard, Sort } from "../components";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
 const productData = [
   {
     image: "/images/bag.png",
@@ -32,6 +36,7 @@ export const ProductCardPage = () => {
   const handleShowMore = () => {
     setIsExpanded(true);
   };
+  const images = ["/images/bag.png", "/images/bag.png", "/images/bag.png"];
 
   return (
     <div>
@@ -40,15 +45,28 @@ export const ProductCardPage = () => {
         <div
           className={`bg-[#272727] border pt-1 px-1 pb-[13px] border-[#303030] pb-2 rounded-[30px] w-[calc(100%_+_26px)] -ml-[13px]`}
         >
-          <div className="h-[570px] rounded-[19px] bg-[#303030] flex items-center justify-center flex-col relative">
-            <button className="absolute top-[10px] right-[10px]">
+          <div className="h-[570px] rounded-[19px] bg-[#303030] block relative">
+            <button className="absolute top-[10px] right-[10px] z-50">
               <img src="/images/icons/featured-border.svg" alt="featured" />
             </button>
-            <img
-              className="w-full h-full object-cover rounded-[26px]"
-              src="/images/bag.png"
-            />
-            <button className="bg-iron absolute -bottom-[30px] right-[41px] rounded-[28px] shadow-cart-btn w-[80px] h-[63px] flex items-center justify-center border-4 border-[#272727]">
+            <Swiper
+            modules={[Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop={true}
+              pagination={{ clickable: true }}
+            >
+              {images.map((src, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    className="w-full h-full object-cover rounded-[26px]"
+                    src={src}
+                    alt={`image-${index}`}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <button className="bg-iron absolute z-50 -bottom-[30px] right-[41px] rounded-[28px] shadow-cart-btn w-[80px] h-[63px] flex items-center justify-center border-4 border-[#272727]">
               <img src="/images/icons/cart.svg" alt="cart" width={30} />
             </button>
           </div>

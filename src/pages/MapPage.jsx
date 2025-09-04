@@ -28,6 +28,8 @@ export const MapPage = () => {
     { path: "/marketplace-products", label: "Маркетплейс товары" },
     { path: "/shop-view", label: "Магазин вид" },
     { path: "/product-card", label: "Карточка товара" },
+    { path: "/create-shop", label: "Создание магазина" },
+
   ];
 
   return (

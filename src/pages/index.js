@@ -19,3 +19,4 @@ export { MyShop } from "./MyShop";
 export { MarketplaceProducts } from "./MarketplaceProducts";
 export { ShopView } from "./ShopView";
 export {ProductCardPage} from './ProductCardPage';
+export {CreateShop} from './CreateShop';
