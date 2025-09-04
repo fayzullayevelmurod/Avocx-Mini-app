@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Header } from "../layouts";
-import { StepOne } from "../components";
+import { StepOne, StepTwo } from "../components";
 export const CreateShop = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -27,6 +27,7 @@ export const CreateShop = () => {
         ))}
       </div>
       {currentStep === 1 && <StepOne onNext={handleNextStep} />}
+      {currentStep === 2 && <StepTwo onNext={handleNextStep} />}
     </div>
   );
 };

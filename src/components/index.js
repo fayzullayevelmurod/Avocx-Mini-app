@@ -20,4 +20,5 @@ export { TextareaForm } from "./TextareaForm";
 export { ProductCard } from "./ProductCard";
 export { Input } from "./Input";
 export { Card } from "./Card";
-export {StepOne} from './StepOne'
+export { StepOne } from "./StepOne";
+export { StepTwo } from "./StepTwo";
