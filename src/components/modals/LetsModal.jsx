@@ -7,13 +7,13 @@ export const LetsModal = ({ isOpen, onClose }) => {
         isOpen ? "flex" : "hidden"
       }`}
     >
-      <div className="w-full h-full absolute top-0 left-0 z-10 blur-10  bg-[#0000006b]"></div>
-      <div className="bg-[#1E1E1ED9] border border-[#303030] relative z-20 w-full rounded-[45px]  px-[33px] pt-[41px] pb-[31px]">
+      <div className="w-full h-full absolute top-0 left-0 z-10 blur-10  bg-[#000000ba]" onClick={onClose}></div>
+      <div className="bg-[#1E1E1ED9] min-w-[350px] max-w-[350px] h-[430px] border border-[#303030] relative z-20 rounded-[45px]  px-[33px] pt-[41px] pb-[31px]">
         <button className="absolute top-[33px] right-[33px]" onClick={onClose}>
           <img src="/images/icons/close.svg" alt="" />
         </button>
         <img
-          className="w-[207px] h-[207px] ml-[29px]"
+          className="w-[207px] h-[207px] mx-auto -translate-x-[29px]"
           src="/gif/5.gif"
           alt=""
         />

@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer className="fixed max-w-[441px] left-1/2 px-[53px] pt-3 -translate-x-1/2 mx-auto bottom-0 bg-charcoal rounded-t-[30px] h-[87px] z-[999] w-full flex justify-between">
       <Link className="text-center" to="#!">
         <img
-          className="mx-auto block mb-1"
+          className="mx-auto block mb-0"
           src="/images/icons/store.svg"
           alt=""
         />
@@ -13,7 +13,7 @@ export const Footer = () => {
       </Link>
       <Link className="text-center" to="#!">
         <img
-          className="mx-auto block mb-1"
+          className="mx-auto block mb-0"
           src="/images/icons/trade-up.svg"
           alt=""
         />
@@ -21,7 +21,7 @@ export const Footer = () => {
       </Link>
       <Link className="text-center" to="#!">
         <img
-          className="mx-auto block mb-1"
+          className="mx-auto block mb-0"
           src="/images/icons/home.svg"
           alt=""
         />
@@ -29,7 +29,7 @@ export const Footer = () => {
       </Link>
       <Link className="text-center" to="#!">
         <img
-          className="mx-auto block mb-1"
+          className="mx-auto block mb-0"
           src="/images/icons/freelance.svg"
           alt=""
         />
@@ -37,7 +37,7 @@ export const Footer = () => {
       </Link>
       <Link className="text-center" to="#!">
         <img
-          className="mx-auto block mb-1"
+          className="mx-auto block mb-0"
           src="/images/icons/basket.svg"
           alt=""
         />

@@ -226,7 +226,7 @@ const Seller2 = () => {
   );
 };
 const AdsContent = () => {
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
   const [count, setCount] = useState(1);
   const handleIncrement = () => {
     setCount((prev) => prev + 1);
@@ -263,7 +263,7 @@ const AdsContent = () => {
       </div>
       <CardUI className="relative !rounded-[30px] !p-[3px] !pr-3">
         <div className="flex gap-3">
-          <div className="relative min-w-[105px] h-[140px]">
+          <div className="relative min-w-[105px] max-w-[105px] h-[140px]">
             <button className="absolute flex items-center justify-center bottom-[6px] right-[7px] w-[26px] h-[26px] z-10 bg-[#272727] rounded-[10px]">
               <img src="/images/icons/red-trash.svg" alt="" />
             </button>
@@ -280,7 +280,7 @@ const AdsContent = () => {
             />
           </div>
           <div className="mt-[3px] ml-1">
-            <h3 className="text-[13px] font-semibold leading-[112%] mb-[5px]">
+            <h3 className="text-[13px] font-semibold leading-[112%] mb-[5px] line-clamp-2">
               Рюкзак Tommy Helfiger 25 из натуральной кожи черного цвета
             </h3>
             <ul className="space-y-[2px]">
@@ -302,7 +302,7 @@ const AdsContent = () => {
               <h4 className="text-sm font-bold text-[#E679FF]">– 33%</h4>
             </div>
             <div className="mt-[3px] flex gap-[5px]">
-              <div className="text-[#787878] text-[17px] flex gap-[10px] h-[47px] bg-[#303030] min-w-[112px] max-w-[112px] rounded-[20px] items-center justify-between px-4">
+              <div className="text-[#787878] text-[17px] flex gap-[10px] h-[47px] bg-[#303030] 390:min-w-[112px] 390:max-w-[112px] min-w-[100px] max-w-[100px] rounded-[20px] items-center justify-between px-4">
                 <button className="text-[28px]" onClick={handleDecrement}>
                   −
                 </button>

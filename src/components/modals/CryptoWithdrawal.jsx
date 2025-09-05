@@ -5,6 +5,7 @@ import { PayCard } from "../PayCard";
 export const CryptoWithdrawal = ({ isOpen, onClose }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("TON");
+  const [value, setValue] = useState("");
 
   const options = ["TON", "RUB", "USD"];
 
@@ -33,7 +34,14 @@ export const CryptoWithdrawal = ({ isOpen, onClose }) => {
       </div>
       <h4 className="font-bold text-center mt-[57px] text-15">Вывод:</h4>
       <div className="flex items-center gap-[7px] justify-center mt-2 mb-[22px] ml-5">
-        <h3 className="font-bold text-[40px] leading-full">0</h3>
+        <input
+          type="number"
+          placeholder="0"
+          className="placeholder:text-grayCustom  max-w-[100px] text-white font-bold text-[40px] bg-transparent outline-none"
+          style={{ width: `${Math.max(1, value.length)}ch` }}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
         <div className="relative">
           {/* Trigger */}
           <div

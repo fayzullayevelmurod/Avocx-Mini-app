@@ -38,9 +38,9 @@ export const Sort = ({
             {icon && (
               <img src={iconPath || "/images/icons/filter.svg"} alt="filter" />
             )}
-            <span className="text-grayCustom leading-full">{label}</span>
+            <span className="text-grayCustom leading-full font-semibold">{label}</span>
           </div>
-          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] translate-y-[3px]">
+          <span className="overflow-hidden mt-[1px] whitespace-nowrap font-semibold ml-[2px] translate-y-[3px]">
             {selectedOption}
           </span>
         </div>

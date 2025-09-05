@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   Button,
   CardUI,
@@ -43,42 +43,174 @@ export const MyAds = () => {
 
 const Purchase = () => {
   // state
-  const [time, setTime] = useState({ hours: "", minutes: "" });
-  const [ratio, setRatio] = useState({ left: "", right: "" });
+
   const [check, setCheck] = useState(true);
-  // handle inputs
+  const [ratio, setRatio] = useState({ left: "", right: "" });
+  const rightInputRef = useRef(null);
+  const [time, setTime] = useState({ hours: "", minutes: "" });
+  const minutesRef = useRef(null);
+
   const handleTimeChange = (e) => {
     const { name, value } = e.target;
+    const onlyNums = value.replace(/\D/g, "");
+
     if (name === "hours") {
-      if (value >= 0 && value <= 23)
-        setTime((prev) => ({ ...prev, hours: value }));
-    } else if (name === "minutes") {
-      if (value >= 0 && value <= 59)
-        setTime((prev) => ({ ...prev, minutes: value }));
+      if (onlyNums.length > 2) return;
+
+      let formattedValue = onlyNums;
+
+      // Если введено одно число больше 2, добавляем 0 перед ним
+      if (formattedValue.length === 1 && parseInt(formattedValue) > 2) {
+        formattedValue = "0" + formattedValue;
+      }
+
+      // Если введено два числа
+      if (formattedValue.length === 2) {
+        const firstDigit = parseInt(formattedValue[0]);
+        const secondDigit = parseInt(formattedValue[1]);
+
+        // Проверяем корректность часов
+        if (firstDigit > 2 || (firstDigit === 2 && secondDigit > 3)) {
+          // Если часы больше 23, устанавливаем максимальное значение
+          formattedValue = "23";
+        }
+
+        // После ввода двух цифр переходим к минутам
+        minutesRef.current?.focus();
+      }
+
+      setTime((prev) => ({ ...prev, hours: formattedValue }));
     }
+
+    if (name === "minutes") {
+      if (onlyNums.length > 2) return;
+
+      let formattedValue = onlyNums;
+
+      // Если введено одно число больше 5, добавляем 0 перед ним
+      if (formattedValue.length === 1 && parseInt(formattedValue) > 5) {
+        formattedValue = "0" + formattedValue;
+      }
+
+      // Если введено два числа
+      if (formattedValue.length === 2) {
+        const firstDigit = parseInt(formattedValue[0]);
+        const secondDigit = parseInt(formattedValue[1]);
+
+        // Проверяем корректность минут
+        if (firstDigit > 5 || (firstDigit === 5 && secondDigit > 9)) {
+          // Если минуты больше 59, устанавливаем максимальное значение
+          formattedValue = "59";
+        }
+      }
+
+      setTime((prev) => ({ ...prev, minutes: formattedValue }));
+    }
+  };
+
+  const handleTimePreset = (preset) => {
+    const [h, m] = preset.split(":");
+    setTime({ hours: h, minutes: m });
   };
 
   const handleRatioChange = (e) => {
     const { name, value } = e.target;
-    if (name === "left") {
-      if (value >= 1 && value <= 10)
-        setRatio((prev) => ({ ...prev, left: value }));
-    } else if (name === "right") {
-      if (value >= 1 && value <= 100)
-        setRatio((prev) => ({ ...prev, right: value }));
-    }
-  };
+    const onlyNums = value.replace(/\D/g, ""); // Оставляем только цифры
 
-  // preset button click
-  const handleTimePreset = (preset) => {
-    const [h, m] = preset.split(":");
-    setTime({ hours: h, minutes: m });
+    if (name === "left") {
+      if (onlyNums.length <= 2) {
+        const numValue = parseInt(onlyNums) || "";
+        if (numValue === "" || (numValue >= 1 && numValue <= 10)) {
+          setRatio((prev) => ({ ...prev, left: onlyNums }));
+          // Переход фокуса на right, если введено 2 цифры или значение от 1 до 10
+          if (onlyNums.length === 2 || (numValue >= 1 && numValue <= 10)) {
+            rightInputRef.current.focus();
+          }
+        }
+      }
+    } else if (name === "right") {
+      if (onlyNums.length <= 3) {
+        const numValue = parseInt(onlyNums) || "";
+        if (numValue === "" || (numValue >= 1 && numValue <= 100)) {
+          setRatio((prev) => ({ ...prev, right: onlyNums }));
+        }
+      }
+    }
   };
 
   const handleRatioPreset = (preset) => {
     const [l, r] = preset.split("/");
     setRatio({ left: l, right: r });
   };
+
+  // // handle inputs
+  // const handleTimeChange = (e) => {
+  //   const { name, value } = e.target;
+
+  //   // faqat raqam kiritilsin
+  //   const onlyNums = value.replace(/\D/g, "");
+
+  //   if (name === "hours") {
+  //     if (onlyNums.length === 1) {
+  //       // birinchi raqam 0–2 oralig‘ida bo‘lishi kerak
+  //       if (parseInt(onlyNums) > 2) {
+  //         // agar 3 yoki undan katta bo‘lsa → ikkinchi joyga o‘tadi
+  //         setTime((prev) => ({ ...prev, hours: "0" + onlyNums }));
+  //       } else {
+  //         setTime((prev) => ({ ...prev, hours: onlyNums }));
+  //       }
+  //     } else if (onlyNums.length === 2) {
+  //       const first = parseInt(onlyNums[0]);
+  //       const second = parseInt(onlyNums[1]);
+
+  //       // agar birinchi 2 bo‘lsa, ikkinchi 0–3 bo‘lishi shart
+  //       if (first === 2 && second > 3) {
+  //         setTime((prev) => ({ ...prev, hours: "23" }));
+  //       } else {
+  //         setTime((prev) => ({ ...prev, hours: onlyNums }));
+  //       }
+  //     } else {
+  //       setTime((prev) => ({ ...prev, hours: onlyNums.slice(0, 2) }));
+  //     }
+  //   }
+
+  //   if (name === "minutes") {
+  //     if (onlyNums.length === 1) {
+  //       // birinchi raqam 0–5
+  //       if (parseInt(onlyNums) > 5) {
+  //         setTime((prev) => ({ ...prev, minutes: "0" + onlyNums }));
+  //       } else {
+  //         setTime((prev) => ({ ...prev, minutes: onlyNums }));
+  //       }
+  //     } else if (onlyNums.length === 2) {
+  //       setTime((prev) => ({ ...prev, minutes: onlyNums }));
+  //     } else {
+  //       setTime((prev) => ({ ...prev, minutes: onlyNums.slice(0, 2) }));
+  //     }
+  //   }
+  // };
+
+  // // preset button click
+  // const handleTimePreset = (preset) => {
+  //   const [h, m] = preset.split(":");
+  //   setTime({ hours: h, minutes: m });
+  // };
+
+  // const handleRatioChange = (e) => {
+  //   const { name, value } = e.target;
+  //   if (name === "left") {
+  //     if (value >= 1 && value <= 10)
+  //       setRatio((prev) => ({ ...prev, left: value }));
+  //   } else if (name === "right") {
+  //     if (value >= 1 && value <= 100)
+  //       setRatio((prev) => ({ ...prev, right: value }));
+  //   }
+  // };
+
+  // const handleRatioPreset = (preset) => {
+  //   const [l, r] = preset.split("/");
+  //   setRatio({ left: l, right: r });
+  // };
   const options = [
     { value: "sell", label: "Категория:" },
     { value: "buy", label: "Категория:2" },
@@ -112,25 +244,24 @@ const Purchase = () => {
             <img src="/images/icons/time.svg" alt="" />
             <div className="text-grayCustom font-semibold flex gap-1 items-center">
               <input
-                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-4 text-center placeholder:text-grayCustom"
-                type="number"
+                className="w-5 text-center bg-transparent border-none outline-none"
+                type="text"
                 name="hours"
-                placeholder="00"
-                min={0}
-                max={23}
+                placeholder="HH"
                 value={time.hours}
                 onChange={handleTimeChange}
+                maxLength={2}
               />
               <span className="text-white">:</span>
               <input
-                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-[25px] text-center placeholder:text-grayCustom"
-                type="number"
+                ref={minutesRef}
+                className="w-5 text-center bg-transparent border-none outline-none"
+                type="text"
                 name="minutes"
-                placeholder="00"
-                min={0}
-                max={59}
+                placeholder="MM"
                 value={time.minutes}
                 onChange={handleTimeChange}
+                maxLength={2}
               />
             </div>
           </div>
@@ -153,25 +284,24 @@ const Purchase = () => {
             <img src="/images/icons/timer-clock.svg" alt="" />
             <div className="text-grayCustom font-semibold flex gap-1 items-center">
               <input
-                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-[10px] text-center placeholder:text-grayCustom"
-                type="number"
+                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-[20px] text-center placeholder:text-grayCustom"
+                type="text"
                 name="left"
                 placeholder="1"
-                min={1}
-                max={10}
                 value={ratio.left}
                 onChange={handleRatioChange}
+                maxLength={2} // Ограничиваем до 2 цифр
               />
               <span className="text-white">/</span>
               <input
-                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-[25px] text-center placeholder:text-grayCustom"
-                type="number"
+                className="text-grayCustom font-semibold bg-transparent border-none outline-none w-[30px] text-center placeholder:text-grayCustom"
+                type="text"
                 name="right"
                 placeholder="24"
-                min={1}
-                max={100}
                 value={ratio.right}
                 onChange={handleRatioChange}
+                ref={rightInputRef} // Привязываем реф ко второму input
+                maxLength={3} // Ограничиваем до 3 цифр
               />
             </div>
           </div>
@@ -462,7 +592,7 @@ const Stock = () => {
           </div>
         </div>
       </CardUI>
-        <p className="max-w-[341px] mx-auto text-grayCustom font-semibold my-[22px] text-center leading-[125%]">
+      <p className="max-w-[341px] mx-auto text-grayCustom font-semibold my-[22px] text-center leading-[125%]">
         Объявление для этого канала ещё не создано, чтобы получать рекламные
         заказы, создайте его.
       </p>

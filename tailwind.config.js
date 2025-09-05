@@ -44,6 +44,9 @@ export default {
         vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
         check: 'url("/images/icons/check.svg")',
       },
+      screens: {
+        390: "390px"
+      }
     },
   },
   plugins: [],

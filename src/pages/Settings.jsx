@@ -1,15 +1,23 @@
-import { Button, CardUI } from "../components";
+import { useState } from "react";
+import { Button, CardUI, InlineIconSelect } from "../components";
 import { CustomSelect } from "../components/CustomSelect";
 import { Header } from "../layouts";
+
+const languageOptions = [
+  { label: "Русский", icon: "/images/icons/russion-flag.svg" },
+  { label: "English", icon: "/images/icons/english-flag.svg" },
+];
+const languageOptions2 = [
+  { label: "Dark space", icon: "/images/icons/moon.svg" },
+  { label: "Silver crown", subText: "(Soon)", icon: "/images/icons/soon.svg" },
+];
+
 export const Settings = () => {
-  const options = [
-    { value: "buy", label: "Язык: Russian" },
-    { value: "buy", label: "Язык: English" },
-  ];
-  const options3 = [
-    { value: "sell", label: "Dark space" },
-    { value: "buy", label: "Silver crown (Soon)" },
-  ];
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
+  const [selectedLanguage2, setSelectedLanguage2] = useState(
+    languageOptions2[0]
+  );
+
   const options2 = [
     { value: "sell", label: "US Dollar ($)" },
     { value: "buy", label: "Russian ruble (₽)" },
@@ -35,11 +43,12 @@ export const Settings = () => {
         </Button>
       </CardUI>
       <div className="mt-[9px] space-y-2 mb-[7px]">
-        <CustomSelect
-          selected={true}
-          placeholder="Язык: Russian"
+        <InlineIconSelect
+          options={languageOptions}
+          selected={selectedLanguage}
+          placeholder="Язык"
+          onChange={(val) => setSelectedLanguage(val)}
           rightIcon={true}
-          options={options}
           className="!h-[49px] border border-iron"
         />
         <CustomSelect
@@ -48,10 +57,12 @@ export const Settings = () => {
           options={options2}
           className="!h-[49px] border border-iron"
         />
-        <CustomSelect
-          placeholder="Тема интерфейса: Dark space"
+        <InlineIconSelect
+          options={languageOptions2}
+          selected={selectedLanguage2}
+          placeholder="Тема интерфейса:"
+          onChange={(val) => setSelectedLanguage2(val)}
           rightIcon={true}
-          options={options3}
           className="!h-[49px] border border-iron"
         />
       </div>

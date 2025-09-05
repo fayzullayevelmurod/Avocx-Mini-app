@@ -78,7 +78,7 @@ export const CustomSelect = ({
           {leftImg && (
             <img className="ml-[7px] filter brightness-0 invert" src={leftImg} />
           )}
-          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] ">
+          <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] font-semibold">
             {currentValue?.label || placeholder}
           </span>
         </div>

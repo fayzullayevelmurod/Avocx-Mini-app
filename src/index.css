@@ -33,7 +33,7 @@ body {
 
 /* modal */
 .modal {
-  @apply fixed left-0 rounded-t-[30px] z-[9999] bg-charcoal w-full h-full pt-[21px] px-[27px] border-t border-iron;
+  @apply max-w-[500px]  mx-auto fixed left-1/2 -translate-x-1/2 rounded-t-[30px] z-[9999] bg-charcoal w-full h-full pt-[21px] px-[27px] border-t border-iron;
   box-shadow: 0px 4px 20px 0px #464646;
   backdrop-filter: blur(45px);
 }
@@ -253,14 +253,30 @@ h2.react-datepicker__current-month {
     #272727 89.75%
   );
 }
-.circle-chart{
+.circle-chart {
   width: 90px;
   height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.recharts-responsive-container svg,
+.recharts-wrapper svg{
+  /* pointer-events: none; */
+    border: none !important;
+    outline: none !important;
+}
 .circle-chart .recharts-wrapper {
   width: 89px !important;
   height: 89px !important;
+  pointer-events: none;
+}
+
+.react-datepicker__day:hover {
+  @apply !bg-grayCustom;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

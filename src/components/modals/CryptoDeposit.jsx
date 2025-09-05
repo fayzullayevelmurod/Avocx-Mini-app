@@ -18,7 +18,7 @@ const methods = [
   },
   {
     id: 3,
-    title: "СБП",
+    title: "Крипто кошелёк",
     text: "Доступны: TON, USDT/TON",
     icon: "/images/icons/tether.svg",
   },
@@ -48,14 +48,14 @@ export const CryptoDeposit = ({ isOpen, onClose }) => {
       </div>
       <h4 className="font-bold text-center mt-[57px] text-15">Сумма:</h4>
       <div className="flex items-center gap-[7px] justify-center mt-2 mb-[22px] ml-5">
-        <h3 className="font-bold text-[40px] leading-full">5000</h3>
+        <input className="placeholder:text-grayCustom text-white font-bold text-[40px] leading-full bg-transparent outline-none w-[105px]" type="number" placeholder="5000" />
         <div className="font-semibold w-[90px] h-[50px] flex items-center justify-center rounded-[20px] bg-[#303030]">
           RUB
         </div>
       </div>
       <Button type="primary">
         <img src="/images/icons/plus.svg" alt="pay" />
-        <span>Оплатить</span>
+        <span>Пополнить</span>
       </Button>
       <p className="font-semibold mt-2 mb-[29px] text-center">
         Баланс: 2500 <span className="text-grayCustom">₽ /</span> 13.22{" "}
