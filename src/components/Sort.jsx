@@ -6,7 +6,7 @@ export const Sort = ({
   iconPath,
   options = [],
   onChange,
-  className
+  className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0] || "");
@@ -28,8 +28,8 @@ export const Sort = ({
       }`}
     >
       <button
-        className={`flex-1 justify-between flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 bg-carbon pl-[13px] border ${
-          isOpen ? "!border-iron rounded-b-none " : "border-transparent"
+        className={`flex-1 justify-between duration-300 flex w-full items-center text-15 gap-[10px] rounded-[20px] h-[55px] pr-4 bg-carbon pl-[13px] border ${
+          isOpen ? "!border-iron rounded-b-none" : "border-transparent"
         } ${className}`}
         onClick={toggleDropdown}
       >
@@ -38,9 +38,11 @@ export const Sort = ({
             {icon && (
               <img src={iconPath || "/images/icons/filter.svg"} alt="filter" />
             )}
-            <span className="text-grayCustom leading-full font-semibold">{label}</span>
+            <span className="text-grayCustom leading-full font-semibold">
+              {label}
+            </span>
           </div>
-          <span className="overflow-hidden mt-[1px] whitespace-nowrap font-semibold ml-[2px] translate-y-[3px]">
+          <span className="overflow-hidden mt-[1px] whitespace-nowrap font-semibold translate-y-[3px]">
             {selectedOption}
           </span>
         </div>
@@ -61,21 +63,23 @@ export const Sort = ({
         </svg>
       </button>
 
-      {isOpen && (
-        <ul className="absolute left-0 top-full z-50 w-full bg-carbon pt-[2px] p-[15px] rounded-b-[20px] pb-4 -mt-[6px] border border-iron border-t-0">
-          {options.map((option, idx) => (
-            <li
-              key={idx}
-              className={`text-[13px] leading-[200%] ${
-                option === selectedOption ? "text-primary" : "text-grayCustom"
-              } hover:cursor-pointer`}
-              onClick={() => handleOptionClick(option)}
-            >
-              {option}
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        className={`absolute left-0 top-full duration-300 z-50 w-full bg-carbon pt-[2px] p-[15px] rounded-b-[20px] pb-4 -mt-[6px] border border-iron border-t-0 ${
+          isOpen ? "max-h-60 opacity-100 pb-3 visible" : "max-h-0 opacity-0 py-0 invisible"
+        }`}
+      >
+        {options.map((option, idx) => (
+          <li
+            key={idx}
+            className={`text-[13px] leading-[200%] ${
+              option === selectedOption ? "text-primary" : "text-grayCustom"
+            } hover:cursor-pointer`}
+            onClick={() => handleOptionClick(option)}
+          >
+            {option}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

@@ -44,13 +44,13 @@ export const CustomSelect = ({
     <div
       ref={selectRef}
       className={`relative border-none flex-[1_1_30px] h-[55px] rounded-[20px] ${
-        isOpen ? "shadow-option-shadow" : ""
+        isOpen ? "shadow-option-shadow !border-b-0 " : ""
       } ${className}`}
     >
       <button
         onClick={toggleOpen}
-        className={`flex-1 justify-between border flex w-full items-center text-15 gap-[10px] h-full rounded-[20px] pr-4 ${bgColor} pl-[13px] border ${
-          isOpen ? "border-iron rounded-b-none" : "border-[#272727]"
+        className={`flex-1 duration-300 justify-between border flex w-full items-center text-15 gap-[10px] h-full rounded-[20px] pr-4 ${bgColor} pl-[13px] border ${
+          isOpen ? "border-iron !rounded-b-none !border-b-0" : "border-[#272727]"
         } ${rightIcon && "justify-between"}`}
       >
         <div
@@ -76,7 +76,10 @@ export const CustomSelect = ({
             </svg>
           )}
           {leftImg && (
-            <img className="ml-[7px] filter brightness-0 invert" src={leftImg} />
+            <img
+              className="ml-[7px] filter brightness-0 invert"
+              src={leftImg}
+            />
           )}
           <span className="overflow-hidden mt-[1px] whitespace-nowrap ml-[2px] font-semibold">
             {currentValue?.label || placeholder}
@@ -103,10 +106,15 @@ export const CustomSelect = ({
       </button>
 
       {/* Dropdown menu */}
-      {isOpen && (
-        <ul
-          className={`absolute left-0 top-full z-50 w-full ${bgColor} pt-[2px] p-[15px] rounded-b-[20px] pb-4 -mt-[6px] border border-iron border-t-0`}
-        >
+      {/* Dropdown menu */}
+      <div
+        className={`
+    absolute left-0 top-full z-50 w-full overflow-hidden transition-all duration-300
+    ${bgColor} rounded-b-[20px] border border-iron border-t-0
+    ${isOpen ? "max-h-60 opacity-100 pb-3 visible" : "max-h-0 opacity-0 py-0 invisible"}
+  `}
+      >
+        <ul className="px-[15px] space-y-1">
           {options.length > 0 ? (
             options.map((option, idx) => (
               <li
@@ -114,7 +122,7 @@ export const CustomSelect = ({
                 onClick={() => handleSelect(option)}
                 className={`text-15 leading-[200%] ${
                   option === currentValue ? "text-[#E679FF]" : "text-grayCustom"
-                } hover:cursor-pointer`}
+                } hover:cursor-pointer transition-colors duration-200`}
               >
                 {option.label}
               </li>
@@ -125,7 +133,7 @@ export const CustomSelect = ({
             </li>
           )}
         </ul>
-      )}
+      </div>
     </div>
   );
 };

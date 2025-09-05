@@ -26,7 +26,7 @@ export const Settings = () => {
   return (
     <div>
       <Header title="Настройки профиля" />
-      <CardUI className="!pt-[15px] !pb-3">
+      <CardUI className="!pt-[15px] !pb-3 !rounded-[30px]">
         <div className="flex items-center justify-center gap-1">
           <h3 className="text-17 font-bold">Подписка: </h3>
           <div className="flex gap-1 items-center bg-primary rounded-lg h-5 justify-center w-[63px]">
@@ -49,13 +49,13 @@ export const Settings = () => {
           placeholder="Язык"
           onChange={(val) => setSelectedLanguage(val)}
           rightIcon={true}
-          className="!h-[49px] border border-iron"
+          className="!h-[49px]"
         />
         <CustomSelect
           placeholder="Валюта: Russian ruble (₽)"
           rightIcon={true}
           options={options2}
-          className="!h-[49px] border border-iron"
+          className="!h-[49px]"
         />
         <InlineIconSelect
           options={languageOptions2}
@@ -63,7 +63,7 @@ export const Settings = () => {
           placeholder="Тема интерфейса:"
           onChange={(val) => setSelectedLanguage2(val)}
           rightIcon={true}
-          className="!h-[49px] border border-iron"
+          className="!h-[49px]"
         />
       </div>
       <Button type="gray" className="h-[52px] gap-2">

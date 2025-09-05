@@ -7,6 +7,8 @@ import {
   ExpandableAdButtons,
   Sort,
 } from "../components";
+import { ToggleIconButton } from "../components/ToggleFeatured";
+
 export const AdvertisingExchange = () => {
   const categoryOptions2 = ["Все", "От новых 2", "От новых 3"];
   const categoryOptions3 = ["Text 1", "Text 2", "Text 3"];
@@ -32,9 +34,9 @@ export const AdvertisingExchange = () => {
             options={categoryOptions2}
           />
           <Sort label="Фильтр" icon={true} options={categoryOptions3} />
-          <div className="w-[35px] h-[55px] flex items-center justify-center bg-charcoal rounded-[15px]">
-            <img src="/images/icons/featured.svg" alt="" />
-          </div>
+          <ToggleIconButton
+            className="w-[35px] h-[55px] flex items-center justify-center bg-charcoal rounded-[15px]"
+          />
         </div>
         <div className="flex justify-between items-center bg-[#242424] rounded-[20px] px-4 h-[50px]">
           <div className="flex gap-1 items-center">
@@ -127,7 +129,9 @@ export const AdvertisingExchange = () => {
             ]}
           />
         </CardUI>
-        <h3 className="text-center font-semibold text-17 pb-[3px] pt-[1px]">Подборка</h3>
+        <h3 className="text-center font-semibold text-17 pb-[3px] pt-[1px]">
+          Подборка
+        </h3>
         <CardUI className="!p-[11px] mt-[1px] !rounded-[25px] relative">
           <div className="flex items-start justify-between">
             <div className="flex items-start gap-[5px]">

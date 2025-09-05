@@ -1,4 +1,5 @@
 import { Button, Card, Categories, Sort } from "../components";
+import { ToggleIconButton } from "../components/ToggleFeatured";
 import { Header } from "../layouts";
 
 const products = [
@@ -44,9 +45,7 @@ export const MarketplaceStores = () => {
             options={categoryOptions3}
           />
           <Sort label="Фильтр" icon={true} options={categoryOptions2} />
-          <Button className="!w-[35px] h-[55px] !bg-[#242424]" type="gray">
-            <img src="/images/icons/featured.svg" alt="" />
-          </Button>
+          <ToggleIconButton className="!w-[35px] h-[55px] bg-[#242424] flex items-center justify-center rounded-[15px]" />
         </div>
         <Categories />
         <div className="flex gap-[30px] bg-[#242424] rounded-[20px] px-4 h-10 items-center">
@@ -62,7 +61,7 @@ export const MarketplaceStores = () => {
         Актуальное
       </h3>
       {products1.map((product) => (
-        <Card key={product.id} data={product}/>
+        <Card key={product.id} data={product} />
       ))}
     </div>
   );

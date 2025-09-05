@@ -1,4 +1,5 @@
 import { Button, Card, Categories, ProductCard, Sort } from "../components";
+import { ToggleIconButton } from "../components/ToggleFeatured";
 import { Header } from "../layouts";
 
 const products = [
@@ -56,9 +57,7 @@ export const ShopView = () => {
             options={categoryOptions3}
           />
           <Sort label="Фильтр" icon={true} options={categoryOptions2} />
-          <Button className="!w-[35px] h-[55px] !bg-[#242424]" type="gray">
-            <img src="/images/icons/featured.svg" alt="" />
-          </Button>
+          <ToggleIconButton className="!w-[35px] h-[55px] bg-[#242424] flex items-center justify-center rounded-[15px]" />
         </div>
         <Categories />
         <h3 className="text-center font-semibold h-[21px] flex items-center justify-center">

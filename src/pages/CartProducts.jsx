@@ -269,9 +269,9 @@ const AdsContent = () => {
             </button>
             <button
               onClick={handleChecked}
-              className="absolute top-[6px] bg-[#272727] left-[9px] w-5 h-5 mt-1 flex items-center justify-center border-2 border-dark-gray rounded-[6px]"
+              className={`absolute top-[6px]  left-[9px] w-5 h-5 mt-1 flex items-center justify-center border-2  rounded-[6px] ${check ? " bg-[#E679FF] border-transparent" :"bg-[#272727] border-dark-gray"}`}
             >
-              {check && <img src="images/icons/check.svg" alt="checkbox" />}
+              {check && <img className="filter brightness-0 invert-0" src="images/icons/check.svg" alt="checkbox" width={15} />}
             </button>
             <img
               className="w-full h-full object-cover rounded-[26px]"

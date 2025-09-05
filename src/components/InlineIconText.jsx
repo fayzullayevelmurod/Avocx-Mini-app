@@ -41,13 +41,13 @@ export const InlineIconSelect = ({
     <div
       ref={selectRef}
       className={`relative flex-[1_1_30px] h-[55px] rounded-[20px] ${
-        isOpen ? "shadow-option-shadow" : ""
+        isOpen ? "shadow-option-shadow " : ""
       } ${className}`}
     >
       <button
         onClick={toggleOpen}
-        className={`flex w-full items-center justify-between gap-[10px] h-full rounded-[20px] px-[13px] pr-4 ${bgColor} border ${
-          isOpen ? "border-iron rounded-b-none" : "border-[#272727]"
+        className={`flex w-full duration-300 items-center justify-between gap-[10px] h-full rounded-[20px] px-[13px] pr-4 ${bgColor} border ${
+          isOpen ? "border-iron rounded-b-none border-b-0" : "border-[#272727]"
         }`}
       >
         <div className="flex items-center gap-2 overflow-hidden whitespace-nowrap">
@@ -57,7 +57,7 @@ export const InlineIconSelect = ({
           )}
           <span className="overflow-hidden text-ellipsis font-bold">
             {currentValue?.label}{" "}
-            <span className="text-[#FFD26F">{subText}</span>
+            <span className="text-[#FFD26F]">{subText}</span>
           </span>
         </div>
 
@@ -80,29 +80,34 @@ export const InlineIconSelect = ({
         )}
       </button>
 
-      {isOpen && (
-        <ul
-          className={`absolute left-0 top-full z-50 w-full ${bgColor} pt-[2px] p-[15px] rounded-b-[20px] pb-4 -mt-[6px] border border-iron border-t-0`}
-        >
+      {/* Dropdown animatsiya bilan */}
+      <div
+        className={`
+          absolute left-0 top-full  z-50 w-full overflow-hidden transition-all duration-300
+          ${bgColor} border border-iron border-t-0 rounded-b-[20px]
+          ${isOpen ? "max-h-60 opacity-100 pb-3" : "max-h-0 opacity-0 py-0"}
+        `}
+      >
+        <ul className="px-[15px] space-y-1">
           {options.map((option, idx) => (
             <li
               key={idx}
               onClick={() => handleSelect(option)}
-              className={`text-15 leading-[200%] flex items-center gap-2 hover:cursor-pointer ${
+              className={`text-15 leading-[200%] flex items-center gap-2 hover:cursor-pointer transition-colors duration-200 ${
                 option === currentValue ? "text-[#E679FF]" : "text-grayCustom"
               }`}
             >
               {option.icon && (
                 <img src={option.icon} alt="icon" className="w-5 h-5" />
               )}
-              {option.label}{" "}
+              {option.label}
               {option.subText && (
                 <span className="text-[#FFD26F]">{option.subText}</span>
               )}
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </div>
   );
 };
