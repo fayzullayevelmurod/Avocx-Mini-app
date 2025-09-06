@@ -9,8 +9,8 @@ export const Card = ({ data, btns, intelligence, vip }) => {
     groupCount,
     cartCount,
     description,
+    noFeatured = false,
   } = data || {};
-  console.log(vip);
 
   return (
     <div
@@ -40,18 +40,21 @@ export const Card = ({ data, btns, intelligence, vip }) => {
             </div>
           </div>
           <img
-            className="w-full object-cover h-full rounded-[21px]"
+            className="w-full object-cover object-top h-full rounded-[21px]"
             src={image}
             alt={imageAlt}
             loading="lazy"
           />
-          <button className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
-            <img
-              className="w-full h-full"
-              src="/images/icons/featured-border.svg"
-              alt=""
-            />
-          </button>
+
+          {!noFeatured && (
+            <button className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
+              <img
+                className="w-full h-full"
+                src="/images/icons/featured-border.svg"
+                alt=""
+              />
+            </button>
+          )}
         </div>
         <div className="flex gap-2 items-center px-[10px] -ml-0.5 mt-[5px]">
           <div className="relative min-w-[50px] max-w-[50px] h-[50px]">

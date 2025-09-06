@@ -23,3 +23,4 @@ export { Card } from "./Card";
 export { StepOne } from "./StepOne";
 export { StepTwo } from "./StepTwo";
 export { InlineIconSelect } from "./InlineIconText";
+export { Checkbox } from "./Checkbox";

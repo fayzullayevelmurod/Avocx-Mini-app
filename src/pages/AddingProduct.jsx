@@ -8,12 +8,14 @@ import {
   Input,
   TextareaForm,
   Button,
+  Checkbox,
 } from "../components";
 import { CustomSelect } from "../components/CustomSelect";
 import { Header } from "../layouts";
 
 export const AddingProduct = () => {
-  const [check, setCheck] = useState(false);
+    const [check, setCheck] = useState(false);
+
   const categoryOptions = [
     "Добавление нового товара",
     "Добавление нового товара 2",
@@ -25,10 +27,6 @@ export const AddingProduct = () => {
     { value: "rent", label: "Добавить в группу: 3" },
   ];
 
-  const handleChecked = () => {
-    setCheck(!check);
-  };
-
   return (
     <div>
       <Header search={true} />
@@ -37,12 +35,12 @@ export const AddingProduct = () => {
         <List options={categoryOptions} icon={true} />
       </div>
       <CardUI className="rounded-[30px] mt-[7px]">
-        <h3 className="text-center ">Добавление товара</h3>
+        <h3 className="text-center font-semibold">Добавление товара</h3>
         <p className="text-center max-w-[369px] mx-auto mt-[6px] text-xs mb-[10px]">
           Загрузите фото товара. Соотношение сторон: 3,5х4.64. Размер в
           пикселях: 1050х1392 или 1400х1856.
         </p>
-        <ProductCard />
+        <ProductCard title="Pattern (RUB)" noFeatured={true} />
         <div className="flex gap-1 mx-[27px] mt-2 mb-3">
           {Array(6)
             .fill(null)
@@ -119,9 +117,18 @@ export const AddingProduct = () => {
             Габариты товара (мм)
           </h3>
           <div className="grid grid-cols-3 max-w-[308px] mx-auto pt-2 gap-1">
-            <Input className="!h-[50px] text-center text-15" placeHolder="Длинна" />
-            <Input className="!h-[50px] text-center text-15" placeHolder="Ширина" />
-            <Input className="!h-[50px] text-center text-15" placeHolder="Высота" />
+            <Input
+              className="!h-[50px] text-center text-15"
+              placeHolder="Длинна"
+            />
+            <Input
+              className="!h-[50px] text-center text-15"
+              placeHolder="Ширина"
+            />
+            <Input
+              className="!h-[50px] text-center text-15"
+              placeHolder="Высота"
+            />
           </div>
           <h3 className="text-center text-17 font-semibold mt-3 pt-[7px] pb-2">
             Комплектация
@@ -135,12 +142,7 @@ export const AddingProduct = () => {
           </h3>
           <div className="flex justify-between w-full items-center bg-dark p-[10px] rounded-[20px] pl-4 h-[46px] pr-[15px]">
             <div className="flex gap-[10px] items-center">
-              <button
-                onClick={handleChecked}
-                className=" bg-[#272727] w-5 h-5 flex items-center justify-center border-2 border-dark-gray rounded-[6px]"
-              >
-                {check && <img src="images/icons/check.svg" alt="checkbox" />}
-              </button>
+              <Checkbox checked={check} onChange={() => setCheck(!check)} />
               <div className="flex gap-0 items-center">
                 <img src="/images/icons/clock.svg" alt="" />
                 <span>Заказы ко времени</span>

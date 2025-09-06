@@ -29,6 +29,7 @@ export const MyShop = () => {
             data={product}
             intelligence={true}
             btns={true}
+            noFeatured={true}
           />
         ))}
       </div>

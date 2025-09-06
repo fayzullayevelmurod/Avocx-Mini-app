@@ -10,14 +10,14 @@ export const TextareaForm = ({ placeHolder, value, acctions, className }) => {
       />
       {acctions && (
         <div className="flex gap-[5px] absolute bottom-[11px] left-3">
-          <Button className="shadow-ai-btn w-[126px] !h-[39px] border border-[#CFCFCF] !rounded-[15px]">
+          <Button className="shadow-ai-btn !w-[126px] !h-[39px] border border-[#CFCFCF] !rounded-[15px]">
             <img src="/images/icons/stars.svg" alt="" />
             <span className="text-sm font-bold ">Ai Gen</span>
           </Button>
-          <button className="w-[39px] h-[39px] flex items-center justify-center border border-iron bg-[#272727] rounded-[15px]">
+          <button className="min-w-[39px] h-[39px] flex items-center justify-center border border-iron bg-[#272727] rounded-[15px]">
             <img src="/images/icons/ai-edit.svg" alt="" />
           </button>
-          <button className="w-[39px] h-[39px] flex items-center justify-center border border-iron bg-[#272727] rounded-[15px]">
+          <button className="min-w-[39px] h-[39px] flex items-center justify-center border border-iron bg-[#272727] rounded-[15px]">
             <img src="/images/icons/red-trash.svg" alt="" />
           </button>
         </div>

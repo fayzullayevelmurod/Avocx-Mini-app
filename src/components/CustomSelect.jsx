@@ -44,13 +44,15 @@ export const CustomSelect = ({
     <div
       ref={selectRef}
       className={`relative border-none flex-[1_1_30px] h-[55px] rounded-[20px] ${
-        isOpen ? "shadow-option-shadow !border-b-0 " : ""
+        isOpen ? "shadow-option-shadow !border-b-transparent " : ""
       } ${className}`}
     >
       <button
         onClick={toggleOpen}
         className={`flex-1 duration-300 justify-between border flex w-full items-center text-15 gap-[10px] h-full rounded-[20px] pr-4 ${bgColor} pl-[13px] border ${
-          isOpen ? "border-iron !rounded-b-none !border-b-0" : "border-[#272727]"
+          isOpen
+            ? "border-iron !rounded-b-none !border-b-transparent"
+            : "border-[#272727]"
         } ${rightIcon && "justify-between"}`}
       >
         <div
@@ -111,7 +113,11 @@ export const CustomSelect = ({
         className={`
     absolute left-0 top-full z-50 w-full overflow-hidden transition-all duration-300
     ${bgColor} rounded-b-[20px] border border-iron border-t-0
-    ${isOpen ? "max-h-60 opacity-100 pb-3 visible" : "max-h-0 opacity-0 py-0 invisible"}
+    ${
+      isOpen
+        ? "max-h-60 opacity-100 pb-3 visible"
+        : "max-h-0 opacity-0 py-0 invisible"
+    }
   `}
       >
         <ul className="px-[15px] space-y-1">

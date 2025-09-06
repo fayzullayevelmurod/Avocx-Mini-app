@@ -36,12 +36,12 @@ export const AddingProductTwo = () => {
         </div>
 
         <div className="flex gap-1">
-          <ProductCard title="Pattern (USD)" />
-          <ProductCard title="Pattern (RUB)" />
+          <ProductCard title="Pattern (USD)" noFeatured={true} />
+          <ProductCard title="Pattern (RUB)" noFeatured={true} />
         </div>
         <h3 className="text-center font-semibold">Мои шаблоны</h3>
         <div className="flex w-fit">
-          <ProductCard actions={true} title="Pattern: Name" />
+          <ProductCard actions={true} title="Pattern: Name" noFeatured={true} />
         </div>
       </div>
     </>

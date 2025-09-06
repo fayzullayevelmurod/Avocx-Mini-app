@@ -39,8 +39,10 @@ export const ChanelSelect = () => {
       {/* Select head */}
       <div
         onClick={toggleOpen}
-        className={`flex justify-between items-center border  bg-[#242424] border-transparent rounded-[20px] px-4 h-[50px] cursor-pointer ${
-          isOpen ? "shadow-option-shadow rounded-b-none border-[#3a3a3a] border-b-0" : ""
+        className={`flex justify-between duration-300 items-center border  bg-[#242424] rounded-[20px] px-4 h-[50px] cursor-pointer ${
+          isOpen
+            ? "shadow-option-shadow rounded-b-none border border-[#3a3a3a] border-b-transparent"
+            : "border-transparent"
         }`}
       >
         <div className="flex gap-1 items-center">
@@ -65,8 +67,13 @@ export const ChanelSelect = () => {
       </div>
 
       {/* Dropdown options */}
-      {isOpen && (
-        <ul className="absolute left-0 top-full w-full bg-[#242424] z-50 rounded-b-[20px] px-4 pb-3 border border-t-0 border-[#3a3a3a]">
+        <ul
+          className={`absolute left-0 duration-300 top-full w-full bg-[#242424] z-50 rounded-b-[20px] px-4 pb-3 border border-t-0 border-[#3a3a3a] ${
+            isOpen
+              ? "max-h-60 opacity-100 pb-3 visible"
+              : "max-h-0 opacity-0 py-0 invisible"
+          }`}
+        >
           {options.map((option, idx) => (
             <li
               key={idx}
@@ -81,7 +88,6 @@ export const ChanelSelect = () => {
             </li>
           ))}
         </ul>
-      )}
     </div>
   );
 };

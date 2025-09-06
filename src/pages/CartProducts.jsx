@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, CardUI, ReklamaBlock, Sort, Tab, Order } from "../components";
+import { Button, CardUI, ReklamaBlock, Sort, Tab, Order, Checkbox } from "../components";
 import { Header } from "../layouts";
 
 const StoresContent = () => {
@@ -237,10 +237,6 @@ const AdsContent = () => {
       setCount((prev) => prev - 1);
     }
   };
-
-  const handleChecked = () => {
-    setCheck(!check);
-  };
   const categoryOptions2 = ["От новых", "От новых 2", "От новых 3"];
   const categoryOptions3 = ["Все", "Все 2", "Все 3"];
   return (
@@ -267,12 +263,9 @@ const AdsContent = () => {
             <button className="absolute flex items-center justify-center bottom-[6px] right-[7px] w-[26px] h-[26px] z-10 bg-[#272727] rounded-[10px]">
               <img src="/images/icons/red-trash.svg" alt="" />
             </button>
-            <button
-              onClick={handleChecked}
-              className={`absolute top-[6px]  left-[9px] w-5 h-5 mt-1 flex items-center justify-center border-2  rounded-[6px] ${check ? " bg-[#E679FF] border-transparent" :"bg-[#272727] border-dark-gray"}`}
-            >
-              {check && <img className="filter brightness-0 invert-0" src="images/icons/check.svg" alt="checkbox" width={15} />}
-            </button>
+            <div className="absolute top-[10px]  left-[10px]">
+              <Checkbox checked={check} onChange={() => setCheck(!check)} />
+            </div>
             <img
               className="w-full h-full object-cover rounded-[26px]"
               src="/images/bag.png"

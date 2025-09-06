@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Search } from "./Search";
+import { Checkbox } from "./Checkbox";
 
 export const MultiSelect = ({ id, categories, openId, setOpenId }) => {
   const isOpen = openId === id;
@@ -79,12 +80,9 @@ export const MultiSelect = ({ id, categories, openId, setOpenId }) => {
                 key={cat}
                 className="flex items-center gap-2 cursor-pointer text-sm"
               >
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={selectedCategories.includes(cat)}
                   onChange={() => toggleCategory(cat)}
-
-                  className="appearance-none bg-[length:13px_13px] bg-[#272727] bg-center bg-no-repeat border-2 border-[#464646] rounded-[6px] w-[20px] h-[20px] checked:bg-check  cursor-pointer"
                 />
                 <span>{cat}</span>
               </label>

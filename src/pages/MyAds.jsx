@@ -3,8 +3,10 @@ import {
   Button,
   CardUI,
   ChanelSelect,
+  Checkbox,
   Date,
   ExpandableAdButtons,
+  InlineIconSelect,
   InputForm,
   ReklamaBlock,
   Tab,
@@ -41,15 +43,28 @@ export const MyAds = () => {
   );
 };
 
+const languageOptions2 = [
+  {
+    label: "На заявки",
+    icon: "/images/icons/block.svg",
+  },
+  {
+    label: "Открытая",
+    icon: "/images/icons/unlock.svg",
+  },
+];
 const Purchase = () => {
-  // state
-
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
   const [ratio, setRatio] = useState({ left: "", right: "" });
   const rightInputRef = useRef(null);
   const [time, setTime] = useState({ hours: "", minutes: "" });
   const minutesRef = useRef(null);
+  const [selectedLanguage2, setSelectedLanguage2] = useState(
+    languageOptions2[0]
+  );
+  const [active, setActive] = useState("Фикс"); // default
 
+  const buttons = ["Фикс", "CPM", "За пдп"];
   const handleTimeChange = (e) => {
     const { name, value } = e.target;
     const onlyNums = value.replace(/\D/g, "");
@@ -107,12 +122,10 @@ const Purchase = () => {
       setTime((prev) => ({ ...prev, minutes: formattedValue }));
     }
   };
-
   const handleTimePreset = (preset) => {
     const [h, m] = preset.split(":");
     setTime({ hours: h, minutes: m });
   };
-
   const handleRatioChange = (e) => {
     const { name, value } = e.target;
     const onlyNums = value.replace(/\D/g, ""); // Оставляем только цифры
@@ -137,80 +150,10 @@ const Purchase = () => {
       }
     }
   };
-
   const handleRatioPreset = (preset) => {
     const [l, r] = preset.split("/");
     setRatio({ left: l, right: r });
   };
-
-  // // handle inputs
-  // const handleTimeChange = (e) => {
-  //   const { name, value } = e.target;
-
-  //   // faqat raqam kiritilsin
-  //   const onlyNums = value.replace(/\D/g, "");
-
-  //   if (name === "hours") {
-  //     if (onlyNums.length === 1) {
-  //       // birinchi raqam 0–2 oralig‘ida bo‘lishi kerak
-  //       if (parseInt(onlyNums) > 2) {
-  //         // agar 3 yoki undan katta bo‘lsa → ikkinchi joyga o‘tadi
-  //         setTime((prev) => ({ ...prev, hours: "0" + onlyNums }));
-  //       } else {
-  //         setTime((prev) => ({ ...prev, hours: onlyNums }));
-  //       }
-  //     } else if (onlyNums.length === 2) {
-  //       const first = parseInt(onlyNums[0]);
-  //       const second = parseInt(onlyNums[1]);
-
-  //       // agar birinchi 2 bo‘lsa, ikkinchi 0–3 bo‘lishi shart
-  //       if (first === 2 && second > 3) {
-  //         setTime((prev) => ({ ...prev, hours: "23" }));
-  //       } else {
-  //         setTime((prev) => ({ ...prev, hours: onlyNums }));
-  //       }
-  //     } else {
-  //       setTime((prev) => ({ ...prev, hours: onlyNums.slice(0, 2) }));
-  //     }
-  //   }
-
-  //   if (name === "minutes") {
-  //     if (onlyNums.length === 1) {
-  //       // birinchi raqam 0–5
-  //       if (parseInt(onlyNums) > 5) {
-  //         setTime((prev) => ({ ...prev, minutes: "0" + onlyNums }));
-  //       } else {
-  //         setTime((prev) => ({ ...prev, minutes: onlyNums }));
-  //       }
-  //     } else if (onlyNums.length === 2) {
-  //       setTime((prev) => ({ ...prev, minutes: onlyNums }));
-  //     } else {
-  //       setTime((prev) => ({ ...prev, minutes: onlyNums.slice(0, 2) }));
-  //     }
-  //   }
-  // };
-
-  // // preset button click
-  // const handleTimePreset = (preset) => {
-  //   const [h, m] = preset.split(":");
-  //   setTime({ hours: h, minutes: m });
-  // };
-
-  // const handleRatioChange = (e) => {
-  //   const { name, value } = e.target;
-  //   if (name === "left") {
-  //     if (value >= 1 && value <= 10)
-  //       setRatio((prev) => ({ ...prev, left: value }));
-  //   } else if (name === "right") {
-  //     if (value >= 1 && value <= 100)
-  //       setRatio((prev) => ({ ...prev, right: value }));
-  //   }
-  // };
-
-  // const handleRatioPreset = (preset) => {
-  //   const [l, r] = preset.split("/");
-  //   setRatio({ left: l, right: r });
-  // };
   const options = [
     { value: "sell", label: "Категория:" },
     { value: "buy", label: "Категория:2" },
@@ -228,9 +171,7 @@ const Purchase = () => {
     { value: "buy", label: "На заявки 2" },
     { value: "rent", label: "На заявки 3" },
   ];
-  const handleChecked = () => {
-    setCheck(!check);
-  };
+
   return (
     <div className="space-y-[7px]">
       <ChanelSelect />
@@ -247,7 +188,7 @@ const Purchase = () => {
                 className="w-5 text-center bg-transparent border-none outline-none"
                 type="text"
                 name="hours"
-                placeholder="HH"
+                placeholder="09"
                 value={time.hours}
                 onChange={handleTimeChange}
                 maxLength={2}
@@ -255,10 +196,10 @@ const Purchase = () => {
               <span className="text-white">:</span>
               <input
                 ref={minutesRef}
-                className="w-5 text-center bg-transparent border-none outline-none"
+                className="w-6 text-center bg-transparent border-none outline-none"
                 type="text"
                 name="minutes"
-                placeholder="MM"
+                placeholder="00"
                 value={time.minutes}
                 onChange={handleTimeChange}
                 maxLength={2}
@@ -269,7 +210,7 @@ const Purchase = () => {
             {["9:00", "10:00", "13:00", "17:00"].map((t) => (
               <div
                 key={t}
-                className="w-[54px] h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-xs font-bold cursor-pointer"
+                className="w-11 h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-xs font-bold cursor-pointer"
                 onClick={() => handleTimePreset(t)}
               >
                 {t}
@@ -309,7 +250,7 @@ const Purchase = () => {
             {["1/24", "1/48", "2/48", "1/72"].map((r) => (
               <div
                 key={r}
-                className="w-[54px] h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-xs font-bold cursor-pointer"
+                className="w-11 h-[30px] rounded-xl bg-[#303030] flex items-center justify-center text-xs font-bold cursor-pointer"
                 onClick={() => handleRatioPreset(r)}
               >
                 {r}
@@ -373,6 +314,14 @@ const Purchase = () => {
           selected={true}
           placeholder="Тип ссылки: На заявки"
         />
+        <InlineIconSelect
+          options={languageOptions2}
+          selected={selectedLanguage2}
+          placeholder="Тип ссылки:"
+          onChange={(val) => setSelectedLanguage2(val)}
+          rightIcon={true}
+          className="!h-[49px]"
+        />
         <h3 className="text-center text-15 font-semibold mt-3">
           Цена за размещение и тип
         </h3>
@@ -389,26 +338,27 @@ const Purchase = () => {
             />
           </div>
           <div className="flex gap-1">
-            <div className="w-[54px] h-[30px] flex items-center justify-center bg-primary rounded-xl font-bold text-xs">
-              Фикс
-            </div>
-            <div className="w-[54px] h-[30px] flex items-center justify-center bg-[#303030] rounded-xl font-bold text-xs">
-              CPM
-            </div>
-            <div className="w-[54px] h-[30px] flex items-center justify-center bg-[#303030] rounded-xl font-bold text-xs">
-              За пдп
-            </div>
+            {buttons.map((btn) => (
+              <button
+                key={btn}
+                onClick={() => setActive(btn)}
+                className={`w-[54px] h-[30px] flex items-center justify-center rounded-xl font-bold text-xs transition-colors
+            ${
+              active === btn
+                ? "bg-primary text-white"
+                : "bg-[#303030] text-gray-300"
+            }
+          `}
+              >
+                {btn}
+              </button>
+            ))}
           </div>
         </div>
         <div className="flex gap-[7px] mt-[6px] mb-[7px]">
           <div className="flex justify-between w-full items-center bg-dark p-[10px] rounded-[20px] pl-5 h-[50px]">
             <div className="flex gap-[7px] items-center">
-              <button
-                onClick={handleChecked}
-                className=" bg-[#272727] w-5 h-5 flex items-center justify-center border-2 border-dark-gray rounded-[6px]"
-              >
-                {check && <img src="images/icons/check.svg" alt="checkbox" />}
-              </button>
+              <Checkbox checked={check} onChange={() => setCheck(!check)} />
               <span>Маркировка</span>
             </div>
           </div>
@@ -503,6 +453,11 @@ const Order = () => {
 };
 
 const Stock = () => {
+  const [isPaused, setIsPaused] = useState(true);
+
+  const handleToggle = () => {
+    setIsPaused((prev) => !prev);
+  };
   return (
     <div>
       <ChanelSelect />
@@ -581,10 +536,23 @@ const Stock = () => {
             <span className="font-semibold">Del</span>
           </div>
           <div className="flex gap-[17px]">
-            <div className="flex items-center gap-1">
-              <img src="/images/icons/pause.svg" alt="" />
-              <span className="font-semibold">Stop</span>
-            </div>
+            <button
+              onClick={handleToggle}
+              className="flex items-center gap-1 px-3 py-1 rounded-md"
+            >
+              <img
+                src={
+                  isPaused
+                    ? "/images/icons/pause.svg"
+                    : "/images/icons/play.svg"
+                }
+                alt={isPaused ? "pause" : "play"}
+                className="w-4 h-4"
+              />
+              <span className="font-semibold">
+                {isPaused ? "Stop" : "Start"}
+              </span>
+            </button>
             <div className="flex items-center gap-1">
               <img src="/images/icons/edit.svg" alt="" />
               <span className="font-semibold">Edit</span>

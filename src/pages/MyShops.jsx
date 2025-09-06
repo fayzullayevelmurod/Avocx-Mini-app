@@ -15,15 +15,15 @@ export const MyShops = () => {
         width={209}
         height={209}
       />
-      <h3 className="text-[30px] italic font-semibold mt-[22px] text-center">Их нет!</h3>
+      <h3 className="text-[30px] font-semibold mt-[22px] text-center">Их нет!</h3>
       <p className="text-15 leading-[109%] mb-6 mt-5 text-center">
         Создайте свой магазин в{" "}
-        <a className="text-primary" href="#!">
+        <a className="text-primary font-semibold" href="#!">
           @avocx
         </a>{" "}
         и <br /> продавайте быстро, выгодно и удобно.
       </p>
-      <Button className="w-[284px] mx-auto">Создать</Button>
+      <Button className="!w-[284px] mx-auto">Создать</Button>
     </div>
   );
 };
