@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const ToggleIconButton = ({
   defaultIcon = "/images/icons/featured.svg",
-  activeIcon = "/images/icons/featured-border.svg",
+  activeIcon = "/images/icons/active-featured.svg",
   className = "",
   onToggle,
 }) => {

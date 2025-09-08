@@ -43,9 +43,9 @@ const Buyer = () => {
         <div className="pt-[9px] pl-[13px] flex justify-between items-center pr-[10px] bg-[#464646] pb-10 rounded-t-[25px]">
           <div className="flex items-center gap-[4px]">
             <img src="/images/icons/box.svg" alt="" />
-            <span className="text-[13px] font-semibold">№2143</span>
+            <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">№2143</span>
           </div>
-          <span className="text-[13px] font-semibold">29.06.25 в 12:19</span>
+          <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">29.06.25 в 12:19</span>
           <span className="text-[13px] text-[#CBDFFF] font-semibold">
             Принят
           </span>
@@ -58,7 +58,7 @@ const Buyer = () => {
             alt=""
           />
           <div className="pt-[2px] w-full">
-            <h3 className="text-[13px] font-semibold">Capucino Coffe</h3>
+            <h3 className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">Capucino Coffe</h3>
             <ul className="mt-1 space-y-[3px]">
               <li className="text-[10px] leading-full text-grayCustom font-semibold flex gap-[2px]">
                 <span>Магазин:</span>
@@ -104,9 +104,9 @@ const Buyer = () => {
         <div className="pt-[9px] pl-[13px] flex justify-between items-center pr-[10px] bg-[#464646] pb-10 rounded-t-[25px]">
           <div className="flex items-center gap-[4px]">
             <img src="/images/icons/box.svg" alt="" />
-            <span className="text-[13px] font-semibold">№2143</span>
+            <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">№2143</span>
           </div>
-          <span className="text-[13px] font-semibold">29.06.25 в 12:19</span>
+          <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">29.06.25 в 12:19</span>
           <span className="text-[13px] text-[#FFD26F] font-semibold">
             Ожидает
           </span>
@@ -119,7 +119,7 @@ const Buyer = () => {
             alt=""
           />
           <div className="pt-[2px] w-full">
-            <h3 className="text-[13px] font-semibold">Capucino Coffe</h3>
+            <h3 className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">Capucino Coffe</h3>
             <ul className="mt-1 space-y-[3px]">
               <li className="text-[10px] leading-full text-grayCustom font-semibold flex gap-[2px]">
                 <span>Магазин:</span>
@@ -179,9 +179,9 @@ const Seller2 = () => {
         <div className="pt-2 pl-[13px] flex justify-between items-center pr-[10px] bg-[#464646] pb-10 rounded-t-[25px]">
           <div className="flex items-center gap-[4px]">
             <img src="/images/icons/box.svg" alt="" />
-            <span className="text-[13px] font-semibold">№2143</span>
+            <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">№2143</span>
           </div>
-          <span className="text-[13px] font-semibold">29.06.25 в 12:19</span>
+          <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">29.06.25 в 12:19</span>
           <span className="text-[13px] text-[#00D79A] font-semibold">
             Отправлен
           </span>
@@ -189,7 +189,7 @@ const Seller2 = () => {
 
         <div className="border border-[#464646] bg-[#272727] rounded-[30px] mt-[-34px] py-3 pl-[19px] pr-[13px]">
           <div className="pt-[2px] w-full">
-            <h3 className="text-[13px] font-semibold">
+            <h3 className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">
               Рюкзак Tommy Helfiger 25 из натуральной кожи черного цвета
             </h3>
             <ul className="mt-1 flex gap-2">
@@ -337,9 +337,9 @@ const Buyer2 = () => {
         <div className="pt-[9px] pl-[13px] flex justify-between items-center pr-3 bg-[#464646] pb-10 rounded-t-[25px]">
           <div className="flex items-center gap-[4px]">
             <img src="/images/icons/box.svg" alt="" />
-            <span className="text-[13px] font-semibold">№2143</span>
+            <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">№2143</span>
           </div>
-          <span className="text-[13px] font-semibold">29.06.25 в 12:19</span>
+          <span className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">29.06.25 в 12:19</span>
           <span className="text-[13px] text-[#00D79A] font-semibold">
             Завершён
           </span>
@@ -352,7 +352,7 @@ const Buyer2 = () => {
             alt=""
           />
           <div className="pt-[2px] w-full">
-            <h3 className="text-[13px] font-semibold">
+            <h3 className="text-[13px] font-semibold overflow-hidden text-ellipsis line-clamp-2">
               Рюкзак Tommy Helfiger 25 из натуральной кожи черного цвета
             </h3>
             <ul className="mt-1 space-y-[3px]">

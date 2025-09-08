@@ -1,3 +1,5 @@
+import { ToggleIconButton } from "./ToggleFeatured";
+
 export const ProductCard = ({
   image = "/images/empty-photo.png",
   title = "Pattern (RUB)",
@@ -21,9 +23,9 @@ export const ProductCard = ({
           </div>
         )}
         {!noFeatured && (
-          <button className="absolute top-[10px] right-[10px]">
-            <img src="/images/icons/featured-border.svg" alt="featured" />
-          </button>
+          <div className="absolute top-[10px] right-[10px]">
+            <ToggleIconButton defaultIcon="/images/icons/featured-border.svg" activeIcon="/images/icons/active-feature-2.svg" className="!w-4" />
+          </div>
         )}
 
         {actions && (
@@ -41,13 +43,13 @@ export const ProductCard = ({
           <img
             className="object-contain rounded-[19px]"
             src={image}
-            alt={title}
+
           />
         ) : (
           <img
             className="w-full h-full object-cover rounded-[19px]"
             src={image}
-            alt={title}
+
           />
         )}
         {title && (

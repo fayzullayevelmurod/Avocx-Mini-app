@@ -1,6 +1,7 @@
 import { Button } from "./Button";
+import { ToggleIconButton } from "./ToggleFeatured";
 
-export const Card = ({ data, btns, intelligence, vip }) => {
+export const Card = ({ data, btns, intelligence, vip, noFeatured = false }) => {
   const {
     image,
     imageAlt,
@@ -9,8 +10,8 @@ export const Card = ({ data, btns, intelligence, vip }) => {
     groupCount,
     cartCount,
     description,
-    noFeatured = false,
   } = data || {};
+  console.log(noFeatured);
 
   return (
     <div
@@ -47,13 +48,13 @@ export const Card = ({ data, btns, intelligence, vip }) => {
           />
 
           {!noFeatured && (
-            <button className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
-              <img
-                className="w-full h-full"
-                src="/images/icons/featured-border.svg"
-                alt=""
+            <div className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
+              <ToggleIconButton
+                defaultIcon="/images/icons/featured-border.svg"
+                activeIcon="/images/icons/active-feature-2.svg"
+                className="!w-4"
               />
-            </button>
+            </div>
           )}
         </div>
         <div className="flex gap-2 items-center px-[10px] -ml-0.5 mt-[5px]">

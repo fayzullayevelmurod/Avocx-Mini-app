@@ -1,4 +1,4 @@
-import { Button, Card, Categories, ProductCard, Sort } from "../components";
+import { Categories, ProductCard, Sort } from "../components";
 import { ToggleIconButton } from "../components/ToggleFeatured";
 import { Header } from "../layouts";
 
@@ -53,7 +53,7 @@ export const MarketplaceProducts = () => {
             <ProductCard
               key={index}
               image={product.image}
-              title={product.title}
+              title={false}
               price={product.price}
               oldPrice={product.oldPrice}
               storeName={product.storeName}

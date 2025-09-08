@@ -3,6 +3,7 @@ import {
   Button,
   CardUI,
   Categories,
+  ChanelSelect,
   Date,
   ExpandableAdButtons,
   Sort,
@@ -34,29 +35,10 @@ export const AdvertisingExchange = () => {
             options={categoryOptions2}
           />
           <Sort label="Фильтр" icon={true} options={categoryOptions3} />
-          <ToggleIconButton
-            className="w-[35px] h-[55px] flex items-center justify-center bg-charcoal rounded-[15px]"
-          />
+          <ToggleIconButton className="w-[35px] h-[55px] flex items-center justify-center bg-charcoal rounded-[15px]" />
         </div>
-        <div className="flex justify-between items-center bg-[#242424] rounded-[20px] px-4 h-[50px]">
-          <div className="flex gap-1 items-center">
-            <span className="text-grayCustom font-semibold">Канал:</span>
-            <span className="font-semibold">Cчастье Сейчас</span>
-          </div>
-          <svg
-            width="21"
-            height="20"
-            viewBox="0 0 21 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 transition-transform duration-300 "
-          >
-            <path
-              d="M10.5 0C16.01 0 20.5 4.48 20.5 10C20.5 15.51 16.01 20 10.5 20C4.98 20 0.5 15.51 0.5 10C0.5 4.48 4.98 0 10.5 0ZM14.5 8.01953C14.2 7.72978 13.7304 7.73042 13.4404 8.03027L10.5 10.9805L7.55957 8.03027C7.26964 7.73043 6.79 7.72979 6.5 8.01953C6.2 8.31953 6.2 8.79008 6.5 9.08008L9.96973 12.5703C10.1097 12.7103 10.3 12.79 10.5 12.79C10.7 12.79 10.8903 12.7103 11.0303 12.5703L14.5 9.08008C14.65 8.94008 14.7197 8.74957 14.7197 8.55957C14.7196 8.35973 14.6499 8.16942 14.5 8.01953Z"
-              fill="#707070"
-            ></path>
-          </svg>
-        </div>
+
+        <ChanelSelect />
         <Date />
         <Categories categoriesData={categories} />
         <CardUI className="!p-[11px] mt-[1px] !rounded-[25px] border-[#FF9462] shadow-vip relative">
@@ -111,11 +93,7 @@ export const AdvertisingExchange = () => {
                 </div>
               </div>
             </div>
-            <img
-              className="absolute top-3 right-[10px] w-[23px] h-[23px]"
-              src="images/icons/featured.svg"
-              alt="star icon"
-            />
+            <ToggleIconButton activeIcon="/images/icons/active-feature-2.svg" />
           </div>
 
           {/* Первая карточка с уникальным ID и данными */}
@@ -181,11 +159,7 @@ export const AdvertisingExchange = () => {
                 </div>
               </div>
             </div>
-            <img
-              className="absolute top-3 right-[10px] w-[23px] h-[23px]"
-              src="images/icons/featured.svg"
-              alt="star icon"
-            />
+            <ToggleIconButton activeIcon="/images/icons/active-feature-2.svg" />
           </div>
 
           {/* Первая карточка с уникальным ID и данными */}

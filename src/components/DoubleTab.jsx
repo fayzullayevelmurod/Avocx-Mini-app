@@ -29,7 +29,7 @@ export const DoubleTab = ({ tabData, sizeXl, defaultTab }) => {
 
   return (
     <>
-      <ul className="flex items-center px-0.5 border border-iron bg-carbon rounded-[20px] py-[1px] h-[49px]">
+      <ul className="flex items-center px-0.5 border border-[#303030] bg-carbon rounded-[20px] py-[1px] h-[49px]">
         {tabData.map((item, index) => {
           const isActive = activeTab === item.id;
 

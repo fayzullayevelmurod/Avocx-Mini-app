@@ -59,7 +59,6 @@ export const ShopView = () => {
           <Sort label="Фильтр" icon={true} options={categoryOptions2} />
           <ToggleIconButton className="!w-[35px] h-[55px] bg-[#242424] flex items-center justify-center rounded-[15px]" />
         </div>
-        <Categories />
         <h3 className="text-center font-semibold h-[21px] flex items-center justify-center">
           Новое
         </h3>
@@ -67,8 +66,8 @@ export const ShopView = () => {
           {productData.map((product, index) => (
             <ProductCard
               key={index}
-              image={product.image}
-              title={product.title}
+              // image={product.image}
+              title={false}
               price={product.price}
               oldPrice={product.oldPrice}
               storeName={product.storeName}

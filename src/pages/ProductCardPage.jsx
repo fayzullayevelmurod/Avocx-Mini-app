@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
 import "swiper/css";
+import { ToggleIconButton } from "../components/ToggleFeatured";
 const productData = [
   {
     image: "/images/bag.png",
@@ -32,10 +33,12 @@ export const ProductCardPage = () => {
   const options1 = ["Black", "Red", "Yellow"];
   const options2 = ["L", "M", "S"];
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const [activeTab, setActiveTab] = useState("description");
   const handleShowMore = () => {
     setIsExpanded(true);
   };
+
+
   const images = ["/images/bag.png", "/images/bag.png", "/images/bag.png"];
 
   return (
@@ -43,21 +46,25 @@ export const ProductCardPage = () => {
       <Header search={true} shareBtn={true} />
       <div className="space-y-[7px]">
         <div
-          className={`bg-[#272727] border pt-1 px-1 pb-[13px] border-[#303030] pb-2 rounded-[30px] w-[calc(100%_+_26px)] -ml-[13px]`}
+          className={`bg-[#272727] border pt-1 px-1  border-[#303030] pb-2 overflow-hidden rounded-[30px] w-[calc(100%_+_26px)] -ml-[13px]`}
         >
           <div className="h-[570px] rounded-[19px] bg-[#303030] block relative">
             <button className="absolute top-[10px] right-[10px] z-50">
-              <img src="/images/icons/featured-border.svg" alt="featured" />
+              <ToggleIconButton
+                defaultIcon="/images/icons/featured-border.svg"
+                activeIcon="/images/icons/active-feature-2.svg"
+              />
             </button>
             <Swiper
-            modules={[Pagination]}
+              modules={[Pagination]}
               spaceBetween={20}
               slidesPerView={1}
               loop={true}
               pagination={{ clickable: true }}
+              className="h-full overflow-hidden"
             >
               {images.map((src, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="overflow-hidden">
                   <img
                     className="w-full h-full object-cover rounded-[26px]"
                     src={src}
@@ -155,7 +162,10 @@ export const ProductCardPage = () => {
               </div>
             </div>
           </div>
-          <img className="" src="/images/icons/featured.svg" alt="" />
+          <ToggleIconButton
+            defaultIcon="/images/icons/featured.svg"
+            activeIcon="/images/icons/active-featured.svg"
+          />
         </CardUI>
 
         <CardUI className="!pl-4 justify-between pr-4 !mt-[6px] !py-[10px] h-[44px] flex items-center relative !rounded-[25px]">
@@ -172,35 +182,64 @@ export const ProductCardPage = () => {
           </div>
           <img className="" src="/images/icons/book.svg" alt="" />
         </CardUI>
-        <CardUI className="!pt-[10px] !pl-4 border-none h-[145px] relative">
+        <CardUI className="!pt-[10px] !pl-4 border-none relative">
           <div className="flex items-center justify-between mb-[13px]">
-            <div className="flex gap-[21px] items-center">
-              <span className="font-semibold">Описание</span>
-              <span className="font-semibold text-[#707070]">
+            {/* Tabs */}
+            <div className="flex 390:gap-[21px] gap-[10px] items-center">
+              <button
+                className={`font-semibold ${
+                  activeTab === "description" ? "text-white" : "text-[#707070]"
+                }`}
+                onClick={() => setActiveTab("description")}
+              >
+                Описание
+              </button>
+              <button
+                className={`font-semibold ${
+                  activeTab === "features" ? "text-white" : "text-[#707070]"
+                }`}
+                onClick={() => setActiveTab("features")}
+              >
                 Характеристики
-              </span>
+              </button>
             </div>
+
+            {/* Copy ID */}
             <div className="flex gap-1 items-center">
               <span className="text-xs text-grayCustom">ID: 2352:86</span>
               <img src="/images/icons/copy.svg" alt="" width={20} height={20} />
             </div>
           </div>
-          <div
-            className={`relative ${
-              isExpanded ? "" : "show-more__text overflow-hidden"
-            }`}
-          >
-            <p className="text-xs">
-              Изготовленная из премиального хлопка, она сочетает комфорт
-              повседневной носки с безупречным качеством легендарного бренда.
-            </p>{" "}
-            <br />
-            <p className="text-[#D3D3D3] text-xs">
-              Минималистичный крой и фирменный логотип делают ее универсальной
-              основой для любого образа — от дерзкого
-            </p>
-          </div>
-          {!isExpanded && (
+
+          {/* Content */}
+          {activeTab === "description" && (
+            <div
+              className={`relative ${
+                isExpanded ? "" : "show-more__text overflow-hidden"
+              }`}
+            >
+              <p className="text-xs">
+                Изготовленная из премиального хлопка, она сочетает комфорт
+                повседневной носки с безупречным качеством легендарного бренда.
+              </p>
+              <br />
+              <p className="text-[#D3D3D3] text-xs">
+                Минималистичный крой и фирменный логотип делают ее универсальной
+                основой для любого образа — от дерзкого
+              </p>
+            </div>
+          )}
+
+          {activeTab === "features" && (
+            <div className="text-xs">
+              <p>Материал: хлопок 100%</p>
+              <p>Цвет: белый</p>
+              <p>Размер: M, L, XL</p>
+            </div>
+          )}
+
+          {/* Show more button */}
+          {activeTab === "description" && !isExpanded && (
             <button
               className="font-semibold absolute bottom-[9px] left-1/2 -translate-x-1/2 z-50 flex justify-center items-center gap-[7px] w-fit mx-auto"
               onClick={handleShowMore}
@@ -222,7 +261,7 @@ export const ProductCardPage = () => {
             <ProductCard
               key={index}
               image={product.image}
-              title={product.title}
+              title={false}
               price={product.price}
               oldPrice={product.oldPrice}
               storeName={product.storeName}

@@ -166,12 +166,6 @@ const Purchase = () => {
     { value: "rent", label: "Пост: (№последний созданный..) 3" },
   ];
 
-  const options3 = [
-    { value: "sell", label: "На заявки " },
-    { value: "buy", label: "На заявки 2" },
-    { value: "rent", label: "На заявки 3" },
-  ];
-
   return (
     <div className="space-y-[7px]">
       <ChanelSelect />
@@ -308,12 +302,6 @@ const Purchase = () => {
           <img src="/images/icons/heartbeat.svg" alt="" />
           <span className="text-white">0₽</span>
         </div>
-        <CustomSelect
-          options={options3}
-          rightIcon={true}
-          selected={true}
-          placeholder="Тип ссылки: На заявки"
-        />
         <InlineIconSelect
           options={languageOptions2}
           selected={selectedLanguage2}

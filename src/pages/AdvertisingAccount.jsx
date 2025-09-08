@@ -120,7 +120,7 @@ const Cart = () => {
             </span>
             <span className="font-semibold">10:21</span>
           </div>
-          <div className="h-[50px] flex-col w-[96px] flex items-center justify-center bg-[#303030] rounded-[20px]">
+          <div className="h-[50px] flex-col 390:w-[96px] w-[75px] flex items-center justify-center bg-[#303030] rounded-[20px]">
             <span className="text-center text-xs block text-grayCustom">
               Дата
             </span>
@@ -172,18 +172,21 @@ const Order = () => {
           </span>
         </div>
 
-        <div className="border border-[#464646] bg-[#272727] rounded-[30px] flex items-start gap-4 mt-[-34px] p-[14px]">
+        <div className="border relative border-[#464646] bg-[#272727] rounded-[30px] flex items-start gap-4 mt-[-34px] p-[14px]">
           <div className="w-full">
-            <ul className="mt-1 space-y-[3px]">
-              <li className="text-sm  leading-full text-grayCustom font-semibold flex gap-[2px]">
-                <span>Что:</span>
-                <span className="text-white">Название канала 1</span>
-              </li>
-              <li className="text-sm  leading-full text-grayCustom font-semibold flex gap-[2px]">
-                <span>Где:</span>
-                <span className="text-white">Название канала 2</span>
-              </li>
-            </ul>
+              <ul className="mt-1 space-y-[3px]">
+                <li className="text-sm  leading-full text-grayCustom font-semibold flex gap-[2px]">
+                  <span>Что:</span>
+                  <span className="text-white">Название канала 1</span>
+                </li>
+                <li className="text-sm  leading-full text-grayCustom font-semibold flex gap-[2px]">
+                  <span>Где:</span>
+                  <span className="text-white">Название канала 2</span>
+                </li>
+              </ul>
+              <button className="absolute top-[17px] right-[16px] ">
+                <img src="/images/icons/red-trash.svg" alt="" />
+              </button>
             <div className="flex gap-1 mt-[7px] mb-[10px]">
               <div className="flex items-center gap-1">
                 <img src="/images/icons/card-pay-blue.svg" alt="" />
@@ -294,7 +297,7 @@ const Order2 = () => {
               </span>
               <span className="font-semibold">10:21</span>
             </div>
-            <div className="h-[50px] flex-col w-[96px] flex items-center justify-center bg-[#303030] rounded-[20px]">
+            <div className="h-[50px] flex-col 390:w-[96px] w-[74px] flex items-center justify-center bg-[#303030] rounded-[20px]">
               <span className="text-center text-xs block text-grayCustom">
                 Дата
               </span>
@@ -302,7 +305,7 @@ const Order2 = () => {
             </div>
             <div className="h-[50px] flex-col flex-1 flex items-center justify-center bg-primary rounded-[20px]">
               <span className="text-center text-xs block">Пост</span>
-              <span className="font-semibold">№17</span>
+              <span className="font-semibold">Показать</span>
             </div>
           </div>
         </div>
