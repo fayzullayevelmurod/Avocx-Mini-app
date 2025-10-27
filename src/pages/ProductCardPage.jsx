@@ -43,7 +43,7 @@ export const ProductCardPage = () => {
 
   return (
     <div>
-      <Header search={true} shareBtn={true} />
+
       <div className="space-y-[7px]">
         <div
           className={`bg-[#272727] border pt-1 px-1  border-[#303030] pb-2 overflow-hidden rounded-[30px] w-[calc(100%_+_26px)] -ml-[13px]`}

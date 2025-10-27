@@ -9,7 +9,7 @@ export const AddingProductTwo = () => {
   ];
   return (
     <>
-      <Header search={true} />
+
       <div className="space-y-[7px]">
         <ProfileBox />
         <List options={categoryOptions} icon={true} />

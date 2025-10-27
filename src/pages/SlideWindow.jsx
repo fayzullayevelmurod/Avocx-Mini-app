@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Categories } from "../components";
+import { Button } from "../components";
 import {
   CategoriesModal,
   CryptoDeposit,

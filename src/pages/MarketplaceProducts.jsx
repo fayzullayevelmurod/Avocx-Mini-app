@@ -30,7 +30,6 @@ export const MarketplaceProducts = () => {
   const categoryOptions3 = ["Все", "Все 2", "Все 3"];
   return (
     <div>
-      <Header search={true} workBtn={true} />
       <div className="space-y-[7px]">
         <div className="flex gap-1">
           <Sort

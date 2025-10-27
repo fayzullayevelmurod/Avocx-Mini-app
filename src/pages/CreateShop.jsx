@@ -14,7 +14,6 @@ export const CreateShop = () => {
     }`;
   return (
     <div>
-      <Header title="Создание магазина" />
       <div
         className={`flex gap-5 justify-center mt-2 mb-3 h-8${
           currentStep === 5 ? "hidden" : ""

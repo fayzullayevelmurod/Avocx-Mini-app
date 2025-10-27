@@ -27,7 +27,6 @@ export const AdvertisingAccount = () => {
   ];
   return (
     <div>
-      <Header title="Рекламный кабинет" />
       <div className="space-y-[7px]">
         <Button type="gray" className="border border-[#303030] bg-charcoal">
           <img

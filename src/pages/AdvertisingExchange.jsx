@@ -21,7 +21,6 @@ export const AdvertisingExchange = () => {
   ];
   return (
     <div>
-      <Header search="Искать на Авокс.." cabinet={true} />
       <div className="space-y-[7px]">
         <Button type="gray" className="border border-[#303030] bg-charcoal">
           <img src="/images/icons/file-plus.svg" alt="" />

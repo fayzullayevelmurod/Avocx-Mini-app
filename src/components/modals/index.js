@@ -7,3 +7,4 @@ export { CategoriesModal } from "./CategoriesModal";
 export { ReviewsModal } from "./ReviewsModal";
 export { StoreAnalytics } from "./StoreAnalytics";
 export { ProductAnalytics } from "./ProductAnalytics";
+export { SubscriptionModal } from "./SubscriptionModal";

@@ -40,7 +40,7 @@ export const ManagementCharacteristics = () => {
   ];
   return (
     <div>
-      <Header search={true} />
+
       <div className="space-y-[7px]">
         <ProfileBox />
         <List options={categoryOptions} icon={true} />

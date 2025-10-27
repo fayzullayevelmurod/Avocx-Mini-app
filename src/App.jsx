@@ -8,7 +8,7 @@ export const App = () => {
   const hideBottomBarRoutes = ["/loading"];
 
   return (
-    <div className="overflow-hidden pb-[100px]">
+    <div className="overflow-hidden pb-[100px] bg-[#1C1C1C]">
       <div className="container pb-5">
         <AppRoutes />
       </div>

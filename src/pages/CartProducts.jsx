@@ -429,7 +429,6 @@ export const CartProducts = () => {
 
   return (
     <div>
-      <Header search="Искать на Авокс.." />
       <Tab tabData={tabData} />
     </div>
   );

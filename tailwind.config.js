@@ -28,25 +28,26 @@ export default {
       },
       boxShadow: {
         "pay-card": "0px 0px 10px 0px #96BBF7",
-        "option-shadow": "0px 4px 20px 0px #464646",
+        "option-shadow": "0px 0px 5px 0px #464646",
         "cart-btn": "0px 0px 5px 0px #FFFFFF inset",
         vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
-        'ai-btn': "0px 0px 10px 0px #C3A4FF66",
-        "discount": "0px 0px 3px 0px #0000004D",
+        "ai-btn": "0px 0px 10px 0px #C3A4FF66",
+        discount: "0px 0px 3px 0px #0000004D",
       },
       blur: {
         10: "10px",
       },
       borderRadius: {
         base: "14px",
+        15: "15px"
       },
       backgroundImage: {
         vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
         check: 'url("/images/icons/check.svg")',
       },
       screens: {
-        390: "390px"
-      }
+        390: "390px",
+      },
     },
   },
   plugins: [],

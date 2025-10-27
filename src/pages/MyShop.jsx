@@ -18,7 +18,6 @@ const products = [
 export const MyShop = () => {
   return (
     <div>
-      <Header search={true} addBtn={true} />
       <h3 className="text-center text-15 font-semibold mb-[10px] mt-[11px]">
         Мои магазины
       </h3>

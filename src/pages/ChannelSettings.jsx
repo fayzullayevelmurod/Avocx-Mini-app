@@ -35,7 +35,6 @@ export const ChannelSettings = () => {
   ];
   return (
     <div>
-      <Header title="Создание объявления" />
       <CardUI className="!pt-[21px] rounded-[30px] !pl-[14px] !pr-4 ">
         <h3 className="text-center font-semibold mb-[15px]">
           Выберите в какой категории ваш канал

@@ -44,7 +44,7 @@ export const ShopView = () => {
   const categoryOptions3 = ["Все", "Все 2", "Все 3"];
   return (
     <div>
-      <Header search={true} shareBtn={true} />
+
       <div className="space-y-[7px]">
         {products.map((product) => (
           <Card key={product.id} data={product} intelligence={true} />

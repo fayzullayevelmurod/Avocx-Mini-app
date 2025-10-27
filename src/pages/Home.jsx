@@ -14,7 +14,7 @@ export const Home = () => {
   ];
   return (
     <div>
-      <Header search={true} />
+
       <h1 className="mt-[11px] text-15 font-semibold text-center mb-[10px]">
         Главная
       </h1>
