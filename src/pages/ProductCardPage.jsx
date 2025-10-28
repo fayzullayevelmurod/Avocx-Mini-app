@@ -52,7 +52,7 @@ export const ProductCardPage = () => {
             <button className="absolute top-[10px] right-[10px] z-50">
               <ToggleIconButton
                 defaultIcon="/images/icons/featured-border.svg"
-                activeIcon="/images/icons/active-feature-2.svg"
+                activeIcon="/images/icons/active-heart.svg"
               />
             </button>
             <Swiper

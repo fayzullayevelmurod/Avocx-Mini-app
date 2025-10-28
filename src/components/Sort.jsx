@@ -38,11 +38,15 @@ export const Sort = ({
             {icon && (
               <img src={iconPath || "/images/icons/filter.svg"} alt="filter" />
             )}
-            <span className="text-grayCustom leading-full font-semibold">
+            <span className="text-grayCustom leading-full font-semibold text-xs">
               {label}
             </span>
           </div>
-          <span className="overflow-hidden mt-[1px] whitespace-nowrap font-semibold translate-y-[3px]">
+          <span
+            className={`overflow-hidden mt-[1px] whitespace-nowrap text-ellipsis font-semibold translate-y-[3px] ${
+              className === "item-width" ? "max-w-[125px]" : ""
+            }`}
+          >
             {selectedOption}
           </span>
         </div>

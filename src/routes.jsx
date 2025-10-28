@@ -1,17 +1,19 @@
 import { Route, Routes } from "react-router-dom";
-import { AddingProduct, AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, CreateShop, Home, Loading, ManagementCharacteristics, MapPage, MarketplaceProducts, MyAds, MyShop, MyShops, Notifications, ProductCardPage, ProductsMyStores, Settings, ShopView, SlideWindow, StoreManagement, StoreManagementTwo, Wallet } from "./pages";
+import { AddingProduct, AdvertisingAccount, AdvertisingExchange, CartProducts, ChannelSettings, CreateShop, Exchange, Home, Loading, ManagementCharacteristics, MapPage, MarketplaceProducts, MyAds, MyShop, MyShops, Notifications, ProductCardPage, ProductsMyStores, Settings, ShopView, SlideWindow, StoreManagement, StoreManagementTwo, Wallet } from "./pages";
 import { AddingProductTwo } from "./pages/AddingProductTwo";
 import { MarketplaceStores } from "./pages/MarketplaceStores";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* finished pages */}
       <Route path="/" element={<MapPage />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/exchange" element={<Exchange />} />
+
+      {/* finished pages */}
       <Route path="/loading" element={<Loading />} />
       <Route path="/slide-window" element={<SlideWindow />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/settings" element={<Settings />} />
       <Route path="/wallet" element={<Wallet />} />
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/cart-products" element={<CartProducts />} />

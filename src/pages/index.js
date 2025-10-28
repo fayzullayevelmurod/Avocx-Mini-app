@@ -21,3 +21,4 @@ export { ShopView } from "./ShopView";
 export { ProductCardPage } from "./ProductCardPage";
 export { CreateShop } from "./CreateShop";
 export { ProductsMyStores } from "./ProductsMyStores";
+export { Exchange } from "./Exchange";

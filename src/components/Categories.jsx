@@ -1,31 +1,13 @@
-import { Link } from 'react-router-dom';
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-const categories = [
-  { label: 'На хайпе', to: '/hype', className: 'bg-orange' },
-  { label: 'Бестселлеры', to: '/bestsellers', className: 'bg-primary' },
-  { label: 'Бренды', to: '/brands', className: 'bg-purple' },
-  { label: 'Скидки', to: '/discounts', className: 'bg-[#02AA6E]' },
-];
-
-export const Categories = ({ categoriesData = categories }) => {
+import "swiper/css";
+import "swiper/css/navigation";
+export const Categories = ({ categories }) => {
   return (
-    <div className='relative'>
-      {/* <div className='absolute top-0 -right-[17px] rounded-l-base w-[48px] h-full z-10 bg-green-dark-gradient'></div> */}
-      <div className='categories-container overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mx-4 pl-4 pr-4 relative'>
-        <div className='flex gap-2 whitespace-nowrap pr-4 mr-4'>
-          {categoriesData.map((category, index) => (
-            <Link
-              key={index}
-              to={category.to}
-              className={`${category.className} min-w-[123px] shadow-inset-light h-[35px] flex items-center justify-center rounded-base text-xs font-semibold snap-center flex-shrink-0 transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
-            >
-              {category.label}
-            </Link>
-          ))}
+    <div className="flex gap-[3px] overflow-x-auto no-scrollbar px-3 w-[calc(100%_+_24px)] -ml-3">
+      {categories.map((item) => (
+        <div className="bg-[#283134] rounded-xl min-w-[124px] max-w-[124px] h-[42px] flex items-center justify-center text-[#B8EDBE] text-xs font-bold">
+          {item.label}
         </div>
-      </div>
+      ))}
     </div>
   );
 };

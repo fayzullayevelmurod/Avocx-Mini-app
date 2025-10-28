@@ -1,4 +1,3 @@
-import { Header } from "../layouts";
 import {
   Button,
   CardUI,
@@ -11,7 +10,7 @@ import {
 import { ToggleIconButton } from "../components/ToggleFeatured";
 
 export const AdvertisingExchange = () => {
-  const categoryOptions2 = ["Все", "От новых 2", "От новых 3"];
+  const categoryOptions2 = ["Счастье Сейчас", "Счастье Сейчас 2", "Счастье Сейчас 3"];
   const categoryOptions3 = ["Text 1", "Text 2", "Text 3"];
   const categories = [
     { label: "Горячее", to: "/hype", className: "bg-orange" },
@@ -28,7 +27,7 @@ export const AdvertisingExchange = () => {
         </Button>
         <div className="flex gap-1">
           <Sort
-            label="Категория"
+            label="Канал"
             icon={true}
             iconPath="/images/icons/category.svg"
             options={categoryOptions2}
@@ -39,7 +38,7 @@ export const AdvertisingExchange = () => {
 
         <ChanelSelect />
         <Date />
-        <Categories categoriesData={categories} />
+        <Categories categories={categories} />
         <CardUI className="!p-[11px] mt-[1px] !rounded-[25px] border-[#FF9462] shadow-vip relative">
           <div className="absolute top-0 right-9 h-[22px] w-11 flex items-center justify-center bg-vip rounded-b-[7px]">
             VIP
@@ -92,7 +91,7 @@ export const AdvertisingExchange = () => {
                 </div>
               </div>
             </div>
-            <ToggleIconButton activeIcon="/images/icons/active-feature-2.svg" />
+            <ToggleIconButton activeIcon="/images/icons/active-heart.svg" />
           </div>
 
           {/* Первая карточка с уникальным ID и данными */}
@@ -158,7 +157,7 @@ export const AdvertisingExchange = () => {
                 </div>
               </div>
             </div>
-            <ToggleIconButton activeIcon="/images/icons/active-feature-2.svg" />
+            <ToggleIconButton activeIcon="/images/icons/active-heart.svg" />
           </div>
 
           {/* Первая карточка с уникальным ID и данными */}

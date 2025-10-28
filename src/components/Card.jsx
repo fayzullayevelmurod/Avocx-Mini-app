@@ -51,7 +51,7 @@ export const Card = ({ data, btns, intelligence, vip, noFeatured = false }) => {
             <div className="absolute top-[5px] right-[5px] w-[27px] h-[27px] flex items-center justify-center">
               <ToggleIconButton
                 defaultIcon="/images/icons/featured-border.svg"
-                activeIcon="/images/icons/active-feature-2.svg"
+                activeIcon="/images/icons/active-heart.svg"
                 className="!w-4"
               />
             </div>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export const ToggleIconButton = ({
-  defaultIcon = "/images/icons/featured.svg",
-  activeIcon = "/images/icons/active-featured.svg",
+  defaultIcon = "/images/icons/heart.svg",
+  activeIcon = "/images/icons/active-heart.svg",
   className = "",
   onToggle,
 }) => {

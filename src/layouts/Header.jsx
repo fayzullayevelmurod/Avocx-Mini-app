@@ -1,14 +1,34 @@
-export const Header = ({ title, settingBtn = false }) => {
+import { Link } from "react-router-dom";
+import { Button } from "../components";
+
+export const Header = ({ title, search, settingBtn, action, actionIcon }) => {
   return (
     <header className="h-[72px] bg-[#1C1C1C] pr-0.5 py-[13px] flex gap-[7px] items-center justify-between pb-[13px] relative mb-3">
       <div className="w-[calc(100%_+_26px)] border border-[#242424] absolute bottom-0 -left-[13px]"></div>
+      {search && (
+        <div className="min-w-[143px] flex-1 h-[46px] rounded-15 bg-charcoal flex items-center gap-1 px-[14px]">
+          <img src="/images/icons/search.svg" alt="" />
+          <input
+            className="bg-transparent border-none outline-none w-full placeholder:text-[#707070] text-xs font-semibold"
+            type="text"
+            placeholder="Поиск"
+          />
+        </div>
+      )}
       {title && (
         <div className="py-[13px] w-full flex-1 min-w-0 bg-[#242424] rounded-[15px] flex items-center justify-center h-[46px]">
           <h2 className="font-bold text-xs">Настройки</h2>
         </div>
       )}
-      <div
-        className={`bg-[#242424] rounded-[15px] w-[50px] h-[46px] flex items-center justify-center ${settingBtn}`}
+      {action && (
+        <Button className="w-[139px] !h-[46px]">
+          <img src={actionIcon} alt="" />
+          <span className="text-xs text-[#1C1C1C]">{action}</span>
+        </Button>
+      )}
+      <Link
+        to="/settings"
+        className={`bg-[#242424] rounded-[15px] min-w-[50px] max-w-[50px] h-[46px] flex items-center justify-center ${settingBtn}`}
       >
         <svg
           width="24"
@@ -22,8 +42,8 @@ export const Header = ({ title, settingBtn = false }) => {
             fill={`${settingBtn ? "#707070" : "#E8E8E8"}`}
           />
         </svg>
-      </div>
-      <div className="w-[59px] relative h-[46px] rounded-[15px] p-[3px] flex items-center gap-[3px] bg-[#242424]">
+      </Link>
+      <div className="min-w-[59px] max-w-[59px] relative h-[46px] rounded-[15px] p-[3px] flex items-center gap-[3px] bg-[#242424]">
         <img
           className="w-10 h-10 rounded-[13px] object-cover"
           src="/images/header-user-img.jpg"

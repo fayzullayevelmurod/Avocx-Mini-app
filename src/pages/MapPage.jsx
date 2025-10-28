@@ -3,10 +3,13 @@ import { Header } from "../layouts";
 
 export const MapPage = () => {
   const routes = [
+    { path: "/settings", label: "Настройки профиля" },
+    { path: "/exchange", label: "Биржа" },
+
+    // =============================================
     { path: "/loading", label: "Loader" },
     { path: "/slide-window", label: "Slide Window" },
     { path: "/home", label: "Главная" },
-    { path: "/settings", label: "Настройки профиля" },
     { path: "/wallet", label: "Кошелёк" },
     { path: "/notifications", label: "Уведомления" },
     { path: "/cart-products", label: "Корзина товары" },

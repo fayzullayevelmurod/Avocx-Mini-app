@@ -40,7 +40,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
   return (
     <div
       ref={containerRef}
-      className="bg-iron p-[1px] flex items-center rounded-2xl mt-[7px] gap-[2px] h-[38px] border border-[#707070]"
+      className="bg-[#1E1E1E] p-[2px] flex items-center rounded-base mt-[7px] gap-[2px] h-[38px]"
     >
       {buttonsData.map((button) => {
         const isExpanded = expandedButton === button.format;
@@ -49,7 +49,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
           <div
             key={`${cardId}-${button.format}`}
             className={`
-              flex items-center justify-between  rounded-base bg-charcoal cursor-pointer
+              flex items-center justify-between  rounded-xl bg-[#303030] cursor-pointer
               transition-all duration-300 ease-out ml-0
               ${
                 isExpanded
@@ -71,7 +71,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
             {/* Price - slides in */}
             <span
               className={` -ml-2
-                text-[11px] font-bold whitespace-nowrap
+                text-[10px] text-[#52E063] font-bold whitespace-nowrap
                 transition-all duration-300 ease-out
                 ${
                   isExpanded
@@ -102,7 +102,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
               <motion.button
                 onClick={(e) => handleCartClick(e, button.format, button.price)}
                 whileTap={{ scale: 0.9 }}
-                className="relative overflow-hidden min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset !rounded-[13px] bg-primary  flex items-center justify-center mr-[1px] shadow-cart-btn border border-[#E0ECFF]"
+                className="relative overflow-hidden min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset bg-[#52E063] rounded-[10px] flex items-center justify-center mr-0.5"
               >
                 <img src="/images/icons/cart.svg" alt="" />
                 {ripple && (
@@ -110,7 +110,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
                     initial={{ scale: 0, opacity: 0.6 }}
                     animate={{ scale: 2.5, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="absolute w-16 h-16 bg-blue-400 rounded-full pointer-events-none"
+                    className="absolute w-16 h-16 bg-[#52E063] rounded-full pointer-events-none"
                     style={{
                       top: "50%",
                       left: "50%",

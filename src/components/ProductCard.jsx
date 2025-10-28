@@ -24,7 +24,7 @@ export const ProductCard = ({
         )}
         {!noFeatured && (
           <div className="absolute top-[10px] right-[10px]">
-            <ToggleIconButton defaultIcon="/images/icons/featured-border.svg" activeIcon="/images/icons/active-feature-2.svg" className="!w-4" />
+            <ToggleIconButton defaultIcon="/images/icons/featured-border.svg" activeIcon="/images/icons/active-heart.svg" className="!w-4" />
           </div>
         )}
 
