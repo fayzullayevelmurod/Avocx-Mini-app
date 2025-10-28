@@ -20,7 +20,7 @@ const languageOptions = [
 export const SubscriptionModal = ({ isOpen, onClose }) => {
   const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
   const [check, setCheck] = useState(false);
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleClose = () => setOpenModal(null);
   const handleOpen = (modalName) => setOpenModal(modalName);
@@ -43,7 +43,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
           </div>
 
           <img
-            className="w-full h-[201px] object-cover mt-[23px] mb-[11px] rounded-[25px]"
+            className="w-full h-[201px] object-cover object-left mt-[23px] mb-[11px] rounded-[25px]"
             src="/images/modal-banner.png"
             alt=""
           />

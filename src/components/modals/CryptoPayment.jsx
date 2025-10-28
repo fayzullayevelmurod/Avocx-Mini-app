@@ -1,71 +1,111 @@
 import { useState } from "react";
+import { Tab } from "../Tab";
 import { Button } from "../Button";
-import { PayCard } from "../PayCard";
+import { Checkbox } from "../Checkbox";
 
-const methods = [
+const tabData = [
   {
-    id: 1,
-    title: "Авокс кошелёк",
-    text: "0% комиссия",
-    icon: "/images/icons/wallet.svg",
-    selected: true,
+    id: "1",
+    label: "На карту",
+    icon: "/images/icons/card-pay-white.svg",
+    content: "<Cart />",
+  },
+  {
+    id: "2",
+    label: "По номеру",
+    icon: "/images/icons/mobile-phone.svg",
+    content: "<Order />",
   },
 ];
-export const CryptoPayment = ({ isOpen, onClose }) => {
-  const [selected, setSelected] = useState(
-    methods.find((m) => m.selected)?.id || null
-  );
 
+export const CryptoPayment = ({ isOpen, onClose }) => {
+  const [activeBank, setActiveBank] = useState(1);
+  const [check, setCheck] = useState(false);
+  const banks = [
+    { id: 1, name: "Т-Банк", number: "1234 5678 9101 1121" },
+    { id: 2, name: "Сбер", number: "1234 5678 9101 1121" },
+  ];
   return (
     <div
-      className={`modal duration-300 ${
-        isOpen ? "bottom-0" : "-bottom-[150%]"
-      }`}
+      className={`modal duration-300 ${isOpen ? "bottom-0" : "-bottom-[150%]"}`}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-[13px]">
         <div className="flex items-center gap-2">
-          <img
-            src="/images/icons/wallet.svg"
-            alt="wallet"
-            width={20}
-            height={18}
-          />
-          <span className="font-bold">Авокс кошелёк</span>
+          <img src="/images/icons/logo-a.svg" alt="" />
+          <span className="text-15 font-bold">Реквизиты продавца</span>
         </div>
         <button onClick={onClose}>
-          <img src="/images/icons/close.svg" alt="close" />
+          <img src="/images/icons/close.svg" alt="" />
         </button>
       </div>
-      <h4 className="font-bold text-center mt-[57px] text-15">К оплате:</h4>
-      <div className="flex items-center gap-[7px] justify-center mt-2 mb-[22px] ml-5">
-        <h3 className="font-bold text-[40px] leading-full">2.533</h3>
-        <div className="font-semibold w-[90px] h-[50px] flex items-center justify-center rounded-[20px] bg-[#303030]">
-          TON
+      <div className="bg-[#242424] pt-[10px] px-[14px] rounded-15 mt-[23px] pb-[12px]">
+        <div className="flex gap-[6px] items-center justify-center">
+          <img src="/images/icons/shield-done.svg" alt="" />
+          <span className="font-semibold">Обратите внимание</span>
         </div>
+        <p className="mt-[6px] leading-full text-[#A3A3A3] text-center">
+          Сервис не несёт ответственность за переводы денежных средств, и не
+          даёт гарантий.
+        </p>
       </div>
-      <Button type="primary">
-        <img src="/images/icons/pay.svg" alt="pay" />
-        <span>Оплатить</span>
-      </Button>
-      <p className="font-semibold mt-2 mb-[29px] text-center">
-        Баланс: 2500 <span className="text-grayCustom">₽ /</span> 13.22{" "}
-        <span className="text-grayCustom">TON</span>
-      </p>
-      <h4 className="font-bold text-center mb-[7px] text-15">
-        Выберите средство оплаты:
+      <h3 className="text-15 font-bold text-center text-white mt-3 mb-[1px] leading-[18px]">
+        Переведите:
+      </h3>
+      <h2 className="text-[50px] leading-[61px] mt-2 font-bold text-center">
+        3828<span className="text-xl font-medium text-[#A3A3A3]">₽</span>
+      </h2>
+      <div className="flex items-center justify-center gap-[7px] mt-[7px] mb-3">
+        <img src="/images/icons/time.svg" alt="" />
+        <span className="text-[#52E063] font-bold">1:59:59</span>
+      </div>
+      <h4 className="text-center mb-3 leading-4 font-semibold">
+        Отметьте выбранный вариант
       </h4>
-      <div className="space-y-1">
-        {methods.map((m) => (
-          <PayCard
-            key={m.id}
-            title={m.title}
-            text={m.text}
-            icon={m.icon}
-            isSelected={selected === m.id}
-            onClick={() => setSelected(m.id)}
-          />
+      <div className="space-y-[6px]">
+        <Tab tabData={tabData} />
+        {banks.map((bank) => (
+          <div
+            key={bank.id}
+            onClick={() => setActiveBank(bank.id)}
+            className={`flex h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-charcoal w-full cursor-pointer transition-all`}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 rounded-full border-2 border-iron flex items-center justify-center">
+                {activeBank === bank.id && (
+                  <div className="bg-[#52E063] rounded-full w-[13px] h-[13px]"></div>
+                )}
+              </div>
+              <div>
+                <span className="text-[10px] font-medium mb-2 block leading-[7px]">
+                  {bank.name}
+                </span>
+                <h3 className="text-15 font-semibold leading-[11px]">
+                  {bank.number}
+                </h3>
+              </div>
+            </div>
+            <img src="/images/icons/copy-2.svg" alt="" />
+          </div>
         ))}
       </div>
+      <h3 className="text-15 text-center font-bold leading-[14px] my-3">
+        Загрузите чек оплаты
+      </h3>
+      <Button type="lightGray">
+        <img src="/images/icons/upload-file.svg" alt="" />
+        <span>Загрузить чек</span>
+      </Button>
+
+      <div className="flex gap-[6px] mt-[14px] mb-2">
+        <div className="mt-0.5">
+          <Checkbox checked={check} onChange={() => setCheck(!check)} />
+        </div>
+        <span className="text-xs font-semibold text-[#A3A3A3] max-w-[361px] leading-[115%]">
+          Я подтверждаю, что перевёл указанную сумму денежных средства по
+          указанным реквизитам.
+        </span>
+      </div>
+      <Button>Я перевёл</Button>
     </div>
   );
 };

@@ -33,7 +33,7 @@ export const Settings = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
   const [selectedLanguage2, setSelectedLanguage2] = useState(currency[0]);
 
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
