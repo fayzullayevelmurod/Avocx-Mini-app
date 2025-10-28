@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components";
 
-export const Header = ({ title, search, settingBtn, action, actionIcon }) => {
+export const Header = ({
+  title,
+  search,
+  settingBtn,
+  action,
+  actionIcon,
+  actionLink,
+}) => {
   return (
     <header className="h-[72px] bg-[#1C1C1C] pr-0.5 py-[13px] flex gap-[7px] items-center justify-between pb-[13px] relative mb-3">
       <div className="w-[calc(100%_+_26px)] border border-[#242424] absolute bottom-0 -left-[13px]"></div>
@@ -21,10 +28,12 @@ export const Header = ({ title, search, settingBtn, action, actionIcon }) => {
         </div>
       )}
       {action && (
-        <Button className="w-[139px] !h-[46px]">
-          <img src={actionIcon} alt="" />
-          <span className="text-xs text-[#1C1C1C]">{action}</span>
-        </Button>
+        <Link to={actionLink} className="w-[139px] !h-[46px]">
+          <Button className="w-[139px] !h-[46px]">
+            <img src={actionIcon} alt="" />
+            <span className="text-xs text-[#1C1C1C]">{action}</span>
+          </Button>
+        </Link>
       )}
       <Link
         to="/settings"

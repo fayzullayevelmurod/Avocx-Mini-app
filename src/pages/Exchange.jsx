@@ -39,6 +39,7 @@ export const Exchange = () => {
           settingBtn={true}
           search={true}
           action="Кабинет"
+          actionLink="/announcements-exchange"
           actionIcon="/images/icons/trade-up.svg"
         />
         <div className="space-y-[6px]">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, InlineIconSelect, Tab } from "../components";
 import { Header } from "../layouts";
 import { SubscriptionModal } from "../components/modals";
+import { Link } from "react-router-dom";
 
 const languageOptions = [
   { label: "RU", icon: "/images/icons/russion-flag.svg" },
@@ -74,10 +75,12 @@ export const Settings = () => {
               className="!h-[49px]"
             />
           </div>
-          <Button type="gray">
-            <img src="/images/icons/wallet.svg" alt="" />
-            Реквизиты
-          </Button>
+          <Link to="/setting-up-details" className="w-full">
+            <Button type="gray">
+              <img src="/images/icons/wallet.svg" alt="" />
+              Реквизиты
+            </Button>
+          </Link>
           <div className="flex gap-[10px]">
             <Button type="gray">
               <img src="/images/icons/operator.svg" alt="" />

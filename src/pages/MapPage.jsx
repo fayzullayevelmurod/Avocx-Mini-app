@@ -5,6 +5,8 @@ export const MapPage = () => {
   const routes = [
     { path: "/settings", label: "Настройки профиля" },
     { path: "/exchange", label: "Биржа" },
+    { path: "/announcements-exchange", label: "Объявления на бирже" },
+    { path: "/setting-up-details", label: "Настройка реквизитов" },
 
     // =============================================
     { path: "/loading", label: "Loader" },

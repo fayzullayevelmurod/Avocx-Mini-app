@@ -2,7 +2,6 @@ export { MapPage } from "./MapPage";
 export { Loading } from "./Loading";
 export { SlideWindow } from "./SlideWindow";
 export { Home } from "./Home";
-export { Settings } from "./Settings";
 export { Wallet } from "./Wallet";
 export { Notifications } from "./Notifications";
 export { CartProducts } from "./CartProducts";
@@ -21,4 +20,9 @@ export { ShopView } from "./ShopView";
 export { ProductCardPage } from "./ProductCardPage";
 export { CreateShop } from "./CreateShop";
 export { ProductsMyStores } from "./ProductsMyStores";
+
+// ==============new==============
+export { Settings } from "./Settings";
 export { Exchange } from "./Exchange";
+export { AnnouncementsExchange } from "./AnnouncementsExchange";
+export { SettingUpDetails } from "./SettingUpDetails";
