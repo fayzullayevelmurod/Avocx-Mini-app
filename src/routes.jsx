@@ -7,6 +7,7 @@ import {
   CartProducts,
   ChannelSettings,
   CreateShop,
+  CreatingExchange,
   Exchange,
   Home,
   Loading,
@@ -40,11 +41,8 @@ const AppRoutes = () => {
         path="/announcements-exchange"
         element={<AnnouncementsExchange />}
       />
-      <Route
-        path="/setting-up-details"
-        element={<SettingUpDetails />}
-      />
-
+      <Route path="/setting-up-details" element={<SettingUpDetails />} />
+      <Route path="/creating-exchange" element={<CreatingExchange />} />
 
       {/* finished pages */}
       <Route path="/loading" element={<Loading />} />

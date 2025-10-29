@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import AppRoutes from "./routes";
-import { Header, Footer } from "./layouts";
+import { Footer } from "./layouts";
 
 export const App = () => {
   const location = useLocation();

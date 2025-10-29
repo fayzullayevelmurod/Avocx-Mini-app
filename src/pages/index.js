@@ -26,3 +26,4 @@ export { Settings } from "./Settings";
 export { Exchange } from "./Exchange";
 export { AnnouncementsExchange } from "./AnnouncementsExchange";
 export { SettingUpDetails } from "./SettingUpDetails";
+export { CreatingExchange } from "./CreatingExchange";

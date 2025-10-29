@@ -222,7 +222,7 @@ h2.react-datepicker__current-month {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: url("./images/icons/check.svg") no-repeat center;
+  background: url("./images/icons/checked.svg") no-repeat center;
   border-radius: 4px;
   display: none;
 }
@@ -231,7 +231,7 @@ h2.react-datepicker__current-month {
 }
 .checkbox-container input:checked + label::before {
   border: transparent;
-  background: #e679ff;
+  background: #272727;
 }
 
 .text-vip {
