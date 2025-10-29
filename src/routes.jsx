@@ -15,6 +15,7 @@ import {
   MapPage,
   MarketplaceProducts,
   MyAds,
+  MyAdsExchange,
   MyShop,
   MyShops,
   Notifications,
@@ -43,6 +44,8 @@ const AppRoutes = () => {
       />
       <Route path="/setting-up-details" element={<SettingUpDetails />} />
       <Route path="/creating-exchange" element={<CreatingExchange />} />
+      <Route path="/my-ads-exchange" element={<MyAdsExchange />} />
+
 
       {/* finished pages */}
       <Route path="/loading" element={<Loading />} />

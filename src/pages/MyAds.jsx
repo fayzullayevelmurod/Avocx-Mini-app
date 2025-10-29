@@ -39,6 +39,7 @@ export const MyAds = () => {
     <div>
       <Header title="Мои объявления" />
       <Tab tabData={tabData} />
+      <Stock />
     </div>
   );
 };

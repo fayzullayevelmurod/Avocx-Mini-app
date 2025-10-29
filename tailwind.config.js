@@ -17,7 +17,7 @@ export default {
         orange: "#FF6C11",
         grayCustom: "#A3A3A3",
         "dark-gray": "#333333",
-        green: "#00D79A",
+        green: "#52E063",
       },
       fontSize: {
         15: "15px",

@@ -7,18 +7,24 @@ import {
   Tooltip,
 } from "recharts";
 
-
-
-export const EarnedChart = ({title, data, subTitle}) => {
+export const EarnedChart = ({ title, data, subTitle, subTitle2, title2, subTitle3, title3 }) => {
   return (
-    <div className="bg-[#303030] rounded-[20px] p-[10px]  px-0">
+    <div className="bg-charcoal rounded-15 p-[10px] pt-3 px-0">
       {/* Title */}
-      <h2 className="text-15 font-medium mb-1 text-center text-[#FFFFFF]">
-        {title} <span className="text-[#00D79A]">{subTitle}</span>
+      <h2 className="text-xs font-semibold mb-1 text-center leading-[9px]">
+        {title} <span className="text-green">{subTitle}</span>
       </h2>
+      <div className="flex items-center gap-0.5 justify-center">
+        <h3 className="font-semibold leading-[9px] mt-[5px] text-center text-[10px]">
+          {title2} <span className="text-[#E679FF]">{subTitle2}</span>
+        </h3>
+        <h3 className="font-semibold leading-[9px] mt-[5px] text-center text-[10px]">
+          {title3} <span className="text-[#E679FF]">{subTitle3}</span>
+        </h3>
+      </div>
 
       {/* Chart */}
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height={168}>
         <LineChart
           data={data}
           margin={{ top: 10, right: 30, left: -15, bottom: 0 }}
@@ -35,10 +41,10 @@ export const EarnedChart = ({title, data, subTitle}) => {
           <Line
             type="monotone"
             dataKey="value"
-            stroke="#00D79A"
+            stroke="#52E063"
             strokeWidth={3}
-            dot={{ r: 5, fill: "#00D79A" }}
-            activeDot={{ r: 7, fill: "#00D79A" }}
+            dot={{ r: 5, fill: "#52E063" }}
+            activeDot={{ r: 7, fill: "#52E063" }}
           />
         </LineChart>
       </ResponsiveContainer>

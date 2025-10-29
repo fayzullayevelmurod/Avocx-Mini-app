@@ -8,6 +8,7 @@ export const MapPage = () => {
     { path: "/announcements-exchange", label: "Объявления на бирже" },
     { path: "/setting-up-details", label: "Настройка реквизитов" },
     { path: "/creating-exchange", label: "Создание объявления на биржу" },
+    { path: "/my-ads-exchange", label: "Мои объявления на бирже" },
 
     // =============================================
     { path: "/loading", label: "Loader" },

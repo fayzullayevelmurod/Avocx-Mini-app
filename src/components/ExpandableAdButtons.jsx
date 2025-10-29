@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
+export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
   const [expandedButton, setExpandedButton] = useState(null);
   const [ripple, setRipple] = useState(false);
   const containerRef = useRef(null);
@@ -40,7 +40,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
   return (
     <div
       ref={containerRef}
-      className="bg-[#1E1E1E] p-[2px] flex items-center rounded-base mt-[7px] gap-[2px] h-[38px]"
+      className="bg-[#1E1E1E] p-[2px] relative flex items-center rounded-base mt-[7px] gap-[2px] h-[38px]"
     >
       {buttonsData.map((button) => {
         const isExpanded = expandedButton === button.format;
@@ -123,6 +123,9 @@ export const ExpandableAdButtons = ({ cardId, buttonsData }) => {
           </div>
         );
       })}
+      {status && (
+        <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#52E063]">Активно</div>
+      )}
     </div>
   );
 };
