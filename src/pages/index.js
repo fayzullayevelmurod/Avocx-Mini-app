@@ -28,3 +28,4 @@ export { AnnouncementsExchange } from "./AnnouncementsExchange";
 export { SettingUpDetails } from "./SettingUpDetails";
 export { CreatingExchange } from "./CreatingExchange";
 export { MyAdsExchange } from "./MyAdsExchange";
+export { BuyerAdvertisingOrders } from "./BuyerAdvertisingOrders";

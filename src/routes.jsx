@@ -4,6 +4,7 @@ import {
   AdvertisingAccount,
   AdvertisingExchange,
   AnnouncementsExchange,
+  BuyerAdvertisingOrders,
   CartProducts,
   ChannelSettings,
   CreateShop,
@@ -45,6 +46,7 @@ const AppRoutes = () => {
       <Route path="/setting-up-details" element={<SettingUpDetails />} />
       <Route path="/creating-exchange" element={<CreatingExchange />} />
       <Route path="/my-ads-exchange" element={<MyAdsExchange />} />
+      <Route path="/buyer-advertising-orders" element={<BuyerAdvertisingOrders />} />
 
 
       {/* finished pages */}

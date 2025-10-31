@@ -29,9 +29,9 @@ export const Header = ({
       )}
       {action && (
         <Link to={actionLink} className="w-[139px] !h-[46px]">
-          <Button className="w-[139px] !h-[46px]">
+          <Button className="w-[139px] !h-[46px] !bg-[#242424]">
             <img src={actionIcon} alt="" />
-            <span className="text-xs text-[#1C1C1C]">{action}</span>
+            <span className="text-xs text-base-white">{action}</span>
           </Button>
         </Link>
       )}

@@ -36,7 +36,7 @@ export const Sort = ({
         <div className="text-left">
           <div className="flex gap-1 items-center">
             {icon && (
-              <img src={iconPath || "/images/icons/filter.svg"} alt="filter" />
+              <img src={iconPath || "/images/icons/filter.svg"} alt="filter" width={14} />
             )}
             <span className="text-grayCustom leading-full font-semibold text-xs">
               {label}
