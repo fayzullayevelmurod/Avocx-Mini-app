@@ -39,6 +39,8 @@ export const MyAds = () => {
     <div>
       <Header title="Мои объявления" />
       <Tab tabData={tabData} />
+      <Purchase />
+      <Order />
       <Stock />
     </div>
   );

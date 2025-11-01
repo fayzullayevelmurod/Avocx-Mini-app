@@ -5,6 +5,8 @@ import {
   AdvertisingExchange,
   AnnouncementsExchange,
   BuyerAdvertisingOrders,
+  BuyerAdvertisingOrdersThree,
+  BuyerAdvertisingOrdersTwo,
   CartProducts,
   ChannelSettings,
   CreateShop,
@@ -24,6 +26,7 @@ import {
   ProductsMyStores,
   Settings,
   SettingUpDetails,
+  ShoppingCartAdvertising,
   ShopView,
   SlideWindow,
   StoreManagement,
@@ -32,6 +35,7 @@ import {
 } from "./pages";
 import { AddingProductTwo } from "./pages/AddingProductTwo";
 import { MarketplaceStores } from "./pages/MarketplaceStores";
+import { CreatingAdvertisingPost } from "./pages/CreatingAdvertisingPost";
 
 const AppRoutes = () => {
   return (
@@ -46,8 +50,26 @@ const AppRoutes = () => {
       <Route path="/setting-up-details" element={<SettingUpDetails />} />
       <Route path="/creating-exchange" element={<CreatingExchange />} />
       <Route path="/my-ads-exchange" element={<MyAdsExchange />} />
-      <Route path="/buyer-advertising-orders" element={<BuyerAdvertisingOrders />} />
-
+      <Route
+        path="/buyer-advertising-orders"
+        element={<BuyerAdvertisingOrders />}
+      />
+      <Route
+        path="/creating-advertising-post"
+        element={<CreatingAdvertisingPost />}
+      />
+      <Route
+        path="/shopping-cart-advertising"
+        element={<ShoppingCartAdvertising />}
+      />
+      <Route
+        path="/buyer-advertising-orders-two"
+        element={<BuyerAdvertisingOrdersTwo />}
+      />
+      <Route
+        path="/buyer-advertising-orders-three"
+        element={<BuyerAdvertisingOrdersThree />}
+      />
 
       {/* finished pages */}
       <Route path="/loading" element={<Loading />} />

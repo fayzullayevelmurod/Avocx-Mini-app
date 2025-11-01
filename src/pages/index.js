@@ -29,3 +29,6 @@ export { SettingUpDetails } from "./SettingUpDetails";
 export { CreatingExchange } from "./CreatingExchange";
 export { MyAdsExchange } from "./MyAdsExchange";
 export { BuyerAdvertisingOrders } from "./BuyerAdvertisingOrders";
+export { ShoppingCartAdvertising } from "./ShoppingCartAdvertising";
+export { BuyerAdvertisingOrdersTwo } from "./BuyerAdvertisingOrdersTwo";
+export { BuyerAdvertisingOrdersThree } from "./BuyerAdvertisingOrdersThree";

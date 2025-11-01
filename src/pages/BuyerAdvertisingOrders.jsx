@@ -24,14 +24,14 @@ export const BuyerAdvertisingOrders = () => {
           icon={true}
           iconPath="/images/icons/filter.svg"
           options={categoryOptions2}
-          className="item-width h-[54px]"
+          className="item-width !h-[54px]"
         />
         <Sort
           label="Статус"
           icon={true}
           iconPath="/images/icons/flag.svg"
           options={categoryOptions1}
-          className="item-width h-[54px]"
+          className="item-width !h-[54px]"
         />
       </div>
       <Sort
@@ -39,7 +39,7 @@ export const BuyerAdvertisingOrders = () => {
         icon={true}
         iconPath="/images/icons/stars.svg"
         options={categoryOptions3}
-        className="item-width h-[54px]"
+        className="item-width !h-[54px]"
       />
     </div>
   );

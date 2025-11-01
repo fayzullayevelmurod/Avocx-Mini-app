@@ -9,8 +9,17 @@ export const MapPage = () => {
     { path: "/setting-up-details", label: "Настройка реквизитов" },
     { path: "/creating-exchange", label: "Создание объявления на биржу" },
     { path: "/my-ads-exchange", label: "Мои объявления на бирже" },
-    { path: "/buyer-advertising-orders", label: "Заказы рекламы покупателя" },
-
+    { path: "/creating-advertising-post", label: "Создание рекламного поста" },
+    { path: "/shopping-cart-advertising", label: "Корзина реклама" },
+    {
+      path: "/buyer-advertising-orders-two",
+      label: "Заказы рекламы покупателя 1",
+    },
+    {
+      path: "/buyer-advertising-orders-three",
+      label: "Заказы рекламы покупателя 2",
+    },
+    { path: "/buyer-advertising-orders", label: "Заказы рекламы покупателя 3" },
     // =============================================
     // { path: "/loading", label: "Loader" },
     // { path: "/slide-window", label: "Slide Window" },
