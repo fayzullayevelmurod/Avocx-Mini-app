@@ -32,3 +32,4 @@ export { BuyerAdvertisingOrders } from "./BuyerAdvertisingOrders";
 export { ShoppingCartAdvertising } from "./ShoppingCartAdvertising";
 export { BuyerAdvertisingOrdersTwo } from "./BuyerAdvertisingOrdersTwo";
 export { BuyerAdvertisingOrdersThree } from "./BuyerAdvertisingOrdersThree";
+export { MyCreatedAds } from "./MyCreatedAds";

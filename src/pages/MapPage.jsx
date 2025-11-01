@@ -20,6 +20,7 @@ export const MapPage = () => {
       label: "Заказы рекламы покупателя 2",
     },
     { path: "/buyer-advertising-orders", label: "Заказы рекламы покупателя 3" },
+    { path: "/my-created-ads", label: "Мои  созданные рекламы" },
     // =============================================
     // { path: "/loading", label: "Loader" },
     // { path: "/slide-window", label: "Slide Window" },

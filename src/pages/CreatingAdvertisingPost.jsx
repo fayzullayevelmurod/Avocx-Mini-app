@@ -9,25 +9,8 @@ const categoryOptions2 = [
 ];
 
 export const CreatingAdvertisingPost = () => {
-  const languageOptions2 = [
-    {
-      label: "На заявки",
-      icon: "/images/icons/block.svg",
-    },
-    {
-      label: "Открытая",
-      icon: "/images/icons/unlock.svg",
-    },
-  ];
-
-  const [check, setCheck] = useState(false);
-  const [ratio, setRatio] = useState({ left: "", right: "" });
-  const rightInputRef = useRef(null);
   const [time, setTime] = useState({ hours: "", minutes: "" });
   const minutesRef = useRef(null);
-  const [selectedLanguage2, setSelectedLanguage2] = useState(
-    languageOptions2[0]
-  );
   const [active, setActive] = useState("Фикс"); // default
 
   const buttons = ["Фикс", "CPM", "ПДП"];
@@ -92,45 +75,6 @@ export const CreatingAdvertisingPost = () => {
     const [h, m] = preset.split(":");
     setTime({ hours: h, minutes: m });
   };
-  const handleRatioChange = (e) => {
-    const { name, value } = e.target;
-    const onlyNums = value.replace(/\D/g, ""); // Оставляем только цифры
-
-    if (name === "left") {
-      if (onlyNums.length <= 2) {
-        const numValue = parseInt(onlyNums) || "";
-        if (numValue === "" || (numValue >= 1 && numValue <= 10)) {
-          setRatio((prev) => ({ ...prev, left: onlyNums }));
-          // Переход фокуса на right, если введено 2 цифры или значение от 1 до 10
-          if (onlyNums.length === 2 || (numValue >= 1 && numValue <= 10)) {
-            rightInputRef.current.focus();
-          }
-        }
-      }
-    } else if (name === "right") {
-      if (onlyNums.length <= 3) {
-        const numValue = parseInt(onlyNums) || "";
-        if (numValue === "" || (numValue >= 1 && numValue <= 100)) {
-          setRatio((prev) => ({ ...prev, right: onlyNums }));
-        }
-      }
-    }
-  };
-  const handleRatioPreset = (preset) => {
-    const [l, r] = preset.split("/");
-    setRatio({ left: l, right: r });
-  };
-  const options = [
-    { value: "sell", label: "Категория:" },
-    { value: "buy", label: "Категория:2" },
-    { value: "rent", label: "Категория:3" },
-  ];
-
-  const options2 = [
-    { value: "sell", label: "Пост: (№последний созданный..) " },
-    { value: "buy", label: "Пост: (№последний созданный..) 2" },
-    { value: "rent", label: "Пост: (№последний созданный..) 3" },
-  ];
 
   const tabData = [
     {
@@ -274,7 +218,10 @@ export const CreatingAdvertisingPost = () => {
         </div>
       </div>
       <div className="mt-4">
-        <Button> <img src="/images/icons/paper-plus.svg" alt="" /> Создать пост</Button>
+        <Button>
+          {" "}
+          <img src="/images/icons/paper-plus.svg" alt="" /> Создать пост
+        </Button>
       </div>
     </div>
   );

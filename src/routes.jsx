@@ -19,6 +19,7 @@ import {
   MarketplaceProducts,
   MyAds,
   MyAdsExchange,
+  MyCreatedAds,
   MyShop,
   MyShops,
   Notifications,
@@ -70,6 +71,11 @@ const AppRoutes = () => {
         path="/buyer-advertising-orders-three"
         element={<BuyerAdvertisingOrdersThree />}
       />
+      <Route
+        path="/my-created-ads"
+        element={<MyCreatedAds />}
+      />
+
 
       {/* finished pages */}
       <Route path="/loading" element={<Loading />} />

@@ -288,3 +288,18 @@ input::-webkit-inner-spin-button {
 .icon-white {
   filter: invert(0) brightness(100%);
 }
+
+.custom-table table tbody td:last-child,
+.custom-table table tbody th:last-child,
+.custom-table table thead td:last-child,
+.custom-table table thead th:last-child {
+  position: sticky;
+  right: 0;
+  border-left: 2px solid #00000066 !important;
+  z-index: 100;
+}
+table tfoot {
+  position: static;
+  bottom: 0;
+  left: 0;
+}
