@@ -5,7 +5,7 @@ export const MyTable = () => {
         <table className="w-[1250px]">
           <thead className="">
             <tr>
-              <td className="bg-[#1F1F1F] h-[35px] rounded-tl-15">
+              <td className="bg-[#1F1F1F] h-[35px] rounded-tl-15 w-[117px]">
                 <div className="flex items-center justify-between pr-[10px] pl-[14px]">
                   <div className="flex items-center gap-[5px]">
                     <span className="leading-[9px] text-[10px] font-semibold">
