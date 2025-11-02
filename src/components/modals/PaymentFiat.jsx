@@ -74,7 +74,7 @@ export const PaymentFiat = ({ isOpen, onClose }) => {
                       Telegram Stars
                     </span>
                     <img src="/images/icons/flash.svg" alt="" />
-                    <span className="text-xs font-semibold text-[#52E063]">
+                    <span className="text-xs font-semibold text-[#59BFFF]">
                       ТОП
                     </span>
                   </div>

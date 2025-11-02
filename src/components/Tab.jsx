@@ -20,7 +20,7 @@ export const Tab = ({ tabData }) => {
           >
             <div className="relative">
               {item.count && (
-                <div className="absolute z-10 mt-[1px] top-1/2 -translate-y-1/2 -left-[5px] bg-[#52E063] rounded-full w-3 h-3 text-[9px] font-bold text-[#242424] flex items-center justify-center border border-[#242424]">
+                <div className="absolute z-10 mt-[1px] top-1/2 -translate-y-1/2 -left-[5px] bg-[#59BFFF] rounded-full w-[14px] h-[14px] text-[10px] font-bold text-[#242424] flex items-center justify-center border border-[#242424]">
                   {item.count}
                 </div>
               )}

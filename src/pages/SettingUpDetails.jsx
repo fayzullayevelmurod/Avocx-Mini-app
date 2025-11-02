@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 import { Button, Checkbox } from "../components";
 
 export const SettingUpDetails = () => {
@@ -87,15 +87,15 @@ export const SettingUpDetails = () => {
           />
         </div>
 
-        <div className="w-[2px] bg-[#52E063] h-full"></div>
+        <div className="w-[2px] bg-[#59BFFF] h-full"></div>
 
         <input
           className="bg-transparent placeholder:text-[#464646] outline-none"
           style={{
-            width: "140px",
+            width: "90px",
           }}
           type="text"
-          placeholder="Название банка"
+          placeholder="банка"
           value={item.bank}
           onChange={handleChange(data, setData, index, "bank")}
         />
@@ -112,44 +112,43 @@ export const SettingUpDetails = () => {
     ));
 
   return (
-    <div>
-      <div>
-        <Header title="Мои реквизиты" settingBtn={true} />
+    <>
+      <div className="pb-[200px]">
+        <div>
+          <Header title="Мои реквизиты" settingBtn={true} />
 
-        <h3 className="text-center max-w-[302px] mx-auto mb-3 leading-[18px] text-15 font-bold">
-          Введите свои реквизиты, для приёма оплат за рекламу.
-        </h3>
+          <h3 className="text-center max-w-[302px] mx-auto mb-3 leading-[18px] text-15 font-bold">
+            Введите свои реквизиты, для приёма оплат за рекламу.
+          </h3>
 
-        <h3 className="text-15 font-semibold text-center mb-3 leading-[16px]">
-          Банковские карты
-        </h3>
-        <div className="space-y-[7px]">
-          {renderInputs(cards, setCards, true)}
-        </div>
-
-        <h3 className="text-center text-15 font-bold my-3 leading-4">
-          Номер телефона (СБП)
-        </h3>
-        <div className="space-y-[7px]">
-          {renderInputs(phones, setPhones, false)}
-        </div>
-        <div className="flex gap-[6px] mt-4">
-          <div className="mt-0.5">
-            <Checkbox checked={check} onChange={() => setCheck(!check)} />
+          <h3 className="text-15 font-semibold text-center mb-3 leading-[16px]">
+            Банковские карты
+          </h3>
+          <div className="space-y-[7px]">
+            {renderInputs(cards, setCards, true)}
           </div>
-          <p className="text-xs text-[#A3A3A3] font-semibold max-w-[381px]">
-            Я подтверждаю, что: <br /> 1. Указанные мной реквизиты принадлежат
-            мне и исправны для перевода на них денежных средств. <br /> 2.
-            Указаны достоверно. <br /> 3. Я не использую реквизиты третих лиц
-            для приёма оплат. <br /> 4. Понимаю и принимаю всю ответственность
-            на себя за не правильно указанные мною данные.
-          </p>
+
+          <h3 className="text-center text-15 font-bold my-3 leading-4">
+            Номер телефона (СБП)
+          </h3>
+          <div className="space-y-[7px]">
+            {renderInputs(phones, setPhones, false)}
+          </div>
+          <div className="flex gap-[6px] mt-4">
+            <div className="mt-0.5">
+              <Checkbox checked={check} onChange={() => setCheck(!check)} />
+            </div>
+            <p className="text-xs text-[#A3A3A3] font-semibold max-w-[381px]">
+              Я подтверждаю, что: <br /> 1. Указанные мной реквизиты принадлежат
+              мне и исправны для перевода на них денежных средств. <br /> 2.
+              Указаны достоверно. <br /> 3. Я не использую реквизиты третих лиц
+              для приёма оплат. <br /> 4. Понимаю и принимаю всю ответственность
+              на себя за не правильно указанные мною данные.
+            </p>
+          </div>
         </div>
       </div>
-
-      <div className="border-t border-charcoal pt-3 mt-3 w-[calc(100%_+_26px)] -ml-[13px] px-[13px]">
-        <Button>Сохранить</Button>
-      </div>
-    </div>
+      <Footer btn="Сохранить" />
+    </>
   );
 };

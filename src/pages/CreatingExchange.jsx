@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Button, InputForm, SelectTime, Sort } from "../components";
 import { CustomSelect } from "../components/CustomSelect";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 import { LetsModal } from "../components/modals";
 
 const categoryOptions2 = [
@@ -20,7 +20,7 @@ export const CreatingExchange = () => {
 
   return (
     <>
-      <div>
+      <div className="pb-[250px]">
         <Header title="Создание объявления" settingBtn={true} />
         <h3 className="text-center font-bold text-15 leading-[18px] mb-[11px]">
           Выберите канал
@@ -37,7 +37,7 @@ export const CreatingExchange = () => {
         </h3>
         <div className="flex flex-wrap gap-1 mb-3">
           <div className="px-[10px] h-[30px] rounded-[10px] bg-[#283134] flex items-center gap-[7px]">
-            <span className="text-xs font-semibold text-[#B8EDBE]">
+            <span className="text-xs font-semibold text-[#59BFFF]">
               Не выбрано
             </span>
             <svg
@@ -49,7 +49,7 @@ export const CreatingExchange = () => {
             >
               <path
                 d="M15.4999 15.4999L8.5 8.5M8.5 8.5L1.5 1.5M8.5 8.5L15.5 1.5M8.5 8.5L1.5 15.5"
-                stroke="#B8EDBE"
+                stroke="#59BFFF"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -115,15 +115,20 @@ export const CreatingExchange = () => {
           />
           <span>Добавить ещё время</span>
         </Button>
-        <div className="border-t border-[#242424] pt-3 w-[calc(100%_+_26px)] -ml-[13px] px-[13px] mt-3">
+        {/* <div className="border-t border-[#242424] pt-3 w-[calc(100%_+_26px)] -ml-[13px] px-[13px] mt-3">
           <Button onClick={() => handleOpen("lets-modal")}>
             <img src="/images/icons/plus-btn.svg" alt="" />
             <span>Создать</span>
           </Button>
-        </div>
+        </div> */}
       </div>
 
       <LetsModal isOpen={openModal === "lets-modal"} onClose={handleClose} />
+      <Footer
+        btn="Создать"
+        onClick={() => handleOpen("lets-modal")}
+        btnIcon="/images/icons/plus-btn.svg"
+      />
     </>
   );
 };

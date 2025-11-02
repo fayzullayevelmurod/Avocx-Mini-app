@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ExpandableAdButtons, Sort } from "../components";
+import { Button, ExpandableAdButtons, Sort } from "../components";
 import { ToggleIconButton } from "../components/ToggleFeatured";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 import { useState } from "react";
 import { ProductAnalytics } from "../components/modals";
 
@@ -13,6 +13,8 @@ const categoryOptions2 = [
 
 export const MyAdsExchange = () => {
   const [openModal, setOpenModal] = useState(null);
+  const [isOpen, setIsOpen] = useState(null);
+  const [isRunning, setIsRunning] = useState(false); // default: Stop
 
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
@@ -40,9 +42,9 @@ export const MyAdsExchange = () => {
                   src="images/icons/logo.svg"
                   alt="logo"
                 />
-                <div className="flex gap-[1px] justify-center items-center bg-[#FF9462] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
+                <div className="flex gap-[1px] justify-center items-center bg-[#464646] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
                   <img src="/images/icons/trophy.svg" alt="" />
-                  <span className="text-[8px] text-[#242424] font-semibold leading-full">
+                  <span className="text-[8px] text-[#D9D9D9] font-semibold leading-full">
                     189
                   </span>
                 </div>
@@ -65,7 +67,7 @@ export const MyAdsExchange = () => {
                   <div className="flex gap-[2px]">
                     <img src="images/icons/plus.svg" alt="" />
                     <img src="images/icons/plus.svg" alt="" />
-                    <img src="images/icons/minus.svg" alt="" />
+                    <img src="images/icons/gray-plus.svg" alt="" />
                   </div>
                 </div>
                 <div className="flex items-center gap-[5px] mt-[3px]">
@@ -105,14 +107,31 @@ export const MyAdsExchange = () => {
           />
 
           <div className="flex justify-between mt-[7px]">
-            <button className="p-[10px] rounded-xl bg-[#303030] text-xs font-bold flex items-center gap-1">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="p-[10px] rounded-xl bg-[#303030] text-xs font-bold flex items-center gap-1"
+            >
               <img src="/images/icons/trash.svg" alt="" />
               <span>Del</span>
             </button>
             <div className="flex gap-1">
-              <button className="p-[10px] rounded-xl bg-[#303030] text-xs font-bold flex items-center gap-1">
-                <img src="/images/icons/pause.svg" alt="" />
-                <span>Stop</span>
+              <button
+                onClick={() => setIsRunning(!isRunning)}
+                className="p-[10px] rounded-xl bg-[#303030] text-xs font-bold flex items-center gap-1 transition-all"
+              >
+                {isRunning ? (
+                  <>
+                    {/* Start holati */}
+                    <img src="/images/icons/play.svg" alt="Play" />
+                    <span>Start</span>
+                  </>
+                ) : (
+                  <>
+                    {/* Stop holati */}
+                    <img src="/images/icons/pause.svg" alt="Pause" />
+                    <span>Stop</span>
+                  </>
+                )}
               </button>
               <button
                 onClick={() => handleOpen("product-analytics")}
@@ -136,6 +155,28 @@ export const MyAdsExchange = () => {
         isOpen={openModal === "product-analytics"}
         onClose={handleClose}
       />
+      <div
+        className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
+          isOpen ? "block" : "hidden"
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        <div className="bg-[#303030B2] text-center w-[302px] rounded-15 pt-[12px] p-[13px]">
+          <span className="text-15 font-bold leading-[18px] text-[#FF8077]">
+            Удалить?
+          </span>
+          <p className="text-center font-bold text-15 pt-[23px] pb-[18px]">
+            Да
+          </p>
+          <Button
+            className="!h-10 !rounded-[12px]"
+            onClick={() => setIsOpen(false)}
+          >
+            Отмена
+          </Button>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };

@@ -1,15 +1,10 @@
 import { useState } from "react";
-import {
-  CardUI,
-  Categories,
-  Date,
-  ExpandableAdButtons,
-  Sort,
-} from "../components";
+import { Categories, Date, ExpandableAdButtons, Sort } from "../components";
 import { CustomSelect } from "../components/CustomSelect";
 import { ToggleIconButton } from "../components/ToggleFeatured";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 import { CategoriesModal } from "../components/modals";
+import { CustomSelect2 } from "../components/CustomSelect2";
 
 const categoryOptions2 = [
   "Счастье Сейчас",
@@ -23,18 +18,48 @@ const categories = [
   { label: "Свежие", to: "#!" },
 ];
 const options = [
-  { value: "sell", label: "Реклама в канале " },
-  { value: "buy", label: "Реклама в канале 2" },
-  { value: "rent", label: "Реклама в канале 3" },
+  { value: "sell", label: "Реклама в канале ", icon: "/images/icons/tg.svg" },
+  {
+    value: "buy",
+    label: "Реклама в сети каналов",
+    icon: "/images/icons/grid.svg",
+  },
+  {
+    value: "rent",
+    label: "Купить / продать канал",
+    icon: "/images/icons/check-bag.svg",
+  },
 ];
 export const Exchange = () => {
   const [openModal, setOpenModal] = useState(null);
 
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
+  const [open, setOpen] = useState(false);
+
+  // Checkbox state
+  const [checkedDays, setCheckedDays] = useState({
+    one: false,
+    two: false,
+    three: true,
+    four: false,
+    five: false,
+    six: false,
+    seven: false,
+  });
+  // handle checkbox change
+  const handleChange = (e) => {
+    const { id, checked } = e.target;
+    setCheckedDays((prev) => ({ ...prev, [id]: checked }));
+  };
+  const [activeBox, setActiveBox] = useState(null);
+
+  const toggleBox = (index) => {
+    setActiveBox(activeBox === index ? null : index);
+  };
   return (
     <>
-      <div>
+      <div className="pb-[160px]">
         <Header
           settingBtn={true}
           search={true}
@@ -68,22 +93,166 @@ export const Exchange = () => {
             <ToggleIconButton className="w-[35px] h-full flex items-center justify-center bg-charcoal rounded-[15px]" />
           </div>
           <Date />
-          <div className="flex gap-[5px]">
-            <div className="h-[54px] rounded-15 bg-charcoal flex items-center justify-center flex-1">
-              <img src="/images/icons/eye.svg" alt="" />
+          <div
+            className={`${
+              activeBox !== null
+                ? "bg-[#242424] shadow-option-shadow rounded-15 pb-[13px] overflow-hidden"
+                : ""
+            }`}
+          >
+            {/* Bosiladigan itemlar */}
+            <div className="flex gap-[5px]">
+              {[
+                { icon: "/images/icons/eye.svg" },
+                { icon: "/images/icons/er.svg" },
+                { icon: "/images/icons/discount.svg" },
+                { icon: "/images/icons/filter.svg" },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => toggleBox(index)}
+                  className={`h-[54px] rounded-15 flex-1 flex items-center justify-center cursor-pointer  duration-300 bg-charcoal`}
+                >
+                  <img
+                    className={`${
+                      activeBox === index
+                        ? "[filter:invert(56%)_sepia(70%)_saturate(2374%)_hue-rotate(165deg)_brightness(98%)_contrast(101%)]"
+                        : ""
+                    }`}
+                    src={item.icon}
+                    alt=""
+                  />
+                </div>
+              ))}
             </div>
-            <div className="h-[54px] rounded-15 bg-charcoal flex items-center justify-center flex-1">
-              <img src="/images/icons/er.svg" alt="" />
+
+            {/* 1-box */}
+            <div className={` ${activeBox === 0 ? "mt-3 block" : "hidden"}`}>
+              <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex justify-between">
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    От
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0</span>
+                </div>
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    До
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0</span>
+                </div>
+                <button>
+                  <img src="/images/icons/trash.svg" alt="" />
+                </button>
+              </div>
             </div>
-            <div className="h-[54px] rounded-15 bg-charcoal flex items-center justify-center flex-1">
-              <img src="/images/icons/discount.svg" alt="" />
+
+            {/* 2-box */}
+            <div className={` ${activeBox === 1 ? "mt-3 block" : "hidden"}`}>
+              <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex justify-between">
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    От
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0 %</span>
+                </div>
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    До
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0 %</span>
+                </div>
+                <button>
+                  <img src="/images/icons/trash.svg" alt="" />
+                </button>
+              </div>
             </div>
-            <div className="h-[54px] rounded-15 bg-charcoal flex items-center justify-center flex-1">
-              <img src="/images/icons/filter.svg" alt="" />
+
+            {/* 3-box */}
+            <div className={` ${activeBox === 2 ? "mt-3 block" : "hidden"}`}>
+              <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex justify-between">
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    От
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0</span>
+                </div>
+                <div>
+                  <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
+                    До
+                  </span>
+                  <span className="text-[18px] font-bold text-white">0</span>
+                </div>
+                <button>
+                  <img src="/images/icons/trash.svg" alt="" />
+                </button>
+              </div>
+            </div>
+
+            {/* 4-box */}
+            <div
+              className={` ${
+                activeBox === 3
+                  ? "max-h-[300px] opacity-100 mt-3"
+                  : "max-h-0 opacity-0 overflow-hidden"
+              }`}
+            >
+              <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex gap-6">
+                <div className="space-y-4">
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="one"
+                      checked={checkedDays.one}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="one">Больше охват</label>
+                  </div>
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="two"
+                      checked={checkedDays.two}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="two">Меньше охват</label>
+                  </div>
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="three"
+                      checked={checkedDays.three}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="three">C популярных</label>
+                  </div>
+                </div>
+                <div className="space-y-4 text-sm text-white ">
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="four"
+                      checked={checkedDays.four}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="four">Больше ER</label>
+                  </div>
+                  <div className="checkbox-container">
+                    <input
+                      type="checkbox"
+                      id="five"
+                      checked={checkedDays.five}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="five">Меньше ER</label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="bg-charcoal rounded-[20px] p-3">
-            <CustomSelect
+            {/* salom */}
+            <CustomSelect2
               options={options}
               placeholder="Реклама в канале"
               className="!h-[42px] mb-[6px]"
@@ -100,9 +269,9 @@ export const Exchange = () => {
                       src="images/icons/logo.svg"
                       alt="logo"
                     />
-                    <div className="flex gap-[1px] justify-center items-center bg-[#FF9462] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
+                    <div className="flex gap-[1px] justify-center items-center bg-[#464646] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
                       <img src="/images/icons/trophy.svg" alt="" />
-                      <span className="text-[8px] text-[#242424] font-semibold leading-full">
+                      <span className="text-[8px] text-[#D9D9D9] font-semibold leading-full">
                         189
                       </span>
                     </div>
@@ -125,7 +294,7 @@ export const Exchange = () => {
                       <div className="flex gap-[2px]">
                         <img src="images/icons/plus.svg" alt="" />
                         <img src="images/icons/plus.svg" alt="" />
-                        <img src="images/icons/minus.svg" alt="" />
+                        <img src="images/icons/gray-plus.svg" alt="" />
                       </div>
                     </div>
                     <div className="flex items-center gap-[5px] mt-[3px]">
@@ -144,7 +313,7 @@ export const Exchange = () => {
                           alt="see"
                         />
                         <span className="text-xs text-grayCustom">
-                          567, 754, 1145
+                          567, 754
                         </span>
                       </div>
                     </div>
@@ -173,9 +342,9 @@ export const Exchange = () => {
                       src="images/icons/logo.svg"
                       alt="logo"
                     />
-                    <div className="flex gap-[1px] justify-center items-center bg-[#FF9462] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
+                    <div className="flex gap-[1px] justify-center items-center bg-[#464646] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-9px]">
                       <img src="/images/icons/trophy.svg" alt="" />
-                      <span className="text-[8px] text-[#242424] font-semibold leading-full">
+                      <span className="text-[8px] text-[#D9D9D9] font-semibold leading-full">
                         189
                       </span>
                     </div>
@@ -198,7 +367,7 @@ export const Exchange = () => {
                       <div className="flex gap-[2px]">
                         <img src="images/icons/plus.svg" alt="" />
                         <img src="images/icons/plus.svg" alt="" />
-                        <img src="images/icons/minus.svg" alt="" />
+                        <img src="images/icons/gray-plus.svg" alt="" />
                       </div>
                     </div>
                     <div className="flex items-center gap-[5px] mt-[3px]">
@@ -217,7 +386,7 @@ export const Exchange = () => {
                           alt="see"
                         />
                         <span className="text-xs text-grayCustom">
-                          567, 754, 1145
+                          567, 754
                         </span>
                       </div>
                     </div>
@@ -245,6 +414,7 @@ export const Exchange = () => {
         isOpen={openModal === "categories-modal"}
         onClose={handleClose}
       />
+      <Footer />
     </>
   );
 };

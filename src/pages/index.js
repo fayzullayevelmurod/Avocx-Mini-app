@@ -1,26 +1,3 @@
-export { MapPage } from "./MapPage";
-export { Loading } from "./Loading";
-export { SlideWindow } from "./SlideWindow";
-export { Home } from "./Home";
-export { Wallet } from "./Wallet";
-export { Notifications } from "./Notifications";
-export { CartProducts } from "./CartProducts";
-export { AdvertisingExchange } from "./AdvertisingExchange";
-export { AdvertisingAccount } from "./AdvertisingAccount";
-export { ChannelSettings } from "./ChannelSettings";
-export { MyAds } from "./MyAds";
-export { MyShops } from "./MyShops";
-export { StoreManagement } from "./StoreManagement";
-export { StoreManagementTwo } from "./StoreManagementTwo";
-export { ManagementCharacteristics } from "./ManagementCharacteristics";
-export { AddingProduct } from "./AddingProduct";
-export { MyShop } from "./MyShop";
-export { MarketplaceProducts } from "./MarketplaceProducts";
-export { ShopView } from "./ShopView";
-export { ProductCardPage } from "./ProductCardPage";
-export { CreateShop } from "./CreateShop";
-export { ProductsMyStores } from "./ProductsMyStores";
-
 // ==============new==============
 export { Settings } from "./Settings";
 export { Exchange } from "./Exchange";

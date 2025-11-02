@@ -5,7 +5,7 @@ export const Button = ({
   type = "green",
 }) => {
   const variants = {
-    green: "bg-[#52E063] text-[#242424]",
+    green: "bg-[#59BFFF] text-[#303030]",
     primary: "bg-primary text-white",
     gray: "bg-[#242424] text-white",
     lightGray: "bg-[#303030] text-[#E8E8E8]",

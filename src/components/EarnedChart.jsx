@@ -12,7 +12,7 @@ export const EarnedChart = ({ title, data, subTitle, subTitle2, title2, subTitle
     <div className="bg-charcoal rounded-15 p-[10px] pt-3 px-0">
       {/* Title */}
       <h2 className="text-xs font-semibold mb-1 text-center leading-[9px]">
-        {title} <span className="text-green">{subTitle}</span>
+        {title} <span className="text-[#52E063]">{subTitle}</span>
       </h2>
       <div className="flex items-center gap-0.5 justify-center">
         <h3 className="font-semibold leading-[9px] mt-[5px] text-center text-[10px]">

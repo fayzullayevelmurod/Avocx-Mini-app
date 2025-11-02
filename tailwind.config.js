@@ -17,7 +17,7 @@ export default {
         orange: "#FF6C11",
         grayCustom: "#A3A3A3",
         "dark-gray": "#333333",
-        green: "#52E063",
+        green: "#59BFFF",
       },
       fontSize: {
         15: "15px",
@@ -33,18 +33,19 @@ export default {
         vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
         "ai-btn": "0px 0px 10px 0px #C3A4FF66",
         discount: "0px 0px 3px 0px #0000004D",
+
       },
       blur: {
         10: "10px",
       },
       borderRadius: {
         base: "14px",
-        15: "15px"
+        15: "15px",
       },
       backgroundImage: {
         vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
         check: 'url("/images/icons/check.svg")',
-        'blue-black': "linear-gradient(180deg, #468FF5 0%, #242424 100%)"
+        "blue-black": "linear-gradient(180deg, #468FF5 0%, #242424 100%)",
       },
       screens: {
         390: "390px",

@@ -4,7 +4,7 @@ import { ModalUI } from "./ModalUI";
 export const LetsModal = ({ isOpen, onClose }) => {
   return (
     <ModalUI isOpen={isOpen} className="flex flex-col justify-between">
-      <button className="ml-auto" onClick={onClose}>
+      <button className="ml-auto pr-[14px]" onClick={onClose}>
         <img src="/images/icons/close.svg" alt="" />
       </button>
       <div>

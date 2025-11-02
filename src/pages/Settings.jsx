@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, InlineIconSelect, Tab } from "../components";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 import { SubscriptionModal } from "../components/modals";
 import { Link } from "react-router-dom";
 
@@ -10,9 +10,9 @@ const languageOptions = [
 ];
 
 const currency = [
-  { value: "buy", label: "(₽)" },
-  { value: "sell", label: "($)" },
-  { value: "rent", label: "(€)" },
+  { value: "buy", label: "₽" },
+  { value: "sell", label: "$" },
+  { value: "rent", label: "€" },
 ];
 const tabData = [
   {
@@ -31,6 +31,7 @@ const tabData = [
   },
 ];
 export const Settings = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
   const [selectedLanguage2, setSelectedLanguage2] = useState(currency[0]);
 
@@ -39,9 +40,15 @@ export const Settings = () => {
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 1000);
+  }, [isOpen]);
+
   return (
     <>
-      <div>
+      <div className="pb-[160px]">
         <Header title="Настройки" />
         <Tab tabData={tabData} />
         <div className="text-center mt-3">
@@ -99,9 +106,12 @@ export const Settings = () => {
               </span>
             </div>
             <div className="flex gap-[7px] h-10 max-w-[287px] mx-auto w-full">
-              <div className="flex-1 flex items-center gap-[6px] justify-center min-w-0 bg-[#283134] rounded-xl px-[13px] py-[10px]">
+              <div
+                onClick={() => setIsOpen(true)}
+                className="flex-1 flex items-center gap-[6px] justify-center min-w-0 bg-[#283134] rounded-xl px-[13px] py-[10px]"
+              >
                 <img src="/images/icons/copy.svg" alt="" />
-                <span className="text-15 font-semibold text-[#B8EDBE]">
+                <span className="text-15 font-semibold text-[#59BFFF]">
                   t.me/+FhdgrCiNxln5YTZi
                 </span>
               </div>
@@ -113,6 +123,31 @@ export const Settings = () => {
         </div>
       </div>
       <SubscriptionModal isOpen={openModal} onClose={handleClose} />
+      {/* copy modal */}
+      <div
+        className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
+          isOpen ? "block" : "hidden"
+        }`}
+        onClick={() => setIsOpen(false)}
+      >
+        <div className="bg-[#303030B2] w-[302px] space-y-[7px] rounded-15 pt-[12px] p-[13px]">
+          <div className="flex gap-[6px] items-center justify-center">
+            <img src="/images/icons/check-rounded.svg" alt="" />
+            <span className="text-15 font-bold leading-[18px] text-[#468FF5]">
+              Скопировано
+            </span>
+          </div>
+          <Button
+            type="primary"
+            className="!h-10 !rounded-[12px]"
+            onClick={() => setIsOpen(false)}
+          >
+            Ок
+          </Button>
+        </div>
+      </div>
+      {/* footer */}
+      <Footer />
     </>
   );
 };

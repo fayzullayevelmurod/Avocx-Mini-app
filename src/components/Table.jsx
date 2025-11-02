@@ -309,7 +309,7 @@ export const MyTable = () => {
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[149px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"></td>
             </tr>
-            <tr className="border-t border-[#303030]">
+            <tr className="border-y border-[#303030]">
               <td className="h-[32px] bg-[#242424]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[113px] text-center"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[64px] pl-[10px]"></td>

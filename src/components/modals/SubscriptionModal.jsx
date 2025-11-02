@@ -5,6 +5,7 @@ import { InlineIconSelect } from "../InlineIconText";
 import { Checkbox } from "../Checkbox";
 import { RadioComponent } from "../RadioComponent";
 import { PaymentFiat } from "./PaymentFiat";
+import { Footer } from "../../layouts";
 
 const categoryOptions3 = [
   "Название канала 1",
@@ -31,7 +32,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
           isOpen ? "bottom-0" : "-bottom-[150%]"
         }`}
       >
-        <div>
+        <div className="overflow-y-auto h-[calc(100vh_-_120px)] no-scrollbar">
           <div className="flex items-center justify-between px-[13px]">
             <div className="flex items-center gap-2">
               <img src="/images/icons/logo-a.svg" alt="" />
@@ -43,7 +44,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
           </div>
 
           <img
-            className="w-full h-[201px] object-cover object-left mt-[23px] mb-[11px] rounded-[25px]"
+            className="w-full h-auto aspect-[16/7] object-cover object-left mt-[23px] mb-[11px] rounded-[25px]"
             src="/images/modal-banner.png"
             alt=""
           />
@@ -79,7 +80,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
                   placeholder="Промокод"
                 />
               </div>
-              <button className="w-[129px] h-[30px] bg-[#52E063] rounded-lg flex items-center justify-center text-[#242424] text-xs font-semibold">
+              <button className="w-[129px] h-[30px] bg-[#59BFFF] rounded-lg flex items-center justify-center text-[#242424] text-xs font-semibold">
                 Применить
               </button>
             </div>
@@ -99,15 +100,15 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
           </h3>
           <p className="text-xs text-center font-medium mt-[7px] mb-1 leading-[15px]">
             Всего за 12 месяцев: 3828₽ ({" "}
-            <span className="text-[#52E063]">-720₽</span> )
+            <span className="text-[#59BFFF]">-720₽</span> )
           </p>
           <span className="text-[#A3A3A3] font-medium text-xs leading-[15px] text-center mb-3 block">
             Без промокода
           </span>
         </div>
 
-        <div className="pt-[17px] mt-4 border-t border-charcoal">
-          <Button onClick={() => handleOpen("payment-fiat")}>
+        <div className="pt-[17px] mt-4 border-t border-charcoal w-full fixed bottom-0 left-0 z-[100] bg-[#1C1C1C] px-[13px] pb-5">
+          <Button onClick={() => handleOpen("payment-fiat")} className="">
             <img src="/images/icons/pay.svg" alt="" />
             <span>Перейти к оплате</span>
           </Button>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Checkbox, Sort } from "../components";
-import { Header } from "../layouts";
+import { Footer, Header } from "../layouts";
 
 const categoryOptions = [
   "Счастье Сейчас",
@@ -43,10 +43,10 @@ export const ShoppingCartAdvertising = () => {
             className="item-width !h-[54px]"
           />
           <div className="flex gap-3">
-            <div className="text-center flex items-center justify-center bg-[#52E06312] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
+            <div className="text-center flex items-center justify-center bg-[#59BFFF12] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
               Охват: ~754
             </div>
-            <div className="text-center flex items-center justify-center bg-[#52E06312] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
+            <div className="text-center flex items-center justify-center bg-[#59BFFF12] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
               Охват: ~754
             </div>
           </div>
@@ -142,7 +142,7 @@ export const ShoppingCartAdvertising = () => {
                   </span>
                 </div>
               </div>
-              <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col w-[135px]">
+              <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full">
                 <span className="text-[10px] font-medium block mb-[7px] text-[#A3A3A3] leading-[9px]">
                   Пост
                 </span>
@@ -189,6 +189,7 @@ export const ShoppingCartAdvertising = () => {
           </Button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

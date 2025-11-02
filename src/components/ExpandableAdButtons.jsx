@@ -71,7 +71,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
             {/* Price - slides in */}
             <span
               className={` -ml-2
-                text-[10px] text-[#52E063] font-bold whitespace-nowrap
+                text-[10px] text-[#59BFFF] font-bold whitespace-nowrap
                 transition-all duration-300 ease-out
                 ${
                   isExpanded
@@ -102,7 +102,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
               <motion.button
                 onClick={(e) => handleCartClick(e, button.format, button.price)}
                 whileTap={{ scale: 0.9 }}
-                className="relative overflow-hidden min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset bg-[#52E063] rounded-[10px] flex items-center justify-center mr-0.5"
+                className="relative overflow-hidden min-w-[34.89236831665039px] min-h-[31.20182991027832px] max-w-[34.89236831665039px] max-h-[31.20182991027832px] shadow-btn-inset bg-[#59BFFF] rounded-[10px] flex items-center justify-center mr-0.5"
               >
                 <img src="/images/icons/cart.svg" alt="" />
                 {ripple && (
@@ -110,7 +110,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
                     initial={{ scale: 0, opacity: 0.6 }}
                     animate={{ scale: 2.5, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="absolute w-16 h-16 bg-[#52E063] rounded-full pointer-events-none"
+                    className="absolute w-16 h-16 bg-[#59BFFF] rounded-full pointer-events-none"
                     style={{
                       top: "50%",
                       left: "50%",
@@ -124,7 +124,7 @@ export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
         );
       })}
       {status && (
-        <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#52E063]">Активно</div>
+        <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#59BFFF]">Активно</div>
       )}
     </div>
   );
