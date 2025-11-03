@@ -28,11 +28,11 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
   return (
     <>
       <div
-        className={`modal flex flex-col justify-between duration-300 ${
+        className={`modal flex flex-col justify-between duration-300 !p-0 ${
           isOpen ? "bottom-0" : "-bottom-[150%]"
         }`}
       >
-        <div className="overflow-y-auto h-[calc(100vh_-_120px)] no-scrollbar">
+        <div className="overflow-y-auto h-[calc(100vh_-_120px)] no-scrollbar px-[13px]">
           <div className="flex items-center justify-between px-[13px]">
             <div className="flex items-center gap-2">
               <img src="/images/icons/logo-a.svg" alt="" />
@@ -102,7 +102,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
             Всего за 12 месяцев: 3828₽ ({" "}
             <span className="text-[#59BFFF]">-720₽</span> )
           </p>
-          <span className="text-[#A3A3A3] font-medium text-xs leading-[15px] text-center mb-3 block">
+          <span className="text-[#A3A3A3] font-medium text-xs leading-[15px] text-center mb-3 block pb-[100px]">
             Без промокода
           </span>
         </div>

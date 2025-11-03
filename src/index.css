@@ -260,7 +260,7 @@ h2.react-datepicker__current-month {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: url("./images/icons/checked.svg") no-repeat center;
+  background: url("/images/icons/checked.svg") no-repeat center;
   border-radius: 4px;
   display: none;
 }
@@ -359,4 +359,18 @@ table tfoot {
 .react-datepicker__year-text--in-selecting-range,
 .react-datepicker__year-text--in-range {
   @apply !bg-[#59BFFF] !text-[#303030] !rounded-[10px];
+}
+
+@media (max-width: 410px) {
+  .react-datepicker__navigation-icon--next {
+    left: 4px;
+    min-width: 75px !important;
+  }
+  .react-datepicker__navigation-icon--previous {
+    min-width: 75px !important;
+    right: 5px !important;
+  }
+  h2.react-datepicker__current-month{
+    transform: translateX(-3px);
+  }
 }

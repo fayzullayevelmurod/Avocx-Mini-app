@@ -10,7 +10,7 @@ const categoryOptions2 = [
 export const AnnouncementsExchange = () => {
   return (
     <>
-      <div className="h-[calc(100vh_-_151px)] relative overflow-y-auto overflow-x-hidden">
+      <div className="">
         <div>
           <Header title="Кабинет" settingBtn={true} />
           <h3 className="text-center font-bold text-15 leading-[18px] mb-[11px]">
@@ -24,7 +24,7 @@ export const AnnouncementsExchange = () => {
             className="item-width h-[54px]"
           />
         </div>
-        <div className="mb-4 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[347px] mt-[80px]">
+        <div className="mb-4 w-[347px] mt-[80px]">
           <img
             className="w-[150px] mx-auto mb-3  h-[150px]"
             src="/gif/not-found.gif"

@@ -95,7 +95,7 @@ export const SettingUpDetails = () => {
             width: "90px",
           }}
           type="text"
-          placeholder="банка"
+          placeholder="Банк"
           value={item.bank}
           onChange={handleChange(data, setData, index, "bank")}
         />

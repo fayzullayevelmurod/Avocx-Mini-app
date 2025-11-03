@@ -10,7 +10,7 @@ const categoryOptions2 = [
   "Счастье Сейчас 3",
 ];
 
-const options = ["Фикс", "Фикс2", "Фикс3"];
+const options = ["Фикс", "CPM", "ПДП"];
 
 export const CreatingExchange = () => {
   const [openModal, setOpenModal] = useState(null);
@@ -75,7 +75,7 @@ export const CreatingExchange = () => {
             </span>
             <SplitInput />
           </div>
-          <div className="flex-1 relative !max-w-[95px]">
+          <div className="flex-1 relative !max-w-[110px]">
             <Sort
               label={null}
               icon={false}

@@ -72,7 +72,7 @@ export const CreatingAdvertisingPost = () => {
     }
   };
   const handleTimePreset = (preset) => {
-    const [h, m] = preset.split(":");
+    const [h, m] = preset.split("/");
     setTime({ hours: h, minutes: m });
   };
 
@@ -119,10 +119,10 @@ export const CreatingAdvertisingPost = () => {
             <img src="/images/icons/clock.svg" alt="" />
             <div className="text-grayCustom font-semibold flex items-center">
               <input
-                className="w-5 text-center text-15 font-semibold placeholder:text-[#464646] bg-transparent border-none outline-none"
+                className="w-5 text-center text-15 font-semibold placeholder:text-[#464646] text-base-white bg-transparent border-none outline-none"
                 type="text"
                 name="hours"
-                placeholder="09"
+                placeholder="1"
                 value={time.hours}
                 onChange={handleTimeChange}
                 maxLength={2}
@@ -130,10 +130,10 @@ export const CreatingAdvertisingPost = () => {
               <span className="text-white">/</span>
               <input
                 ref={minutesRef}
-                className="w-6 text-center text-15 font-semibold placeholder:text-[#464646] bg-transparent border-none outline-none"
+                className="w-6 text-center text-15 font-semibold placeholder:text-[#464646] text-base-white bg-transparent border-none outline-none"
                 type="text"
                 name="minutes"
-                placeholder="00"
+                placeholder="24"
                 value={time.minutes}
                 onChange={handleTimeChange}
                 maxLength={2}
@@ -141,7 +141,7 @@ export const CreatingAdvertisingPost = () => {
             </div>
           </div>
           <div className="flex gap-1">
-            {["9:00", "10:00", "13:00", "17:00"].map((t) => (
+            {["1/24", "1/48", "2/48", "1/72"].map((t) => (
               <div
                 key={t}
                 className="py-[7px] rounded-lg bg-[#283134] text-xs font-semibold text-[#59BFFF] h-[30px] flex items-center justify-center w-[54px]"

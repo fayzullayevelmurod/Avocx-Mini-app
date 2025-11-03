@@ -11,7 +11,7 @@ export const Header = ({
 }) => {
   return (
     <header className="h-[72px] bg-[#1C1C1C] pr-0.5 py-[13px] flex gap-[7px] items-center justify-between pb-[13px] relative mb-3">
-      <div className="w-[calc(100%_+_26px)] border border-[#242424] absolute bottom-0 -left-[13px]"></div>
+      <div className="w-[calc(100%_+_26px)] max-h-[1px] h-[1px] bg-[#242424] absolute bottom-0 -left-[13px]"></div>
       {search && (
         <div className="min-w-[100px] flex-1 h-[46px] rounded-15 bg-charcoal flex items-center gap-1 px-[14px]">
           <img src="/images/icons/search.svg" alt="" />
