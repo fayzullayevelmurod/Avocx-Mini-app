@@ -22,12 +22,10 @@ const Filters = () => {
   };
 
   const handleChange = (e) => {
-    const { id, checked } = e.target;
-    setCheckedDays((prev) => ({ ...prev, [id]: checked }));
+    setCheckedDays({ [e.target.id]: true });
   };
 
   const handleInputChange = (boxKey, field, value) => {
-    // faqat raqamlar (yoki % belgisi 2-box uchun)
     if (/^\d*%?$/.test(value)) {
       setValues((prev) => ({
         ...prev,
@@ -90,7 +88,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box1.from}
                 onChange={(e) =>
                   handleInputChange("box1", "from", e.target.value)
@@ -103,7 +101,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box1.to}
                 onChange={(e) =>
                   handleInputChange("box1", "to", e.target.value)
@@ -127,7 +125,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box2.from}
                 onChange={(e) =>
                   handleInputChange("box2", "from", e.target.value)
@@ -140,7 +138,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box2.to}
                 onChange={(e) =>
                   handleInputChange("box2", "to", e.target.value)
@@ -164,7 +162,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box3.from}
                 onChange={(e) =>
                   handleInputChange("box3", "from", e.target.value)
@@ -177,7 +175,7 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-10 h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box3.to}
                 onChange={(e) =>
                   handleInputChange("box3", "to", e.target.value)
@@ -201,49 +199,49 @@ const Filters = () => {
       >
         <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex gap-6">
           <div className="space-y-4">
-            <div className="checkbox-container">
+            <div className="radio-container">
               <input
-                type="checkbox"
+                type="radio"
+                name="hammasi"
                 id="one"
-                checked={checkedDays.one}
                 onChange={handleChange}
               />
               <label htmlFor="one">Больше охват</label>
             </div>
-            <div className="checkbox-container">
+            <div className="radio-container">
               <input
-                type="checkbox"
+                type="radio"
+                name="hammasi"
                 id="two"
-                checked={checkedDays.two}
                 onChange={handleChange}
               />
               <label htmlFor="two">Меньше охват</label>
             </div>
-            <div className="checkbox-container">
+            <div className="radio-container">
               <input
-                type="checkbox"
+                type="radio"
+                name="hammasi"
                 id="three"
-                checked={checkedDays.three}
                 onChange={handleChange}
               />
               <label htmlFor="three">C популярных</label>
             </div>
           </div>
           <div className="space-y-4 text-sm text-white">
-            <div className="checkbox-container">
+            <div className="radio-container">
               <input
-                type="checkbox"
+                type="radio"
+                name="hammasi"
                 id="four"
-                checked={checkedDays.four}
                 onChange={handleChange}
               />
               <label htmlFor="four">Больше ER</label>
             </div>
-            <div className="checkbox-container">
+            <div className="radio-container">
               <input
-                type="checkbox"
+                type="radio"
+                name="hammasi"
                 id="five"
-                checked={checkedDays.five}
                 onChange={handleChange}
               />
               <label htmlFor="five">Меньше ER</label>

@@ -43,17 +43,17 @@ export const ShoppingCartAdvertising = () => {
             className="item-width !h-[54px]"
           />
           <div className="flex gap-3">
-            <div className="text-center flex items-center justify-center bg-[#59BFFF12] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
+            <div className="text-center flex items-center justify-center bg-[#262E38] rounded-15 text-xs font-semibold text-[#59BFFF] flex-1 h-10">
               Охват: ~754
             </div>
-            <div className="text-center flex items-center justify-center bg-[#59BFFF12] rounded-15 text-xs font-semibold text-[#468FF5] flex-1 h-10">
+            <div className="text-center flex items-center justify-center bg-[#262E38] rounded-15 text-xs font-semibold text-[#59BFFF] flex-1 h-10">
               Охват: ~754
             </div>
           </div>
         </div>
         <div className="space-y-[7px] mt-[7px]">
           <div className="flex gap-3">
-            <div className="text-center flex items-center gap-1 justify-center bg-[#242424] rounded-15 text-xs font-semibold text-base-white flex-1 h-10">
+            <div className="text-center flex items-center gap-1 justify-center  rounded-15 text-xs font-semibold text-[#59BFFF] bg-[#262E38] flex-1 h-10">
               Выбрано: <span className="text-[#468FF5]">1</span>
             </div>
             <div className="text-center flex items-center justify-center bg-[#242424] rounded-15 text-xs font-semibold text-base-white flex-1 h-10">
@@ -142,11 +142,11 @@ export const ShoppingCartAdvertising = () => {
                   </span>
                 </div>
               </div>
-              <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full">
+              <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[100px] w-full">
                 <span className="text-[10px] font-medium block mb-[7px] text-[#A3A3A3] leading-[9px]">
                   Пост
                 </span>
-                <span className="text-[13px] font-semibold leading-[10px] text-[#468FF5]">
+                <span className="text-[13px] font-semibold leading-[10px] text-[#59BFFF]">
                   Выбрать
                 </span>
               </div>

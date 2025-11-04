@@ -137,13 +137,6 @@ export const Settings = () => {
               Скопировано
             </span>
           </div>
-          <Button
-            type="primary"
-            className="!h-10 !rounded-[12px]"
-            onClick={() => setIsOpen(false)}
-          >
-            Ок
-          </Button>
         </div>
       </div>
       {/* footer */}

@@ -370,7 +370,42 @@ table tfoot {
     min-width: 75px !important;
     right: 5px !important;
   }
-  h2.react-datepicker__current-month{
+  h2.react-datepicker__current-month {
     transform: translateX(-3px);
   }
+}
+
+.radio-container input {
+  display: none;
+}
+.radio-container input:checked + label::after {
+  display: block;
+}
+.radio-container label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 4px;
+  background: #59bfff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: none;
+}
+.radio-container label {
+  position: relative;
+  padding-left: 27px;
+}
+.radio-container label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  border: 2px solid #464646;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: transparent;
 }

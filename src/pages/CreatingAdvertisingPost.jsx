@@ -114,7 +114,7 @@ export const CreatingAdvertisingPost = () => {
           Дата, время выхода и формат
         </h3>
         <Date />
-        <div className="bg-[#242424] rounded-15 p-[10px] flex justify-between items-center h-[50px] pl-[21px] mt-[3px]">
+        <div className="bg-[#242424] rounded-15 p-[10px] flex justify-between items-center h-[50px] pl-[21px] mt-[7px]">
           <div className="flex gap-[7px] items-center">
             <img src="/images/icons/clock.svg" alt="" />
             <div className="text-grayCustom font-semibold flex items-center">
