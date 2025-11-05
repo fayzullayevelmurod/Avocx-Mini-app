@@ -409,3 +409,18 @@ table tfoot {
   height: 20px;
   background: transparent;
 }
+
+
+@media (max-width: 365px) {
+  .react-datepicker__navigation-icon--next {
+    left: 10px;
+    min-width: 60px !important;
+  }
+  .react-datepicker__navigation-icon--previous {
+    min-width: 60px !important;
+    right: 10px !important;
+  }
+  h2.react-datepicker__current-month {
+    transform: translateX(-3px);
+  }
+}

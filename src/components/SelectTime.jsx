@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export const SelectTime = ({ className }) => {
+export const SelectTime = ({ className, deleteItem }) => {
   const [open, setOpen] = useState(false);
 
   const [checkedDays, setCheckedDays] = useState({
@@ -68,17 +68,22 @@ export const SelectTime = ({ className }) => {
           />
           <div className="text-[#464646] font-semibold flex gap-1 items-center">
             <input
-              className="text-base-white font-semibold bg-transparent border-none outline-none w-[20px] placeholder:text-grayCustom"
+              className="text-white font-semibold bg-transparent border-none outline-none w-[20px] placeholder:text-grayCustom"
               type="text"
               placeholder="00"
             />
             <span className="text-white">:</span>
             <input
-              className="text-base-white font-semibold bg-transparent border-none outline-none w-[20px] placeholder:text-grayCustom"
+              className="text-white font-semibold bg-transparent border-none outline-none w-[20px] placeholder:text-grayCustom"
               type="text"
               placeholder="00"
             />
           </div>
+          {deleteItem && (
+            <div className="w-[65px] h-[20px] flex items-center justify-center bg-[#303030] rounded-[5px] text-[10px] font-semibold text-[#A3A3A3]">
+              <span>Удалить</span>
+            </div>
+          )}
         </div>
 
         <svg

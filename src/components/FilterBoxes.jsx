@@ -25,13 +25,44 @@ const Filters = () => {
     setCheckedDays({ [e.target.id]: true });
   };
 
+  // const handleInputChange = (boxKey, field, value) => {
+  //   if (/^\d*%?$/.test(value)) {
+  //     setValues((prev) => ({
+  //       ...prev,
+  //       [boxKey]: { ...prev[boxKey], [field]: value },
+  //     }));
+  //   }
+  // };
+
+  // 🔥 Asosiy o'zgarish shu yerda
   const handleInputChange = (boxKey, field, value) => {
     if (/^\d*%?$/.test(value)) {
       setValues((prev) => ({
         ...prev,
-        [boxKey]: { ...prev[boxKey], [field]: value },
+        [boxKey]: {
+          ...prev[boxKey],
+          [field]:
+            // agar hozirgi qiymat 0 yoki 0% bo'lsa, foydalanuvchi yozishni boshlaganda uni tozalaymiz
+            prev[boxKey][field] === "0" || prev[boxKey][field] === "0%"
+              ? value.replace(/^0%?/, "")
+              : value,
+        },
       }));
     }
+  };
+
+  const handleFocus = (boxKey, field) => {
+    setValues((prev) => {
+      const current = prev[boxKey][field];
+      // inputga focus bo'lganda agar qiymat 0 yoki 0% bo'lsa — uni o'chirib tashlaymiz
+      if (current === "0" || current === "0%") {
+        return {
+          ...prev,
+          [boxKey]: { ...prev[boxKey], [field]: "" },
+        };
+      }
+      return prev;
+    });
   };
 
   const handleReset = (boxKey) => {
@@ -90,6 +121,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box1.from}
+                 onFocus={() => handleFocus("box1", "from")}
                 onChange={(e) =>
                   handleInputChange("box1", "from", e.target.value)
                 }
@@ -103,6 +135,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box1.to}
+                onFocus={() => handleFocus("box1", "to")}
                 onChange={(e) =>
                   handleInputChange("box1", "to", e.target.value)
                 }
@@ -127,6 +160,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box2.from}
+                 onFocus={() => handleFocus("box2", "from")}
                 onChange={(e) =>
                   handleInputChange("box2", "from", e.target.value)
                 }
@@ -140,6 +174,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box2.to}
+                onFocus={() => handleFocus("box2", "to")}
                 onChange={(e) =>
                   handleInputChange("box2", "to", e.target.value)
                 }
@@ -164,6 +199,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box3.from}
+                onFocus={() => handleFocus("box3", "from")}
                 onChange={(e) =>
                   handleInputChange("box3", "from", e.target.value)
                 }
@@ -177,6 +213,7 @@ const Filters = () => {
                 type="text"
                 className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
                 value={values.box3.to}
+                onFocus={() => handleFocus("box3", "to")}
                 onChange={(e) =>
                   handleInputChange("box3", "to", e.target.value)
                 }

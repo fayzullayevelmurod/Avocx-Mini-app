@@ -72,7 +72,7 @@ export const BuyerAdvertisingOrdersThree = () => {
               </div>
 
               <span className="text-xs font-semibold leading-[15px] text-[#FF9462]">
-                23:59:59Ждём
+                23:59:59
               </span>
             </div>
             <div className="pt-[7px] pl-[13px] pr-[13px]">

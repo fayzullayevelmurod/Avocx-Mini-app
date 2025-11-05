@@ -38,7 +38,7 @@ export const TimeInput = () => {
         <img className="" src="images/icons/time.svg" alt="time icon" />
         <div className="text-[#464646] font-semibold flex gap-1 items-center">
           <input
-            className="text-[#464646] font-semibold bg-transparent border-none outline-none w-[17px] placeholder:text-[#464646] text-center"
+            className="text-[#fff] font-semibold bg-transparent border-none outline-none w-[17px] placeholder:text-[#464646] text-center"
             type="text"
             placeholder="00"
             value={hour}
@@ -48,7 +48,7 @@ export const TimeInput = () => {
           <span className="text-base-white">:</span>
           <input
             ref={minuteRef}
-            className="text-[#464646] font-semibold bg-transparent border-none outline-none w-[17px] placeholder:text-[#464646] text-center"
+            className="text-[#fff] font-semibold bg-transparent border-none outline-none w-[17px] placeholder:text-[#464646] text-center"
             type="text"
             placeholder="00"
             value={minute}

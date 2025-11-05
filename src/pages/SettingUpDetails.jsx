@@ -71,7 +71,7 @@ export const SettingUpDetails = () => {
           <input
             className="bg-transparent placeholder:text-[#464646] outline-none"
             style={{
-              width: isCard ? (item.number ? "136px" : "172px") : "128px",
+              width: isCard ? (item.number ? "150px" : "172px") : "128px",
             }}
             type="text"
             inputMode="numeric"

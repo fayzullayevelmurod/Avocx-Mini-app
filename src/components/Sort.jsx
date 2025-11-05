@@ -29,7 +29,10 @@ export const Sort = ({
   };
 
   return (
-    <div className="relative flex-[1_1_30px] rounded-15 z-50">
+    <div
+      className="relative flex-[1_1_30px] rounded-15 z-50"
+      style={{ zIndex: isOpen ? 9999 : 1 }}
+    >
       {/* Shadow layer */}
       {isOpen && (
         <div
