@@ -332,9 +332,17 @@ input::-webkit-inner-spin-button {
 .custom-table table thead td:last-child,
 .custom-table table thead th:last-child {
   position: sticky;
-  right: 0;
-  /* border-left: 2px solid #00000066 !important; */
+  right: -1px;
   z-index: 100;
+  padding-left: 0;
+}
+.custom-table table tbody td:last-child div,
+.custom-table table tbody th:last-child div,
+.custom-table table thead td:last-child div,
+.custom-table table thead th:last-child div {
+  height: 32px;
+  padding-left: 10px;
+  border-left: 1px solid #303030;
 }
 table tfoot {
   position: static;
@@ -373,6 +381,9 @@ table tfoot {
   h2.react-datepicker__current-month {
     transform: translateX(-3px);
   }
+  .md-small-boxh {
+    max-width: 100px;
+  }
 }
 
 .radio-container input {
@@ -409,7 +420,6 @@ table tfoot {
   height: 20px;
   background: transparent;
 }
-
 
 @media (max-width: 365px) {
   .react-datepicker__navigation-icon--next {

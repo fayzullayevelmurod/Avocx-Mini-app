@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
+export const ExpandableAdButtons = ({
+  cardId,
+  buttonsData,
+  status,
+  statusPaused,
+}) => {
   const [expandedButton, setExpandedButton] = useState(null);
   const [ripple, setRipple] = useState(false);
   const containerRef = useRef(null);
@@ -124,7 +129,17 @@ export const ExpandableAdButtons = ({ cardId, buttonsData, status }) => {
         );
       })}
       {status && (
-        <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#59BFFF]">Активно</div>
+        <>
+          {statusPaused ? (
+            <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#FF9462]">
+              На паузе
+            </div>
+          ) : (
+            <div className="text-xs absolute top-1/2 -translate-y-1/2 right-[10px] font-semibold text-[#52E063]">
+              Активно
+            </div>
+          )}
+        </>
       )}
     </div>
   );

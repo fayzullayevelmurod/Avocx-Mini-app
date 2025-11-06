@@ -162,12 +162,16 @@ export const MyAdsExchange = () => {
         onClick={() => setIsOpen(false)}
       >
         <div className="bg-[#303030B2] text-center w-[302px] rounded-15 pt-[12px] p-[13px]">
-          <span className="text-15 font-bold leading-[18px] text-[#FF8077]">
+          <span className="text-15 font-bold leading-[18px]  mb-3">
             Удалить?
           </span>
-          <p className="text-center font-bold text-15 pt-[23px] pb-[18px]">
+          <Button
+            className="!h-10 !rounded-[12px] !bg-[#303030] mb-[7px]"
+            type="gray"
+            onClick={() => setIsOpen(false)}
+          >
             Да
-          </p>
+          </Button>
           <Button
             className="!h-10 !rounded-[12px]"
             onClick={() => setIsOpen(false)}

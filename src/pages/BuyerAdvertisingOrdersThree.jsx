@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button, Sort } from "../components";
 import { Footer, Header } from "../layouts";
 
@@ -10,6 +11,7 @@ const categoryOptions3 = [
 ];
 
 export const BuyerAdvertisingOrdersThree = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <div className="pb-[160px]">
@@ -142,13 +144,16 @@ export const BuyerAdvertisingOrdersThree = () => {
                     </span>
                   </div>
                 </div>
-                <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full">
+                <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full md-small-boxh">
                   <span className="text-[10px] font-medium block mb-[7px] text-[#A3A3A3] leading-[9px]">
                     Пост
                   </span>
-                  <span className="text-[13px] font-semibold leading-[10px] text-[#468FF5]">
+                  <button
+                    className="text-[13px] font-semibold leading-[10px] text-left text-[#468FF5]"
+                    onClick={() => setShowModal(true)}
+                  >
                     Показать
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -238,13 +243,16 @@ export const BuyerAdvertisingOrdersThree = () => {
                     </span>
                   </div>
                 </div>
-                <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full">
+                <div className="bg-[#303030] rounded-15 h-[50px] flex pl-3 justify-center flex-col max-w-[135px] w-full md-small-boxh">
                   <span className="text-[10px] font-medium block mb-[7px] text-[#A3A3A3] leading-[9px]">
                     Пост
                   </span>
-                  <span className="text-[13px] font-semibold leading-[10px] text-[#468FF5]">
+                  <button
+                    className="text-[13px] font-semibold leading-[10px] text-left text-[#468FF5]"
+                    onClick={() => setShowModal(true)}
+                  >
                     Показать
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -252,6 +260,45 @@ export const BuyerAdvertisingOrdersThree = () => {
         </div>
       </div>
       <Footer />
+
+      <div
+        className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
+          showModal ? "block" : "hidden"
+        }`}
+        onClick={() => setShowModal(false)}
+      >
+        <div className="bg-[#303030B2] w-[302px] rounded-15 pt-[12px] p-[13px]">
+          <div className="border border-dashed border-[#A3A3A3] p-[6px] rounded-15 w-[244px] mx-auto mb-2">
+            <div className="bg-[#464646] rounded-[10px] w-[232px] mx-auto h-[232px]"></div>
+            <h3 className="text-[10px] font-bold mt-2">Text example</h3>
+            <p className="text-[10px] font-normal leading-full mt-4 mb-1">
+              The quick brown fox jumps over the lazy dog. 123! Life is
+              short—enjoy every moment. The sun shines bright, the wind whispers
+              secrets
+            </p>
+
+            <Button
+              className="!h-[30px] !bg-[#464646] !rounded-[10px]"
+              type="gray"
+            >
+              <span className="text-[10px] font-semibold">Text button</span>
+            </Button>
+          </div>
+          <Button
+            className="!h-10 !rounded-[12px] !bg-[#303030] mb-[7px]"
+            type="gray"
+            onClick={() => setShowModal(false)}
+          >
+            Отказаться
+          </Button>
+          <Button
+            className="!h-10 !rounded-[12px]"
+            onClick={() => setShowModal(false)}
+          >
+            Взять заказ
+          </Button>
+        </div>
+      </div>
     </>
   );
 };

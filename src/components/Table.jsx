@@ -1,6 +1,6 @@
 export const MyTable = () => {
   return (
-    <div>
+    <div className="overflow-hidden rounded-15 bg-[#1F1F1F]">
       <div className="overflow-x-auto custom-table no-scrollbar">
         <table className="w-[1250px]">
           <thead className="">
@@ -292,7 +292,7 @@ export const MyTable = () => {
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[149px] pl-[10px]"></td>
-              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"></td>
+              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"><div></div></td>
             </tr>
             <tr className="border-t border-[#303030]">
               <td className="h-[32px] bg-[#242424]"></td>
@@ -307,7 +307,7 @@ export const MyTable = () => {
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[149px] pl-[10px]"></td>
-              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"></td>
+              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"><div></div></td>
             </tr>
             <tr className="border-y border-[#303030]">
               <td className="h-[32px] bg-[#242424]"></td>
@@ -322,7 +322,7 @@ export const MyTable = () => {
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[71px] pl-[10px]"></td>
               <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[149px] pl-[10px]"></td>
-              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"></td>
+              <td className="h-[32px] bg-[#242424] border-l border-[#303030] w-[106px] pl-[10px]"><div></div></td>
             </tr>
           </tbody>
           {/* <tfoot className="bg-[#1F1F1F]  h-[54px]">

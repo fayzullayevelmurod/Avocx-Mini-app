@@ -2,6 +2,11 @@ import React, { useState } from "react";
 
 const Filters = () => {
   const [activeBox, setActiveBox] = useState(null);
+  const [values, setValues] = useState({
+    box1: { from: "", to: "" },
+    box2: { from: "", to: "" },
+    box3: { from: "", to: "" },
+  });
   const [checkedDays, setCheckedDays] = useState({
     one: false,
     two: false,
@@ -10,67 +15,30 @@ const Filters = () => {
     five: false,
   });
 
-  // Har bir box uchun qiymatlar
-  const [values, setValues] = useState({
-    box1: { from: 0, to: 0 },
-    box2: { from: "0%", to: "0%" },
-    box3: { from: 0, to: 0 },
-  });
-
   const toggleBox = (index) => {
     setActiveBox(activeBox === index ? null : index);
   };
 
+  const handleInputChange = (box, field, value) => {
+    setValues((prev) => ({
+      ...prev,
+      [box]: {
+        ...prev[box],
+        [field]: value,
+      },
+    }));
+  };
+
   const handleChange = (e) => {
-    setCheckedDays({ [e.target.id]: true });
-  };
-
-  // const handleInputChange = (boxKey, field, value) => {
-  //   if (/^\d*%?$/.test(value)) {
-  //     setValues((prev) => ({
-  //       ...prev,
-  //       [boxKey]: { ...prev[boxKey], [field]: value },
-  //     }));
-  //   }
-  // };
-
-  // 🔥 Asosiy o'zgarish shu yerda
-  const handleInputChange = (boxKey, field, value) => {
-    if (/^\d*%?$/.test(value)) {
-      setValues((prev) => ({
-        ...prev,
-        [boxKey]: {
-          ...prev[boxKey],
-          [field]:
-            // agar hozirgi qiymat 0 yoki 0% bo'lsa, foydalanuvchi yozishni boshlaganda uni tozalaymiz
-            prev[boxKey][field] === "0" || prev[boxKey][field] === "0%"
-              ? value.replace(/^0%?/, "")
-              : value,
-        },
-      }));
-    }
-  };
-
-  const handleFocus = (boxKey, field) => {
-    setValues((prev) => {
-      const current = prev[boxKey][field];
-      // inputga focus bo'lganda agar qiymat 0 yoki 0% bo'lsa — uni o'chirib tashlaymiz
-      if (current === "0" || current === "0%") {
-        return {
-          ...prev,
-          [boxKey]: { ...prev[boxKey], [field]: "" },
-        };
-      }
-      return prev;
-    });
+    setCheckedDays({ ...checkedDays, [e.target.id]: true });
   };
 
   const handleReset = (boxKey) => {
     setValues((prev) => ({
       ...prev,
       [boxKey]: {
-        from: boxKey === "box2" ? "0%" : 0,
-        to: boxKey === "box2" ? "0%" : 0,
+        from: "",
+        to: "",
       },
     }));
   };
@@ -119,9 +87,9 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0"
                 value={values.box1.from}
-                 onFocus={() => handleFocus("box1", "from")}
                 onChange={(e) =>
                   handleInputChange("box1", "from", e.target.value)
                 }
@@ -133,9 +101,9 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0"
                 value={values.box1.to}
-                onFocus={() => handleFocus("box1", "to")}
                 onChange={(e) =>
                   handleInputChange("box1", "to", e.target.value)
                 }
@@ -154,13 +122,13 @@ const Filters = () => {
           <div className="border rounded-[12px] border-[#303030] p-[10px] mx-[13px] flex justify-between">
             <div>
               <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
-                От
+                От %
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0%"
                 value={values.box2.from}
-                 onFocus={() => handleFocus("box2", "from")}
                 onChange={(e) =>
                   handleInputChange("box2", "from", e.target.value)
                 }
@@ -168,13 +136,13 @@ const Filters = () => {
             </div>
             <div>
               <span className="text-xs font-semibold mb-[9px] text-[#A3A3A3] block">
-                До
+                До %
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0%"
                 value={values.box2.to}
-                onFocus={() => handleFocus("box2", "to")}
                 onChange={(e) =>
                   handleInputChange("box2", "to", e.target.value)
                 }
@@ -197,9 +165,9 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0"
                 value={values.box3.from}
-                onFocus={() => handleFocus("box3", "from")}
                 onChange={(e) =>
                   handleInputChange("box3", "from", e.target.value)
                 }
@@ -211,9 +179,9 @@ const Filters = () => {
               </span>
               <input
                 type="text"
-                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px]"
+                className="text-[18px] font-bold text-white bg-transparent outline-none w-[76px] h-[15px] placeholder:text-[#464646]"
+                placeholder="0"
                 value={values.box3.to}
-                onFocus={() => handleFocus("box3", "to")}
                 onChange={(e) =>
                   handleInputChange("box3", "to", e.target.value)
                 }
