@@ -20,10 +20,10 @@ const Tab1 = () => {
         <div
           key={bank.id}
           onClick={() => setActiveBank(bank.id)}
-          className={`flex h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
+          className={`flex h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#262E38] w-full cursor-pointer transition-all`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center bg-[#272727]">
               {activeBank === bank.id && (
                 <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
               )}
@@ -65,10 +65,10 @@ const Tab2 = () => {
         <div
           key={bank.id}
           onClick={() => setActiveBank(bank.id)}
-          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
+          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#262E38] w-full cursor-pointer transition-all`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center bg-[#272727]">
               {activeBank === bank.id && (
                 <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
               )}
@@ -123,10 +123,10 @@ const Tab3 = () => {
         <div
           key={bank.id}
           onClick={() => setActiveBank(bank.id)}
-          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
+          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#262E38] w-full cursor-pointer transition-all`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center bg-[#272727]">
               {activeBank === bank.id && (
                 <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
               )}
@@ -161,13 +161,13 @@ const Tab3 = () => {
 const tabData = [
   {
     id: "1",
-    label: "На карту",
+    label: "Карта",
     icon: "/images/icons/card-pay-white.svg",
     content: <Tab1 />,
   },
   {
     id: "2",
-    label: "По номеру",
+    label: "Номер",
     icon: "/images/icons/mobile-phone.svg",
     content: <Tab2 />,
   },

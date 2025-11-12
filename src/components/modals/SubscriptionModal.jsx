@@ -6,6 +6,7 @@ import { Checkbox } from "../Checkbox";
 import { RadioComponent } from "../RadioComponent";
 import { PaymentFiat } from "./PaymentFiat";
 import { Footer } from "../../layouts";
+import { SelectChannel } from "../SelectChannel";
 
 const categoryOptions3 = [
   "Название канала 1",
@@ -56,7 +57,7 @@ export const SubscriptionModal = ({ isOpen, onClose }) => {
             Действует по: 25.10.2025
           </span>
           <div className="space-y-[7px]">
-            <Sort
+            <SelectChannel
               label="Каналы для подписки"
               icon={true}
               iconPath="/images/icons/stars.svg"

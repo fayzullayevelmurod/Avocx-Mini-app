@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Button, Date, SelectChannel, Sort, Tab } from "../components";
 import { Footer, Header } from "../layouts";
 import { SelectAvg } from "../components/SelectAvg";
+import { CategoriesModal } from "../components/modals";
 
 const categoryOptions2 = [
   "Счастье Сейчас",
@@ -13,6 +14,14 @@ export const CreatingAdvertisingPost = () => {
   const [time, setTime] = useState({ hours: "", minutes: "" });
   const minutesRef = useRef(null);
   const [active, setActive] = useState("Фикс"); // default
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [openModal, setOpenModal] = useState(null);
+  const handleOpen = (modalName) => setOpenModal(modalName);
+  const handleClose = () => setOpenModal(null);
+  // X bosilganda kategoriyani o‘chirish
+  const handleRemoveCategory = (cat) => {
+    setSelectedCategories((prev) => prev.filter((item) => item !== cat));
+  };
 
   const buttons = ["Фикс", "CPM", "ПДП"];
   const handleTimeChange = (e) => {
@@ -93,8 +102,6 @@ export const CreatingAdvertisingPost = () => {
   ];
 
   const avgOptions = [
-    "№4 Текст первой строчки поста",
-    "№3 Текст первой строчки поста",
     "№2 Текст первой строчки поста",
     "№1 Текст первой строчки поста",
   ];
@@ -183,11 +190,49 @@ export const CreatingAdvertisingPost = () => {
               Выбрать
             </Button>
           </div>
-          <div className="w-full flex items-center justify-between gap-1 h-[50px] py-2 pl-5 pr-[11px] bg-charcoal rounded-15 placeholder:text-iron text-sm text-white disabled:opacity-100 disabled:text-white">
-            <span className="font-semibold">Категория:</span>
-            <Button className="!min-w-[129px] max-w-[129px] !h-[30px] !text-xs !rounded-lg">
-              Выбрать
-            </Button>
+          <div className="p-[10px] bg-[#242424] rounded-15 pl-[14px]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-[7px]">
+                <img src="/images/icons/category-2.svg" alt="" />
+                <span>Категория:</span>
+              </div>
+              <Button
+                onClick={() => handleOpen("category-modal")}
+                className="!w-[129px] !h-[30px] rounded-[8px] text-xs"
+              >
+                Выбрать
+              </Button>
+            </div>
+            {/* 🔽 Agar tanlangan kategoriya yo‘q bo‘lsa, "Не выбрано" chiqadi */}
+            {selectedCategories.length === 0 ? null : (
+              <div className="flex flex-wrap gap-1 mt-[7px]">
+                {selectedCategories.map((cat) => (
+                  <div
+                    key={cat}
+                    className="p-[10px] h-[30px] text-[#59BFFF] flex items-center gap-2 text-[10px] font-medium bg-[#262E38] rounded-[10px] w-fit"
+                  >
+                    <span>{cat}</span>
+                    <button onClick={() => handleRemoveCategory(cat)}>
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 17 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.4999 15.4999L8.5 8.5M8.5 8.5L1.5 1.5M8.5 8.5L15.5 1.5M8.5 8.5L1.5 15.5"
+                          stroke="#59BFFF"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <h3 className="text-center font-bold text-15 leading-[16px] mt-[11px] mb-[7px]">
             Выберите рекламный пост
@@ -224,10 +269,19 @@ export const CreatingAdvertisingPost = () => {
                 ))}
               </div>
             </div>
-            <Tab tabData={tabData} />
+            {/* <Tab tabData={tabData} /> */}
           </div>
         </div>
       </div>
+      <CategoriesModal
+        isOpen={openModal === "category-modal"}
+        onClose={handleClose}
+        onApply={(selected) => {
+          setSelectedCategories(selected);
+          handleClose();
+        }}
+        defaultSelected={selectedCategories}
+      />
       <Footer btnIcon="/images/icons/paper-plus.svg" btn="Создать пост" />
     </>
   );

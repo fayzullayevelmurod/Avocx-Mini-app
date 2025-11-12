@@ -70,7 +70,7 @@ export const ShoppingCartAdvertising = () => {
           </div>
 
           {/* card */}
-          {/* <div className="bg-[#242424] rounded-[20px] p-[13px]">
+          <div className="bg-[#242424] rounded-[20px] p-[13px]">
             <div className="flex items-center justify-between">
               <div className="flex gap-[7px] items-center">
                 <Checkbox checked={check} onChange={() => setCheck(!check)} />
@@ -159,7 +159,7 @@ export const ShoppingCartAdvertising = () => {
               <img src="/images/icons/say-hello.svg" alt="" />
               <span>Запросить на оплату</span>
             </Button>
-          </div> */}
+          </div>
         </div>
       </div>
 

@@ -68,7 +68,12 @@ export const MyTable = () => {
         <input
           type="text"
           placeholder="Поиск"
-          className="border text-xs font-semibold placeholder:text-[#707070] border-[#464646] bg-[#303030] rounded-[15px] px-[15px] h-[40px] w-[250px] focus:outline-none"
+          className="border text-xs pr-[38px] font-semibold placeholder:text-[#707070] border-[#464646] bg-[#303030] rounded-[15px] px-[15px] h-[40px] w-[250px] focus:outline-none"
+        />
+        <img
+          className="absolute top-1/2 -translate-y-1/2 right-[13px]"
+          src="/images/icons/arrow-right.svg"
+          alt=""
         />
       </div>
     </td>
@@ -199,7 +204,12 @@ export const MyTable = () => {
                   <input
                     type="text"
                     placeholder="Поиск"
-                    className="border text-xs font-semibold placeholder:text-[#707070] border-[#464646] bg-[#303030] rounded-[15px] px-[15px] h-[40px] w-[250px] focus:outline-none"
+                    className="border text-xs pr-[38px] font-semibold placeholder:text-[#707070] border-[#464646] bg-[#303030] rounded-[15px] px-[15px] h-[40px] w-[250px] focus:outline-none"
+                  />
+                  <img
+                    className="absolute top-1/2 -translate-y-1/2 right-[13px]"
+                    src="/images/icons/arrow-right.svg"
+                    alt=""
                   />
                 </div>
               </td>

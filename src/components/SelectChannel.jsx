@@ -95,6 +95,14 @@ export const SelectChannel = ({
             : "max-h-0 opacity-0 py-0 invisible"
         }`}
       >
+        <div className="bg-[#303030] rounded-15 px-8 relative h-[46px] mt-2">
+          <img className="absolute top-1/2 -translate-y-1/2 left-[14px]" src="/images/icons/search.svg" alt="" />
+          <input
+            className="w-full h-full outline-none bg-transparent"
+            type="text"
+            placeholder="Поиск"
+          />
+        </div>
         {options.map((option, idx) => (
           <li
             key={idx}
