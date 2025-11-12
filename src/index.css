@@ -434,3 +434,19 @@ table tfoot {
     transform: translateX(-3px);
   }
 }
+
+.small-text .radio-container span {
+  width: 117px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 390px) {
+  .media-small-text {
+    width: 98%;
+  }
+  .media-size-small .flex-1 span {
+    font-size: 12px;
+  }
+}

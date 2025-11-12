@@ -1,8 +1,8 @@
-import { Button, Sort } from "../components";
+import { Button, SelectChannel, Sort } from "../components";
 import { Footer, Header } from "../layouts";
 
 const categoryOptions2 = [
-  "Счастье Сейчас",
+  "Счастье Сейчас 1",
   "Счастье Сейчас 2",
   "Счастье Сейчас 3",
 ];
@@ -16,7 +16,7 @@ export const AnnouncementsExchange = () => {
           <h3 className="text-center font-bold text-15 leading-[18px] mb-[11px]">
             Выберите канал
           </h3>
-          <Sort
+          <SelectChannel
             label="Канал"
             icon={true}
             iconPath="/images/icons/stars.svg"
@@ -36,7 +36,11 @@ export const AnnouncementsExchange = () => {
           </p>
         </div>
       </div>
-      <Footer btn="Создать объявление" btnIcon="/images/icons/plus-btn.svg" btnOnClick={() => {}} />
+      <Footer
+        btn="Создать объявление"
+        btnIcon="/images/icons/plus-btn.svg"
+        btnOnClick={() => {}}
+      />
     </>
   );
 };

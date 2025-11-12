@@ -1,4 +1,4 @@
-import { Sort } from "../components";
+import { SelectChannel, Sort } from "../components";
 import { Footer, Header } from "../layouts";
 
 const categoryOptions2 = ["От новых", "От новых 2", "От новых 3"];
@@ -35,7 +35,7 @@ export const BuyerAdvertisingOrdersTwo = () => {
             className="item-width !h-[54px]"
           />
         </div>
-        <Sort
+        <SelectChannel
           label="Канал"
           icon={true}
           iconPath="/images/icons/stars.svg"

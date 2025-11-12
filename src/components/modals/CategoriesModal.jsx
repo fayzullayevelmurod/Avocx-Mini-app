@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search } from "../Search";
 import { ModalUI } from "./ModalUI";
 import { Button } from "../Button";
@@ -21,23 +21,37 @@ const categories = [
   "Образование",
 ];
 
-export const CategoriesModal = ({ isOpen, onClose }) => {
-  const [selectedSet, setSelectedSet] = useState(() => new Set());
+export const CategoriesModal = ({
+  isOpen,
+  onClose,
+  onApply,
+  defaultSelected = [],
+}) => {
+  const [selectedSet, setSelectedSet] = useState(new Set(defaultSelected));
+
+  // 🔄 Modal ochilganda defaultSelected dan yangilash
+  useEffect(() => {
+    if (isOpen) {
+      setSelectedSet(new Set(defaultSelected));
+    }
+  }, [isOpen, defaultSelected]);
 
   const toggleSelect = (category) => {
     setSelectedSet((prev) => {
       const next = new Set(prev);
-      if (next.has(category)) next.delete(category);
-      else next.add(category);
+      next.has(category) ? next.delete(category) : next.add(category);
       return next;
     });
   };
 
   const resetAll = () => setSelectedSet(new Set());
 
+  const handleApply = () => {
+    onApply?.(Array.from(selectedSet)); // 🔥 tanlanganlarni yuborish
+  };
+
   return (
     <ModalUI isOpen={isOpen} className="!p-0 flex flex-col justify-between">
-      {/* Header */}
       <div className="px-[27px] pt-[23px]">
         <div className="flex items-center justify-between mb-[18px]">
           <div className="flex items-center gap-[7px]">
@@ -56,7 +70,6 @@ export const CategoriesModal = ({ isOpen, onClose }) => {
 
         <Search />
 
-        {/* Category List */}
         <ul className="mt-3 space-y-1 max-h-[calc(100vh_-_206px)] pb-4 no-scrollbar overflow-y-auto">
           {categories.map((cat) => {
             const checked = selectedSet.has(cat);
@@ -81,7 +94,7 @@ export const CategoriesModal = ({ isOpen, onClose }) => {
       </div>
 
       <div className="pt-[16px] px-[13px] pb-5 border-t border-[#242424]">
-        <Button onClick={onClose}>Применить</Button>
+        <Button onClick={handleApply}>Применить</Button>
       </div>
     </ModalUI>
   );

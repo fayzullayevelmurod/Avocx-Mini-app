@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Categories, Date, ExpandableAdButtons, Sort } from "../components";
+import {
+  Categories,
+  Date,
+  ExpandableAdButtons,
+  SelectChannel,
+  Sort,
+} from "../components";
 import { CustomSelect } from "../components/CustomSelect";
 import { ToggleIconButton } from "../components/ToggleFeatured";
 import { Footer, Header } from "../layouts";
@@ -8,7 +14,7 @@ import { CustomSelect2 } from "../components/CustomSelect2";
 import Filters from "../components/FilterBoxes";
 
 const categoryOptions2 = [
-  "Счастье Сейчас",
+  "Счастье Сейчас 1",
   "Счастье Сейчас 2",
   "Счастье Сейчас 3",
 ];
@@ -69,8 +75,8 @@ export const Exchange = () => {
           actionIcon="/images/icons/trade-up.svg"
         />
         <div className="space-y-[6px]">
-          <div className="flex gap-1 mb-[6px] h-[54px]">
-            <Sort
+          <div className="flex gap-1 mb-[6px] h-[54px] small-text">
+            <SelectChannel
               label="Канал"
               icon={true}
               iconPath="/images/icons/stars.svg"

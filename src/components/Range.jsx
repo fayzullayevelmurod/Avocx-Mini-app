@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function CustomRangeSlider() {
-  const values = [0, 11, 18, 24];
-  const [minIndex, setMinIndex] = useState(1); // 11
-  const [maxIndex, setMaxIndex] = useState(2); // 18
+  const values = [0, 4, 8, 12, 16, 20, 24];
+  const [minIndex, setMinIndex] = useState(3); // 11
+  const [maxIndex, setMaxIndex] = useState(5); // 18
 
   const handleMinChange = (index) => {
     if (index <= maxIndex) {

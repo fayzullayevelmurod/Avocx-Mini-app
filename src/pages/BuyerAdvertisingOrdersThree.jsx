@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Sort } from "../components";
+import { Button, SelectChannel, Sort } from "../components";
 import { Footer, Header } from "../layouts";
 
 const categoryOptions2 = ["От новых", "От новых 2", "От новых 3"];
@@ -38,7 +38,7 @@ export const BuyerAdvertisingOrdersThree = () => {
               className="item-width !h-[54px]"
             />
           </div>
-          <Sort
+          <SelectChannel
             label="Канал"
             icon={true}
             iconPath="/images/icons/stars.svg"

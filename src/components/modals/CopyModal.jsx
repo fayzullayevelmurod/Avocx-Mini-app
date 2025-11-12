@@ -1,20 +1,38 @@
-import { Button } from "../Button";
+import { useEffect, useState } from "react";
 
 export const CopyModal = ({ isOpen, setIsOpen }) => {
+  const [visible, setVisible] = useState(false);
+
+  // animatsiya holatini boshqarish
+  useEffect(() => {
+    if (isOpen) {
+      setVisible(true);
+      // 2 soniyadan so‘ng avtomatik yopiladi
+      const timer = setTimeout(() => {
+        setVisible(false);
+        setTimeout(() => setIsOpen(false), 300); // animatsiya tugashini kutadi
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, setIsOpen]);
+
   return (
     <div
-      className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
-        isOpen ? "block" : "hidden"
+      className={`fixed top-0 left-0 w-full flex justify-center pointer-events-none z-[99999] transition-all duration-300 ${
+        isOpen ? "opacity-100" : "opacity-0"
       }`}
-      onClick={() => setIsOpen(false)}
     >
-      <div className="bg-[#303030B2] w-[302px] space-y-[7px] rounded-15 pt-[12px] p-[13px]">
-        <div className="flex gap-[6px] items-center justify-center">
-          <img src="/images/icons/check-rounded.svg" alt="" />
-          <span className="text-15 font-bold leading-[18px] text-[#468FF5]">
-            Скопировано
-          </span>
-        </div>
+      <div
+        className={`bg-[#303030] w-[302px] rounded-15 pt-[12px] p-[13px] flex items-center justify-center gap-[6px] transition-all duration-500 ease-out ${
+          visible
+            ? "translate-y-[30px] opacity-100"
+            : "-translate-y-[100%] opacity-0"
+        }`}
+      >
+        <img src="/images/icons/check-rounded.svg" alt="" />
+        <span className="text-15 font-bold leading-[18px] text-[#52E063]">
+          Скопировано
+        </span>
       </div>
     </div>
   );

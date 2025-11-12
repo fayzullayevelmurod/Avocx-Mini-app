@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Checkbox, Sort } from "../components";
+import { Button, Checkbox, SelectChannel, Sort } from "../components";
 import { Footer, Header } from "../layouts";
 
 const categoryOptions = [
@@ -35,7 +35,7 @@ export const ShoppingCartAdvertising = () => {
               className="item-width h-full"
             />
           </div>
-          <Sort
+          <SelectChannel
             label="Канал"
             icon={true}
             iconPath="/images/icons/stars.svg"
@@ -53,7 +53,7 @@ export const ShoppingCartAdvertising = () => {
         </div>
         <div className="space-y-[7px] mt-[7px]">
           <div className="flex gap-3">
-            <div className="text-center flex items-center gap-1 justify-center  rounded-15 text-xs font-semibold text-[#59BFFF] bg-[#262E38] flex-1 h-10">
+            <div className="text-center flex items-center gap-1 justify-center  rounded-15 text-xs font-semibold  bg-[#242424] flex-1 h-10">
               Выбрано: <span className="text-[#468FF5]">1</span>
             </div>
             <div className="text-center flex items-center justify-center bg-[#242424] rounded-15 text-xs font-semibold text-base-white flex-1 h-10">
@@ -70,7 +70,7 @@ export const ShoppingCartAdvertising = () => {
           </div>
 
           {/* card */}
-          <div className="bg-[#242424] rounded-[20px] p-[13px]">
+          {/* <div className="bg-[#242424] rounded-[20px] p-[13px]">
             <div className="flex items-center justify-between">
               <div className="flex gap-[7px] items-center">
                 <Checkbox checked={check} onChange={() => setCheck(!check)} />
@@ -159,7 +159,7 @@ export const ShoppingCartAdvertising = () => {
               <img src="/images/icons/say-hello.svg" alt="" />
               <span>Запросить на оплату</span>
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Button, ExpandableAdButtons, Sort } from "../components";
+import { Button, ExpandableAdButtons, SelectChannel, Sort } from "../components";
 import { ToggleIconButton } from "../components/ToggleFeatured";
 import { Footer, Header } from "../layouts";
 import { useState } from "react";
@@ -26,7 +26,7 @@ export const MyAdsExchange = () => {
         <h3 className="text-center mb-[11px] leading-[18px] font-bold text-15">
           Мои объявления на бирже
         </h3>
-        <Sort
+        <SelectChannel
           label="Канал"
           icon={true}
           iconPath="/images/icons/stars.svg"

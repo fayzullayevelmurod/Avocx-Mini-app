@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
-import { Button, Date, Sort, Tab } from "../components";
+import { Button, Date, SelectChannel, Sort, Tab } from "../components";
 import { Footer, Header } from "../layouts";
+import { SelectAvg } from "../components/SelectAvg";
 
 const categoryOptions2 = [
   "Счастье Сейчас",
@@ -91,6 +92,13 @@ export const CreatingAdvertisingPost = () => {
     },
   ];
 
+  const avgOptions = [
+    "№4 Текст первой строчки поста",
+    "№3 Текст первой строчки поста",
+    "№2 Текст первой строчки поста",
+    "№1 Текст первой строчки поста",
+  ];
+
   return (
     <>
       <div className="pb-[160px]">
@@ -103,7 +111,7 @@ export const CreatingAdvertisingPost = () => {
         <h3 className="text-center font-bold text-15 leading-[18px] mb-[11px]">
           Выберите канал
         </h3>
-        <Sort
+        <SelectChannel
           label="Канал"
           icon={true}
           iconPath="/images/icons/stars.svg"
@@ -187,32 +195,7 @@ export const CreatingAdvertisingPost = () => {
           <p className="text-[#A3A3A3] max-w-[280px] mx-auto text-xs font-medium text-center mb-3">
             Если их нет, то добавьте через бот: меню - креатив - добавить.
           </p>
-          <div className="flex items-center justify-between h-[50px] bg-[#242424] rounded-15 pr-[18px] pl-[15px]">
-            <span className="font-semibold">Пост: №...</span>
-            <div className="flex gap-[19px] items-center">
-              <div className="flex gap-1 items-center">
-                <span className="text-[#A3A3A3] text-xs font-semibold leading-[15px]">
-                  Ср. по посту:
-                </span>
-                <img src="/images/icons/diagnostika.svg" alt="" />
-                <span className="text-[#E8E8E8] text-xs font-semibold leading-[15px]">
-                  0₽
-                </span>
-              </div>
-              <svg
-                width="14"
-                height="8"
-                viewBox="0 0 14 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.878 0.363023C12.3588 -0.1183 13.138 -0.1183 13.6353 0.346979C13.884 0.58764 14 0.892477 14 1.21336C14 1.5182 13.884 1.82303 13.6353 2.04765L7.88277 7.64703C7.65068 7.87165 7.3357 8 7.00414 8C6.67259 8 6.35761 7.87165 6.12552 7.64703L0.373002 2.04765C-0.124334 1.58237 -0.124334 0.828301 0.373002 0.346979C0.85376 -0.1183 1.6495 -0.1183 2.13025 0.363023L7.00414 5.09602L11.878 0.363023Z"
-                  fill="#464646"
-                />
-              </svg>
-            </div>
-          </div>
+          <SelectAvg options={avgOptions} />
           <div className="space-y-[7px]">
             <div className="flex justify-between items-center bg-charcoal p-[10px] rounded-15 pl-5 h-[50px]">
               <div className="flex gap-1 items-center">

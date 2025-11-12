@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, InputForm, SelectTime, Sort } from "../components";
+import {
+  Button,
+  InputForm,
+  SelectChannel,
+  SelectTime,
+  Sort,
+} from "../components";
 import { CustomSelect } from "../components/CustomSelect";
 import { Footer, Header } from "../layouts";
-import { LetsModal } from "../components/modals";
+import { CategoriesModal, LetsModal } from "../components/modals";
 
 const categoryOptions2 = [
   "Счастье Сейчас",
@@ -14,9 +20,15 @@ const options = ["Фикс", "CPM", "ПДП"];
 
 export const CreatingExchange = () => {
   const [openModal, setOpenModal] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
+
+  // X bosilganda kategoriyani o‘chirish
+  const handleRemoveCategory = (cat) => {
+    setSelectedCategories((prev) => prev.filter((item) => item !== cat));
+  };
 
   return (
     <>
@@ -25,7 +37,7 @@ export const CreatingExchange = () => {
         <h3 className="text-center font-bold text-15 leading-[18px] mb-[11px]">
           Выберите канал
         </h3>
-        <Sort
+        <SelectChannel
           label="Канал"
           icon={true}
           iconPath="/images/icons/stars.svg"
@@ -35,36 +47,53 @@ export const CreatingExchange = () => {
         <h3 className="text-center font-semibold text-15 leading-[12px] mt-[13px] mb-3">
           Выберите нишу вашего канала
         </h3>
-        <div className="flex flex-wrap gap-1 mb-3">
-          <div className="px-[10px] h-[30px] rounded-[10px] bg-[#283134] flex items-center gap-[7px]">
-            <span className="text-xs font-semibold text-[#59BFFF]">
-              Не выбрано
-            </span>
-            <svg
-              width="10"
-              height="10"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+
+        {/* Категория tanlash paneli */}
+        <div className="p-[10px] bg-[#242424] rounded-15 pl-[14px]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-[7px]">
+              <img src="/images/icons/category-2.svg" alt="" />
+              <span>Категория:</span>
+            </div>
+            <Button
+              onClick={() => handleOpen("category-modal")}
+              className="!w-[129px] !h-[30px] rounded-[8px] text-xs"
             >
-              <path
-                d="M15.4999 15.4999L8.5 8.5M8.5 8.5L1.5 1.5M8.5 8.5L15.5 1.5M8.5 8.5L1.5 15.5"
-                stroke="#59BFFF"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+              Выбрать
+            </Button>
           </div>
+          {/* 🔽 Agar tanlangan kategoriya yo‘q bo‘lsa, "Не выбрано" chiqadi */}
+          {selectedCategories.length === 0 ? null : (
+            <div className="flex flex-wrap gap-1 mt-[7px]">
+              {selectedCategories.map((cat) => (
+                <div
+                  key={cat}
+                  className="p-[10px] h-[30px] text-[#59BFFF] flex items-center gap-2 text-[10px] font-medium bg-[#262E38] rounded-[10px] w-fit"
+                >
+                  <span>{cat}</span>
+                  <button onClick={() => handleRemoveCategory(cat)}>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.4999 15.4999L8.5 8.5M8.5 8.5L1.5 1.5M8.5 8.5L15.5 1.5M8.5 8.5L1.5 15.5"
+                        stroke="#59BFFF"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        <Button type="gray">
-          <img
-            className="filter invert brightness-0"
-            src="/images/icons/plus-btn.svg"
-            alt=""
-          />
-          <span>Выбрать</span>
-        </Button>
+
         <h3 className="text-center font-semibold text-15 leading-[12px] my-3">
           Укажите формат, условия и цену.
         </h3>
@@ -172,6 +201,15 @@ export const CreatingExchange = () => {
       </div>
 
       <LetsModal isOpen={openModal === "lets-modal"} onClose={handleClose} />
+      <CategoriesModal
+        isOpen={openModal === "category-modal"}
+        onClose={handleClose}
+        onApply={(selected) => {
+          setSelectedCategories(selected);
+          handleClose();
+        }}
+        defaultSelected={selectedCategories}
+      />
       <Footer
         btn="Создать"
         onClick={() => handleOpen("lets-modal")}

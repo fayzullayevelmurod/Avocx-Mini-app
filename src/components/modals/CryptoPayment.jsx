@@ -20,19 +20,19 @@ const Tab1 = () => {
         <div
           key={bank.id}
           onClick={() => setActiveBank(bank.id)}
-          className={`flex h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-charcoal w-full cursor-pointer transition-all`}
+          className={`flex h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-5 h-5 rounded-full border-2 border-iron flex items-center justify-center">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
               {activeBank === bank.id && (
                 <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
               )}
             </div>
             <div>
-              <span className="text-[10px] font-medium mb-2 block leading-[7px]">
+              <span className="text-[10px] font-medium mb-2 block leading-[7px] text-[#59BFFF]">
                 {bank.name}
               </span>
-              <h3 className="text-[15px] font-semibold leading-[11px]">
+              <h3 className="text-[15px] font-semibold leading-[11px] text-[#59BFFF]">
                 {bank.number}
               </h3>
             </div>
@@ -65,19 +65,19 @@ const Tab2 = () => {
         <div
           key={bank.id}
           onClick={() => setActiveBank(bank.id)}
-          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-charcoal w-full cursor-pointer transition-all`}
+          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-5 h-5 rounded-full border-2 border-iron flex items-center justify-center">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
               {activeBank === bank.id && (
                 <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
               )}
             </div>
             <div>
-              <span className="text-[10px] font-medium mb-2 block leading-[7px]">
+              <span className="text-[10px] font-medium mb-2 block leading-[7px] text-[#59BFFF]">
                 {bank.name}
               </span>
-              <h3 className="text-[15px] font-semibold leading-[11px]">
+              <h3 className="text-[15px] font-semibold leading-[11px] text-[#59BFFF]">
                 {bank.number}
               </h3>
             </div>
@@ -98,6 +98,66 @@ const Tab2 = () => {
   );
 };
 
+const Tab3 = () => {
+  const [activeBank, setActiveBank] = useState(null);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const banks = [
+    {
+      id: 1,
+      name: "Счёт в банке: Т-банк",
+      number: "45678908765435678998765445678",
+    },
+    {
+      id: 2,
+      name: "Интернет",
+      number: "Эквайринг",
+      button: true,
+
+    },
+  ];
+
+  return (
+    <>
+      {banks.map((bank) => (
+        <div
+          key={bank.id}
+          onClick={() => setActiveBank(bank.id)}
+          className={`flex gap-1 h-[50px] items-center justify-between py-3 pl-3 pr-[14px] rounded-xl bg-[#3B382B80] w-full cursor-pointer transition-all`}
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-[21px] h-[21px] rounded-full border-2 border-iron flex items-center justify-center">
+              {activeBank === bank.id && (
+                <div className="bg-[#59BFFF] rounded-full w-[13px] h-[13px]"></div>
+              )}
+            </div>
+            <div>
+              <span className="text-[10px] font-medium mb-2 block leading-[7px] text-[#59BFFF]">
+                {bank.name}
+              </span>
+              <h3 className="text-[15px] font-semibold leading-[11px] text-[#59BFFF]">
+                {bank.number}
+              </h3>
+            </div>
+          </div>
+
+         {bank.button ? (
+          <div className="w-[129px] h-[30px] flex items-center justify-center bg-[#59BFFF] rounded-lg text-[#303030] text-xs font-bold text-[#303030]">Оплатить</div>
+         ) :  <img
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpenModal(true);
+            }}
+            src="/images/icons/copy-2.svg"
+            alt=""
+          />}
+        </div>
+      ))}
+      <CopyModal isOpen={isOpenModal} setIsOpen={setIsOpenModal} />
+    </>
+  );
+};
+
 const tabData = [
   {
     id: "1",
@@ -110,6 +170,12 @@ const tabData = [
     label: "По номеру",
     icon: "/images/icons/mobile-phone.svg",
     content: <Tab2 />,
+  },
+  {
+    id: "3",
+    label: "ИП",
+    icon: "/images/icons/ip.svg",
+    content: <Tab3 />,
   },
 ];
 
@@ -186,7 +252,7 @@ export const CryptoPayment = ({ isOpen, onClose }) => {
         <h4 className="text-center mb-3 leading-4 font-semibold">
           Отметьте выбранный вариант
         </h4>
-        <div className="space-y-[6px]">
+        <div className="space-y-[6px] media-size-small">
           <Tab2Compoonent tabData={tabData} />
         </div>
         <h3 className="text-15 text-center font-bold leading-[14px] my-3">

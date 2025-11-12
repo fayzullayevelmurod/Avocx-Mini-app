@@ -1,4 +1,4 @@
-import { Button, Sort } from "../components";
+import { Button, SelectChannel, Sort } from "../components";
 import { MyTable } from "../components/Table";
 import { Footer, Header } from "../layouts";
 
@@ -75,7 +75,7 @@ export const MyCreatedAds = () => {
           settingBtn={true}
           actionIcon="/images/icons/blue-plus.svg"
         />
-        <Sort
+        <SelectChannel
           label="Канал"
           icon={true}
           iconPath="/images/icons/stars.svg"
