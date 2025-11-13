@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Checkbox, SelectChannel, Sort } from "../components";
 import { Footer, Header } from "../layouts";
+import { SendModal } from "../components/modals/SendModal";
 
 const categoryOptions = [
   "Счастье Сейчас",
@@ -163,32 +164,7 @@ export const ShoppingCartAdvertising = () => {
         </div>
       </div>
 
-      <div
-        className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
-          isOpen ? "block" : "hidden"
-        }`}
-        onClick={() => setIsOpen(false)}
-      >
-        <div className="bg-[#303030B2] w-[302px] space-y-[7px] rounded-15 pt-[12px] p-[13px]">
-          <div className="flex gap-[6px] items-center justify-center">
-            <img src="/images/icons/check-rounded.svg" alt="" />
-            <span className="text-15 font-bold leading-[18px] text-[#468FF5]">
-              Запрос отправлен
-            </span>
-          </div>
-          <p className="text-center font-semibold text-[10px] text-[#A3A3A3]">
-            На подтверждение админу, вам придёт уведомление в бот, с реквизитами
-            для оплаты.
-          </p>
-          <Button
-            type="primary"
-            className="!h-10 !rounded-[12px]"
-            onClick={() => setIsOpen(false)}
-          >
-            Ок
-          </Button>
-        </div>
-      </div>
+      <SendModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <Footer />
     </>
   );

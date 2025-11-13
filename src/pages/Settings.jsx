@@ -3,6 +3,7 @@ import { Button, InlineIconSelect, Tab } from "../components";
 import { Footer, Header } from "../layouts";
 import { SubscriptionModal } from "../components/modals";
 import { Link } from "react-router-dom";
+import { CopyModal } from "../components/modals/CopyModal";
 
 const languageOptions = [
   { label: "RU", icon: "/images/icons/russion-flag.svg" },
@@ -124,7 +125,8 @@ export const Settings = () => {
       </div>
       <SubscriptionModal isOpen={openModal} onClose={handleClose} />
       {/* copy modal */}
-      <div
+            <CopyModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <div
         className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
           isOpen ? "block" : "hidden"
         }`}
@@ -138,7 +140,7 @@ export const Settings = () => {
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* footer */}
       <Footer />
     </>

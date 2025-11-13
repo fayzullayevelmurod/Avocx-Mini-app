@@ -28,7 +28,7 @@ export const CopyModal = ({ isOpen, setIsOpen }) => {
         }`}
       >
         <img src="/images/icons/check-rounded.svg" alt="" />
-        <span className="text-15 font-bold leading-[18px] text-[#52E063]">
+        <span className="text-xs font-semibold leading-[18px] text-[#52E063]">
           Скопировано
         </span>
       </div>
