@@ -21,14 +21,14 @@ export const CopyModal = ({ isOpen, setIsOpen }) => {
       }`}
     >
       <div
-        className={`bg-[#303030] w-[302px] rounded-15 pt-[12px] p-[13px] flex items-center justify-center gap-[6px] transition-all duration-300 ease-out transform ${
+        className={`bg-[#303030] w-[240px] h-10 rounded-15 pt-[12px] p-[13px] flex items-center justify-center gap-[6px] transition-all duration-300 ease-out transform ${
           visible
             ? "scale-100 opacity-100"
             : "scale-[.7] opacity-0"
         }`}
       >
-        <img src="/images/icons/check-rounded.svg" alt="" />
-        <span className="text-xs font-semibold leading-[18px] text-[#52E063]">
+        <img className="w-5 h-5" src="/images/icons/check-rounded.svg" alt="" />
+        <span className="text-xs font-semibold leading-[9px] text-[#52E063]">
           Скопировано
         </span>
       </div>

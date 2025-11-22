@@ -54,8 +54,8 @@ export const Header = ({
       </Link>
       <div className="min-w-[59px] max-w-[59px] relative h-[46px] rounded-[15px] p-[3px] flex items-center gap-[3px] bg-[#242424]">
         <img
-          className="w-10 h-10 rounded-[13px] object-cover"
-          src="/images/header-user-img.jpg"
+          className="w-10 h-10 rounded-[13px] object-bottom object-cover"
+          src="/images/main-img.jpg"
           alt="header user img"
         />
         <span className="-rotate-90 absolute top-1/2 -translate-y-1/2 text-[8px] font-bold right-0.5">

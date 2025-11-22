@@ -470,7 +470,7 @@ const Stock = () => {
               <span className="text-[7px] text-grayCustom">Diamond</span>
             </div>
             <div>
-              <h4 className="text-[17px] font-semibold leading-full mt-[3px]">
+              <h4 className="text-[15px] font-semibold leading-full mt-[3px]">
                 Cчастье Сейчас
               </h4>
               <p className="text-[10px] font-normal text-grayCustom leading-full mt-[2px] mb-[6px]">

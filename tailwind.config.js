@@ -33,7 +33,7 @@ export default {
         vip: "0px 0px 15px 0px #FFA37880, 0px 0px 10px 0px #FFA378 inset",
         "ai-btn": "0px 0px 10px 0px #C3A4FF66",
         discount: "0px 0px 3px 0px #0000004D",
-
+        "setting-shadow": "0px 6px 50px 0px #FFFFFF66",
       },
       blur: {
         10: "10px",
@@ -43,6 +43,7 @@ export default {
         15: "15px",
       },
       backgroundImage: {
+        "setting-bg": "linear-gradient(180deg, #242424 0%, #E8E8E8 100%)",
         vip: "linear-gradient(90deg, #FF6D44 0%, #FFB783 100%)",
         check: 'url("/images/icons/check.svg")',
         "blue-black": "linear-gradient(180deg, #468FF5 0%, #242424 100%)",

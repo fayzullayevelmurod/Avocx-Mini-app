@@ -42,7 +42,6 @@ export const Exchange = () => {
 
   const handleOpen = (modalName) => setOpenModal(modalName);
   const handleClose = () => setOpenModal(null);
-  const [open, setOpen] = useState(false);
 
   // Checkbox state
   const [checkedDays, setCheckedDays] = useState({
@@ -131,8 +130,8 @@ export const Exchange = () => {
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-semibold leading-full">
-                      Cчастье Сейчас
+                    <h4 className="text-[15px] font-semibold leading-full">
+                      Тихая гавань | Надя Мирова
                     </h4>
                     <p className="text-[10px] font-normal text-grayCustom leading-full mt-[2px] mb-[6px]">
                       Психология, Цитаты, Литература.
@@ -204,8 +203,8 @@ export const Exchange = () => {
                     </span>
                   </div>
                   <div>
-                    <h4 className="text-[17px] font-semibold leading-full">
-                      Cчастье Сейчас
+                    <h4 className="text-[15px] font-semibold leading-full">
+                      Тихая гавань | Надя Мирова
                     </h4>
                     <p className="text-[10px] font-normal text-grayCustom leading-full mt-[2px] mb-[6px]">
                       Психология, Цитаты, Литература.

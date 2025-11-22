@@ -153,7 +153,7 @@ export const ShoppingCartAdvertising = () => {
               </div>
             </div>
             <Button
-              className="gap-[10px] w-full mt-[7px] !h-10"
+              className="gap-[10px] w-full mt-[7px] !rounded-[12px] !h-10"
               onClick={() => setIsOpen(true)}
             >
               <span>650₽</span>

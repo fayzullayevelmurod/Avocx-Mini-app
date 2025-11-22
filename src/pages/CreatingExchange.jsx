@@ -164,7 +164,7 @@ export const CreatingExchange = () => {
             </div>
           </div>
         </div>
-        <Button type="gray">
+        <Button type="lightGray">
           <img
             className="filter invert brightness-0"
             src="/images/icons/plus-btn.svg"
@@ -184,7 +184,7 @@ export const CreatingExchange = () => {
           <SelectTime className="pb-[12px]" />
           <SelectTime className="pb-[12px]" deleteItem={true} />
         </div>
-        <Button type="gray">
+        <Button type="lightGray">
           <img
             className="filter invert brightness-0"
             src="/images/icons/plus-btn.svg"

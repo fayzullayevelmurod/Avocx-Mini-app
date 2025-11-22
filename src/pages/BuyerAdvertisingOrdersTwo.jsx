@@ -227,7 +227,7 @@ export const BuyerAdvertisingOrdersTwo = () => {
           </div>
         </div>
       </div>
-      <Footer  />
+      <Footer />
     </>
   );
 };

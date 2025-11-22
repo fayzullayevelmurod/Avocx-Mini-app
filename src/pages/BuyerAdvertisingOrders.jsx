@@ -38,7 +38,7 @@ export const BuyerAdvertisingOrders = () => {
                 </span>
               </div>
               <div>
-                <h4 className="text-[17px] font-semibold leading-full">
+                <h4 className="text-[15px] font-semibold leading-full">
                   Cчастье Сейчас
                 </h4>
                 <p className="text-[10px] font-normal text-grayCustom leading-full mt-[2px] mb-[6px]">
@@ -110,7 +110,7 @@ export const BuyerAdvertisingOrders = () => {
                 </span>
               </div>
               <div>
-                <h4 className="text-[17px] font-semibold leading-full">
+                <h4 className="text-[15px] font-semibold leading-full">
                   Cчастье Сейчас
                 </h4>
                 <p className="text-[10px] font-normal text-grayCustom leading-full mt-[2px] mb-[6px]">

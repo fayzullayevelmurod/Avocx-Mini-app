@@ -15,22 +15,7 @@ const currency = [
   { value: "sell", label: "$" },
   { value: "rent", label: "€" },
 ];
-const tabData = [
-  {
-    id: "1",
-    count: "2",
-    label: "Покупатель",
-    icon: "/images/icons/profile.svg",
-    content: "<Cart />",
-  },
-  {
-    id: "2",
-    count: "5",
-    label: "Продавец",
-    icon: "/images/icons/work-bag.svg",
-    content: "<Order />",
-  },
-];
+
 export const Settings = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
@@ -51,14 +36,41 @@ export const Settings = () => {
     <>
       <div className="pb-[160px]">
         <Header title="Настройки" />
-        <Tab tabData={tabData} />
+        {/* <Tab tabData={tabData} /> */}
         <div className="text-center mt-3">
-          <h3 className="text-[17px] font-bold leading-[21px]">Подписка</h3>
+          <div className="h-[119px] w-[108px] bg-setting-bg shadow-setting-shadow p-1 rounded-[34px] mx-auto relative">
+            <img
+              className="absolute -right-1 -top-1"
+              src="/images/icons/starr.svg"
+              alt=""
+            />
+            <img
+              className="w-full object-cover object-bottom h-[100px] rounded-[30px]"
+              src="/images/main-img.jpg"
+              alt=""
+            />
+            <div className="flex w-fit relative mx-auto z-10 gap-[1px] justify-center items-center bg-[#464646] min-h-[10px] max-h-[10px] rounded-[3px] px-1 mt-[-6px]">
+              <img src="/images/icons/trophy.svg" alt="" />
+              <span className="text-[8px] text-[#D9D9D9] font-semibold leading-full">
+                189
+              </span>
+            </div>
+            <span className="text-center font-bold text-[8px] text-[#242424] block  leading-normal">
+              Pro
+            </span>
+          </div>
+          <h3 className="text-[17px] font-bold leading-[21px] mt-[5px]">
+            Подписка
+          </h3>
           <span className="text-sm font-semibold mb-3 mt-1 leading-[17px]">
             Действует по: 25.10.2025
           </span>
-          <Button onClick={() => handleOpen("payment-fiat")}>
-            <img src="/images/icons/pay.svg" alt="" />
+          <Button type="lightGray" onClick={() => handleOpen("payment-fiat")}>
+            <img
+              className="filter brightness-0 invert"
+              src="/images/icons/pay.svg"
+              alt=""
+            />
             Оформить
           </Button>
           <h3 className="leading-[21px] my-3 font-bold text-17">Настройки</h3>
@@ -125,7 +137,7 @@ export const Settings = () => {
       </div>
       <SubscriptionModal isOpen={openModal} onClose={handleClose} />
       {/* copy modal */}
-            <CopyModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <CopyModal isOpen={isOpen} setIsOpen={setIsOpen} />
       {/* <div
         className={`fixed top-0 z-[99999] left-0 w-full h-full flex items-center justify-center bg-[#1F1F1F80] backdrop-blur-[5px] ${
           isOpen ? "block" : "hidden"

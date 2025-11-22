@@ -7,13 +7,11 @@ export const SettingUpDetails = () => {
   const [cards, setCards] = useState([
     { number: "1234 5678 9101 1121", bank: "Т-банк" },
     { number: "", bank: "" },
-    { number: "", bank: "" },
+    // { number: "", bank: "" },
   ]);
+  const [cards2, setCards2] = useState([{ number: "", bank: "" }]);
 
-  const [phones, setPhones] = useState([
-    { number: "", bank: "" },
-    { number: "", bank: "" },
-  ]);
+  const [phones, setPhones] = useState([{ number: "", bank: "" }]);
 
   // --- 🔸 CARD FORMAT: faqat raqam + formatlash ---
   const formatCard = (value) => {
@@ -111,6 +109,66 @@ export const SettingUpDetails = () => {
       </div>
     ));
 
+  const renderInputs2 = (data, setData, isCard = true) =>
+    data.map((item, index) => (
+      <div
+        key={index}
+        className="bg-[#242424] rounded-15 py-[16px] px-[14px] h-[50px] flex gap-1 items-center"
+      >
+        <div className="flex items-center gap-[13px]">
+          <img
+            src={
+              isCard
+                ? "/images/icons/bino.svg"
+                : "/images/icons/mobile-phone.svg"
+            }
+            alt=""
+            className={isCard ? "" : "filter invert brightness-0"}
+          />
+
+          <input
+            className="bg-transparent placeholder:text-[#464646] outline-none"
+            style={{
+              width: isCard ? (item.number ? "102px" : "102px") : "102px",
+            }}
+            type="text"
+            inputMode="numeric"
+            placeholder={"Номер счёта"}
+            value={item.number}
+            onChange={handleChange(
+              data,
+              setData,
+              index,
+              "number",
+              isCard ? formatCard : formatPhone
+            )}
+          />
+        </div>
+
+        <div className="w-[2px] bg-[#59BFFF] h-full"></div>
+
+        <input
+          className="bg-transparent placeholder:text-[#464646] outline-none"
+          style={{
+            width: "90px",
+          }}
+          type="text"
+          placeholder="Банк"
+          value={item.bank}
+          onChange={handleChange(data, setData, index, "bank")}
+        />
+
+        {(item.number || item.bank) && (
+          <button
+            className="ml-auto"
+            onClick={() => handleDelete(data, setData, index)}
+          >
+            <img src="/images/icons/trash.svg" alt="trash" />
+          </button>
+        )}
+      </div>
+    ));
+
   return (
     <>
       <div className="pb-[200px]">
@@ -124,27 +182,67 @@ export const SettingUpDetails = () => {
           <h3 className="text-15 font-semibold text-center mb-3 leading-[16px]">
             Банковские карты
           </h3>
-          <div className="space-y-[7px]">
+          <div className="space-y-2">
             {renderInputs(cards, setCards, true)}
+            <Button type="lightGray">
+              <img
+                className="filter invert brightness-0"
+                src="/images/icons/plus-btn.svg"
+                alt=""
+              />
+              <span>Добавить</span>
+            </Button>
           </div>
 
-          <h3 className="text-center text-15 font-bold my-3 leading-4">
+          <h3 className="text-center text-15 font-semibold my-3 leading-4">
             Номер телефона (СБП)
           </h3>
-          <div className="space-y-[7px]">
+          <div className="space-y-2">
             {renderInputs(phones, setPhones, false)}
+            <Button type="lightGray">
+              <img
+                className="filter invert brightness-0"
+                src="/images/icons/plus-btn.svg"
+                alt=""
+              />
+              <span>Добавить</span>
+            </Button>
           </div>
-          <div className="flex gap-[6px] mt-4">
-            <div className="mt-0.5">
-              <Checkbox checked={check} onChange={() => setCheck(!check)} />
+          <h3 className="text-center text-15 font-semibold my-3 leading-4">
+            Бизнес
+          </h3>
+          <div className="space-y-2">
+            {renderInputs2(cards2, setCards2)}
+            <Button type="lightGray">
+              <img
+                className="filter invert brightness-0"
+                src="/images/icons/plus-btn.svg"
+                alt=""
+              />
+              <span>Добавить</span>
+            </Button>
+
+            <div className="bg-[#242424] w-full h-[50px] rounded-15 flex items-center px-[14px] gap-[7px]">
+              <img src="/images/icons/chrome.svg" alt="" />
+              <input
+                className="w-full h-full bg-transparent font-semibold text-15 placeholder:text-[#464646]"
+                type="text"
+                placeholder="Ссылка на эквайринг бизнеса"
+              />
             </div>
-            <p className="text-xs text-[#A3A3A3] font-semibold max-w-[381px]">
-              Я подтверждаю, что: <br /> 1. Указанные мной реквизиты принадлежат
-              мне и исправны для перевода на них денежных средств. <br /> 2.
-              Указаны достоверно. <br /> 3. Я не использую реквизиты третих лиц
-              для приёма оплат. <br /> 4. Понимаю и принимаю всю ответственность
-              на себя за не правильно указанные мною данные.
-            </p>
+            <div className="py-[10px] px-[14px] rounded-15 bg-[#242424]">
+              <div className="flex items-center gap-2">
+                <Checkbox checked={check} onChange={() => setCheck(!check)} />
+                <span className="text-15 font-semibold">Я подтверждаю:</span>
+              </div>
+              <p className="text-[10px] text-[#A3A3A3] font-medium max-w-[381px] mt-3">
+                1. Указанные мной реквизиты принадлежат мне, исправны для
+                перевода на них денежных средств, указаны достоверно. <br />
+                2. Я не использую реквизиты третих лиц для приёма оплат. <br />
+                3. Понимаю и принимаю всю ответственность на себя за не
+                правильно указанные мною данные.
+              </p>
+            </div>
           </div>
         </div>
       </div>
