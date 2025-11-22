@@ -157,8 +157,7 @@
 //     </div>
 //   );
 // };
-
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ru from "date-fns/locale/ru";
@@ -169,25 +168,11 @@ import { Tab } from "./Tab";
 
 registerLocale("ru", ru);
 
-const Tab1 = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const formattedDate = selectedDate
-    ? selectedDate.toLocaleDateString("ru-RU", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      })
-    : "";
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
+const Tab1 = ({ date, onChange }) => {
   return (
     <DatePicker
-      selected={selectedDate}
-      onChange={handleDateChange}
+      selected={date}
+      onChange={onChange}
       inline
       locale="ru"
       dateFormat="dd.MM.yyyy"
@@ -196,25 +181,11 @@ const Tab1 = () => {
   );
 };
 
-const Tab2 = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const formattedDate = selectedDate
-    ? selectedDate.toLocaleDateString("ru-RU", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      })
-    : "";
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
+const Tab2 = ({ date, onChange }) => {
   return (
     <DatePicker
-      selected={selectedDate}
-      onChange={handleDateChange}
+      selected={date}
+      onChange={onChange}
       inline
       locale="ru"
       dateFormat="dd.MM.yyyy"
@@ -222,34 +193,42 @@ const Tab2 = () => {
     />
   );
 };
-
-const tabData = [
-  {
-    id: "1",
-    label: "Дата от:",
-    content: <Tab1 />,
-    icon: null,
-  },
-  {
-    id: "2",
-    label: "Дата до:",
-    content: <Tab2 />,
-    icon: null,
-  },
-];
 
 export const Date = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const datePickerRef = useRef(null);
 
-  const formattedDate = selectedDate
-    ? selectedDate.toLocaleDateString("ru-RU", {
+  const formattedStart = startDate
+    ? startDate.toLocaleDateString("ru-RU", {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
       })
     : "";
+  const formattedEnd = endDate
+    ? endDate.toLocaleDateString("ru-RU", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })
+    : "";
+
+  const rangeText = [];
+  if (startDate) rangeText.push(`от: ${formattedStart}`);
+  if (endDate) rangeText.push(`до: ${formattedEnd}`);
+  const displayText =
+    rangeText.length > 0 ? rangeText.join(" ") : "Дата/время:";
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+  };
+
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+    setIsOpen(false);
+  };
 
   const togglePicker = (e) => {
     e.stopPropagation();
@@ -265,6 +244,30 @@ export const Date = () => {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [isOpen]);
+
+  const tabData = [
+    {
+      id: "1",
+      label: "Дата от:",
+      content: <Tab1 date={startDate} onChange={handleStartDateChange} />,
+      icon: null,
+    },
+    {
+      id: "2",
+      label: "Дата до:",
+      content: <Tab2 date={endDate} onChange={handleEndDateChange} />,
+      icon: null,
+    },
+  ];
 
   return (
     <div
@@ -284,9 +287,7 @@ export const Date = () => {
             alt="calendar"
             className="w-[19px] h-5 ml-2"
           />
-          <span className="text-15 text-white">
-            Дата/время: {formattedDate}
-          </span>
+          <span className="text-15 text-white">{displayText}</span>
         </div>
         <svg
           width="14"
