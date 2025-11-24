@@ -1,5 +1,5 @@
 import { useState } from "react";
-export const Tab = ({ tabData }) => {
+export const DateTab = ({ tabData }) => {
   const [activeTab, setActiveTab] = useState(tabData[0]?.id || "");
 
   const handleTabClick = (id) => {
@@ -9,13 +9,13 @@ export const Tab = ({ tabData }) => {
   return (
     <>
       {/* Tab headers */}
-      <div className="w-full h-[50px] bg-[#242424] p-1 rounded-[15px] flex">
+      <div className="h-[50px]  p-1 rounded-[15px] flex bg-[#303030] w-[calc(100%_-_41px)] -translate-x-[1px] mx-auto">
         {tabData?.map((item) => (
           <div
             key={item.id}
             onClick={() => handleTabClick(item.id)}
             className={`flex-1 ${
-              activeTab === item.id ? "bg-[#303030]" : "bg-transparent"
+              activeTab === item.id ? "bg-[#59BFFF]" : "bg-transparent"
             } rounded-[12px] flex items-center justify-center gap-[5px] cursor-pointer`}
           >
             <div className="relative">
@@ -36,7 +36,7 @@ export const Tab = ({ tabData }) => {
             </div>
             <span
               className={`text-[15px] font-bold ${
-                activeTab === item.id ? "text-white" : "text-[#707070]"
+                activeTab === item.id ? "text-[#303030]" : "text-[#707070]"
               }`}
             >
               {item.label}

@@ -15,7 +15,7 @@ const Tab2 = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <div className="space-y-2">
+      <div className="space-y-2 -mt-2">
         <div className="flex gap-3">
           <Sort
             label="Фильтр"
@@ -299,7 +299,7 @@ const Tab1 = () => {
   ];
   return (
     <>
-      <div className="flex gap-3 mb-2">
+      <div className="flex gap-3 mb-2 -mt-2">
         <Sort
           label="Фильтр"
           icon={true}
@@ -529,8 +529,8 @@ export const BuyerAdvertisingOrdersThree = () => {
         <Header
           search={true}
           settingBtn={true}
-          action="История"
-          actionIcon="/images/icons/open-book.svg"
+          action="Таблица"
+          actionIcon="/images/icons/table2.svg"
         />
         <Tab tabData={tabData} />
       </div>

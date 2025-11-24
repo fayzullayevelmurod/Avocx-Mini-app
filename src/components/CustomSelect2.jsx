@@ -68,7 +68,7 @@ export const CustomSelect2 = ({
       </button>
 
       <div
-        className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-[#303030]  rounded-b-[20px] transition-all duration-300 ${
+        className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-[#303030]  rounded-b-15 transition-all duration-300 ${
           isOpen
             ? "max-h-60 opacity-100 visible"
             : "max-h-0 opacity-0 invisible"
